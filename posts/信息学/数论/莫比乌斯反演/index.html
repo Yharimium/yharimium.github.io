@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>莫比乌斯反演 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">莫比乌斯反演</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#莫比乌斯函数">莫比乌斯函数</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#性质">性质</a>
+          <ul>
+            <li><a href="#性质-1">性质 1</a></li>
+            <li><a href="#性质-2">性质 2</a></li>
+            <li><a href="#积性函数">积性函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#模板">模板</a></li>
+      </ul>
+    </li>
+    <li><a href="#狄利克雷卷积">狄利克雷卷积</a>
+      <ul>
+        <li><a href="#定义-1">定义</a></li>
+        <li><a href="#性质-3">性质</a></li>
+        <li><a href="#重要结论">重要结论</a></li>
+      </ul>
+    </li>
+    <li><a href="#莫比乌斯反演">莫比乌斯反演</a>
+      <ul>
+        <li><a href="#形式-1">形式 1</a></li>
+        <li><a href="#形式-2">形式 2</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../categories/%e6%95%b0%e8%ae%ba">数论</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../tags/%e6%8a%bd%e8%b1%a1">抽象</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-9-23</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">莫比乌斯反演</h1>
+  <span class="description"></span><div class='mkdocs hint info' open>
+    <p class='title'>
+        <img class='icon' src='../../../../img/material/info.svg' />
+        <span>info</span>
+    </p>
+    <div class='inner'> 
+<p>若无特殊说明，本章涉及的变量皆为正整数.</p>
+ </div>
+</div> 
+<h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p>由函数 $f$ 定义一个函数 $g$：</p>
+<p>$$g(n)=\sum_{d\mid n}f(d)\quad\big(\text{或}\quad g(n)=\sum_{n\mid d}f(d)\big)$$</p>
+<p>已知 $g(n)$，即可用莫比乌斯反演推出 $f(n)$.</p>
+<h2 id="#莫比乌斯函数">
+    莫比乌斯函数
+    <a class="anchor" name="莫比乌斯函数" href="#%e8%8e%ab%e6%af%94%e4%b9%8c%e6%96%af%e5%87%bd%e6%95%b0">#</a>
+</h2><h3 id="#定义">
+    定义
+    <a class="anchor" name="定义" href="#%e5%ae%9a%e4%b9%89">#</a>
+</h3><p>$n$ 的莫比乌斯函数记为 $\mu(n)$：</p>
+<p>$$\mu(n)=\begin{cases}
+0  &amp; n \ 有平方因数 \\
+1  &amp; n \ 无平方因数，且有偶数个质因数 \\
+-1 &amp; n \ 无平方因数，且有奇数个质因数
+\end{cases}$$</p><p>特别地，$μ(1)=1$.</p>
+<h3 id="#性质">
+    性质
+    <a class="anchor" name="性质" href="#%e6%80%a7%e8%b4%a8">#</a>
+</h3><h4 id="#性质-1">
+    性质 1
+    <a class="anchor" name="性质-1" href="#%e6%80%a7%e8%b4%a8-1">#</a>
+</h4><p>$$\sum_{d\mid n}μ(d)
+= \left\lfloor\frac{1}{n}\right\rfloor
+= \begin{cases}
+    1 &amp; n=1\\
+    0 &amp; n&gt;1
+\end{cases}$$</p>
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>设 $n$ 有 $k$ 个质因子 $p_1,p_2,\cdots,p_k$，则：</p>
+<p>$$\begin{aligned}
+\sum_{d\mid n}μ(d)
+= \ &amp;μ(1)&#43;μ(p_1)&#43;μ(p_2)&#43;\cdots&#43;μ(p_k)&#43;μ(p_1p_2)&#43;\cdots&#43;μ(p_1p_2\cdots p_k)\\
+= \ &amp;{k\choose 0}&#43;{k\choose 1}(-1)&#43;{k\choose 2}(-1)^2&#43;\cdots&#43;{k\choose k}(-1)^k\\
+= \ &amp;\sum_{i=0}^k{k\choose i}(-1)^i
+\end{aligned}$$</p><p>由 <a class="md-link" href="../../../../post/%e6%95%b0%e5%ad%a6/%e6%95%b0%e8%ae%ba/%e7%bb%84%e5%90%88%e6%95%b0%e5%ad%a6/%e4%ba%8c%e9%a1%b9%e5%bc%8f%e5%ae%9a%e7%90%86/"  >二项式定理<img class="icon" src="../../../../img/link.svg" /></a> 得：</p>
+<p>$$\sum_{i=0}^k{k\choose i}(-1)^i=(1-1)^k=\begin{cases}1&amp;k=1\\0&amp;k&gt;1\end{cases}$$</p>
+<p>当且仅当 $n=1$ 时，$k=1$. 因此：</p>
+<p>$$\sum_{d\mid n}μ(d)=\begin{cases}1&amp;n=1\\0&amp;n&gt;1\end{cases}$$</p>
+</div>
+</details>
+<h4 id="#性质-2">
+    性质 2
+    <a class="anchor" name="性质-2" href="#%e6%80%a7%e8%b4%a8-2">#</a>
+</h4><p>$$\sum_{d\mid gcd(n,m)}μ(d)=
+\begin{cases}
+    1 &amp; n,m \ 互质\\
+    0 &amp; n,m \ 不互质
+\end{cases}$$</p>
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'>根据 <a class="md-link" href="#%e6%80%a7%e8%b4%a8-1"  >性质 1<img class="icon" src="../../../../img/link.svg" /></a> 自证.</div>
+</details>
+<!-- #### 性质 3
+
+$$\sum_{d\mid n}\dfrac{μ(d)}{d}=\dfrac{\varphi(n)}{n}$$
+
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'>动一动你聪明的小脑瓜.</div>
+</details> -->
+<h4 id="#积性函数">
+    积性函数
+    <a class="anchor" name="积性函数" href="#%e7%a7%af%e6%80%a7%e5%87%bd%e6%95%b0">#</a>
+</h4><p>$$\displaystyleμ(nm)=\begin{cases}μ(n)\cdotμ(m)&amp;n,m \  互质\\0&amp;n,m \  不互质\end{cases}$$</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'>读者自证.</div>
+</details>
+<h3 id="#模板">
+    模板
+    <a class="anchor" name="模板" href="#%e6%a8%a1%e6%9d%bf">#</a>
+</h3><p>基于质数的 <a class="md-link" href="../../../../post/%e6%95%b0%e5%ad%a6/%e6%95%b0%e8%ae%ba/%e8%b4%a8%e6%95%b0/#%e7%ba%bf%e6%80%a7%e7%ad%9b%e6%b3%95"  >线性筛法<img class="icon" src="../../../../img/link.svg" /></a> 求 $μ(1)\simμ(n)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">prime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">miu</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">isPrime</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">getMiu</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">miu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">isPrime</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">isPrime</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">isPrime</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">prime</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">miu</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">prime</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">isPrime</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="n">miu</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">              <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="n">miu</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="n">miu</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">miu</span><span class="p">[</span><span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]];</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#狄利克雷卷积">
+    狄利克雷卷积
+    <a class="anchor" name="狄利克雷卷积" href="#%e7%8b%84%e5%88%a9%e5%85%8b%e9%9b%b7%e5%8d%b7%e7%a7%af">#</a>
+</h2><h3 id="#定义-1">
+    定义
+    <a class="anchor" name="定义-1" href="#%e5%ae%9a%e4%b9%89-1">#</a>
+</h3><p>函数 $f(x)$ 和 $g(x)$ 的狄利克雷卷积 $h(x)$ 定义为：</p>
+<p>$$h(x)=\sum_{d|x}f(d)g\!\left(\frac{x}{d}\right)=\sum_{ab=x}f(a)g(b)$$</p>
+<p>简记为：</p>
+<p>$$h=f*g$$</p>
+<h3 id="#性质-3">
+    性质
+    <a class="anchor" name="性质-3" href="#%e6%80%a7%e8%b4%a8-3">#</a>
+</h3><ul>
+<li>
+<p>交换律：$f* g=g*f$.</p>
+</li>
+<li>
+<p>结合律：$(f* g)*h=f *(g *h)$.</p>
+</li>
+<li>
+<p>分配律：$(f+g)*h=f *h+g *h$.</p>
+</li>
+<li>
+<p>等式的性质：$f=g\eq f* h=g*h,h(1)\not=0$.</p>
+</li>
+<li>
+<p>单位元：即单位函数 $ε$，满足 $f*ε=f$.</p>
+</li>
+</ul>
+<p>$$ε(n)=\begin{cases}1&amp;n=1\\0&amp;n&gt;1\end{cases}$$</p>
+ <!-- - 逆元：若 $f*g=ε$，则 $g(x)$ 是 $f(x)$ 的逆元. 
+
+$$g(x)=\frac{ε(x)-\sum_{ d|x,d\not=1}f(d)g\Big(\frac{x}{d}\Big)}{f(1)}$$ -->
+<blockquote>
+<p>值为常数的函数，如 $f(n)=C$，在狄利克雷卷积中简记为 $C$.</p>
+<p>$$g(x)=\sum_{d|x}C\cdot f(d)\eq g=C*f$$</p>
+</blockquote>
+<h3 id="#重要结论">
+    重要结论
+    <a class="anchor" name="重要结论" href="#%e9%87%8d%e8%a6%81%e7%bb%93%e8%ae%ba">#</a>
+</h3><p>$$ε(n)=\sum_{d\mid n}μ(d)\quad ( 或 \quad\normalsize 1*μ=ε)$$</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>由 $μ$ 函数的 <a class="md-link" href="#%e6%80%a7%e8%b4%a8-1"  >性质 1<img class="icon" src="../../../../img/link.svg" /></a> 得：</p>
+<p>$$\sum_{d\mid n}μ(d)=\begin{cases}1&amp;n=1\\0&amp;n&gt;1\end{cases}=ε(n)$$</p>
+<p>$$∴1*μ=ε$$</p>
+</div>
+</details>
+<h2 id="#莫比乌斯反演">
+    莫比乌斯反演
+    <a class="anchor" name="莫比乌斯反演" href="#%e8%8e%ab%e6%af%94%e4%b9%8c%e6%96%af%e5%8f%8d%e6%bc%94">#</a>
+</h2><h3 id="#形式-1">
+    形式 1
+    <a class="anchor" name="形式-1" href="#%e5%bd%a2%e5%bc%8f-1">#</a>
+</h3><p>$$f(n)=\sum_{d\mid n}g(d)\Longrightarrow g(n)=\sum_{d\mid n}μ(d)f\!\left(\frac{n}{d}\right)$$</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>原式可简记为：</p>
+<p>$$f=g*1\Longrightarrow g=μ *f$$</p>
+<p>由 <a class="md-link" href="#%e9%87%8d%e8%a6%81%e7%bb%93%e8%ae%ba"  >重要结论<img class="icon" src="../../../../img/link.svg" /></a> 得：</p>
+<p>$$f=g* 1\Longrightarrow f* μ=g* (1 *μ)=g *ε=g$$</p>
+<p>即证.</p>
+</div>
+</details>
+<h3 id="#形式-2">
+    形式 2
+    <a class="anchor" name="形式-2" href="#%e5%bd%a2%e5%bc%8f-2">#</a>
+</h3><p>$$f(n)=\sum_{n\mid d}g(d)\Longrightarrow g(n)=\sum_{n\mid d}μ\!\left(\frac{d}{n}\right)f(d)$$</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'>$$\begin{aligned}
+&amp; \sum_{n\mid d}μ\!\left(\frac{d}{n}\right)f(d)\\
+= \ &amp;\sum_{k=1}^{&#43;∞}μ(k)f(kn)&amp;&amp;\quad 设 \ k=\frac{d}{n}，代入\\
+= \ &amp;\sum_{k=1}^{&#43;∞}μ(k)\sum_{kn\mid d}g(d)&amp;&amp;\quad 将 \ f(n)=\sum_{n\mid d}g(d) \ 代入\\
+= \ &amp;\sum_{n\mid d}g(d)\sum_{k\mid\frac{d}{n}}μ(k)\\
+= \ &amp;\sum_{n\mid d}g(d)ε\!\left(\frac{d}{n}\right)&amp;&amp;\quad 套用 \ 重要结论\\
+= \ &amp;g(n)
+\end{aligned}$$</div>
+</details>
+</article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

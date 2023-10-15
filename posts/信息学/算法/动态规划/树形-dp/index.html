@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>树形 DP - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../../">博客</a><a class="nav-item " href="../../../../../docs/">文档</a><a class="nav-item " href="../../../../../search/">搜索</a><a class="nav-item " href="../../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">树形 DP</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#例-1">例 1</a></li>
+    <li><a href="#例-2">例 2</a></li>
+    <li><a href="#树形-dp--背包-dp">树形 DP + 背包 DP</a></li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../../categories/%e7%ae%97%e6%b3%95">算法</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../../tags/dp">DP</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-4-1</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">树形 DP</h1>
+  <span class="description"></span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p><strong>树形 DP</strong> 以树形结构为研究对象. 通常设 $f[u]$ 为树中 $u$ 号节点的值，利用树形关系推出其它节点的值. DP 过程多为 <a class="md-link" href="../../../../../posts/%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92/%e8%ae%b0%e5%bf%86%e5%8c%96%e6%90%9c%e7%b4%a2/"  >记忆化搜索<img class="icon" src="../../../../../img/link.svg" /></a>.</p>
+<h2 id="#例-1">
+    例 1
+    <a class="anchor" name="例-1" href="#%e4%be%8b-1">#</a>
+</h2><p>给定一棵 $n$ 个点，$m$ 条边的树，顶点编号为 $1\sim n$，且以 $1$ 号节点为根. 以 $i$ 号节点为根的子树有几个节点？</p>
+<p>$f[i]$：以 $i$ 号节点为根的子树的节点数.</p>
+<p>$Son[i]$：$i$ 号节点的子节点集合.</p>
+<p>$$f[i]=1&#43;\sum_{v\in Son[i]}f[v]$$</p><p>计算顺序为 $f[$子节点$]→f[$父节点$]$. 使用记忆化搜索.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">son</span><span class="p">[];</span> <span class="c1">// son[u] : 节点 u 的子节点集合
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 求以 u 为根的子树中节点个数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">];</span> <span class="c1">// 节点 u 的第 i 个子节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="n">f</span><span class="p">[</span><span class="n">v</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#例-2">
+    例 2
+    <a class="anchor" name="例-2" href="#%e4%be%8b-2">#</a>
+</h2><p>公司有 $n$ 个人，编号为 $1\cdots n$，其中 $1$ 号员工是 boss. 现要举⾏⼀场晚会，如果邀请了某个⼈，那么他的上司不会来（他上司的上司，上司的上司的上司 $\cdots$ 都可以来）.</p>
+<p>每个⼈都有⼀个欢乐值，给出公司所有人的上下级关系，求⼀个邀请⽅案，使欢乐值的和最⼤.</p>
+<p>$f[i,j]$：从员工 $i$ 和所有下属中邀请部分人参会的最大欢乐值. 当 $j=0$ 时 $i$ 号员工不参会，$j=1$ 时参会.</p>
+<p>$Son[i]$：员工 $i$ 的下属集合.</p>
+<ul>
+<li>若 $i$ 号员工参会，他的直接下属都不来：</li>
+</ul>
+<p>$$f[i,1]=H_i&#43;\sum_{v\in Son(i)}f[v,0]$$</p><ul>
+<li>若 $i$ 号员工参会，他的直接下属爱来不来，于是取最大值：</li>
+</ul>
+<p>$$f[i,0]=\sum_{v\in Son(i)}\max\{f[v,0],f[v,1]\}$$</p><p>时间复杂度为 $O(n)$，最终答案为 $\max\{f[1,0],f[1,1]\}$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">son</span><span class="p">[];</span> <span class="c1">// son[u] : 员工 u 的下属集合
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 求出 u 号员工对应的 f[u][0] 和 f[u][1]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">];</span> <span class="c1">// 员工 u 的第 i 个下属
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">f</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#树形-dp--背包-dp">
+    树形 DP + 背包 DP
+    <a class="anchor" name="树形-dp--背包-dp" href="#%e6%a0%91%e5%bd%a2-dp--%e8%83%8c%e5%8c%85-dp">#</a>
+</h2><p>处理某些问题时，需要结合树形 DP 和背包 DP 的思想.</p>
+<p>现有 $n$ 门课程，第 $i$ 门课程的学分为 $s_i$，每门课程有 $0$ 或 $1$ 门先修课.有先修课的课程需要先学完先修课，才能学习该课程.求学习 $m$ 门课程能获得的最多学分.</p>
+<p>将每门课程看作树中的节点，$a→b$ 代表 $a$ 比 $b$ 先修：</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart
+2--&gt;1
+2--&gt;4
+2--&gt;7
+    7--&gt;5
+    7--&gt;6
+3
+</code></pre><p>为了方便解决问题，新增 $0$ 号节点，使其指向所有无先修课的课程：</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart
+0--&gt;2
+0--&gt;3
+    2--&gt;1
+    2--&gt;4
+    2--&gt;7
+        7--&gt;5
+        7--&gt;6
+    3
+</code></pre><p>$f[u,j]$ 表示以 $u$ 为根节点，选 $j$ 个节点，获得的最大学分.</p>
+<p>$dfs(u)$ 的功能是算出以 $u$ 为根节点时，分别选 $0\sim m$ 个节点时能获得的最大学分.</p>
+<p>执行 $dfs(u)$ 时，枚举 $u$ 的子节点 $v$，在内层循环枚举选取的节点数 $j=m→1$：</p>
+<ul>
+<li>
+<p>将 $j$ 个节点分成两组，一组 $k$ 个，另一组 $j-k$ 个；</p>
+</li>
+<li>
+<p>将第一组 $k$ 个节点放在以 $v$ 为根节点的子树中，最大学分为 $f[v][k]$；</p>
+</li>
+<li>
+<p>将第二组 $j-k$ 个节点放在以 $u$ 为根节点的子树中，但不放在以 $v$ 为根节点的子树中，最大学分为 $f[u][j-k]$.</p>
+</li>
+</ul>
+<p>$$f[u,j]=\max_{v\in Son(u)}{f[u,j],f[u,j-k]+f[v,k]}$$</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">初始条件</th>
+<th style="text-align:center">$f[i,1]=s[i]$</th>
+<th style="text-align:center">边界条件</th>
+<th style="text-align:center">$f[0,m]$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">时间复杂度</td>
+<td style="text-align:center">$O(n^3)$</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>在主程序中执行 $dfs(0)$ 后输出 $f[0,m]$ 即可.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">k</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../../scripts/mathjax.js"></script>
+</html>

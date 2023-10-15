@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>自极三角形 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../../">博客</a><a class="nav-item " href="../../../../../docs/">文档</a><a class="nav-item " href="../../../../../search/">搜索</a><a class="nav-item " href="../../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">自极三角形</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#定义">定义</a></li>
+    <li><a href="#证明">证明</a>
+      <ul>
+        <li><a href="#引理">引理</a>
+          <ul>
+            <li><a href="#ceva-定理">Ceva 定理</a></li>
+            <li><a href="#pascal-定理">Pascal 定理</a></li>
+          </ul>
+        </li>
+        <li><a href="#证明-1">证明</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用例">使用例</a>
+      <ul>
+        <li><a href="#例-1">例 1</a></li>
+        <li><a href="#例-2">例 2</a></li>
+        <li><a href="#例-3">例 3</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../../categories/%e6%95%b0%e5%ad%a6">数学</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../../tags/%e5%b9%b3%e9%9d%a2%e5%87%a0%e4%bd%95">平面几何</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../../tags/%e5%9c%86%e9%94%a5%e6%9b%b2%e7%ba%bf">圆锥曲线</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../../tags/%e6%8a%bd%e8%b1%a1">抽象</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2023-3-7</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">自极三角形</h1>
+  <span class="description">看上去十分简单。</span><div class='mkdocs hint warning' open>
+    <p class='title'>
+        <img class='icon' src='../../../../../img/material/warning.svg' />
+        <span>warning</span>
+    </p>
+    <div class='inner'> 
+<p>需要 <a class="md-link" href="../%e6%9e%81%e7%82%b9%e6%9e%81%e7%ba%bf%e6%96%b9%e7%a8%8b/"  >极点极线方程<img class="icon" src="../../../../../img/link.svg" /></a> 的相关知识。</p>
+ </div>
+</div> 
+<h2 id="#定义">
+    定义
+    <a class="anchor" name="定义" href="#%e5%ae%9a%e4%b9%89">#</a>
+</h2><div class='mkdocs columns'> 
+<div class='inner markdown'><p>圆锥曲线任意内接四边形 $ABCD$，其边交点 $M,N$ 和对角线交点 $P$ 构成自极三角形。</p>
+<ul>
+<li>$MN$ 是 $P$ 的极线</li>
+<li>$MP$ 是 $N$ 的极线</li>
+<li>$NP$ 是 $M$ 的极线</li>
+</ul>
+</div> 
+<div class='inner markdown'><table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/1-%e5%ae%9a%e4%b9%89.jpg" alt="" title="15%" style="zoom: 15%"></th>
+</tr>
+</thead>
+</table>
+</div> 
+ </div> 
+<h2 id="#证明">
+    证明
+    <a class="anchor" name="证明" href="#%e8%af%81%e6%98%8e">#</a>
+</h2><h3 id="#引理">
+    引理
+    <a class="anchor" name="引理" href="#%e5%bc%95%e7%90%86">#</a>
+</h3><h4 id="#ceva-定理">
+    Ceva 定理
+    <a class="anchor" name="ceva-定理" href="#ceva-%e5%ae%9a%e7%90%86">#</a>
+</h4><p>$\Delta ABC$ 中，$AD,BE,CF$ 共点 $O$。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/2-ceva.jpg" alt="" title="15%" style="zoom: 15%"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$</td>
+</tr>
+</tbody>
+</table>
+<p>证明：</p>
+<p>$$\frac{BD}{DC}=\frac{S_{\Delta AOB}}{S_{\Delta AOC}},
+\frac{CE}{CA}=\frac{S_{\Delta BOC}}{S_{\Delta AOB}},
+\frac{AF}{FB}=\frac{S_{\Delta AOC}}{S_{\Delta BOC}}$$</p><p>代入即得</p>
+<p>$$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$$</p>
+<p>Ceva 定理还有角元形式</p>
+<p>$$\frac{\sin\angle BAD}{\sin\angle CAD}\cdot\frac{\sin\angle CBE}{\sin\angle ABE}\cdot\frac{\sin\angle ACF}{\sin\angle BCF}=1$$</p>
+<p>证明过程与边元形式大致相同。</p>
+<p>证明过程都是充要的，故 Ceva 定理可逆用。</p>
+<h4 id="#pascal-定理">
+    Pascal 定理
+    <a class="anchor" name="pascal-定理" href="#pascal-%e5%ae%9a%e7%90%86">#</a>
+</h4><p>二次曲线任意内接六边形的所有对边交点共线。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/3-pascal.jpg" alt="" title="15%" style="zoom: 15%"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$P,Q,R$ 共线</td>
+</tr>
+</tbody>
+</table>
+<p>证明：</p>
+<p>由射影几何知识得，只需要讨论圆，其余二次曲线可由圆推广。</p>
+<div class='mkdocs columns'> 
+<div class='inner markdown'><table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/3-pascal-proof.jpg" alt="" title="21.3%" style="zoom: 21.3%"></th>
+</tr>
+</thead>
+</table>
+</div> 
+<div class='inner markdown'><p>$P,Q,R$ 共线 $\eq PQ,BC,EF$ 共点。</p>
+<p>在 $\Delta ADQ$ 中，由 <a class="md-link" href="#ceva-%e5%ae%9a%e7%90%86"  >Ceva 定理<img class="icon" src="../../../../../img/link.svg" /></a> 得</p>
+<p>$$\frac{\sin\angle 1}{\sin\angle 2}\cdot\frac{\sin\angle 3}{\sin\angle 4}\cdot\frac{\sin\angle 5}{\sin\angle 6}=1$$</p>
+<p>由圆周角定理得</p>
+<p>$$\angle n=\angle n&rsquo;\quad(n=1,2,3,4,5,6)$$</p>
+<p>故在 $\Delta CFQ$ 中有</p>
+<p>$$\frac{\sin\angle 1&rsquo;}{\sin\angle 2&rsquo;}\cdot\frac{\sin\angle 3&rsquo;}{\sin\angle 4&rsquo;}\cdot\frac{\sin\angle 5&rsquo;}{\sin\angle 6&rsquo;}=1$$</p>
+<p>由 <a class="md-link" href="#ceva-%e5%ae%9a%e7%90%86"  >Ceva 定理<img class="icon" src="../../../../../img/link.svg" /></a> 逆定理得 $PQ,BC,EF$ 共点。即证。</p>
+</div> 
+ </div> 
+<h3 id="#证明-1">
+    证明
+    <a class="anchor" name="证明-1" href="#%e8%af%81%e6%98%8e-1">#</a>
+</h3><div class='mkdocs columns'> 
+<div class='inner markdown'><p>移动 <a class="md-link" href="#pascal-%e5%ae%9a%e7%90%86"  >Pascal 定理<img class="icon" src="../../../../../img/link.svg" /></a> 中六个顶点的位置。</p>
+</div> 
+<div class='inner markdown'><table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/4-proof-1.jpg" alt="" title="13%" style="zoom: 13%"></th>
+</tr>
+</thead>
+</table>
+</div> 
+ </div> 
+<p>当 $B,C$ 和 $E,F$ 重合时，直线 $BC,EF$ 为椭圆的切线。同理，再将 $B,A$ 和 $E,D$ 移动至重合。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/4-proof-2.jpg" alt="" title="13%" style="zoom: 13%"></th>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/4-proof-3.jpg" alt="" title="13%" style="zoom: 13%"></th>
+</tr>
+</thead>
+</table>
+<div class='mkdocs columns'> 
+<div class='inner markdown'><p>结合前两图得：椭圆任意内接四边形（如图）有</p>
+<p>$$M,I,P,J \ \text{共线}$$</p>
+<p>其中 $I$ 为 $AB$ 极点，$J$ 为 $CD$ 极点。由 <a class="md-link" href="../%e6%9e%81%e7%82%b9%e6%9e%81%e7%ba%bf%e6%96%b9%e7%a8%8b/"  >极点极线方程<img class="icon" src="../../../../../img/link.svg" /></a> 知识得</p>
+<p>$$AB:\frac{x_Ix}{a^2}+\frac{y_Iy}{b^2}=1$$</p>
+<p>$$CD:\frac{x_Jx}{a^2}+\frac{y_Jy}{b^2}=1$$</p>
+<p>由 $AB,CD$ 交于 $N$，将 $N$ 点坐标代入得</p>
+<p>$$\begin{cases}
+\disp\frac{x_Ix_N}{a^2}&#43;\frac{y_Iy_N}{b^2}=1\\
+\disp\frac{x_Jx_N}{a^2}&#43;\frac{y_Jy_N}{b^2}=1
+\end{cases}$$</p><p>故 $I,J$ 为方程 $\frac{x_Nx}{a^2}+\frac{y_Ny}{b^2}=1$ 的两解，即 $N$ 的极线过 $I,J$。故 $MP$ 为 $N$ 的极线。</p>
+<p>同理得 $MN$ 为 $P$ 的极线，$NP$ 为 $M$ 的极线。</p>
+<p>证毕。</p>
+</div> 
+<div class='inner markdown'><table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/4-proof-4.jpg" alt="" title="13%" style="zoom: 13%"></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/1-%e5%ae%9a%e4%b9%89.jpg" alt="" title="13.8%" style="zoom: 13.8%"></th>
+</tr>
+</thead>
+</table>
+</div> 
+ </div> 
+<h2 id="#使用例">
+    使用例
+    <a class="anchor" name="使用例" href="#%e4%bd%bf%e7%94%a8%e4%be%8b">#</a>
+</h2><h3 id="#例-1">
+    例 1
+    <a class="anchor" name="例-1" href="#%e4%be%8b-1">#</a>
+</h3><div class='mkdocs columns'> 
+<div class='inner markdown'><p>$P(p,0)$ 为定点，$E$ 的运动轨迹为 $P$ 的极线。</p>
+<p>$$\frac{px}{a^2}+\frac{0}{b^2}=1\intro x=\frac{a^2}{p}$$</p>
+</div> 
+<div class='inner markdown'><table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/5-1.jpg" alt="" title="16%" style="zoom: 16%"></th>
+</tr>
+</thead>
+</table>
+</div> 
+ </div> 
+<h3 id="#例-2">
+    例 2
+    <a class="anchor" name="例-2" href="#%e4%be%8b-2">#</a>
+</h3><div class='mkdocs columns'> 
+<div class='inner markdown'><p>$P(m,n)$ 为定点，$E$ 的运动轨迹为 $P$ 的极线。</p>
+<p>$$\frac{mx}{a^2}+\frac{ny}{b^2}=1$$</p>
+</div> 
+<div class='inner markdown'><table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/5-2.jpg" alt="" title="16%" style="zoom: 16%"></th>
+</tr>
+</thead>
+</table>
+</div> 
+ </div> 
+<h3 id="#例-3">
+    例 3
+    <a class="anchor" name="例-3" href="#%e4%be%8b-3">#</a>
+</h3><div class='mkdocs columns'> 
+<div class='inner markdown'><p>$Q$ 的运动轨迹为 $P$ 的极线。</p>
+<p>设 $P(0,p)$，则 $Q$ 的轨迹方程为</p>
+<p>$$\frac{0}{a^2}+\frac{py}{b^2}=1\intro y=\frac{b^2}{p}$$</p>
+<p>故</p>
+<p>$$\vec{OP}\cdot\vec{OQ}=(0,p)\cdot(x_Q,\frac{b^2}{p})=b^2$$</p>
+</div> 
+<div class='inner markdown'><table>
+<thead>
+<tr>
+<th style="text-align:center"><img class="md_img" data-fancybox="gallery" src="img/5-3.jpg" alt="" title="16%" style="zoom: 16%"></th>
+</tr>
+</thead>
+</table>
+</div> 
+ </div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../../scripts/mathjax.js"></script>
+</html>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>抽象 on Yharim Area</title>
+    <link>/tags/%E6%8A%BD%E8%B1%A1/</link>
+    <description>Recent content in 抽象 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 07 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E6%8A%BD%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自极三角形</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E8%87%AA%E6%9E%81%E4%B8%89%E8%A7%92%E5%BD%A2/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E8%87%AA%E6%9E%81%E4%B8%89%E8%A7%92%E5%BD%A2/</guid>
+      <description>!!! warning 需要 极点极线方程 的相关知识。
+定义#:::
+圆锥曲线任意内接四边形 $ABCD$，其边交点 $M,N$ 和对角线交点 $P$ 构成自极三角形。- $MN$ 是 $P$ 的极线- $MP$ 是 $N$ 的极线- $NP$ 是 $M$ 的极线:::
+![](img/1-定义.jpg &amp;quot;15%&amp;quot;):-:证明#引理#Ceva 定理#$\Delta ABC$ 中，$AD,BE,CF$ 共点 $O$。
+$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$ 证明：
+$$\frac{BD}{DC}=\frac{S_{\Delta AOB}}{S_{\Delta AOC}},\frac{CE}{CA}=\frac{S_{\Delta BOC}}{S_{\Delta AOB}},\frac{AF}{FB}=\frac{S_{\Delta AOC}}{S_{\Delta BOC}}$$
+代入即得
+$$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$$
+Ceva 定理还有角元形式
+$$\frac{\sin\angle BAD}{\sin\angle CAD}\cdot\frac{\sin\angle CBE}{\sin\angle ABE}\cdot\frac{\sin\angle ACF}{\sin\angle BCF}=1$$
+证明过程与边元形式大致相同。
+证明过程都是充要的，故 Ceva 定理可逆用。</description>
+    </item>
+    
+    <item>
+      <title>极点极线方程</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E6%9E%81%E7%82%B9%E6%9E%81%E7%BA%BF%E6%96%B9%E7%A8%8B/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E6%9E%81%E7%82%B9%E6%9E%81%E7%BA%BF%E6%96%B9%E7%A8%8B/</guid>
+      <description>定义#极点和极线是双映射关系。
+对椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$，任意一点 $P(x_0,y_0)$ 对应的极线为 $l:\frac{x_0x}{a^2}+\frac{y_0y}{b^2}=1$。同理，任意直线 $l$ 对应的极点为 $P$。
+当极点 $P$ 位于不同的空间位置时，极线 $l$ 的几何意义有所区别。
+P 在椭圆上#$l$ 为切线 证明：
+$\because\frac{x_0^2}{a^2}+\frac{y_0^2}{b^2}=1,\therefore l$ 过点 $P$。
+对于椭圆上任意非 $P$ 点 $(x_0&amp;rsquo;,y_0&amp;rsquo;)$ 有
+$$\frac{x_0&amp;rsquo;^2}{a_2}+\frac{y_0&amp;rsquo;^2}{b^2}=1\not=\frac{x_0x_0&amp;rsquo;}{a^2}+\frac{y_0y_0&amp;rsquo;}{b^2}$$
+即 $l$ 上有且仅有一点 $P$ 在椭圆上。$l$ 为切线。
+P 在椭圆外#$l$ 为切点弦 证明：
+设 $AB$ 为切点弦。下证 $A,B$ 在 $l$ 上。
+由 $P$ 在椭圆上 得
+$$PA:\frac{x_1x}{a^2}+\frac{y_1y}{b^2}=1,PB:\frac{x_2x}{a^2}+\frac{y_2y}{b^2}=1$$
+将 $P(x_0,y_0)$ 分别代入
+$$\begin{cases}\disp\frac{x_1x_0}{a^2}&amp;#43;\frac{y_1y_0}{b^2}=1\\\disp\frac{x_2x_0}{a^2}&amp;#43;\frac{y_2y_0}{b^2}=1\end{cases}$$
+即 $(x_1,y_1),(x_2,y_2)$ 是方程 $\frac{x_0x}{a^2}+\frac{y_0y}{b^2}=1$ 的两解，即证 $A,B$ 在 $l$ 上。</description>
+    </item>
+    
+    <item>
+      <title>哥德尔不完备性定理的证明</title>
+      <link>/posts/%E6%9D%82%E9%A1%B9/%E5%93%A5%E5%BE%B7%E5%B0%94%E4%B8%8D%E5%AE%8C%E5%A4%87%E6%80%A7%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%9D%82%E9%A1%B9/%E5%93%A5%E5%BE%B7%E5%B0%94%E4%B8%8D%E5%AE%8C%E5%A4%87%E6%80%A7%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/</guid>
+      <description>!!! info 所有变量默认为自然数。
+罗素悖论#!!! question 一个理发师要给所有「不给自己理发的人」理发，不给「给自己理发的人」理发，他是否应该给自己理发？
+如果理发师给自己理发，他就属于「给自己理发的人」，但他不能给这类人理发，矛盾；如果他不给自己理发，他就属于「不给自己理发的人」，但他必须给这类人理发，也矛盾。
+英国哲学家罗素（Russell）最早发现了这类悖论。罗素悖论的具体形式还有很多，比如：
+我正在说的这句话是假话。 一张明信片的正面写「背面的话是真的」，背面写「正面的话是假的」。 一本书要列出所有「不列出自己书名的书」，这本书是否应该列出它自己？ 这些悖论都能以「朴素集合论」的形式概括：
+设集合 $A=\{x\mid x\not\in A\}$
+若 $x\in A$，则 $x\not\in A$ 若 $x\not\in A$，则 $x\in A$ 罗素最终构建了一个新的集合论系统 $\text{ZF(C)}$，取代了朴素集合论。$\text{ZF(C)}$ 通过对集合概念的限定，将 $A=\{x\mid x\not\in A\}$ 这种异端从集合的名单里剔除出去，从而规避了集合论中的罗素悖论。
+但是，当我们离开集合论，来到自然数公理系统时，事情似乎变得更加复杂。
+哥德尔不完备性定理#1931年，德国数学家库尔特·哥德尔（Kurt Gödel）在他的论文中提出了一个惊为天人的定理：
+!!! quote 在蕴含 皮亚诺公理（自然数公理） 的公理系统中，必然存在一个「既不能证明，又不能证伪」的命题。
+此定理揭示了公理系统的巨大的缺陷。此缺陷至今未被修复。
+哥德尔的证明#哥德尔在皮亚诺公理的环境下找到了一个「罗素悖论」式的数学命题：
+$$A:\neg A$$
+若 $A$ 是真的，则 $A$ 是假的。 若 $A$ 是假的，则 $A$ 是真的。 命题 $A$ 就是「既不能证明，又不能证伪」的数学命题。
+那么命题 $A$ 到底是什么？哥德尔是如何找到命题 $A$ 的？
+哥德尔编码#哥德尔创造了一种编码算法，将数学语句编码为自然数。</description>
+    </item>
+    
+    <item>
+      <title>皮亚诺公理</title>
+      <link>/posts/%E6%9D%82%E9%A1%B9/%E7%9A%AE%E4%BA%9A%E8%AF%BA%E5%85%AC%E7%90%86/</link>
+      <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%9D%82%E9%A1%B9/%E7%9A%AE%E4%BA%9A%E8%AF%BA%E5%85%AC%E7%90%86/</guid>
+      <description>概述#皮亚诺公理（自然数公理）定义了一种形如「单向链表」的数数方法。
+$$\xymatrix {0\ar[r] &amp;amp; 1\ar[r] &amp;amp; 2\ar[r] &amp;amp; 3\ar[r] &amp;amp; 4\ar[r] &amp;amp; \cdots}$$
+为了在公理系统中严谨地使用「自然数」，数学家朱塞佩 · 皮亚诺（Giuseppe Peano）提出了五条公理。
+公理一#!!! quote $0$ 是自然数。
+自然数的起点诞生了。
+公理二#!!! quote 任何自然数都有一个后继（$n$ 的后继记作 $sn$）。
+自然数的雏形有了，大概长这样：
+$$\xymatrix {0\ar[r] &amp;amp; 1\ar[r] &amp;amp; 2\ar[r] &amp;amp; 3\ar[r] &amp;amp; 4\ar[r] &amp;amp; \cdots}$$
+但也有可能长这样：
+$$\xymatrix {0\ar[r] &amp;amp; 1\ar[r] &amp;amp; 1\ar[r] &amp;amp; 4\ar[r] &amp;amp; 5\ar[r] &amp;amp; 1\ar[r] &amp;amp; 4\ar[r] &amp;amp; \cdots}$$</description>
+    </item>
+    
+    <item>
+      <title>莫比乌斯反演</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</guid>
+      <description>!!! info 若无特殊说明，本章涉及的变量皆为正整数.
+简介#由函数 $f$ 定义一个函数 $g$：
+$$g(n)=\sum_{d\mid n}f(d)\quad\big(\text{或}\quad g(n)=\sum_{n\mid d}f(d)\big)$$
+已知 $g(n)$，即可用莫比乌斯反演推出 $f(n)$.
+莫比乌斯函数#定义#$n$ 的莫比乌斯函数记为 $\mu(n)$：
+$$\mu(n)=\begin{cases}0 &amp;amp; n \ 有平方因数 \\1 &amp;amp; n \ 无平方因数，且有偶数个质因数 \\-1 &amp;amp; n \ 无平方因数，且有奇数个质因数\end{cases}$$
+特别地，$μ(1)=1$.
+性质#性质 1#$$\sum_{d\mid n}μ(d)= \left\lfloor\frac{1}{n}\right\rfloor= \begin{cases}1 &amp;amp; n=1\\0 &amp;amp; n&amp;gt;1\end{cases}$$
+证 设 $n$ 有 $k$ 个质因子 $p_1,p_2,\cdots,p_k$，则：
+$$\begin{aligned}\sum_{d\mid n}μ(d)= \ &amp;amp;μ(1)&amp;#43;μ(p_1)&amp;#43;μ(p_2)&amp;#43;\cdots&amp;#43;μ(p_k)&amp;#43;μ(p_1p_2)&amp;#43;\cdots&amp;#43;μ(p_1p_2\cdots p_k)\\= \ &amp;amp;{k\choose 0}&amp;#43;{k\choose 1}(-1)&amp;#43;{k\choose 2}(-1)^2&amp;#43;\cdots&amp;#43;{k\choose k}(-1)^k\\= \ &amp;amp;\sum_{i=0}^k{k\choose i}(-1)^i\end{aligned}$$</description>
+    </item>
+    
+  </channel>
+</rss>

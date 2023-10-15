@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>欧拉函数 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../../">博客</a><a class="nav-item " href="../../../../../docs/">文档</a><a class="nav-item " href="../../../../../search/">搜索</a><a class="nav-item " href="../../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">欧拉函数</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#定义">定义</a></li>
+    <li><a href="#性质">性质</a>
+      <ul>
+        <li><a href="#质数的欧拉函数">质数的欧拉函数</a></li>
+        <li><a href="#pk-的欧拉函数">$p^k$ 的欧拉函数</a></li>
+        <li><a href="#通项公式">通项公式</a></li>
+        <li><a href="#积性函数">积性函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#定理">定理</a>
+      <ul>
+        <li><a href="#欧拉定理">欧拉定理</a></li>
+        <li><a href="#费马小定理">费马小定理</a></li>
+        <li><a href="#扩展欧拉定理">扩展欧拉定理</a></li>
+      </ul>
+    </li>
+    <li><a href="#模板">模板</a>
+      <ul>
+        <li><a href="#欧拉函数">欧拉函数</a></li>
+        <li><a href="#线性欧拉算法">线性欧拉算法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../../categories/%e6%95%b0%e8%ae%ba">数论</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../../tags/%e5%90%8c%e4%bd%99">同余</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-8-20</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">欧拉函数</h1>
+  <span class="description"></span><p><strong>注意</strong>：若无特殊说明，本章涉及的变量皆为正整数.</p>
+<h2 id="#定义">
+    定义
+    <a class="anchor" name="定义" href="#%e5%ae%9a%e4%b9%89">#</a>
+</h2><p>$n$ 的欧拉函数为 $[1,n]$ 中与 $n$ 互质的数的个数，记为 $\varphi(n)$. 特别地，$\varphi(1)=1$.</p>
+<h2 id="#性质">
+    性质
+    <a class="anchor" name="性质" href="#%e6%80%a7%e8%b4%a8">#</a>
+</h2><h3 id="#质数的欧拉函数">
+    质数的欧拉函数
+    <a class="anchor" name="质数的欧拉函数" href="#%e8%b4%a8%e6%95%b0%e7%9a%84%e6%ac%a7%e6%8b%89%e5%87%bd%e6%95%b0">#</a>
+</h3><p>$p$ 为质数，则 $\varphi(p)=p-1$.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../../img/arrow.svg"></summary>
+  <div class='inner'>$p$ 与 $[1,p-1]$ 中的每个数互质.</div>
+</details>
+<h3 id="#pk-的欧拉函数">
+    $p^k$ 的欧拉函数
+    <a class="anchor" name="pk-的欧拉函数" href="#pk-%e7%9a%84%e6%ac%a7%e6%8b%89%e5%87%bd%e6%95%b0">#</a>
+</h3><p>$p$ 为质数，$n=p^k$，则 $\varphi(n)=p^k-p^{k-1}$.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>在 $[1,n]$ 中，只有 $p$ 的倍数不与 $n=p^k$ 互质.</p>
+<p>$∵\;[1,n]$ 中 $p$ 的倍数有 $\dfrac{n}{p}=\dfrac{p^k}{p}=p^{k-1}$ 个，</p>
+<p>$∴\varphi(n)=n-p^{k-1}=p^k-p^{k-1}$.</p>
+</div>
+</details>
+<h3 id="#通项公式">
+    通项公式
+    <a class="anchor" name="通项公式" href="#%e9%80%9a%e9%a1%b9%e5%85%ac%e5%bc%8f">#</a>
+</h3><p>$n$ 有 $m$ 个质因子 $p_1∼p_m$，则 $\varphi(n)=n\prod_{i=1}^{m}(1-\frac{1}{p_i})$.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>若 $n$ 有质因子 $p$，则 $p$ 的倍数不与 $n$ 互质.</p>
+<p>$[1,n]$ 中 $p$ 的倍数有 $\cfrac{n}{p}$ 个，则剩下的 $n-\cfrac{n}{p}=n\cdot(1-\cfrac{1}{p})$ 个数不是 $p$ 的倍数. 也就是说，这 $n$ 个数中，非 $p$ 的倍数占比为 $1-\cfrac{1}{p}$.</p>
+<p>根据定义，$[1,n]$ 中有 $\varphi(n)$ 个数不是 $p_1∼p_m$ 的倍数（即与 $n$ 互质）. 由乘法原理得：</p>
+<p>$$\varphi(n)=n(1-\frac{1}{p_1})(1-\frac{1}{p_2})\cdots(1-\frac{1}{p_m})=n\prod_{i=1}^{m}(1-\frac{1}{p_i})$$</p>
+</div>
+</details>
+<h3 id="#积性函数">
+    积性函数
+    <a class="anchor" name="积性函数" href="#%e7%a7%af%e6%80%a7%e5%87%bd%e6%95%b0">#</a>
+</h3><p>$n,m$ 互质，则 $\varphi(nm)=\varphi(n)\cdot \varphi(m)$.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>设 $n$ 有 $x$ 个质因子 $p_1\sim p_x$，</p>
+<p>设 $m$ 有 $y$ 个质因子 $q_1\sim q_y$，</p>
+<p>$∵n,m$ 互质，$∴n,m$ 的质因子互不相同.</p>
+<p>$∴nm$ 有 $x+y$ 个质因子 $p_1\sim p_x,q_1\sim q_y$.</p>
+<p>由 $\varphi$ 函数的通项公式可得：</p>
+<p>$$\begin{aligned}
+\varphi(n)\cdot \varphi(m)&amp;=(n\prod_{i=1}^{x}(1-\frac{1}{p_i}))\cdot (m\prod_{i=1}^{y}(1-\frac{1}{q_i}))\\
+&amp;=nm\prod_{i=1}^{x}(1-\frac{1}{p_i})\prod_{i=1}^{y}(1-\frac{1}{q_i})\\
+&amp;=\varphi(nm)
+\end{aligned}$$</p><p>即证.</p>
+</div>
+</details>
+<h2 id="#定理">
+    定理
+    <a class="anchor" name="定理" href="#%e5%ae%9a%e7%90%86">#</a>
+</h2><h3 id="#欧拉定理">
+    欧拉定理
+    <a class="anchor" name="欧拉定理" href="#%e6%ac%a7%e6%8b%89%e5%ae%9a%e7%90%86">#</a>
+</h3><p>若 $a,n$ 互质，则 $a^{ \varphi(n)}≡1\pmod{n}$.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>设 $C=\{C_1,C_2,\cdots,C_{\varphi(n)}\}$ 为模 $n$ 的 <a class="md-link" href="../../../../../docs/NOI/Math/mod/#%e7%ae%80%e5%8c%96%e5%89%a9%e4%bd%99%e7%b3%bb"  >简化剩余系<img class="icon" src="../../../../../img/link.svg" /></a>.</p>
+<p>设 $aC=\{aC_1,aC_2,\cdots,aC_{\varphi(n)}\}$，即 $C$ 中的每个元素乘 $a$.</p>
+<details class="book-details" >
+  <summary><span>引理 1</span><img class="alt" src="../../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>由 <a class="md-link" href="../../../../../docs/NOI/Math/mod/#%e5%89%a9%e4%bd%99%e7%b3%bb"  >剩余系<img class="icon" src="../../../../../img/link.svg" /></a> 的定义得：</p>
+<p>$$C_i\not≡C_j \ (\bmod \ n)(i\not=j)$$</p>
+<p>$∵a,n$ 互质，由同余的 <a class="md-link" href="../../../../../docs/NOI/Math/mod/#%e6%80%a7%e8%b4%a8"  >同乘性<img class="icon" src="../../../../../img/link.svg" /></a> 可知：</p>
+<p>$$aC_i\not≡aC_j \ (\bmod \ n)(i\not=j)$$</p>
+<p>$∴aC$ 为模 $n$ 的剩余系.</p>
+</div>
+</details>
+<details class="book-details" >
+  <summary><span>引理 2</span><img class="alt" src="../../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>$∵a,n$ 互质，根据 <a class="md-link" href="../../../../../docs/NOI/Math/mod/gcd/"  >欧几里得算法<img class="icon" src="../../../../../img/link.svg" /></a> 有：</p>
+<p>$$gcd(a,n)=gcd(n,a \bmod n)=1$$</p>
+<p>$∴a \bmod n$ 也与 $n$ 互质. 根据 <a class="md-link" href="../../../../../docs/NOI/Math/mod/#%e7%ae%80%e5%8c%96%e5%89%a9%e4%bd%99%e7%b3%bb"  >简化剩余系<img class="icon" src="../../../../../img/link.svg" /></a> 的定义可知：</p>
+<p>$$a \bmod n\in C$$</p>
+<p>$∵\;$简化剩余系满足 <a class="md-link" href="../../../../../docs/NOI/Math/mod/#%e4%b9%98%e6%b3%95%e5%b0%81%e9%97%ad"  >乘法封闭<img class="icon" src="../../../../../img/link.svg" /></a> 性质，所以：</p>
+<p>$$\begin{cases}
+  a \bmod n\in C \\
+  C_i\in C
+\end{cases}
+\eq(a \bmod n)\cdot C_i \bmod n\in C
+\eq aC_i \bmod n\in C$$</p><p>$∴aC_i \bmod n$ 与 $n$ 互质，即 $aC$ 中的任意元素模 $n$ 后与 $n$ 互质.</p>
+</div>
+</details>
+<p>结合引理 $1$、引理 $2$ 可知 $aC$ 也为 $n$ 的简化剩余系.</p>
+<p>显然，$C$ 的所有元素之积和 $aC$ 的所有元素之积模 $n$ 同余，即：</p>
+<p>$$\prod_{i=1}^{\varphi(n)}C_i≡\prod_{i=1}^{\varphi(n)}aC_i \ (\bmod \ n)$$</p>
+<p>$$\prod_{i=1}^{\varphi(n)}C_i≡a^{\varphi(n)}\cdot \prod_{i=1}^{\varphi(n)}C_i \ (\bmod \ n)$$</p>
+<p>$$(a^{\varphi(n)}-1)\prod_{i=1}^{\varphi(n)}C_i≡0 \ (\bmod \ n)$$</p>
+<p>$∵C$ 中的所有元素模 $n$ 后与 $n$ 互质，所以：</p>
+<p>$$\prod_{i=1}^{\varphi(n)}C_i\not≡0 \ (\bmod \ n)$$</p>
+<p>$∴a^{\varphi(n)}-1≡0\pmod{n}$，即 $a^{\varphi(n)}≡1\pmod{n}$.</p>
+</div>
+</details>
+<h3 id="#费马小定理">
+    费马小定理
+    <a class="anchor" name="费马小定理" href="#%e8%b4%b9%e9%a9%ac%e5%b0%8f%e5%ae%9a%e7%90%86">#</a>
+</h3><p>若 $p$ 为质数，则 $a^{p-1}≡a\pmod{p}$.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>当 $p\mid a$ 时，费马小定理显然成立，故只需讨论 $p\nmid a$ 的情况.</p>
+<p>当 $p\nmid a$ 时，$∵p$ 是质数 $∴a,p$ 没有公因数（即 $a,p$ 互质）. 根据 <a class="md-link" href="../../../../../docs/NOI/Math/mod/euler/#%e6%ac%a7%e6%8b%89%e5%ae%9a%e7%90%86"  >欧拉定理<img class="icon" src="../../../../../img/link.svg" /></a> 有：</p>
+<p>$$a^{ \varphi(p)}≡1 \ (\bmod \ p)$$</p>
+<p>$∵p$ 为质数，由 <a class="md-link" href="../../../../../docs/NOI/Math/mod/euler/#%e6%80%a7%e8%b4%a8"  >性质<img class="icon" src="../../../../../img/link.svg" /></a> 可知 $\varphi(p)=p-1$. 代入上式：</p>
+<p>$$a^{  p-1}≡1 \ (\bmod \ p)$$</p>
+<p>即证.</p>
+<!-- 当 $p\mid a$ 时，费马小定理显然成立，故只需讨论 $p\nmid a$ 的情况. 
+
+设 $C=\\{0,1,2,\cdots,p-1\\}$ 为 $p$ 的 [完全剩余系](/docs/NOI/Math/mod/#完全剩余系). 
+
+设 $aC=\\{0,a,2a,\cdots,(p-1)\cdot a\\}$，即 $C$ 中的每个元素乘 $a$. 
+
+由 [剩余系](/docs/NOI/Math/mod/#剩余系) 的定义得：
+
+$$C_i\not≡C_j \ (\bmod \ p)(i\not=j)$$
+
+$∵p\nmid a$，由同余的 [同乘性](/docs/NOI/Math/mod/#性质) 可知：
+
+$$aC_i\not≡aC_j \ (\bmod \ p)(i\not=j)$$
+
+$∴aC$ 为模 $p$ 的剩余系. 
+
+$∵aC$ 有 $p$ 个元素 $∴aC$ 也为 $p$ 的完全剩余系. 
+
+显然，$C$ 的非零元素之积和 $aC$ 的非零元素之积模 $p$ 同余，即：
+
+$$\prod_{i=2}^{p}C_i≡\prod_{i=2}^{p}aC_i \ (\bmod \ p)$$
+
+$$(p-1)!≡a^{p-1}\cdot (p-1)! \ (\bmod \ p)$$
+
+$$(a^{p-1}-1)(p-1)!≡0 \ (\bmod \ p)$$
+
+$∵p$ 是质数，$(p-1)!\not≡0\pmod{p}$，
+
+$∴a^{p-1}-1≡0\pmod{p}$，即 $a^p≡a\pmod{p}$.  -->
+</div>
+</details>
+<h3 id="#扩展欧拉定理">
+    扩展欧拉定理
+    <a class="anchor" name="扩展欧拉定理" href="#%e6%89%a9%e5%b1%95%e6%ac%a7%e6%8b%89%e5%ae%9a%e7%90%86">#</a>
+</h3><p>若 $a,n$ 互质，则对于任意 $b$，有 $a^b≡a^{b \bmod \varphi(n)}\pmod{n}$.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>设 $b \bmod \varphi(n)=q$，则 $b$ 可以表示为 $k\cdot \varphi(n)+q$. 代入 $a^b$ 得：</p>
+<p>$$a^b=a^{k\cdot \varphi(n)+q}=\big(a^{\varphi(n)}\big)^k\cdot a^q$$</p>
+<p>根据 <a class="md-link" href="../../../../../docs/NOI/Math/mod/#%e6%ac%a7%e6%8b%89%e5%ae%9a%e7%90%86"  >欧拉定理<img class="icon" src="../../../../../img/link.svg" /></a>，当 $a,n$ 互质时，有：</p>
+<p>$$a^{\varphi(n)}≡1 \ (\bmod \ n)$$</p>
+<p>由同余的 <a class="md-link" href="../../../../../docs/NOI/Math/mod/#%e6%80%a7%e8%b4%a8"  >同幂性<img class="icon" src="../../../../../img/link.svg" /></a>、<a class="md-link" href="../../../../../docs/NOI/Math/mod/#%e6%80%a7%e8%b4%a8"  >同乘性<img class="icon" src="../../../../../img/link.svg" /></a> 可知：</p>
+<p>$$\big(a^{\varphi(n)}\big)^k≡1^k=1 \ (\bmod \ n)$$</p>
+<p>$$\big(a^{\varphi(n)}\big)^k\cdot a^q≡a^q \ (\bmod \ n)$$</p>
+<p>$$a^b≡a^q \ (\bmod \ n)$$</p>
+<p>即 $a^b≡a^{b \bmod \varphi(n)}\pmod{n}$.</p>
+</div>
+</details>
+<h2 id="#模板">
+    模板
+    <a class="anchor" name="模板" href="#%e6%a8%a1%e6%9d%bf">#</a>
+</h2><h3 id="#欧拉函数">
+    欧拉函数
+    <a class="anchor" name="欧拉函数" href="#%e6%ac%a7%e6%8b%89%e5%87%bd%e6%95%b0">#</a>
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">varphi</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">);</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">/</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">n</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="#线性欧拉算法">
+    线性欧拉算法
+    <a class="anchor" name="线性欧拉算法" href="#%e7%ba%bf%e6%80%a7%e6%ac%a7%e6%8b%89%e7%ae%97%e6%b3%95">#</a>
+</h3><blockquote>
+<p>求 $1\sim n$ 的欧拉函数.</p>
+</blockquote>
+<p>对质数的 <a class="md-link" href="../../../../../docs/NOI/Math/prime/#%e7%ba%bf%e6%80%a7%e7%ad%9b%e6%b3%95"  >线性筛法<img class="icon" src="../../../../../img/link.svg" /></a> 加以改造.</p>
+<ul>
+<li>
+<p>若 $i$ 为质数，则 $\varphi(i)=i-1$.</p>
+</li>
+<li>
+<p>利用 $i$ 和 $prime_j$ 生成合数时，利用 <a class="md-link" href="../../../../../docs/NOI/Math/mod/euler/#%e7%a7%af%e6%80%a7%e5%87%bd%e6%95%b0"  >积性函数<img class="icon" src="../../../../../img/link.svg" /></a> 这一性质：</p>
+</li>
+</ul>
+<p>$$\varphi(i\cdot prime_j)=\varphi(i)\cdot\varphi(prime_j)$$</p>
+<p>时间复杂度为 $O(n)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">phi</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">prime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">varphi</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">prime</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">prime</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">phi</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">phi</span><span class="p">[</span><span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]];</span> <span class="c1">// 积性函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../../scripts/mathjax.js"></script>
+</html>

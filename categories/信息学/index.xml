@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>信息学 on Yharim Area</title>
+    <link>/categories/%E4%BF%A1%E6%81%AF%E5%AD%A6/</link>
+    <description>Recent content in 信息学 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E4%BF%A1%E6%81%AF%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>换根 DP</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%8D%A2%E6%A0%B9-dp/</link>
+      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%8D%A2%E6%A0%B9-dp/</guid>
+      <description>简介#换根 DP 是基于 树形 DP 的更高效算法. 通常设 $f[u]$ 表示以 $u$ 为树根时的解，进而推出 $f[$其它节点$]$.
+例 1#给定一棵 $n$ 个点的树，请求出一个节点，使得以其为根时，所有节点的深度之和最大（根节点的深度为 $1$）.
+$d[u]$：（以 $1$ 为树根时）$u$ 的深度.
+$\text{size}[u]$：（以 $1$ 为树根时）以 $u$ 为根的子树的节点数.
+$f[u]$：以 $u$ 为树根时的节点深度和.
+以 $1$ 为根时：
+flowchart1 --&amp;gt; 2 &amp;amp; 32 --&amp;gt; 4 &amp;amp; 53 --&amp;gt; 6 &amp;amp; 7 &amp;amp; 8 以 $3$ 为根时：
+flowchart3 --&amp;gt; 1 &amp;amp; 6 &amp;amp; 7 &amp;amp; 81 --&amp;gt; 2 --&amp;gt; 4 &amp;amp; 5 观察发现，原先 $3$ 的子树中（包括 $3$）节点的深度减少了 $1$，而其余节点的深度增加了 $1$.</description>
+    </item>
+    
+    <item>
+      <title>矩阵快速幂</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <description>简介#矩阵快速幂能将 $O(n)$ 的线性递推优化成 $O(\log n)$.
+矩阵#矩阵相当于二维数组.
+矩阵 $A$ 有 $m$ 行 $n$ 列，称为 $m×n$ 矩阵，简记为 $A_{mn}$.
+矩阵 $A$ 第 $i$ 行 $j$ 列的元素写作 $a_{ij}$.
+$$A=\begin{bmatrix}a_{11}&amp;amp; a_{12}&amp;amp; \cdots &amp;amp; a_{1n}\\a_{21}&amp;amp; a_{22}&amp;amp; \cdots &amp;amp; a_{2n}\\\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\a_{m1}&amp;amp; a_{m2}&amp;amp; \cdots &amp;amp; a_{mn}\end{bmatrix}$$
+单位矩阵#主对角线上的元素都为 $1$，其余元素为 $0$ 的 $n×n$ 矩阵称为 $n$ 阶单位矩阵，记作 $I_n$ 或 $E_n$.
+$$I_n=\begin{bmatrix}1 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 \\0 &amp;amp; 1 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 \\0 &amp;amp; 0 &amp;amp; 1 &amp;amp; \cdots &amp;amp; 0 \\\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 1\end{bmatrix}$$</description>
+    </item>
+    
+    <item>
+      <title>莫比乌斯反演</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</guid>
+      <description>!!! info 若无特殊说明，本章涉及的变量皆为正整数.
+简介#由函数 $f$ 定义一个函数 $g$：
+$$g(n)=\sum_{d\mid n}f(d)\quad\big(\text{或}\quad g(n)=\sum_{n\mid d}f(d)\big)$$
+已知 $g(n)$，即可用莫比乌斯反演推出 $f(n)$.
+莫比乌斯函数#定义#$n$ 的莫比乌斯函数记为 $\mu(n)$：
+$$\mu(n)=\begin{cases}0 &amp;amp; n \ 有平方因数 \\1 &amp;amp; n \ 无平方因数，且有偶数个质因数 \\-1 &amp;amp; n \ 无平方因数，且有奇数个质因数\end{cases}$$
+特别地，$μ(1)=1$.
+性质#性质 1#$$\sum_{d\mid n}μ(d)= \left\lfloor\frac{1}{n}\right\rfloor= \begin{cases}1 &amp;amp; n=1\\0 &amp;amp; n&amp;gt;1\end{cases}$$
+证 设 $n$ 有 $k$ 个质因子 $p_1,p_2,\cdots,p_k$，则：
+$$\begin{aligned}\sum_{d\mid n}μ(d)= \ &amp;amp;μ(1)&amp;#43;μ(p_1)&amp;#43;μ(p_2)&amp;#43;\cdots&amp;#43;μ(p_k)&amp;#43;μ(p_1p_2)&amp;#43;\cdots&amp;#43;μ(p_1p_2\cdots p_k)\\= \ &amp;amp;{k\choose 0}&amp;#43;{k\choose 1}(-1)&amp;#43;{k\choose 2}(-1)^2&amp;#43;\cdots&amp;#43;{k\choose k}(-1)^k\\= \ &amp;amp;\sum_{i=0}^k{k\choose i}(-1)^i\end{aligned}$$</description>
+    </item>
+    
+    <item>
+      <title>博弈论</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%8D%9A%E5%BC%88%E8%AE%BA/</guid>
+      <description>简介#博弈论研究在一局博弈中如何最优化玩家的策略.
+公平组合游戏 ICG#两名玩家轮流行动，且行动规则相同. 最终不能行动的玩家判负. NIM 游戏#简介#有 $n$ 堆石子，第 $i$ 堆石子数为 $A_i$. 两名玩家轮流取走任意一堆的任意个石子，但不能不取. 取走最后一个石子的玩家胜.
+NIM 游戏属于 公平组合游戏，且不存在平局，只有「先手必胜」和「后手必胜」两种情况.
+策略#当且仅当 $A_1\oplus A_2\oplus\cdots\oplus A_n\not=0$ 时，先手必胜（$\oplus$ 表示二进制异或）.
+$A\oplus B$：将 $A$ 和 $B$ 的二进制位对齐，相等取 $0$，不相等取 $1$.
+$$\begin{aligned}1 \ 0 \ 0 \ 1 \ 0 \ 1 \ 0\\\underline{\oplus \ 1 \ 1 \ 0 \ 1 \ 1 \ 0 \ 1}\\0 \ 1 \ 0 \ 0 \ 1 \ 1 \ 1\end{aligned}$$</description>
+    </item>
+    
+    <item>
+      <title>容斥原理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 06 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/</guid>
+      <description>!!! info 若无特殊说明，本章涉及的变量皆为正整数.
+简介#容斥原理是一种不重不漏的计数原理.
+例，$A,B,C$ 三人竞选扫黄队长：
+::: - $15$ 人投给 $A$ - $16$ 人投给 $B$ - $17$ 人投给 $C$ - $2$ 人同时投给 $A,B,C$ ::: - $4$ 人同时投给 $A,B$ - $5$ 人同时投给 $A,C$ - $6$ 人同时投给 $B,C$
+问共有多少人参与投票.
+$A,B,C$ 三人的得票情况以用韦恩图描述：
+::: - $|A|=15$ - $|B|=16$ - $|C|=17$ - $|A∩B∩C|=2$ ::: - $|A∩B|=4$ - $|A∩C|=5$ - $|B∩C|=6$
+求的是投票人数，即 $|A∪B∪C|$.
+$$|A∪B∪C|=|A|+|B|+|C|-|A∩B|-|A∩C|-|B∩C|+|A∩B∩C|$$
+将上述问题推广到普遍情况，就是容斥原理.
+公式#并集#对于 $n$ 个集合 $S_1,S_2\cdots S_n$，$|S|$ 表示集合 $S$ 的元素数，则：</description>
+    </item>
+    
+    <item>
+      <title>中国剩余定理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/</guid>
+      <description>若无特殊说明，本章涉及的变量皆为正整数.
+简介#中国剩余定理最早发现于《孙子算经》中.
+有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二. 问物几何？
+即求满足下列条件的 $x$：
+$$\left\{\begin{aligned}x \bmod 3 = 2 \\x \bmod 5 = 3 \\x \bmod 7 = 2 \\\end{aligned}\right.$$
+它的通解公式为 $x=233+105k$.
+《孙子算经》中只给出了最小正整数解，也就是 $k=-2$ 时的解：$x=23$.
+不过，今天我们只关心中国剩余定理更普遍的应用.
+问题#中国剩余定理指关于 $x$ 的同余方程组的解法：
+$$\left\{\begin{aligned}x&amp;amp;≡a_1 \ (\bmod \ m_1)\\x&amp;amp;≡a_2 \ (\bmod \ m_2)\\&amp;amp;\cdots\\x&amp;amp;≡a_k \ (\bmod \ m_k)\end{aligned}\right.$$
+其中 $a_1, a_2, \cdots, a_k$ 两两互质.
+解法#设 $M=\prod^k_{i=1}m_i$.
+设 $ M_i=\frac{M}{m_i}$，即除 $m_i$ 外，其余所有 $m$ 的乘积.</description>
+    </item>
+    
+    <item>
+      <title>Lucas 定理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/lucas-%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/lucas-%E5%AE%9A%E7%90%86/</guid>
+      <description>若无特殊说明，本章涉及的变量皆为正整数.
+简介#Lucas 定理用于求解大组合数对质数 $p$（$p≤10^6$）取模：
+$${n\choose m}≡{n \bmod p\choose m \bmod p}\cdot{\lfloor n/p\rfloor\choose\lfloor m/p\rfloor} \ (\bmod \ p)$$
+证明#我不会，长大后再学习.
+解法#对于 $n,m≤10^6$ 的组合数 ${n\choose m}$，可以直接代入 公式，并使用 乘法逆元 将除法转为乘法.
+$$\binom{n}{m}=\frac{n!}{m!(n-m)!}≡n!\cdot(m!)^{-1}\cdot[(n-m)!]^{-1} \ (\bmod \ p)$$
+/* fac[x]: x! * inv[x]: x! 关于模 p 的乘法逆元（注意有阶乘） * 以上需要预处理 */ LL C(LL n, LL m) { if (n &amp;lt; m) return 0; return fac[n] * inv[m] % P * inv[n - m] % P; } 对于更大的组合数，套用 Lucas 定理.</description>
+    </item>
+    
+    <item>
+      <title>卡特兰数列</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0%E5%88%97/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0%E5%88%97/</guid>
+      <description> 若无特殊说明，本章涉及的变量皆为正整数.
+简介#卡特兰数列是许多看似毫不相关的问题的解.
+$n$ 个节点能构成 $Cat_n$ 种不同的二叉树. $n$ 个左括号和 $n$ 个右括号组成的合法序列有 $Cat_n$ 种. $n$ 个元素的进栈顺序为 $1,2,\cdots,n$，合法的出栈顺序有 $Cat_n$ 种. 在圆上选择 $2n$ 个点成对连接，使得 $n$ 条线段不相交的方法数为 $Cat_n$. 通过若干条互不相交的对角线,把凸 $n$ 边形拆分成若干个三角形的方案数为 $Cat_{n-2}$. 在平面直角坐标系上，每一步只能向上或向右走 $1$ 个单位，从 $(0,0)$ 走到 $(n,n)$ 且不接触直线 $y=x$ 的路径数量为 $2Cat_n-1$. 通项公式#$$Cat_n={2n\choose n}÷(n+1)={2n\choose n}-{2n\choose n-1}$$
+递推公式#$$Cat_n=\sum_{i=0}^{n-1}Cat_i\cdot Cat_{n-i+1}$$
+附表#$Cat_0$ $Cat_1$ $Cat_2$ $Cat_3$ $Cat_4$ $Cat_5$ $Cat_6$ $Cat_7$ $Cat_8$ $\cdots$ $1 $ $1 $ $2 $ $5 $ $14 $ $42 $ $132 $ $429 $ $1430 $ $\cdots$ </description>
+    </item>
+    
+    <item>
+      <title>二项式定理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+简介#$$(a+b)^n=\sum_{i=0}^n\binom{n}{i}a^{n-i}b^i$$
+证明#使用数学归纳法.
+设 $n=k$ 时二项式定理成立，考察 $n=k+1$ 时是否也成立：
+$$\begin{aligned}&amp;amp;\textcolor{transparent}{=}(a&amp;#43;b)^{k&amp;#43;1}\\&amp;amp;=(a&amp;#43;b)\cdot(a&amp;#43;b)^k\\&amp;amp;=a(a&amp;#43;b)^k&amp;#43;b(a&amp;#43;b)^k\\&amp;amp;=a\sum_{i=0}^k\binom{k}{i}a^{k-i}b^i&amp;#43;b\sum_{j=0}^k\binom{k}{j}a^{k-j}b^j\\&amp;amp;=\sum_{i=0}^k\binom{k}{i}a^{k-i&amp;#43;1}b^i&amp;#43;\sum_{j=0}^k\binom{k}{j}a^{k-j}b^{j&amp;#43;1}&amp;amp;&amp;amp;将 \ a,b \ 乘进去\\&amp;amp;=a^{k&amp;#43;1}&amp;#43;\sum_{i=1}^k\binom{k}{i}a^{k-i&amp;#43;1}b^i&amp;#43;\sum_{j=0}^k\binom{k}{j}a^{k-j}b^{j&amp;#43;1}&amp;amp;&amp;amp;提出 \ i=0 \ 的项\\&amp;amp;=a^{k&amp;#43;1}&amp;#43;\sum_{i=1}^k\binom{k}{i}a^{k-i&amp;#43;1}b^i&amp;#43;\sum_{λ=1}^{k&amp;#43;1}\binom{k}{λ-1}a^{k-λ&amp;#43;1}b^λ&amp;amp;&amp;amp;设 \ λ=j&amp;#43;1，代入\\&amp;amp;=a^{k&amp;#43;1}&amp;#43;\sum_{i=1}^k\binom{k}{i}a^{k-i&amp;#43;1}b^i&amp;#43;b^{k&amp;#43;1}&amp;#43;\sum_{λ=1}^{k}\binom{k}{λ-1}a^{k-λ&amp;#43;1}b^λ&amp;amp;&amp;amp;提出 \ λ=k&amp;#43;1 \ 的项\\&amp;amp;=a^{k&amp;#43;1}&amp;#43;b^{k&amp;#43;1}&amp;#43;\sum_{i=1}^k\binom{k&amp;#43;1}{i}a^{k&amp;#43;1-i}b^i&amp;amp;&amp;amp;套用 \ 帕斯卡法则\\&amp;amp;=\sum_{i=0}^{k&amp;#43;1}\binom{k&amp;#43;1}{i}a^{k&amp;#43;1-i}b^i\\\end{aligned}$$
+∴ 二项式定理满足递推成立关系：
+$n=k$ 时成立 $\Longrightarrow$ $n=k+1$ 时成立∵ $n=1$ 时 $(a+b)^1=\sum_{i=0}^1\binom{n}{i}a^{n-i}b^i=a+b$ 成立，
+∴ 二项式定理在 $n=1$ 之后的任何整数都成立.</description>
+    </item>
+    
+    <item>
+      <title>组合数学</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/</link>
+      <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+简介#排列：从 $n$ 个元素中取出 $m$ 个，按一定顺序排列.
+组合：从 $n$ 个元素中取出 $m$ 个，不计排列顺序.
+加法原理#一算法有 $n$ 种方式，第 $i$ 种方式有 $a_i$ 种方法，该算法共有 $\sum_{i=1}^na_i$ 种实现方法.
+例 从 $A$ 地到 $B$ 地有爬行、骑车、飞行三种方式，可以任选一个. 而爬行、骑车、飞行分别有 $a_1,a_2,a_3$ 种方法，那么 $A→B$ 共有 $a_1+a_2+a_3$ 种方法. 乘法原理#一算法有 $n$ 个步骤，第 $i$ 个步骤有 $a_i$ 种方法，该算法共有 $\prod_{i=1}^na_i$ 种实现方法.
+例 从 $A$ 地到 $B$ 地必须先爬行到车站，再骑车到机场，最后飞行到北京，而爬行、骑车、飞行分别有 $a_1,a_2,a_3$ 种方法，那么 $A→B$ 共有 $a_1\cdot a_2\cdot a_3$ 种方法. 排列数#从 $n$ 个元素中取出 $m$ 个，按一定顺序排列的方案数，用符号 $A_n^m$ 表示.</description>
+    </item>
+    
+    <item>
+      <title>欧拉函数</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+定义#$n$ 的欧拉函数为 $[1,n]$ 中与 $n$ 互质的数的个数，记为 $\varphi(n)$. 特别地，$\varphi(1)=1$.
+性质#质数的欧拉函数#$p$ 为质数，则 $\varphi(p)=p-1$.
+证 $p$ 与 $[1,p-1]$ 中的每个数互质. $p^k$ 的欧拉函数#$p$ 为质数，$n=p^k$，则 $\varphi(n)=p^k-p^{k-1}$.
+证 在 $[1,n]$ 中，只有 $p$ 的倍数不与 $n=p^k$ 互质.
+$∵\;[1,n]$ 中 $p$ 的倍数有 $\dfrac{n}{p}=\dfrac{p^k}{p}=p^{k-1}$ 个，
+$∴\varphi(n)=n-p^{k-1}=p^k-p^{k-1}$.
+通项公式#$n$ 有 $m$ 个质因子 $p_1∼p_m$，则 $\varphi(n)=n\prod_{i=1}^{m}(1-\frac{1}{p_i})$.
+证 若 $n$ 有质因子 $p$，则 $p$ 的倍数不与 $n$ 互质.
+$[1,n]$ 中 $p$ 的倍数有 $\cfrac{n}{p}$ 个，则剩下的 $n-\cfrac{n}{p}=n\cdot(1-\cfrac{1}{p})$ 个数不是 $p$ 的倍数.</description>
+    </item>
+    
+    <item>
+      <title>乘法逆元</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</link>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+定义#若 $a\cdot b≡1\pmod{p}$，则 $b$ 为 $a$ 在模 $p$ 意义下的逆元，记作 $a^{-1}$ 或 $inv(a)$.
+$$a·a^{-1}≡1 \ (\bmod \ p)$$
+乘法逆元能够很好地将模运算中的除法转为乘法：
+$$\dfrac{a}{b}≡a\cdot b^{-1} \ (\bmod \ p)$$
+在模运算中，$a^{-1}$ 是整数，并不是 $a$ 的 $-1$ 次方.
+解法#对于整数 $x$，可以求解关于 $x^{-1}$ 的 线性同余方程 $x\cdot x^{-1}≡1 \ (\bmod \ p)$，其中 $x$ 为已知常数.
+int exGcd(int a, int b, int&amp;amp; x, int&amp;amp; y) { if(b == 0) { x = 1, y = 0; return a; } int d = exGcd(b, a % b, x, y); int t = x; x = y, y = t - a / b * y; return d; } int liEu(int a, int b, int c) { // a·x ≡ c (mod b) int x, y, d = exGcd(a, b, x, y); x *= (c / d); int t = b / d; return (x % t + t) % t; } int inv(int x, int m) { return liEu(x, m, 1); } 质数的逆元#当 $p$ 为质数时，由 费马小定理 得：</description>
+    </item>
+    
+    <item>
+      <title>线性同余方程</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+简介#形如 $ax≡c\pmod{b}$ 的方程称为线性同余方程.
+特殊解#$ax≡c\pmod{b}\eq ax+by=c$. 由 裴蜀定理 可知，当且仅当 $gcd(a,b)\mid c$ 时有整数解.
+先用 扩展欧几里得算法 求出一组 $x_0,y_0$，使得：
+$$ax_0+by_0=gcd(a,b)$$
+两边同时乘 $\frac{c}{gcd(a,b)}$：
+$$a\frac{c}{gcd(a,b)}x_0+b\frac{c}{gcd(a,b)}y_0=c$$
+于是找到方程 $ax+by=c$ 的一组特殊解：
+$$\left\{\begin{aligned}x=\frac{c}{gcd(a,b)}x_0\\y=\frac{c}{gcd(a,b)}y_0\end{aligned}\right.$$
+通解#若 $x_0,y_0$ 为方程 $ax+by=c$ 的一组解，则该方程的任意解可表示为：
+$$\left\{\begin{aligned}x=x_0&amp;#43;bt\\y=y_0-at\end{aligned}\right.$$
+在实际问题中，往往只需要最小正整数解：
+$$x=(x_0 \bmod t&amp;#43;t) \bmod t, \ t=\frac{b}{gcd(a,b)}$$
+模板#int exGcd(int a, int b, int&amp;amp; x, int&amp;amp; y) { if (b == 0) { x = 1, y = 0; return a; } int d = exGcd(b, a % b, x, y); int t = x; x = y, y = t - a / b * y; return d; } int liEu(int a, int b, int c) { // ax ≡ c (mod b) int x, y, d = exGcd(a, b, x, y); if (c % d !</description>
+    </item>
+    
+    <item>
+      <title>欧几里得算法</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</guid>
+      <description>最大公因数#$a$ 和 $b$ 的最大公因数记作 $gcd(a,b)$，简记为 $(a,b)$.
+若 $a,b$ 有公因数 $d$，则 $a \bmod b = a - b \cdot\left\lfloor\frac{a}{b}\right\rfloor$ 也有因数 $d$. 也就是说，$a$ 和 $b$ 的所有公因数，同时也是 $b$ 和 $a \bmod b$ 的公因数，因此它们的最大公因数也相等.
+$$gcd(a,b)=gcd(b,a \bmod b)$$
+递归到 $b=0$ 时，$a$ 即为 $gcd(a,b)$.
+时间复杂度为 $O(log{(a+b)})$.
+int gcd(int a, int b) { if (b == 0) return a; return gcd(b, a % b); } 最小公倍数#$a$ 和 $b$ 的最小公倍数记作 $lcm(a,b)$，简记为 $[a,b]$.
+设 $gcd(a,b)=d$，则 $a=k_1d,b=k_2d$，所以：</description>
+    </item>
+    
+    <item>
+      <title>贝祖定理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E8%B4%9D%E7%A5%96%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E8%B4%9D%E7%A5%96%E5%AE%9A%E7%90%86/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+简介#对于任意 $a,b$，$ax+by=c\eq gcd(a,b)\mid c$.
+证明#设 $gcd(a,b)=d$，则：
+$$\left\{\begin{aligned}&amp;amp;d\mid a\\&amp;amp;d\mid b\end{aligned}\right.\eq\left\{\begin{aligned}&amp;amp;d\mid ax\\&amp;amp;d\mid by\end{aligned}\right.\eqd\mid (ax&amp;#43;by)\eqd\mid c$$
+即 $gcd(a,b)\mid c$.</description>
+    </item>
+    
+    <item>
+      <title>快速幂</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <description>快速幂#如何快速求 $a^b$（$a,b\in\mathbb{Z}$）？
+递归写法#根据乘方公式 $a^{m+n}=a^m\cdot a^n$，有：
+$$a^b=\left\{\begin{aligned}&amp;amp;a^{\left\lfloor b/2\right\rfloor}\cdot a^{\left\lfloor b/2\right\rfloor} &amp;amp;&amp;amp; b=2k\\&amp;amp;a^{\left\lfloor b/2\right\rfloor}\cdot a^{\left\lfloor b/2\right\rfloor}\cdot a &amp;amp;&amp;amp; b=2k&amp;#43;1\end{aligned}\right.,k\in\mathbb{Z}$$
+边界条件 时间复杂度 $a^0=1$ $O(\log{b})$ typedef long long LL; LL Pow(LL a, LL b) { if(!b) return 1; // 边界条件 LL res = Pow(a, b / 2); if(b % 2 == 0) // b 是偶数 return res * res; else // b 是奇数 return res * res * a; } 递推写法#若 $b$ 在二进制下的第 $k_1,k_2,k_3,\cdots$ 位为 $1$，则 $b=2^{k_1}+2^{k_2}+2^{k_3}+\cdots(k_i≤\log{b})$.</description>
+    </item>
+    
+    <item>
+      <title>同余</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E5%90%8C%E4%BD%99/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E5%90%8C%E4%BD%99/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+定义#若 $a \bmod m=b \bmod m$，则 $a$ 和 $b$ 模 $m$ 同余，记作 $a≡b\pmod{m}$.
+$$a≡b \ (\bmod \ m)\eq a=b+km\eq m\mid(a-b)$$
+性质#自反性：$a≡a\pmod{m}$.
+对称性：$a≡b\pmod{m}\eq b≡a\pmod{m}$.
+传递性：$\left\{\begin{aligned}a&amp;amp;≡b \ (\bmod \ m)\\b&amp;amp;≡c \ (\bmod \ m)\end{aligned}\right.\eq a≡c\pmod{m}$.
+同加性：$a≡b\pmod{m}\eq a+c≡b+c\pmod{m}$.
+同乘性：$a≡b\pmod{m}\eq ac≡bc\pmod{m}$.
+同幂性：$a≡b\pmod{m}\eq a^n≡b^n\pmod{m}$.
+同余不满足同除性. 当 $a≡b \ (\bmod \ m)$ 时不一定有 $\frac{a}{n}≡\frac{b}{n} \ (\bmod \ m)$.
+同余类#集合 $A$ 是模 $m$ 的同余类，当且仅当：
+$A$ 中的所有元素模 $m$ 都等于同一个值 $a$. $$A=\{x\mid x \bmod m=a\}$$</description>
+    </item>
+    
+    <item>
+      <title>因数</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%9B%A0%E6%95%B0/</link>
+      <pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%9B%A0%E6%95%B0/</guid>
+      <description>若无特殊说明，本章涉及的变量皆为正整数.
+定义#若 $n \div d$ 为整数，则 $d$ 是 $n$ 的因数，记作 $d\mid n$.
+算数基本定理#任意正整数 $n$ 都能唯一地分解为有限个质数的乘积.
+$$n=p_1^{\normalsize c_1}\cdot p_2^{\normalsize c_2}\cdots p_m^{\normalsize c_m}$$
+分解质因数#试除法#将 $n$ 分解成 算数基本定理 的形式. 如 $$360=2^3\times 3^2\times 5$$
+枚举 $i=2,3,\cdots,\sqrt{n}$，除尽 $n$ 中的 $i$，并记录除的次数.
+const int N = 1e6; vector&amp;lt;int&amp;gt; P, C; void factor(int n) { for (int i = 2; i &amp;lt;= sqrt(n); i ++) { if (n % i == 0) { P.</description>
+    </item>
+    
+    <item>
+      <title>质数</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%B4%A8%E6%95%B0/</link>
+      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%B4%A8%E6%95%B0/</guid>
+      <description>若无特殊说明，本章涉及的变量皆为正整数.
+定义#若 $n$ 只能被 $1$ 和 $n$ 整除，则 $n$ 是质数，否则是合数. $\pi(n)$：$n$ 以内的质数个数，$\pi(n)≈\frac{n}{\ln{n}}$. $p(n)$：第 $n$ 个质数，$p(n)≈n\ln{n}$. 质数判定#若 $n$ 为合数，则必定存在 $i≤\sqrt{n}$，使 $n$ 能整除 $i$. $n=0,1$ 需要特判.
+时间复杂度：$O(\sqrt n)$.
+bool isPrime(int n) { if (n &amp;lt; 2) return false; for (int i = 2; i &amp;lt;= sqrt(n); i ++) if (n % i == 0) return false; return true; } 质数筛法#求 $n$ 以内的所有质数.
+暴力算法#对 $[2,n]$ 中的所有整数进行一次 质数判定.</description>
+    </item>
+    
+    <item>
+      <title>差分约束系统</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Sun, 13 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%B3%BB%E7%BB%9F/</guid>
+      <description>简介#给定差分不等式组
+$$\begin{cases}X_1 - X_2 ≤ 1\\X_3 - X_2 ≤ 3\\X_4 - X_1 ≤ -2\\\cdots\end{cases}$$
+求一组满足所有条件的 $X_1\cdots X_n$ 的解.
+以上形式的不等式组称作「差分约束系统」.
+原理#根据 松弛操作 原理，当 SPFA 程序 结束时，图中任意两个节点 $i,j$ 满足 $\dis[j] ≤ \dis[i] + g[i,j]$.
+事实上，差分约束系统的不等式可以变形为
+$$X_j ≤ X_i + C$$
+于是令 $\dis[j]=X_j,\dis[i]=X_i,g[i,j]=C$.
+在图上跑一遍 SPFA 后，$X_1\cdots X_n$ 便满足差分不等式组.
+模板#bool in[], X[]; // 将 dis[] 换成 X[]，便于理解 struct node { int val, len; }; vector&amp;lt;int&amp;gt; g[]; void add(int X_j, X_i, C) { // X_j - X_i ≤ C g[X_i].</description>
+    </item>
+    
+    <item>
+      <title>强连通分量</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/</guid>
+      <description>简介#强连通#在有向图 $G$ 中，如果同时存在 $u→v$ 和 $v→u$ 的路径，那么称 $u$ 和 $v$ 强连通.
+强连通图#如果有向图 $G$ 的任意两个节点都强连通，那么称 $G$ 是强连通图.
+强连通分量#如果图 $G$ 的子图是强连通图，那么该子图称作 $G$ 的强连通分量.
+本章介绍求强连通分量的三种算法.
+Tarjan 算法#图的结构#Tarjan 算法基于对图的 深度优先遍历（DFS），并且将图近似地看成一棵 树.因此，这棵树中会不可避免地出现一些奇怪的边.
+前向边：与普通边方向一致，但跨越多个节点.
+返祖边：与普通边方向相反，从子孙指向祖先.
+横向边：边的两个端点居于树的同一深度.
+时间戳#DFS 遍历一张图时，按访问顺序给节点打标记.$u$ 是第 $i$ 个被访问的节点，记作 $dfn[u]=i$.这个标记叫做「时间戳」.在图中，时间戳标记在节点的右上方.
+$u$ $1$ $2$ $3$ $4$ $5$ $6$ $dfn[u]$ $1$ $2$ $5$ $3$ $4$ $6$ 追溯值#Tarjan 算法还引入了「追溯值」：$low[u]$，定义为以下节点时间戳的最小值：
+以 $u$ 为根的子树中的所有节点.</description>
+    </item>
+    
+    <item>
+      <title>二叉堆</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E5%A0%86/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E5%A0%86/</guid>
+      <description>简介#二叉堆（Binary Heap） 是一种基于完全二叉树的数据结构.
+小根堆：任意节点 $≥$ 其父节点，根节点最小.
+大根堆：任意节点 $≤$ 其父节点，根节点最大.
+本篇以小根堆为例，介绍二叉堆的实现方式.
+构造#按照从上到下，从左到右的顺序给节点编号.
+该二叉堆具有以下性质：
+$1$ 号节点是根节点.
+$u$ 号的父节点为 $\frac{u}{2}$（向下取整）.
+$u$ 号的左子节点为 $2u$，右子节点为 $2u+1$.
+二叉堆的任意一条支路都按照升序排序.
+使用数组保存二叉堆.
+int t[], n; // t[u] : u 号节点的值 // n : 节点总数 插入#如何往小根堆中插入元素 $2$？
+在堆底新建节点，值为 $2$；
+对新节点所在支路进行排序.重复执行以下步骤：
+若新节点 $&amp;lt;$ 其父节点，则交换它们的位置，否则跳出循环. 1 2 3 时间复杂度为 $O(n\log{n})$.
+void push(int val) { // 插入元素 val t[++ n] = val; // 新建节点 for(int u = n; u !</description>
+    </item>
+    
+    <item>
+      <title>最短路径</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</guid>
+      <description>简介#现在给你 $n$ 个节点（编号为 $1\sim n$）和它们之间的边长，求任意两个节点之间的最短路径.
+松弛操作#使用 邻接矩阵 $g$ 存图.如果 $g[i,k] + g[k,j] &amp;lt; g[i,j]$，则路径 $i→k→j$ 比原先 $i→j$ 的路径更短，那么就令 $g[i,j] = g[i,k] + g[k,j]$.这就是松弛操作.
+Floyed 算法#一开始，我们将所有节点全部拨到图外面，然后按 $1$ 号到 $n$ 号顺序依次往图中加入节点.
+$g[k,i,j]$：当图中已经加入了 $1 \sim k$ 号节点时，从节点 $i$ 到 $j$ 的最短路径.
+当节点 $k$ 被加入图中时，枚举节点 $i$ 和 $j$，利用新加入的 $k$ 对路径 $i-j$ 进行 松弛操作：
+若路径 $i-j$ 不经过节点 $k$，则 $g[k,i,j] = g[k - 1,i,j]$；
+若路径 $i-j$ 经过节点 $k$，则 $g[k,i,j] = g[k - 1,i,k] + g[k - 1,k,j]$.</description>
+    </item>
+    
+    <item>
+      <title>并查集</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
+      <description>简介#并查集支持以下操作：
+往一个集合中加入元素；
+查询两个元素是否在同一集合；
+合并两个集合.
+问题#$\{a,b\}$，$\{e,c\}$，$\{e,d\}$ 分别在同一个集合，则共有几个集合？$b$ 和 $d$ 是否同集？
+构造#把同集的两节点相连，则集合数 $=$ 连通图数. 若两节点连通，则它们同集.
+并查集在每个集合中选取一个代表元素作为根节点，构造树型结构. 如图，$a,e$ 分别为两集合的代表元素.
+flowcharta --&amp;gt; be --&amp;gt; ce --&amp;gt; d $fa[i]$ 为节点 $i$ 的父节点编号.上图中 $fa[b]=a$，$fa[c]=e$，$fa[d]=e$.
+根节点的 $fa$ 值都设为 $0$，$fa[a]=0$，$fa[e]=0$.
+查询代表元素#集合的代表元素就是并查集中的根节点.若节点 $x$ 没有父节点，则它自己是根节点，否则递归查询它的父节点.时间复杂度为 $O(\log{n})$.
+int find(int x) { // 返回节点 x 的根节点 if (!fa[x]) return x; return find(fa[x]); } 查询是否同集#若两个节点所在树的根节点相同，则它们同集.
+bool judge(int x, int y) { return find(x) == find(y); } 合并集合#若 $\{b,c\}$ 也同集，则合并其所在的集合.</description>
+    </item>
+    
+    <item>
+      <title>AC 自动机</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/ac-%E8%87%AA%E5%8A%A8%E6%9C%BA/</link>
+      <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/ac-%E8%87%AA%E5%8A%A8%E6%9C%BA/</guid>
+      <description>简介#AC 自动机不是能自动 AC 的机器，而是一种著名的多模式串匹配算法.
+问题#给定 $n$ 个模式串 $A_1\sim A_n$ 和一个长为 $m$ 的主串 $S$，问有多少个模式串在 $S$ 中出现过.
+假设 $n$ 个模式串互不相同，且字符串中仅含小写字母.可以考虑枚举 $S$ 的所有子串并进行判断.
+int n, ans; string A[], S; int m = S.size(); for(int l = 0; l &amp;lt; m; l ++) { for(int r = l + 1; r &amp;lt; m; r ++) { string substr = S.substr(l, r - l + 1); // substr = S[l...r] for(int i = 1; i &amp;lt;= n; i ++) { if(substr == A[i]) { ans ++; } } } } cout &amp;lt;&amp;lt; ans; 暴力算法（$\textcolor{red}{×}$） AC 自动机（$\textcolor{green}{√}$） $O(n^3)$ $O(n+m)$ 原理#Under Construction .</description>
+    </item>
+    
+    <item>
+      <title>KMP 算法</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/kmp-%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/kmp-%E7%AE%97%E6%B3%95/</guid>
+      <description>简介#KMP 算法不是看毛片算法，而是一种字符串匹配算法. KMP 是此算法的发明者 Kruth，Morris 和 Pratt 的名字缩写.
+问题#给定字符串 $A$（长度为 $m$）和 $B$（长度为 $n$），问 $A$ 中是否包含 $B$ ？
+$$\begin{aligned}A&amp;amp;=a \ b \ a \ b \ a \ b \ a \ b \ c\\B&amp;amp;=a \ b \ a \ b \ c\end{aligned}$$
+考虑暴力算法：
+先将 $A$ 和 $B$ 左端对齐. 如果匹配失败，就将 $B$ 右移一位，直到匹配成功. $$\begin{aligned}A&amp;amp;=\textcolor{red}{a \ b \ a \ b \ a} \ b \ a \ b \ c\\B&amp;amp;=\textcolor{red}{a \ b \ a \ b \ c}\end{aligned}$$</description>
+    </item>
+    
+    <item>
+      <title>Trie 树</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/trie-%E6%A0%91/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/trie-%E6%A0%91/</guid>
+      <description>简介#Trie 树又叫「字典树」，能够像字典一样录入和查询多个字符串.
+构造#一般我们会用数组保存字符串，可是这么做既浪费空间，查询速度又慢.
+const int N = 4; const string str[N] = { &amp;#34;his&amp;#34;, &amp;#34;her&amp;#34;, &amp;#34;hello&amp;#34;, &amp;#34;this&amp;#34; }; bool query(string s) { // 查询 str[] 中是否有字符串 s for(int i = 0; i &amp;lt; N; i ++) if(str[i] == s) return true; return false; } 如果将字符串放在链表里，就会有相当一部分节点可以合并.例如 his，her，hello 的开头都是 h，那么它们可以共享同一个 h 节点.同理，her 和 hello 可以共享 he.
+最后，在上方建一个空节点，指向各个字符串的开头，一棵标准的 Trie 树就建好了.至于这个空节点，纯粹是为了让程序写起来更方便.
+节点#Trie 树的节点存储于结构体中：
+const int N = 1e6; struct Node { bool isEnd = false; // 该节点是否为某单词的末尾，默认为 false int next[26]; // 该节点的子节点 } trie[N]; 按照节点的创建顺序为其编号，令 trie[u] 表示第 $u$ 个建立的节点.</description>
+    </item>
+    
+    <item>
+      <title>最近公共祖先（LCA）</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
+      <description>简介#最近公共祖先（Least Common Ancestors，简称 LCA）.
+节点 $p,q$ 的最近公共祖先 $s$ 是这棵树中到 $p,q$ 的距离之和最小的节点.
+如何求两个节点的 LCA？
+0 $p,q$ 两个指针分别指向这两个节点，并且 $p$ 的深度比 $q$ 深. 1 将 $p$ 不断往父节点方向移，直到 $p,q$ 处于同一深度.
+2 $p$ 和 $q$ 同时往父节点移，直到它们相遇于 $s$ 节点.$s$ 节点为 $p$ 和 $q$ 的 LCA.
+暴力算法（$\textcolor{red}{×}$） LCA 算法（$\textcolor{green}{√}$） 预处理 $\textcolor{green}{0}$ $\textcolor{green}{O(n)}$ 单次查询 $\textcolor{red}{O(n)}$ $\textcolor{green}{O(\log{n})}$ $m$ 次查询 $\textcolor{red}{O(mn)}$ $\textcolor{green}{O(m\log{n})}$ int d[]; // d[u]: 节点 u 的深度 int f[]; // f[u]: 节点 u 的父节点 int LCA(int p, int q) { if(d[p] &amp;lt; d[q]) swap(p, q); // 使 p 的深度 ≥ q while(d[p] &amp;gt; d[q]) p = f[p]; // 步骤 1 while(p !</description>
+    </item>
+    
+    <item>
+      <title>RMQ 算法</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/rmq-%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/rmq-%E7%AE%97%E6%B3%95/</guid>
+      <description>简介#RMQ 是 Range Maximum/Minimum Query 的缩写，意为区间的最大（或最小）值.
+问题#已知数组 $A$ 中一共有 $n$ 个元素，给出 $m$ 次询问：
+给出 $l,r$，求 $A[l\cdots r]$ 中的最大值. int n, a[]; void query(int l, int r) { // 暴力算法 int ans = a[l]; for(int i = l; i &amp;lt;= r; i ++) ans = max(ans, a[i]); return ans; } 暴力算法（$\color{red}{×}$） RMQ 算法（$\color{green}{\sqrt{}}$） 预处理 $\color{green}{O(0)}$ $\color{green}{O(n\log{n})}$ 单次查询 $\color{green}{O(n)}$ $\color{green}{O(1)}$ $m$ 次询问 $\color{red}{O(mn)}$ $\color{green}{O(m)}$ 预处理#$f[i,j]$ 表示从 $A[i]$ 开始往后数 $2^j$ 个数的最大值，也就是 $\max\{A[i]\sim A[i+2^j-1]\}$.</description>
+    </item>
+    
+    <item>
+      <title>哈希表</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/</guid>
+      <description>简介#哈希表 由 哈希函数 和 链表 组成，相当于「超级数组」.
+数组的下标1可以是整数，浮点数，字符串等.
+不用定义数组的长度.
+问题#医院的排队系统需要记录每个病人对应的问诊顺序.此处假设每个病人的名称都是数字.
+名称 $32$ $26$ $75$ $4$ 问诊顺序 $1$ $2$ $3$ $4$ $p[i]$ 表示「名称为 $i$ 的病人的问诊顺序」.查询问诊顺序的时间复杂度为 $O(1)$.
+int p[]; void update(int i, int x) { // 记录病人 i 的问诊顺序为 x p[i] = x; } int query(int i) { // 查询病人 i 的问诊顺序 return p[i]; } 然而总有某些病人不按套路取名.
+名称 $114514$ $2333$ $2147483647$ $404$ 问诊顺序 $1$ $2$ $3$ $4$ 要存储 $p[2147483647]=3$，得先开一个长度为 $2147483647$ 的数组.</description>
+    </item>
+    
+    <item>
+      <title>哈希函数</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0/</guid>
+      <description>简介#哈希函数 $getHash()$ 能够将字符串转化成整数，并保证字符串不同，对应的整数也不同.该整数称为哈希值.这样，判断两个字符串是否相等，就只要判断它们的哈希值是否相等.
+原理#假设所有字符串中只包含小写字符 $a\sim z$.以字符串 fantasy 为例：
+将 $a\sim z$ 替换为数字 $1\sim 26$，得到一个数列. $$fantasy→\{6,1,14,20,1,19,25\}$$
+将该数列看作一个 $27$ 进制数（逢 $27$ 进一）. $$getHash(fantasy)=6\cdot 27^6+1\cdot 27^5+14\cdot 27^4+\cdots+25\cdot 27^0$$
+按此方法设计的哈希函数，可保证不同字符串的哈希值必不同.但字符串长度过长时，哈希值会超出 long long 的范围.
+滚动哈希#为解决一般哈希函数适用范围有限的问题，采用滚动哈希.
+选取两个合适的质数 $b$ 和 $p$，将字符串看作 $b$ 进制数（$b &amp;gt;$ 字符种数）.
+$getHash(fantasy)=(6\cdot b^6+1\cdot b^5+14\cdot b^4+\cdots+25\cdot b^0)\%p$按此方法设计的哈希函数，不同字符串的哈希值相同的概率较小，且哈希值不会超出 long long 的范围.时间复杂度为 $O(n)$.
+typedef long long LL; const LL b = 29, p = 10000019; LL getHash(string str) { // 返回 str 的哈希值 LL h = 0; for(int i = 0; i &amp;lt; str.</description>
+    </item>
+    
+    <item>
+      <title>线段树</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/</guid>
+      <description>问题#数组 $A$ 中共 $n$ 个元素，对其反复进行以下操作共 $m$ 次：
+单点修改：将 $A[id]$ 修改为 $v$.
+区间查询：查询 $A[l\cdots r]$ 的最小值.
+区间修改：将 $A[l\cdots r]$ 每个数加上 $v$.
+int a[]; void set(int id, int v) { // 单点修改 a[id] = v; } int ask(int l, int r) { // 区间查询 int ans = 0; for(int i = l; i &amp;lt;= r; i ++) ans = min(ans, a[i]); return ans; } void add(int l, int r, int v) { // 区间修改 for(int i = l; i &amp;lt;= r; i ++) a[i] += v; } 暴力算法（$\textcolor{red}{×}$） 线段树（$\textcolor{green}{√}$） 单点修改 $\textcolor{green}{O(1)}$ $\textcolor{green}{O(\log{n})}$ 区间查询 $\textcolor{red}{O(n)}$ $\textcolor{green}{O(\log{n})}$ 区间修改 $\textcolor{red}{O(n)}$ $\textcolor{green}{O(\log{n})}$ $m$ 次操作 $\textcolor{red}{O(mn)}$ $\textcolor{green}{O(m\log{n})}$ 构造#查询数组 $A={6,2,3,7,1,5,4,2}$ 中的最小值时，通常使用「两两比较法」：每次比较相邻两项，只保留更小的一项.</description>
+    </item>
+    
+    <item>
+      <title>树状数组</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
+      <description>问题#数组 $A$ 中共 $n$ 个元素，对其反复进行以下操作共 $m$ 次：
+单点修改：将 $A[ x]$ 加上 $k$.
+区间查询：查询 $A[l\cdots r]$ 的和.
+int a[]; void set(int id, int v) { // 单点修改 a[id] = v; } int ask(int l, int r) { // 区间查询 int ans = 0; for(int i = l; i &amp;lt;= r; i ++) ans += a[i]; return ans; } 暴力算法（$\textcolor{red}{×}$） 树状数组（$\textcolor{green}{√}$） 单点修改 $\textcolor{green}{O(1)}$ $\textcolor{green}{O(\log{n})}$ 区间查询 $\textcolor{red}{O(n)}$ $\textcolor{green}{O(\log{n})}$ $m$ 次操作 $\textcolor{red}{O(mn)}$ $\textcolor{green}{O(m\log{n})}$ 构造#在原数组的上方构建树型结构，每个节点表示一段区间和：</description>
+    </item>
+    
+    <item>
+      <title>数位 DP</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%95%B0%E4%BD%8D-dp/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%95%B0%E4%BD%8D-dp/</guid>
+      <description>简介#如何统计区间 $[l,r]$ 中有多少整数符合某条件？
+暴力算法，枚举 $[l,r]$ 中的每一个整数，逐个判断是否满足条件，此方法遇大数据必 $gg$. 优雅地使用数位 DP. 问题#统计区间 $[l,r]$（$0≤l&amp;lt;r≤100$）中有多少整数符合「相邻两个数字之差 $≥2$」.
+预处理#采用「试填法」：从个位填到最高位，如果第 $d$ 位填了 $i$，那么第 $d+1$ 位只能填 $[0,i-2]$ 或 $[i+2,9]$ 中的整数.
+$f[i,d]$ 表示「所有最高位为 $i$ 的 $d$ 位数中，符合条件的个数」. 通过给定条件可推出：
+$$ f[i,d]=\sum_{|k-i|≥2} f[k,d-1] $$
+初始条件 $f[i,1]=1$ 计算顺序 $f[0→9,2→n]$ 时间复杂度 $O(10^2\log{n})$ int f[][]; for(int i = 0; i &amp;lt;= 9; i ++) f[i][1] = 1; // 初始条件 for(int d = 2; d &amp;lt;= N; d ++) // N : 位数的上限，N ≈ log(r) for(int i = 0; i &amp;lt;= 9; i ++) for(int k = 0; k &amp;lt;= 9; k ++) if(abs(k - i) &amp;gt;= 2) f[i][d] += f[k][d - 1]; 数位统计#考虑 前缀和 思想：</description>
+    </item>
+    
+    <item>
+      <title>树形 DP</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%A0%91%E5%BD%A2-dp/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%A0%91%E5%BD%A2-dp/</guid>
+      <description>简介#树形 DP 以树形结构为研究对象. 通常设 $f[u]$ 为树中 $u$ 号节点的值，利用树形关系推出其它节点的值. DP 过程多为 记忆化搜索.
+例 1#给定一棵 $n$ 个点，$m$ 条边的树，顶点编号为 $1\sim n$，且以 $1$ 号节点为根. 以 $i$ 号节点为根的子树有几个节点？
+$f[i]$：以 $i$ 号节点为根的子树的节点数.
+$Son[i]$：$i$ 号节点的子节点集合.
+$$f[i]=1&amp;#43;\sum_{v\in Son[i]}f[v]$$
+计算顺序为 $f[$子节点$]→f[$父节点$]$. 使用记忆化搜索.
+vector&amp;lt;int&amp;gt; son[]; // son[u] : 节点 u 的子节点集合 void dfs(int u) { // 求以 u 为根的子树中节点个数 f[u] = 1; for (int i = 0; i &amp;lt; son[u].size(); i ++) { int v = son[u][i]; // 节点 u 的第 i 个子节点 dfs(v); f[u] += f[v]; } } 例 2#公司有 $n$ 个人，编号为 $1\cdots n$，其中 $1$ 号员工是 boss.</description>
+    </item>
+    
+    <item>
+      <title>拓扑排序</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</guid>
+      <description>简介#给出 $n$ 个元素的 $m$ 组关系：$a &amp;gt; b,a &amp;gt; c,b &amp;gt; c,b &amp;gt; d,\cdots$，试将这 $n$ 个元素按大小排序.
+将上述关系转化为有向图，$a → b$ 代表 $a &amp;gt; b$.这类反映节点大小关系的图称作 AOV 网.
+拓扑排序求的是符合条件的优先顺序，即拓扑序列.
+原理#根据定义，没被箭头指着的节点（即入度为 $0$ 的节点）是当前最大的节点.
+1 节点 $a$ 的入度为 $0$.在拓扑序列中追加 $a$，并删除 $a$ 和它的所有邻边： 拓扑序列：$a$ 2 节点 $e$ 的入度为 $0$.在拓扑序列中追加 $e$，并删除 $e$ 和它的所有邻边： 拓扑序列：$a,e$ 3 节点 $b$ 的入度为 $0$.在拓扑序列中追加 $b$，并删除 $b$ 和它的所有邻边： 拓扑序列：$a,e,b$ 4 节点 $c$ 的入度为 $0$.在拓扑序列中追加 $c$，并删除 $c$ 和它的所有邻边： 拓扑序列：$a,e,b,c$ 5 节点 $d$ 的入度为 $0$.</description>
+    </item>
+    
+    <item>
+      <title>最小生成树</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <description>简介#无向图 $G$ 的生成树满足以下性质：
+包含 $G$ 中的所有节点. 任意两个节点都 连通. 具有 树 的所有性质. 图 $b$ 和图 $c$ 皆为图 $a$ 的生成树.
+最小生成树，即边权和最小的生成树.对于 $n$ 个节点的无向图，最小生成树一定有 $n-1$ 条边.
+Kruskal 算法#Kruskal 是一种贪心算法.
+将 $m$ 条边按照边权升序排序； 从小到大枚举边： 若此边的两个顶点未连通，则在树中加入此边，并连通两个顶点. 若此边的两个顶点已连通，直接跳到下一条边. 重复直到树中共加入 $n-1$ 条边.
+使用 并查集 判断和维护两个顶点是否连通.
+时间复杂度为 $O(m\log{m})$，适用于稀疏图.
+const int N = 1e6; int n, m, fa[N]; struct edge { int x, y, len; } g[N]; bool cmp(edge x, edge y) { return x.</description>
+    </item>
+    
+    <item>
+      <title>图</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%9B%BE/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%9B%BE/</guid>
+      <description>定义#图（Graph） 由若干 顶点 和 边 组成，用大写字母 $G$ 表示，$V$ 为顶点集合，$E$ 为边集合，记作 $G=(V,E)$.
+图是描述实际问题的工具.如进行城市道规划时，可将每个城市视作顶点，连接城市的道路视作边.
+边的方向#图的每条边都有起点和终点，则图为 有向图； 相反，边没有方向（可以理解为双向）的图为 无向图（双向图）. 边权和点权#为解决实际问题，引入 边权 和 点权 的概念：
+边权 及边的长度.解决最短路径问题时，将城市视作顶点，城市之间的道路长度视作边权； 点权 即点的大小.解决最小收费问题时，将收费站视作顶点，收费站之间的道路视作边，通过收费站支付的费用视作点权. 度数#若图中有 $d$ 条边与节点 $i$ 相连，则节点 $i$ 的 度数 为 $d$（即节点的 连边 个数）.如下图，节点 $1$ 的度为 $6$：
+若有向图中有 $d$ 条边的 终点 是节点 $i$，则节点 $i$ 的 入度 为 $d$（即节点的 入边 个数）； 若有向图中有 $d$ 条边的 起点 是节点 $i$，则节点 $i$ 的 出度 为 $d$（即节点的 出边 个数）； 子图#图 $G$ 的子图 $H$ 满足以下条件：</description>
+    </item>
+    
+    <item>
+      <title>树</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%A0%91/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%A0%91/</guid>
+      <description>定义#树有多种等价的定义方式：
+连通且无环的无向图. 有 $n$ 个节点和 $n-1$ 条边的无向图. 任意两个顶点间只有一条路径的无向图. 图论中的树看起来更像现实中倒悬的树：
+树的节点存在「父子关系」：
+有连边的两个节点中，上节点为下节点的父节点.节点 $2$ 是节点 $5$ 的父节点； 有连边的两个节点中，下节点为上节点的子节点，节点 $5$ 是节点 $2$ 的子节点； 没有父节点的节点为根节点，节点 $1$； 没有子节点的节点为叶节点，节点 $5,6,3,8,9$. 有根树和无根树#有根树必须明确根节点，而无根树的任意节点都可以是根节点.下面的左图和右图是同一棵无根树：
+子树#将节点 $i$ 和其父节点断开，分裂出的以 $i$ 为根的新树，称作节点 $i$ 的子树.如下图，红色部分为节点 $3$ 的子树.
+层和深度#定义根节点在第 $1$ 层，子节点层数 $=$ 父节点层数 $+ \ 1$：
+树的深度 $=$ 总层数.上图中树的深度为 $4$.树中各个节点的深度为节点所在的层数.
+二叉树#任意节点的子节点数量 $≤2$ 的树是二叉树：
+满二叉树#深度为 $k$ 的二叉树最多有 $2^k-1$ 个节点.节点最多的那棵树是满二叉树：
+满二叉树除最后一层外，其它层任意节点都有 $2$ 个子节点.</description>
+    </item>
+    
+    <item>
+      <title>链表</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/</guid>
+      <description>简介#链表只能按顺序依次访问元素，而数组支持随机访问. 链表支持在任意位置插入或删除元素，而数组不支持. 链表节点#用一个结构体表示链表的节点，其中可以存储任意数据.每个节点有 prev 和 next 两个指针，指向前后相邻的节点.
+struct Node { int val; // 数据（可以是任意类型） Node *prev, *next; // 指针 }; 初始化#初始化链表时，额外建立两个节点 head 和 tail 代表链表头尾，把实际节点存储在 head 与 tail 之间，简化链表边界的判断.
+Node *head, *tail; void init() { head = new Node(); tail = new Node(); head-&amp;gt;next = tail; tail-&amp;gt;prev = next; } 插入/删除节点#如何在 1 和 2 之间插入 3 ？
+Step 1Step 2删除节点运用到类似的方法.</description>
+    </item>
+    
+    <item>
+      <title>栈</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/</guid>
+      <description>简介#栈是一种「先进后出」的数据结构.类似于在桶中堆积物品，取物品时只能从顶端开始取，最先进桶的被压在最底下，最后被取出来.基本操作见 STL Stack.
+表达式计算#算术表达式分为三类（$op$ 为运算符，$A,B$ 为数字或表达式）：
+中缀表达式：全国人民都在用的表达式，如「$5×(3+2)$」； 前缀表达式：形如「$op \ \textcolor{red}{A} \ \textcolor{blue}{B}$」，如「$× \ \textcolor{red}{5} \ \textcolor{blue}{+} \ \textcolor{blue}{3} \ \textcolor{blue}{2}$」； 后缀表达式：形如「$\textcolor{red}{A} \ \textcolor{blue}{B} \ op$」，如「$\textcolor{red}{3} \ \textcolor{red}{2} \ \textcolor{red}{+} \ \textcolor{blue}{5} \ ×$」. 计算前/后缀表达式时，先递归求出 $A,B$ 的值，二者再做 $op$ 运算.计算方案是唯一确定的，且不需要使用括号.计算后缀表达式的算法最容易设计.
+后缀表达式#定义一个栈，用于存放数； 逐一扫描后缀表达式中的元素： 若扫到一个数 $n$，则把 $n$ 入栈； 若扫到运算符 $op$ ，则弹出栈顶的两个元素，二者做 $op$ 计算.将计算结果入栈. 最终的栈顶元素就是计算结果.时间复杂度为 $O(n)$.
+bool isdigit(char ch) { // 判断是否为数字 return ch &amp;gt;= &amp;#39;0&amp;#39; &amp;amp;&amp;amp; ch &amp;lt;= &amp;#39;9&amp;#39;; } bool isop(char ch) { // 判断是否为运算符 return ch == &amp;#39;+&amp;#39; || ch == &amp;#39;-&amp;#39; || ch == &amp;#39;*&amp;#39; || ch == &amp;#39;/&amp;#39; || ch == &amp;#39;^&amp;#39;; } double postfix_calc(string str) { stack&amp;lt;double&amp;gt; s; int i = 0; s = stack&amp;lt;double&amp;gt;(); while(i &amp;lt; str.</description>
+    </item>
+    
+    <item>
+      <title>队列</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/</guid>
+      <description>简介#队列是一种「先进先出」的数据结构.元素从队列的前端进入（入队），从末端离开（出队），类似于排队.基本操作见 STL Queue.
+双向队列#队列元素只能从一端进，另一端出，有时无法满足问题的需要.双向队列应运而生，它支持从两端插入或删除元素.
+双向队列的基本操作见 STL Deque.
+单调队列#单调队列的元素从队头到队尾满足单调性，适用于查询某一动态区间的最大（或最小）元素.
+插入元素#将 $A[i]$ 入队，维护队列单调性，同时保证队列元素在 $A[p\cdots i]$ 范围内.以单调递增队列为例：
+重复弹出队头，直到队头 $≥p$；
+重复弹出队尾，直到 $A[$队尾$]&amp;lt;A[i]$（若单调递减，则重复直到 $A[$队尾$]&amp;gt;A[i]$）.
+将 $i$ 入队.
+涉及双端操作，须使用双向队列.此时 $A[p\cdots i]$ 范围内最小元素为 $A[$队头$]$.
+deque&amp;lt;int&amp;gt; q; // 存储元素下标 void insert(int i, int p) { // 将 a[i] 入队，维护队列元素在 a[p...i] 范围内 while(!q.empty() &amp;amp;&amp;amp; q.front() &amp;lt; p) q.pop_front(); while(!q.empty() &amp;amp;&amp;amp; a[q.back()] &amp;gt;= a[i]) q.pop_back(); q.push_back(i); } 滑动窗口#一个滑动窗口（长度为 $k$）从数组 $A$ （长度为 $n$）的左端移动到右端，每次只向右移一位.</description>
+    </item>
+    
+    <item>
+      <title>状压 DP</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%8A%B6%E5%8E%8B-dp/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%8A%B6%E5%8E%8B-dp/</guid>
+      <description>简介#在程序中，我们如何保存一面棋盘？
+$$\def\arraystretch{2}\begin{array}{|c|c|c|c|}\hline\ &amp; \Large♕ &amp; \ &amp; \Large♕ \\ \hline\Large♕ &amp; \ &amp; \Large♕ &amp; \Large♕ \\ \hline\ &amp; \ &amp; \Large♕ &amp; \ \\ \hline\Large♕ &amp; \Large♕ &amp; \ &amp; \Large♕ \\ \hline\end{array}$$
+用 $bool$ 数组 $A[ \ ][ \ ]$.$A[i][j]=1$ 表示第 $i$ 行第 $j$ 列有一枚棋子.
+bool A[][] = { {0, 1, 0, 1}, {1, 0, 1, 1}, {0, 0, 1, 0}, {1, 1, 0, 1} }; 现在我摆出了棋盘的第 $1$ 行和第 $4$ 行，并规定任意两个棋子不能相邻，则中间两行一共有多少种可行的摆法？</description>
+    </item>
+    
+    <item>
+      <title>区间 DP</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4-dp/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4-dp/</guid>
+      <description>简介#区间 DP 以区间为研究对象. 通常设 $f[l,r]$ 为区间 $[l,r]$ 的值，用 $f[小区间]$ 的值推出 $f[大区间]$ 的值.
+问题#$n$ 堆石子排成一列，第 $i$ 堆石子重量为 $A_i$. 每次合并相邻两堆石子，消耗的体力值为其重量和. 求将所有石子合并为一堆，最少消耗多少体力.
+原理#$f[l,r]$：合并第 $l$ 堆至第 $r$ 堆石子的最少体力值.
+合并第 $l\sim r$ 堆石子可分为三步（设 $k$ 为 $[l, r)$ 中的某个数）：
+合并第 $l\sim k$ 堆石子，消耗体力值 $f[l,k]$.
+合并第 $k+1\sim r$ 堆石子，消耗体力值为$f[k+1,r]$.
+合并剩下两堆石子，消耗体力值 $\displaystyle\sum_{i=l}^r A_i$.
+枚举 $k$，找出最小的体力值.
+$$f[l,r]=\min_{l≤k&amp;lt; r}\{f[l,k]&amp;#43;f[k&amp;#43;1,r]\}&amp;#43;\sum_{i=l}^r A_i$$
+其中 $\displaystyle\sum_{i=l}^r A_i$ 可以用 前缀和 优化.
+计算顺序为 $f[小区间]\rightarrow f[大区间]$，故枚举区间长度的循环在最外层.
+时间复杂度为 $O(n^3)$
+memset(f, 0x7f, sizeof f); for (int i = 1; i &amp;lt;= n; i ++) { f[i][i] = 0; sum[i] = sum[i - 1] + a[i]; } for (int len = 2; len &amp;lt;= n; len ++) { // 区间长度 for (int l = 1; l + len - 1 &amp;lt;= n; l ++) { // 枚举区间左端点 int r = l + len - 1; // 区间右端点 for (int k = l; k &amp;lt; r; k ++) f[l][r] = min(f[l][r], f[l][k] + f[k + 1][r]); f[l][r] += sum[r] - sum[l - 1]; } } </description>
+    </item>
+    
+    <item>
+      <title>记忆化搜索</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
+      <description>求 Fibonacci 第 $i$ 项的深搜程序如下：
+int f(int x) { if (x &amp;lt;= 2) return 1; return f(x - 1) + f(x - 2); } 该程序直观，但运行效率低. 以 $f(7)$ 为例，列出函数调用情况：
+随着 $n$ 的增大，$f(n)$ 的时间复杂度呈指数级增长. 我们发现，有很多函数被重复调用. 使用「记忆化搜索」可避免此情况.
+建立数组 $F$ 保存计算结果.
+若 $f(x)$ 未被调用过，算出 $f(x)$ 的值，并存入 $F[ x]$ 若 $f(x)$ 已被调用过，直接返回 $F[ x]$ int F[]; F[1] = F[2] = 1; int f(int x) { if (F[x] != 0) // 若 F[x] 有值，则说明 f(x) 被调用过 return F[x]; return F[x] = f(x - 1) + f(x - 2); // 返回时保存 } 记忆化搜索的时间复杂度与动态规划相当，但效率略低.</description>
+    </item>
+    
+    <item>
+      <title>背包问题</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85-dp/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85-dp/</guid>
+      <description>01 背包#给定 $n$ 个物品，第 $i$ 个物品体积为 $c[i]$, 价值为 $w[i]$. 现有容积为 $m$ 的背包，求将物品装入背包得到的最大价值.
+$f[i,v]$: 从前 $i$ 个物品中，选出总体积为 $v$ 的物品，能得到的最大价值.
+不选第 $i$ 个物品：$f[i,v]=f[i-1,v]$. 选第 $i$ 个物品：$f[i,v]=f[i-1,v-w_i]+c_i$. $$f[i,v] = \max\left\{\begin{aligned}&amp;amp;f[i-1,v]\\&amp;amp;f[i-1,v-w_i]&amp;#43;c_i\quad(v≥w_i)\\\end{aligned}\right.$$
+时间复杂度：$O(nm)$.
+for (int i = 1; i &amp;lt;= n; i ++) { for (int v = 0; v &amp;lt;= m; v ++) { f[i][v] = f[i - 1][v]; if (v &amp;gt;= w[i]) f[i][v] = max(f[i][v], f[i - 1][v - w[i]] + c[i]); } } // 问题的解是 f[n][m] 空间优化#实际上，状态转移方程 的第一维可以去掉，即让新状态覆盖旧状态，以降低空间开销.</description>
+    </item>
+    
+    <item>
+      <title>基础 DP</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%9F%BA%E7%A1%80-dp/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%9F%BA%E7%A1%80-dp/</guid>
+      <description>斐波那契数列#斐波那契数列是形如 $\{1,1,2,3,5,8,\cdots\}$ 的数列. 求数列的第 $n$ 项.
+??? note 分析 $f[n]$：数列的第 $n$ 项.
+``` latexf[n]=\begin{cases}1&amp;amp;n=1,2\\f[n-1]+f[n-2]&amp;amp;n\geq 3\end{cases}`````` cppint f[];f[1] = f[2] = 1;for (int i = 3; i &amp;lt;= n; i ++)f[i] = f[i - 1] + f[i - 2];```汉诺塔问题#汉诺塔由 $n$ 个不同的盘子和 $3$ 根杆子组成. 初始时，$n$ 个盘子从小到大叠在 $a$ 杆上：
+现在，按以下规则将 $n$ 个盘子从 $a$ 杆移到 $c$ 杆.</description>
+    </item>
+    
+    <item>
+      <title>动态规划（DP）</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <description>简介#动态规划（DP）是打表的最高境界. 我们从一个案例入手 DP.
+案例#斐波那契数列形如 $\{1,1,2,3,5,8,\cdots\}$. 计算此数列的第 $n$ 项 $f[n]$.
+根据数列特征，列出递推公式
+$$f[n]=\begin{cases}1&amp;amp;n=1,2\\f[n-1]&amp;#43;f[n-2]&amp;amp;n\geq 3\end{cases}$$
+首先，将 $f[1]=1,f[2]=1$ 填入表.
+$f[1]$ $f[2]$ $1$ $1$ 计算 $f[3]=f[2]+f[1]$ 并填入表.
+$f[1]$ $f[2]$ $\color{red}{f[3]}$ $1$ $1$ $\color{red}{2}$ 计算 $f[4]=f[3]+f[2]$ 并填入表.
+$f[1]$ $f[2]$ $f[3]$ $\color{red}{f[4]}$ $1$ $1$ $2$ $\color{red}{3}$ 重复计算填表的步骤，直到得到 $f[n]$.
+$f[1]$ $f[2]$ $f[3]$ $f[4]$ $f[5]$ $f[6]$ $f[7]$ $\cdots$ $f[n]$ $1$ $1$ $2$ $3$ $5$ $8$ $13$ $\cdots$ 时间复杂度：$O(n)$.
+f[1] = f[2] = 1; for (int i = 3; i &amp;lt;= n; i ++) f[i] = f[i - 1] + f[i - 2]; 步骤#为问题设计 状态.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图论 on Yharim Area</title>
+    <link>/categories/%E5%9B%BE%E8%AE%BA/</link>
+    <description>Recent content in 图论 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>差分约束系统</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Sun, 13 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%B3%BB%E7%BB%9F/</guid>
+      <description>简介#给定差分不等式组
+$$\begin{cases}X_1 - X_2 ≤ 1\\X_3 - X_2 ≤ 3\\X_4 - X_1 ≤ -2\\\cdots\end{cases}$$
+求一组满足所有条件的 $X_1\cdots X_n$ 的解.
+以上形式的不等式组称作「差分约束系统」.
+原理#根据 松弛操作 原理，当 SPFA 程序 结束时，图中任意两个节点 $i,j$ 满足 $\dis[j] ≤ \dis[i] + g[i,j]$.
+事实上，差分约束系统的不等式可以变形为
+$$X_j ≤ X_i + C$$
+于是令 $\dis[j]=X_j,\dis[i]=X_i,g[i,j]=C$.
+在图上跑一遍 SPFA 后，$X_1\cdots X_n$ 便满足差分不等式组.
+模板#bool in[], X[]; // 将 dis[] 换成 X[]，便于理解 struct node { int val, len; }; vector&amp;lt;int&amp;gt; g[]; void add(int X_j, X_i, C) { // X_j - X_i ≤ C g[X_i].</description>
+    </item>
+    
+    <item>
+      <title>强连通分量</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/</guid>
+      <description>简介#强连通#在有向图 $G$ 中，如果同时存在 $u→v$ 和 $v→u$ 的路径，那么称 $u$ 和 $v$ 强连通.
+强连通图#如果有向图 $G$ 的任意两个节点都强连通，那么称 $G$ 是强连通图.
+强连通分量#如果图 $G$ 的子图是强连通图，那么该子图称作 $G$ 的强连通分量.
+本章介绍求强连通分量的三种算法.
+Tarjan 算法#图的结构#Tarjan 算法基于对图的 深度优先遍历（DFS），并且将图近似地看成一棵 树.因此，这棵树中会不可避免地出现一些奇怪的边.
+前向边：与普通边方向一致，但跨越多个节点.
+返祖边：与普通边方向相反，从子孙指向祖先.
+横向边：边的两个端点居于树的同一深度.
+时间戳#DFS 遍历一张图时，按访问顺序给节点打标记.$u$ 是第 $i$ 个被访问的节点，记作 $dfn[u]=i$.这个标记叫做「时间戳」.在图中，时间戳标记在节点的右上方.
+$u$ $1$ $2$ $3$ $4$ $5$ $6$ $dfn[u]$ $1$ $2$ $5$ $3$ $4$ $6$ 追溯值#Tarjan 算法还引入了「追溯值」：$low[u]$，定义为以下节点时间戳的最小值：
+以 $u$ 为根的子树中的所有节点.</description>
+    </item>
+    
+    <item>
+      <title>最短路径</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</guid>
+      <description>简介#现在给你 $n$ 个节点（编号为 $1\sim n$）和它们之间的边长，求任意两个节点之间的最短路径.
+松弛操作#使用 邻接矩阵 $g$ 存图.如果 $g[i,k] + g[k,j] &amp;lt; g[i,j]$，则路径 $i→k→j$ 比原先 $i→j$ 的路径更短，那么就令 $g[i,j] = g[i,k] + g[k,j]$.这就是松弛操作.
+Floyed 算法#一开始，我们将所有节点全部拨到图外面，然后按 $1$ 号到 $n$ 号顺序依次往图中加入节点.
+$g[k,i,j]$：当图中已经加入了 $1 \sim k$ 号节点时，从节点 $i$ 到 $j$ 的最短路径.
+当节点 $k$ 被加入图中时，枚举节点 $i$ 和 $j$，利用新加入的 $k$ 对路径 $i-j$ 进行 松弛操作：
+若路径 $i-j$ 不经过节点 $k$，则 $g[k,i,j] = g[k - 1,i,j]$；
+若路径 $i-j$ 经过节点 $k$，则 $g[k,i,j] = g[k - 1,i,k] + g[k - 1,k,j]$.</description>
+    </item>
+    
+    <item>
+      <title>最近公共祖先（LCA）</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
+      <description>简介#最近公共祖先（Least Common Ancestors，简称 LCA）.
+节点 $p,q$ 的最近公共祖先 $s$ 是这棵树中到 $p,q$ 的距离之和最小的节点.
+如何求两个节点的 LCA？
+0 $p,q$ 两个指针分别指向这两个节点，并且 $p$ 的深度比 $q$ 深. 1 将 $p$ 不断往父节点方向移，直到 $p,q$ 处于同一深度.
+2 $p$ 和 $q$ 同时往父节点移，直到它们相遇于 $s$ 节点.$s$ 节点为 $p$ 和 $q$ 的 LCA.
+暴力算法（$\textcolor{red}{×}$） LCA 算法（$\textcolor{green}{√}$） 预处理 $\textcolor{green}{0}$ $\textcolor{green}{O(n)}$ 单次查询 $\textcolor{red}{O(n)}$ $\textcolor{green}{O(\log{n})}$ $m$ 次查询 $\textcolor{red}{O(mn)}$ $\textcolor{green}{O(m\log{n})}$ int d[]; // d[u]: 节点 u 的深度 int f[]; // f[u]: 节点 u 的父节点 int LCA(int p, int q) { if(d[p] &amp;lt; d[q]) swap(p, q); // 使 p 的深度 ≥ q while(d[p] &amp;gt; d[q]) p = f[p]; // 步骤 1 while(p !</description>
+    </item>
+    
+    <item>
+      <title>拓扑排序</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</guid>
+      <description>简介#给出 $n$ 个元素的 $m$ 组关系：$a &amp;gt; b,a &amp;gt; c,b &amp;gt; c,b &amp;gt; d,\cdots$，试将这 $n$ 个元素按大小排序.
+将上述关系转化为有向图，$a → b$ 代表 $a &amp;gt; b$.这类反映节点大小关系的图称作 AOV 网.
+拓扑排序求的是符合条件的优先顺序，即拓扑序列.
+原理#根据定义，没被箭头指着的节点（即入度为 $0$ 的节点）是当前最大的节点.
+1 节点 $a$ 的入度为 $0$.在拓扑序列中追加 $a$，并删除 $a$ 和它的所有邻边： 拓扑序列：$a$ 2 节点 $e$ 的入度为 $0$.在拓扑序列中追加 $e$，并删除 $e$ 和它的所有邻边： 拓扑序列：$a,e$ 3 节点 $b$ 的入度为 $0$.在拓扑序列中追加 $b$，并删除 $b$ 和它的所有邻边： 拓扑序列：$a,e,b$ 4 节点 $c$ 的入度为 $0$.在拓扑序列中追加 $c$，并删除 $c$ 和它的所有邻边： 拓扑序列：$a,e,b,c$ 5 节点 $d$ 的入度为 $0$.</description>
+    </item>
+    
+    <item>
+      <title>最小生成树</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <description>简介#无向图 $G$ 的生成树满足以下性质：
+包含 $G$ 中的所有节点. 任意两个节点都 连通. 具有 树 的所有性质. 图 $b$ 和图 $c$ 皆为图 $a$ 的生成树.
+最小生成树，即边权和最小的生成树.对于 $n$ 个节点的无向图，最小生成树一定有 $n-1$ 条边.
+Kruskal 算法#Kruskal 是一种贪心算法.
+将 $m$ 条边按照边权升序排序； 从小到大枚举边： 若此边的两个顶点未连通，则在树中加入此边，并连通两个顶点. 若此边的两个顶点已连通，直接跳到下一条边. 重复直到树中共加入 $n-1$ 条边.
+使用 并查集 判断和维护两个顶点是否连通.
+时间复杂度为 $O(m\log{m})$，适用于稀疏图.
+const int N = 1e6; int n, m, fa[N]; struct edge { int x, y, len; } g[N]; bool cmp(edge x, edge y) { return x.</description>
+    </item>
+    
+    <item>
+      <title>图</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%9B%BE/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E5%9B%BE/</guid>
+      <description>定义#图（Graph） 由若干 顶点 和 边 组成，用大写字母 $G$ 表示，$V$ 为顶点集合，$E$ 为边集合，记作 $G=(V,E)$.
+图是描述实际问题的工具.如进行城市道规划时，可将每个城市视作顶点，连接城市的道路视作边.
+边的方向#图的每条边都有起点和终点，则图为 有向图； 相反，边没有方向（可以理解为双向）的图为 无向图（双向图）. 边权和点权#为解决实际问题，引入 边权 和 点权 的概念：
+边权 及边的长度.解决最短路径问题时，将城市视作顶点，城市之间的道路长度视作边权； 点权 即点的大小.解决最小收费问题时，将收费站视作顶点，收费站之间的道路视作边，通过收费站支付的费用视作点权. 度数#若图中有 $d$ 条边与节点 $i$ 相连，则节点 $i$ 的 度数 为 $d$（即节点的 连边 个数）.如下图，节点 $1$ 的度为 $6$：
+若有向图中有 $d$ 条边的 终点 是节点 $i$，则节点 $i$ 的 入度 为 $d$（即节点的 入边 个数）； 若有向图中有 $d$ 条边的 起点 是节点 $i$，则节点 $i$ 的 出度 为 $d$（即节点的 出边 个数）； 子图#图 $G$ 的子图 $H$ 满足以下条件：</description>
+    </item>
+    
+    <item>
+      <title>树</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%A0%91/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9B%BE%E8%AE%BA/%E6%A0%91/</guid>
+      <description>定义#树有多种等价的定义方式：
+连通且无环的无向图. 有 $n$ 个节点和 $n-1$ 条边的无向图. 任意两个顶点间只有一条路径的无向图. 图论中的树看起来更像现实中倒悬的树：
+树的节点存在「父子关系」：
+有连边的两个节点中，上节点为下节点的父节点.节点 $2$ 是节点 $5$ 的父节点； 有连边的两个节点中，下节点为上节点的子节点，节点 $5$ 是节点 $2$ 的子节点； 没有父节点的节点为根节点，节点 $1$； 没有子节点的节点为叶节点，节点 $5,6,3,8,9$. 有根树和无根树#有根树必须明确根节点，而无根树的任意节点都可以是根节点.下面的左图和右图是同一棵无根树：
+子树#将节点 $i$ 和其父节点断开，分裂出的以 $i$ 为根的新树，称作节点 $i$ 的子树.如下图，红色部分为节点 $3$ 的子树.
+层和深度#定义根节点在第 $1$ 层，子节点层数 $=$ 父节点层数 $+ \ 1$：
+树的深度 $=$ 总层数.上图中树的深度为 $4$.树中各个节点的深度为节点所在的层数.
+二叉树#任意节点的子节点数量 $≤2$ 的树是二叉树：
+满二叉树#深度为 $k$ 的二叉树最多有 $2^k-1$ 个节点.节点最多的那棵树是满二叉树：
+满二叉树除最后一层外，其它层任意节点都有 $2$ 个子节点.</description>
+    </item>
+    
+  </channel>
+</rss>

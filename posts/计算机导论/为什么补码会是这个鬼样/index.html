@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>为什么补码会是这个鬼样 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../avatar.png" onerror="this.classList.add('error');this.src='../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../">博客</a><a class="nav-item " href="../../../docs/">文档</a><a class="nav-item " href="../../../search/">搜索</a><a class="nav-item " href="../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">为什么补码会是这个鬼样</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#为什么使用补码">为什么使用补码</a></li>
+    <li><a href="#补码是如何形成的">补码是如何形成的</a>
+      <ul>
+        <li><a href="#溢出">溢出</a></li>
+        <li><a href="#越加越小">越加越小</a></li>
+        <li><a href="#还是减法">还是减法？</a></li>
+        <li><a href="#符号问题">符号问题</a></li>
+        <li><a href="#结论">结论</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../avatar.png" onerror="this.classList.add('error');this.src='../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%af%bc%e8%ae%ba">计算机导论</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2023-10-9</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">为什么补码会是这个鬼样</h1>
+  <span class="description">课本上没有的知识.</span><h2 id="#为什么使用补码">
+    为什么使用补码
+    <a class="anchor" name="为什么使用补码" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%bf%e7%94%a8%e8%a1%a5%e7%a0%81">#</a>
+</h2><p>即答：想把减法转换为加法。</p>
+<p>加法器的逻辑门电路易于设计、效率高。如果能把减法转换为加法，那么加减法就都能通过加法器进行，不需要额外设计减法器，能进一步简化芯片的设计。</p>
+<p>具体怎么转换呢？</p>
+<div class='mkdocs hint info' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/info.svg' />
+        <span>info</span>
+    </p>
+    <div class='inner'> 
+<p>减去一个数，等于加上这个数的相反数。</p>
+<p>$$a-b=a+(-b)$$</p>
+ </div>
+</div> 
+<p>就是这一句废话文学给补码的理论奠大基。</p>
+<h2 id="#补码是如何形成的">
+    补码是如何形成的
+    <a class="anchor" name="补码是如何形成的" href="#%e8%a1%a5%e7%a0%81%e6%98%af%e5%a6%82%e4%bd%95%e5%bd%a2%e6%88%90%e7%9a%84">#</a>
+</h2><blockquote>
+<p>补码充分体现了什么叫作「bug 用得好就是特性」。</p>
+</blockquote>
+<h3 id="#溢出">
+    溢出
+    <a class="anchor" name="溢出" href="#%e6%ba%a2%e5%87%ba">#</a>
+</h3><p>计算机中，储存数据的容器有一个重要的特性：溢出。</p>
+<p>这是一个四位二进制数的容器，最多可以存到 $(15)_{10}=(1111)_2$。</p>
+<p>$$\boxed{1} \ \boxed{1} \ \boxed{1} \ \boxed{1}$$</p><p>当我们把 $(10010)_2$ 存进该容器时，最高位的 $1$ 会被扔掉（悲），<span style="color: red">相当于减少了</span> $\color{red}(10000)_2$。</p>
+<p>$$\cancel 1 \ \boxed{0} \ \boxed{0} \ \boxed{1} \ \boxed{0} \ \color{transparent}{\cancel 1}$$</p><p>这也就导致了，在长度为 $4$ 的容器中，$(10001)_2\Rightarrow(1)_2$，$(10010)_2\Rightarrow(10)_2$，$\cdots$</p>
+<h3 id="#越加越小">
+    越加越小
+    <a class="anchor" name="越加越小" href="#%e8%b6%8a%e5%8a%a0%e8%b6%8a%e5%b0%8f">#</a>
+</h3><p>在固定长度的容器中作加法，会出现「越加越小」的情况。还是拿长度 $4$ 的容器举例：</p>
+<p>$$(1010)_2+(111)_2=(10001)_2\Rightarrow(1)_2$$</p>
+<p>而我们又知道</p>
+<p>$$(1010)_2+(-1001)_2=(1)_2$$</p>
+<p>进一步说，在这样的环境下，给一个数加上负数 $(-1001)_2$，完全等价于给其加上正数 $(111)_2$。</p>
+<p>有没有一种系统的方法，能给每个负数找到等价正数？</p>
+<div class='mkdocs hint note' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/note.svg' />
+        <span>note</span>
+    </p>
+    <div class='inner'> 
+<p>以负数 $(-1001)_2$ 为例。设其等价正数为 $x$，参与加法的另一个常数为 $C$，则</p>
+<p>$$C+(-1001)_2=C+x\color{red}-(10000)_2$$</p>
+<p>解得 $x={\color{red}(10000)_2}-(1001)_2=(111)_2$</p>
+ </div>
+</div> 
+<p>进一步说，对于一般的负数 $-y$，有</p>
+<p>$$x=(10000)_2-y$$</p>
+<p>对于长度为 $m$ 的容器，有</p>
+<p>$$x=(1\underset{m \ 个 \ 0}{\underbrace{00\cdots0}})_2-y$$</p>
+<h3 id="#还是减法">
+    还是减法？
+    <a class="anchor" name="还是减法" href="#%e8%bf%98%e6%98%af%e5%87%8f%e6%b3%95">#</a>
+</h3><p>尴尬的地方来了：<strong>计算 $x$ 所用的还是减法</strong>。</p>
+<p>不过仔细一看，被减数都是 $(100\cdots0)_2$ 这个样。这类减法其实也就是找找规律的事。</p>
+<p>容易发现，对一个四位二进制数（不足四位补 $0$）的每一位取反，再加上原来的数，一定会得到 $(1111)_2$，比如</p>
+<p>$$(0110)_2+(1001)_2=(1111)_2$$</p>
+<p>这 $(1111)_2$，再加上 $1$，恰好就等于 $(10000)_2$。也就是说</p>
+<p>$$y+取反y+1=(10000)_2$$</p>
+<p>移项</p>
+<p>$$(10000)_2-y=取反y+1$$</p>
+<p>代入</p>
+<p>$$x=(10000)_2-y=取反y+1$$</p>
+<p>进一步说，对任意定长的容器而言，都有 $x=取反y+1$</p>
+<h3 id="#符号问题">
+    符号问题
+    <a class="anchor" name="符号问题" href="#%e7%ac%a6%e5%8f%b7%e9%97%ae%e9%a2%98">#</a>
+</h3><p>实际上，我们往往会用容器的第一个格子表示符号，$0$ 表示正数，$1$ 表示负数，例如</p>
+<p>$${\color{red}\boxed{1}} \ \boxed{1} \ \boxed{0} \ \boxed{1} \ \boxed{0}$$</p>
+<p>表示 $(-1010)_2$。</p>
+<p>因此上述的取反操作显然不能把符号位涵盖进去。</p>
+<h3 id="#结论">
+    结论
+    <a class="anchor" name="结论" href="#%e7%bb%93%e8%ae%ba">#</a>
+</h3><p>到此为止，我们终于可以流畅爽滑地定义所谓「补码」：</p>
+<div class='mkdocs hint info' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/info.svg' />
+        <span>info</span>
+    </p>
+    <div class='inner'> 
+<ol>
+<li>正数的补码就是其本身。</li>
+<li>负数的补码为对该数除符号位外各位取反，然后在最后一位加 $1$。</li>
+</ol>
+ </div>
+</div> 
+<p>计算减法 $a-b$ 时，直接把 $a$ 和 $-b$ 的补码相加即可。</p>
+</article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../scripts/mathjax.js"></script>
+</html>

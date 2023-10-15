@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>快速幂 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">快速幂</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#快速幂">快速幂</a>
+      <ul>
+        <li><a href="#递归写法">递归写法</a></li>
+        <li><a href="#递推写法">递推写法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../categories/%e6%95%b0%e8%ae%ba">数论</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-7-31</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">快速幂</h1>
+  <span class="description"></span><h2 id="#快速幂">
+    快速幂
+    <a class="anchor" name="快速幂" href="#%e5%bf%ab%e9%80%9f%e5%b9%82">#</a>
+</h2><p>如何快速求 $a^b$（$a,b\in\mathbb{Z}$）？</p>
+<h3 id="#递归写法">
+    递归写法
+    <a class="anchor" name="递归写法" href="#%e9%80%92%e5%bd%92%e5%86%99%e6%b3%95">#</a>
+</h3><p>根据乘方公式 $a^{m+n}=a^m\cdot a^n$，有：</p>
+<p>$$a^b=\left\{\begin{aligned}
+&amp;a^{\left\lfloor b/2\right\rfloor}\cdot a^{\left\lfloor b/2\right\rfloor} &amp;&amp; b=2k\\
+&amp;a^{\left\lfloor b/2\right\rfloor}\cdot a^{\left\lfloor b/2\right\rfloor}\cdot a &amp;&amp; b=2k&#43;1
+\end{aligned}\right.
+,k\in\mathbb{Z}$$</p><table>
+<thead>
+<tr>
+<th style="text-align:center">边界条件</th>
+<th style="text-align:center">时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$a^0=1$</td>
+<td style="text-align:center">$O(\log{b})$</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">LL</span> <span class="nf">Pow</span><span class="p">(</span><span class="n">LL</span> <span class="n">a</span><span class="p">,</span> <span class="n">LL</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 边界条件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">LL</span> <span class="n">res</span> <span class="o">=</span> <span class="n">Pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">b</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>   <span class="c1">// b 是偶数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="n">res</span> <span class="o">*</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>             <span class="c1">// b 是奇数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="n">res</span> <span class="o">*</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="#递推写法">
+    递推写法
+    <a class="anchor" name="递推写法" href="#%e9%80%92%e6%8e%a8%e5%86%99%e6%b3%95">#</a>
+</h3><p>若 $b$ 在二进制下的第 $k_1,k_2,k_3,\cdots$ 位为 $1$，则 $b=2^{k_1}+2^{k_2}+2^{k_3}+\cdots(k_i≤\log{b})$.</p>
+<p>举个例子，$(14)_{10}=(1011)_2$，二进制下 $14$ 的第 $0,1,3$ 位都为 $1$，那么 $14=2^0+2^1+2^3$.</p>
+<p>将 $b=2^{k_1}+2^{k_2}+2^{k_3}+\cdots$ 代入 $a^b$：</p>
+<p>$$\begin{aligned}
+a^b&amp;=a^{\Large(2^{ k_1}&#43;2^{ k_2}&#43;2^{ k_3}&#43;\cdots)}\\
+&amp;=a^{2^{k_1}}\cdot a^{2^{k_2}}\cdot a^{2^{k_3}}\cdot  \ \cdots
+\end{aligned}$$</p><p>扫描 $b$ 的每个二进制位，如果第 $k$ 位是 $1$，则将答案乘上 $a^{2^k}$.</p>
+<p>时间复杂度为 $O(\log{b})$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">LL</span> <span class="nf">Pow</span><span class="p">(</span><span class="n">LL</span> <span class="n">a</span><span class="p">,</span> <span class="n">LL</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">LL</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">b</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1">// 二进制下该位为 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">res</span> <span class="o">*=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span> <span class="o">*=</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>博弈论 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">博弈论</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#公平组合游戏-icg">公平组合游戏 ICG</a></li>
+    <li><a href="#nim-游戏">NIM 游戏</a>
+      <ul>
+        <li><a href="#简介-1">简介</a></li>
+        <li><a href="#策略">策略</a></li>
+      </ul>
+    </li>
+    <li><a href="#有向图游戏">有向图游戏</a>
+      <ul>
+        <li><a href="#简介-2">简介</a></li>
+        <li><a href="#策略-1">策略</a>
+          <ul>
+            <li><a href="#mex-运算"><code>Mex</code> 运算</a></li>
+            <li><a href="#sg-函数"><code>SG</code> 函数</a></li>
+            <li><a href="#单图游戏">单图游戏</a></li>
+            <li><a href="#组合图游戏">组合图游戏</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../categories/%e6%95%b0%e8%ae%ba">数论</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-9-20</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">博弈论</h1>
+  <span class="description"></span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p>博弈论研究在一局博弈中如何最优化玩家的策略.</p>
+<h2 id="#公平组合游戏-icg">
+    公平组合游戏 ICG
+    <a class="anchor" name="公平组合游戏-icg" href="#%e5%85%ac%e5%b9%b3%e7%bb%84%e5%90%88%e6%b8%b8%e6%88%8f-icg">#</a>
+</h2><ul>
+<li>两名玩家轮流行动，且行动规则相同.</li>
+<li>最终不能行动的玩家判负.</li>
+</ul>
+<h2 id="#nim-游戏">
+    NIM 游戏
+    <a class="anchor" name="nim-游戏" href="#nim-%e6%b8%b8%e6%88%8f">#</a>
+</h2><h3 id="#简介-1">
+    简介
+    <a class="anchor" name="简介-1" href="#%e7%ae%80%e4%bb%8b-1">#</a>
+</h3><p>有 $n$ 堆石子，第 $i$ 堆石子数为 $A_i$. 两名玩家轮流取走任意一堆的任意个石子，但不能不取. 取走最后一个石子的玩家胜.</p>
+<p>NIM 游戏属于 <a class="md-link" href="#%e5%85%ac%e5%b9%b3%e7%bb%84%e5%90%88%e6%b8%b8%e6%88%8f-icg"  >公平组合游戏<img class="icon" src="../../../../img/link.svg" /></a>，且不存在平局，只有「先手必胜」和「后手必胜」两种情况.</p>
+<h3 id="#策略">
+    策略
+    <a class="anchor" name="策略" href="#%e7%ad%96%e7%95%a5">#</a>
+</h3><p>当且仅当 $A_1\oplus A_2\oplus\cdots\oplus A_n\not=0$ 时，先手必胜（$\oplus$ 表示二进制异或）.</p>
+<p>$A\oplus B$：将 $A$ 和 $B$ 的二进制位对齐，相等取 $0$，不相等取 $1$.</p>
+<p>$$\begin{aligned}
+1 \ 0 \ 0 \ 1 \ 0 \ 1 \ 0\\
+\underline{\oplus \ 1 \ 1 \ 0 \ 1 \ 1 \ 0 \ 1}\\
+0 \ 1 \ 0 \ 0 \ 1 \ 1 \ 1
+\end{aligned}$$</p><details class='mkdocs hint note' open>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>引理 1</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'><p>设 $A_1\oplus A_2\oplus\cdots\oplus A_n=k\not=0$.</p>
+<p>设 $k$ 在二进制下有 $\text{len}(k)$ 位.</p>
+<p>由异或的定义得，至少存在一个 $i$，使 $A_i$ 的第 $\text{len}(k)$ 位为 $1$，这样才能保证 $k$ 的第 $\text{len}(k)$ 位也为 $1$. 在此条件下，显然有 $A_i&gt;A_i\oplus k$.</p>
+<p>于是可以取第 $i$ 堆石子，使其剩下 $A_i\oplus k$ 个. 取完石子后有</p>
+<p>$$(A_1\oplus\cdots\oplus A_{i-1})\oplus(A_i\oplus k)\oplus(A_{i+1}\oplus\cdots\oplus A_n)=k\oplus k=0$$</p>
+</div>
+</details> 
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>引理 2</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'><p>设 $A_1\oplus A_2\oplus\cdots\oplus A_n=0$. 此时更改任意一个 $A_i$ 为 $A_i&rsquo;$，都有：</p>
+<p>$$(A_1\oplus\cdots\oplus A_{i-1})\oplus(A_i&rsquo;)\oplus(A_{i+1}\oplus\cdots\oplus A_n)=0\oplus A_i\oplus A_i&rsquo;\not=0$$</p>
+<p>即任意一步操作都会导致异或和 $\not=0$.</p>
+</div>
+</details> 
+<p>结合引理 1，引理 2 可得：</p>
+<ul>
+<li>存在一步操作，使异或和 $\not=0\Longrightarrow$ 异或和 $=0$.</li>
+<li>任意一步操作，使异或和 $=0\Longrightarrow$ 异或和 $\not=0$.</li>
+<li>石子被取光时失败（对手取走最后一个石子，获胜），此时异或和为 $0$.</li>
+</ul>
+<p>当 $A_1\oplus A_2\oplus\cdots\oplus A_n\not=0$ 时，先手可以使博弈进入一种循环：</p>
+<p><img class="md_img" data-fancybox="gallery" src="0.svg" alt="" title="140%" style="zoom: 140%"></p>
+<p>$$\xymatrix {
+    异或和\not=0
+}$$</p><p>轮到后手时，异或和必为 $0$，即失败的局面只可能轮到后手. 先手必胜.</p>
+<p>当 $A_1\oplus A_2\oplus\cdots\oplus A_n=0$ 时，后手可以同样的方法制胜. 此时先手必败.</p>
+ </div>
+</details> 
+<h2 id="#有向图游戏">
+    有向图游戏
+    <a class="anchor" name="有向图游戏" href="#%e6%9c%89%e5%90%91%e5%9b%be%e6%b8%b8%e6%88%8f">#</a>
+</h2><h3 id="#简介-2">
+    简介
+    <a class="anchor" name="简介-2" href="#%e7%ae%80%e4%bb%8b-2">#</a>
+</h3><p>在一个有向无环图中，只有一个起点，上面有一枚棋子. 两名玩家轮轮流沿有向边推动棋子，无法移动者判负.</p>
+<p>任何公平组合游戏都可以转换为有向图游戏：每个节点表示一个状态，并且向后继状态连有向边.</p>
+<h3 id="#策略-1">
+    策略
+    <a class="anchor" name="策略-1" href="#%e7%ad%96%e7%95%a5-1">#</a>
+</h3><h4 id="#mex-运算">
+    <code>Mex</code> 运算
+    <a class="anchor" name="mex-运算" href="#mex-%e8%bf%90%e7%ae%97">#</a>
+</h4><p>设 $S$ 为非负整数集合. $\mex(S)$ 为不属于 $S$ 的最小非负整数.</p>
+<p>$$\mex(S)=\min\{x\mid x\in N, x\notin S\}$$</p>
+<h4 id="#sg-函数">
+    <code>SG</code> 函数
+    <a class="anchor" name="sg-函数" href="#sg-%e5%87%bd%e6%95%b0">#</a>
+</h4><p>状态 $x$ 有 $k$ 个后继状态 $y_1,y_2,\cdots,y_k$，定义 $SG$ 函数：</p>
+<p>$$SG(x)=\mex(\{SG(y_1),SG(y_2),\cdots,SG(y_k)\})$$</p>
+<h4 id="#单图游戏">
+    单图游戏
+    <a class="anchor" name="单图游戏" href="#%e5%8d%95%e5%9b%be%e6%b8%b8%e6%88%8f">#</a>
+</h4><p>设起点为 $s$，当且仅当 $SG(s)\not=0$ 时，先手必胜.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<ul>
+<li>
+<p>当棋子无法移动时失败，此时没有后继状态，$SG(s)=\mex(\varnothing)=0$.</p>
+</li>
+<li>
+<p>存在一步操作，使 $SG(s)\not=0\Longrightarrow SG(s)=0$.</p>
+</li>
+<li>
+<p>任意一步操作，使 $SG(s)=0\Longrightarrow SG(s)\not=0$.</p>
+</li>
+</ul>
+<p>当 $SG(s)\not=0$ 时，先手可以通过类似于 <a class="md-link" href="../../../../docs/NOI/Math/%e5%8d%9a%e5%bc%88%e8%ae%ba/#nim-%e6%b8%b8%e6%88%8f"  ><code>NIM</code> 游戏<img class="icon" src="../../../../img/link.svg" /></a> 的方法制胜.</p>
+<p><img class="md_img" data-fancybox="gallery" src="1.svg" alt="" title="140%" style="zoom: 140%"></p>
+<p>当 $SG(s)=0$ 时，后手必胜.</p>
+ </div>
+</details> 
+<h4 id="#组合图游戏">
+    组合图游戏
+    <a class="anchor" name="组合图游戏" href="#%e7%bb%84%e5%90%88%e5%9b%be%e6%b8%b8%e6%88%8f">#</a>
+</h4><p>对于 $n$ 个有向图游戏组合成的游戏，起点分别为 $s_1,s_2,\cdots,s_n$. 当且仅当 $SG(s_1)\oplus SG(s_2)\oplus\cdots\oplus SG(s_n)\not=0$ 时，先手必胜（$\oplus$ 表示异或）.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>由 <a class="md-link" href="../../../../docs/NOI/Math/%e5%8d%9a%e5%bc%88%e8%ae%ba/#%e5%8d%95%e5%9b%be%e6%b8%b8%e6%88%8f"  >单图游戏<img class="icon" src="../../../../img/link.svg" /></a> 可知：</p>
+<ul>
+<li>
+<p>$SG(s_i)=0$（无法移动每个棋子）时失败，此时异或和 $=0$.</p>
+</li>
+<li>
+<p>存在一步操作，使异或和 $\not=0\Longrightarrow$ 异或和 $=0$.</p>
+</li>
+<li>
+<p>任意一步操作，使异或和 $=0\Longrightarrow$ 异或和 $\not=0$.</p>
+</li>
+</ul>
+<p>当 $SG(s_1)\oplus SG(s_2)\oplus\cdots\oplus SG(s_n)\not=0$ 时，先手可以通过类似于 <a class="md-link" href="../../../../docs/NOI/Math/%e5%8d%9a%e5%bc%88%e8%ae%ba/#nim-%e6%b8%b8%e6%88%8f"  ><code>NIM</code> 游戏<img class="icon" src="../../../../img/link.svg" /></a> 的方法制胜.</p>
+<p><img class="md_img" data-fancybox="gallery" src="0.svg" alt="" title="140%" style="zoom: 140%"></p>
+ </div>
+</details></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

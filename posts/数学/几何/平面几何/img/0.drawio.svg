@@ -1,0 +1,33 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="171px" height="142px" viewBox="-0.5 -0.5 171 142" content="&lt;mxfile&gt;&lt;diagram id=&quot;UWhXXY1s-aTgRQO_o0lg&quot; name=&quot;第 1 页&quot;&gt;1VVNj5swEP013AGHpDku2Y9eWlVNpZ5dPAGrxkbGBLK/vuPYhM9IWWkvvSDPs2c8894MDsih7N40rYpvioEI4pB1AXkO4ngXb/FrgYsDkl3kgFxz5qARcOTv4MHQow1nUE8OGqWE4dUUzJSUkJkJRrVW7fTYSYnprRXNYQEcMyqW6G/OTOHQL/FuwL8Cz4v+5mi7dzsl7Q/7SuqCMtWOIPISkINWyrhV2R1AWO56Xpzf653dW2IapHnEIXYOZyoaX5vPy1z6YtEBeUUjbQtu4FjRzO60qCxihSkFWhEuaV05sk+8A4yfnrgQByWURkwqaUMs8/Mpn0Eb6EaQz/cNVAlGX/CI371x55sn3ni7HaSIQo8VYxl6kHr581vsgSFceJLWCSP/IWG7GWHhkrD9Cl/7T6Br8wBdkj3ZmRxqHlGkVSOZ5eZq3SUD2GRgl1SMSk1WSu0xDYIafp6O+Vr9/oYfimMmA9PkDtN9iFo1OgPvNR7LWSAyk4xsZoEM1TmYRaCrHLeyH1IoWSgkFhJho5lZ6wqeS1xnqARgu6a2HTn+IZ/8RskZs+6phpq/0z/XUCHalc35WkWSBsmzjdUYVbt/vA1dG63+wmwMVibjpKR5pSUXlqNfvMQHIQ6/Q4vfn6qk0h85+jJIb/ubNp8zXGQ7UypaDhdZ6Tjy8eFCc3gYnNLD60pe/gE=&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <ellipse cx="50" cy="90" rx="50" ry="50" fill="none" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <ellipse cx="95" cy="45" rx="45" ry="45" fill="none" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 10 0 L 150 140" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <rect x="140" y="110" width="30" height="30" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 125px; margin-left: 155px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 14px; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; font-style: italic; white-space: nowrap;">
+                                l
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="155" y="129" fill="rgb(0, 0, 0)" font-family="Times New Roman" font-size="14px" text-anchor="middle" font-weight="bold" font-style="italic">
+                    l
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>

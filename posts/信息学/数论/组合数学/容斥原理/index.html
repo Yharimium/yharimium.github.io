@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>容斥原理 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../../">博客</a><a class="nav-item " href="../../../../../docs/">文档</a><a class="nav-item " href="../../../../../search/">搜索</a><a class="nav-item " href="../../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">容斥原理</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#公式">公式</a>
+      <ul>
+        <li><a href="#并集">并集</a></li>
+        <li><a href="#交集">交集</a></li>
+      </ul>
+    </li>
+    <li><a href="#多重集的排列数">多重集的排列数</a></li>
+    <li><a href="#多重集的组合数-1">多重集的组合数 1</a></li>
+    <li><a href="#多重集的组合数-2">多重集的组合数 2</a></li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../../categories/%e6%95%b0%e8%ae%ba">数论</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../../tags/%e7%bb%84%e5%90%88%e6%95%b0%e5%ad%a6">组合数学</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-9-6</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">容斥原理</h1>
+  <span class="description"></span><div class='mkdocs hint info' open>
+    <p class='title'>
+        <img class='icon' src='../../../../../img/material/info.svg' />
+        <span>info</span>
+    </p>
+    <div class='inner'> 
+<p>若无特殊说明，本章涉及的变量皆为正整数.</p>
+ </div>
+</div> 
+<h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p>容斥原理是一种不重不漏的计数原理.</p>
+<p>例，$A,B,C$ 三人竞选扫黄队长：</p>
+<div class='mkdocs columns'> 
+<div class='inner markdown'><ul>
+<li>$15$ 人投给 $A$</li>
+<li>$16$ 人投给 $B$</li>
+<li>$17$ 人投给 $C$</li>
+<li>$2$ 人同时投给 $A,B,C$</li>
+</ul>
+</div> 
+<div class='inner markdown'><ul>
+<li>$4$ 人同时投给 $A,B$</li>
+<li>$5$ 人同时投给 $A,C$</li>
+<li>$6$ 人同时投给 $B,C$</li>
+</ul>
+</div> 
+ </div> 
+<p>问共有多少人参与投票.</p>
+<p>$A,B,C$ 三人的得票情况以用韦恩图描述：</p>
+<p><img class="md_img" data-fancybox="gallery" src="0.svg" alt=""></p>
+<div class='mkdocs columns'> 
+<div class='inner markdown'><ul>
+<li>$|A|=15$</li>
+<li>$|B|=16$</li>
+<li>$|C|=17$</li>
+<li>$|A∩B∩C|=2$</li>
+</ul>
+</div> 
+<div class='inner markdown'><ul>
+<li>$|A∩B|=4$</li>
+<li>$|A∩C|=5$</li>
+<li>$|B∩C|=6$</li>
+</ul>
+</div> 
+ </div> 
+<p>求的是投票人数，即 $|A∪B∪C|$.</p>
+<p>$$|A∪B∪C|=|A|+|B|+|C|-|A∩B|-|A∩C|-|B∩C|+|A∩B∩C|$$</p>
+<p>将上述问题推广到普遍情况，就是容斥原理.</p>
+<h2 id="#公式">
+    公式
+    <a class="anchor" name="公式" href="#%e5%85%ac%e5%bc%8f">#</a>
+</h2><h3 id="#并集">
+    并集
+    <a class="anchor" name="并集" href="#%e5%b9%b6%e9%9b%86">#</a>
+</h3><p>对于 $n$ 个集合 $S_1,S_2\cdots S_n$，$|S|$ 表示集合 $S$ 的元素数，则：</p>
+<p>$$\left|\bigcup_{i=1}^nS_i\right|=\sum_i|S_i|-\sum_{i &lt; j}|S_i∩S_j|+\sum_{i &lt; j &lt; k}|S_i∩S_j∩S_k|-\cdots+(-1)^{n+1}\left|\bigcap_{i=1}^nS_i\right|$$</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>设 $x\in S_{a_1},S_{a_2},\cdots,S_{a_m}$，根据公式，$\left|\bigcup_{i=1}^nS_i\right|$ 中包含元素 $x$ 的个数为：</p>
+<p>$$cnt(x)=m-{m\choose 2}+{m\choose 3}-\cdots+(-1)^{n+1}{m\choose m}={m\choose 0}-\sum_{i=0}^m(-1)^i{m\choose i}$$</p>
+<p>根据 <a class="md-link" href="../../../../../post/%e6%95%b0%e5%ad%a6/%e6%95%b0%e8%ae%ba/%e7%bb%84%e5%90%88%e6%95%b0%e5%ad%a6/%e4%ba%8c%e9%a1%b9%e5%bc%8f%e5%ae%9a%e7%90%86/"  >二项式定理<img class="icon" src="../../../../../img/link.svg" /></a> 有：</p>
+<p>$$(1-1)^m=\sum_{i=0}^m{m\choose i}1^{m-i}\cdot(-1^i)=\sum_{i=0}^m(-1)^i{m\choose i}$$</p>
+<p>$$∴cnt(x)={m\choose 0}-(1-1)^m=1$$</p>
+<p>每个元素只出现一次，等价于并集，证毕.</p>
+ </div>
+</details> 
+<h3 id="#交集">
+    交集
+    <a class="anchor" name="交集" href="#%e4%ba%a4%e9%9b%86">#</a>
+</h3><p>对于 $n$ 个集合 $S_1,S_2\cdots S_n$，已知全集为 $U$：</p>
+<p>$$\left|\bigcap_{i=1}^nS_i\right|=|U|-\left|\bigcup_{i=1}^n\overline{S_i}\right|$$</p>
+<p>其中 $\left|\bigcup_{i=1}^n\overline{S_i}\right|$ 套用 <a class="md-link" href="#%e5%b9%b6%e9%9b%86"  >并集<img class="icon" src="../../../../../img/link.svg" /></a> 的公式计算即可.</p>
+<h2 id="#多重集的排列数">
+    多重集的排列数
+    <a class="anchor" name="多重集的排列数" href="#%e5%a4%9a%e9%87%8d%e9%9b%86%e7%9a%84%e6%8e%92%e5%88%97%e6%95%b0">#</a>
+</h2><div class='mkdocs hint info' open>
+    <p class='title'>
+        <img class='icon' src='../../../../../img/material/info.svg' />
+        <span>info</span>
+    </p>
+    <div class='inner'> 
+<p>普通集合：不允许有相同的元素.</p>
+<p>多重集：相同的元素可以出现多次.</p>
+ </div>
+</div> 
+<p>设 $S=\{n_1\cdot a_1,n_2\cdot a_2,\cdots,n_k\cdot a_k\}$ 是由 $n_1$ 个 $a_1$，$n_2$ 个 $a_2$，$\cdots$，$n_k$ 个 $a_k$ 组成的多重集. 设 $ n=\sum_{i=1}^kn_i$. $S$ 的全排列个数为：</p>
+<p>$$\frac{n!}{n_1!n_2!\cdots n_k!}$$</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$n$ 个不同元素的全排列有 $n!$ 种.</p>
+<p>若有 $j$ 个元素相同，则 $n!$ 种排列中有 $j!$ 种排列应算作同一种. 排列数为：</p>
+<p>$$\dfrac{n}{j!}$$</p>
+<p>根据 <a class="md-link" href="../../../../../post/%e6%95%b0%e5%ad%a6/%e6%95%b0%e8%ae%ba/%e7%bb%84%e5%90%88%e6%95%b0%e5%ad%a6/%e7%bb%84%e5%90%88%e6%95%b0%e5%ad%a6/#%e4%b9%98%e6%b3%95%e5%8e%9f%e7%90%86"  >乘法原理<img class="icon" src="../../../../../img/link.svg" /></a>，多重集的全排列个数为：</p>
+<p>$$\frac{n!}{n_1!n_2!\cdots n_k!}$$</p>
+ </div>
+</details> 
+<h2 id="#多重集的组合数-1">
+    多重集的组合数 1
+    <a class="anchor" name="多重集的组合数-1" href="#%e5%a4%9a%e9%87%8d%e9%9b%86%e7%9a%84%e7%bb%84%e5%90%88%e6%95%b0-1">#</a>
+</h2><p>设 $S=\{∞\cdot a_1,∞\cdot a_2,\cdots,∞\cdot a_k\}$，从 $S$ 中任取 $λ$ 个元素的方案数为：</p>
+<p>$${k+λ-1\choose k-1}$$</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>原问题等价于求以下方程非负整数解的个数：</p>
+<p>$$x_1+x_2+\cdots+x_k=λ$$</p>
+<p>解的个数用插板法计算：</p>
+<p>在 $λ$ 个 $1$ 之间插 $k-1$ 块板，使其分为 $k$ 个区间. 第 $i$ 个区间的和代表 $x_i$. 这样就构造出了一组解.</p>
+<p><img class="md_img" data-fancybox="gallery" src="2.svg" alt=""></p>
+<p>需要注意，板插在两端或同一个空隙中是允许的.</p>
+<p>最初有 $λ+1$ 个空隙. 插第一块板有 $λ+1$ 种方法，第二块有 $λ+2$ 种，第三块有 $λ+3$ 种 $\cdots$ 第 $k-1$ 块有 $λ+k-1$ 种. 根据 <a class="md-link" href="../../../../../post/%e6%95%b0%e5%ad%a6/%e6%95%b0%e8%ae%ba/%e7%bb%84%e5%90%88%e6%95%b0%e5%ad%a6/%e7%bb%84%e5%90%88%e6%95%b0%e5%ad%a6/#%e4%b9%98%e6%b3%95%e5%8e%9f%e7%90%86"  >乘法原理<img class="icon" src="../../../../../img/link.svg" /></a>，总的方案数为：</p>
+<p>$$(λ+1)(λ+2)(λ+3)\cdots(λ+k-1)=A_{λ+k-1}^{k-1}$$</p>
+<p>但是插板的顺序与答案无关. 这么算显然会包含一些重复情况：</p>
+<p><img class="md_img" data-fancybox="gallery" src="3.svg" alt=""></p>
+<p>每一个方案都有 $(k-1)!$ 种不同的插板顺序，故答案为：</p>
+<p>$$\dfrac{A_{λ+k-1}^{k-1}}{(k-1)!}={k+λ-1\choose k-1}$$</p>
+ </div>
+</details> 
+<h2 id="#多重集的组合数-2">
+    多重集的组合数 2
+    <a class="anchor" name="多重集的组合数-2" href="#%e5%a4%9a%e9%87%8d%e9%9b%86%e7%9a%84%e7%bb%84%e5%90%88%e6%95%b0-2">#</a>
+</h2><p>设 $S=\{n_1\cdot a_1,n_2\cdot a_2,\cdots,n_k\cdot a_k\}$，从 $S$ 中任取 $λ(λ≤\sum_in_i)$ 个元素的方案数为：</p>
+<p>$${k&#43;λ-1\choose k-1}-\sum_i{k&#43;λ-n_i-2\choose k-1}&#43;\sum_{i &lt; j}{k&#43;λ-n_i-n_j-3\choose k-1}-\cdots&#43;(-1)^k{k&#43;λ-\sum_in_i-k-1\choose k-1}$$</p><details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>考虑容斥原理：</p>
+<center>合法方案数 $=$ 总方案数 $-$ 不合法方案数</center>
+<p>总方案数 $={k+λ-1\choose k-1}$，详见 <a class="md-link" href="#%e5%a4%9a%e9%87%8d%e9%9b%86%e7%9a%84%e7%bb%84%e5%90%88%e6%95%b0-1"  >多重集的组合数 1<img class="icon" src="../../../../../img/link.svg" /></a>.</p>
+<p>于是问题转化为求不合法方案数.</p>
+<ul>
+<li>
+<p>设 $T_i$ 为 $a_i$ 超标的多重集. 先取 $n_i+1$ 个 $a_i$，再任取 $λ-n_i-1$ 个元素，加入 $T_i$. 不同 $T_i$ 的数量为 ${k+λ-n_i-2\choose k-1}$.</p>
+</li>
+<li>
+<p>设 $T_{ij}$ 为 $a_i,a_j$ 超标的多重集. 先取 $n_i+1$ 个 $a_i$ 和 $n_j+1$ 个 $a_j$，再任取 $λ-n_i-n_j-2$ 个元素，加入 $T_{ij}$. 不同 $T_{ij}$ 的数量为 ${k+λ-n_i-n_j-3\choose k-1}$.</p>
+</li>
+</ul>
+<p>依次类推，由容斥原理可得，不合法的方案数为：</p>
+<p>$$\left|\bigcup\{T\}\right|=\sum_i{k+λ-n_i-2\choose k-1}-\sum_{i &lt; j}{k+λ-n_i-n_j-3\choose k-1}+\cdots+(-1)^{k+1}{k+λ-\sum_in_i-k-1\choose k-1}$$</p>
+<p>于是合法的方案数为：</p>
+<p>$${k+λ-1\choose k-1}-\left|\bigcup\{T\}\right|$$</p>
+ </div>
+</details></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../../scripts/mathjax.js"></script>
+</html>

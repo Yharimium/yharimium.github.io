@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>平面几何 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">平面几何</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#距离公式">距离公式</a></li>
+    <li><a href="#切线公式">切线公式</a>
+      <ul>
+        <li><a href="#切线长公式">切线长公式</a></li>
+        <li><a href="#切线--切点弦方程">切线 / 切点弦方程</a></li>
+      </ul>
+    </li>
+    <li><a href="#公共弦方程">公共弦方程</a></li>
+    <li><a href="#焦半径公式">焦半径公式</a>
+      <ul>
+        <li><a href="#坐标式">坐标式</a></li>
+        <li><a href="#夹角式">夹角式</a></li>
+      </ul>
+    </li>
+    <li><a href="#焦点三角形面积">焦点三角形面积</a></li>
+    <li><a href="#离心率">离心率</a>
+      <ul>
+        <li><a href="#渐近线倾斜角公式">渐近线倾斜角公式</a></li>
+        <li><a href="#正弦比值公式">正弦比值公式</a></li>
+        <li><a href="#焦比弦公式">焦比弦公式</a></li>
+        <li><a href="#最大张角公式">最大张角公式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e6%95%b0%e5%ad%a6">数学</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../tags/%e5%b9%b3%e9%9d%a2%e5%87%a0%e4%bd%95">平面几何</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../tags/%e5%9c%86%e9%94%a5%e6%9b%b2%e7%ba%bf">圆锥曲线</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2023-2-21</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">平面几何</h1>
+  <span class="description">常用的平面几何结论。</span><h2 id="#距离公式">
+    距离公式
+    <a class="anchor" name="距离公式" href="#%e8%b7%9d%e7%a6%bb%e5%85%ac%e5%bc%8f">#</a>
+</h2><p>$(x_1,y_1)$ 到 $(x_2,y_2)$ 距离公式</p>
+<p>$$d=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$$</p>
+<p>$(x_0,y_0)$ 到 $Ax+By+C=0$ 距离公式</p>
+<p>$$d=\frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}$$</p>
+<p>$Ax+By+C_1=0$ 到 $Ax+By+C_2=0$ 距离公式</p>
+<p>$$d=\frac{|C_1-C_2|}{\sqrt{A^2+B^2}}$$</p>
+<h2 id="#切线公式">
+    切线公式
+    <a class="anchor" name="切线公式" href="#%e5%88%87%e7%ba%bf%e5%85%ac%e5%bc%8f">#</a>
+</h2><h3 id="#切线长公式">
+    切线长公式
+    <a class="anchor" name="切线长公式" href="#%e5%88%87%e7%ba%bf%e9%95%bf%e5%85%ac%e5%bc%8f">#</a>
+</h3><p>过 $A(x_0,y_0)$ 作圆 $(x-a)^2+(y-b)^2=r^2$ 的一条切线，切点为 $B$，切线长为</p>
+<p>$$AB=\sqrt{(x_0-a)^2+(y_0-b)^2-r^2}$$</p>
+<h3 id="#切线--切点弦方程">
+    切线 / 切点弦方程
+    <a class="anchor" name="切线--切点弦方程" href="#%e5%88%87%e7%ba%bf--%e5%88%87%e7%82%b9%e5%bc%a6%e6%96%b9%e7%a8%8b">#</a>
+</h3><p>过圆 $(x-a)^2+(y-b)^2=r^2$ 上一点 $P(x_0,y_0)$ 的切线方程为</p>
+<p>$$l:(x_0-a)(x-a)+(y_0-b)(y-b)=r^2$$</p>
+<p>过椭圆（双曲线）$\frac{x^2}{a^2}\pm\frac{y^2}{b^2}=1$ 上一点 $P(x_0,y_0)$ 的切线方程为</p>
+<p>$$l:\frac{x_0\cdot x}{a^2}\pm\frac{y_0\cdot y}{b^2}=1$$</p>
+<p>过抛物线 $y^2=2px$ 上一点 $P(x_0,y_0)$ 的切线方程为</p>
+<p>$$l:y_0\cdot y=p(x_0+x)$$</p>
+<p>当 $P$ 不在对应曲线上时，$l$ 表示切点弦方程。</p>
+<h2 id="#公共弦方程">
+    公共弦方程
+    <a class="anchor" name="公共弦方程" href="#%e5%85%ac%e5%85%b1%e5%bc%a6%e6%96%b9%e7%a8%8b">#</a>
+</h2><p><img class="md_img" data-fancybox="gallery" src="img/0.drawio.svg" alt=""></p>
+<p>圆 $x^2+y^2+A_1x+B_1y+C_1=0$ 和 $x^2+y^2+A_2x+B_2y+C_2=0$ 的公共弦方程为</p>
+<p>$$l:(A_1-A_2)x+(B_1-B_2)y+(C_1-C_2)=0$$</p>
+<h2 id="#焦半径公式">
+    焦半径公式
+    <a class="anchor" name="焦半径公式" href="#%e7%84%a6%e5%8d%8a%e5%be%84%e5%85%ac%e5%bc%8f">#</a>
+</h2><h3 id="#坐标式">
+    坐标式
+    <a class="anchor" name="坐标式" href="#%e5%9d%90%e6%a0%87%e5%bc%8f">#</a>
+</h3><div class='mkdocs columns'> 
+<div class='inner markdown'><p><img class="md_img" data-fancybox="gallery" src="img/1.1.drawio.svg" alt=""></p>
+<p>$$PF_1=a+ex_0,PF_2=a-ex_0$$</p>
+</div> 
+<div class='inner markdown'><p><img class="md_img" data-fancybox="gallery" src="img/1.5.drawio.svg" alt=""></p>
+<p>$$PF_1=|ex_0+a|,PF_2=|ex_0-a|$$</p>
+</div> 
+ </div> 
+<details class='mkdocs hint note' open>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p><img class="md_img" data-fancybox="gallery" src="img/1.2.drawio.svg" alt=""></p>
+<p>由勾股定理得</p>
+<p>$$x_1^2-(x_0+c)^2=x_2^2-(x_0-c)^2$$</p>
+<p>$$x_1^2-x_2^2=(x_0+c)^2-(x_0-c)^2$$</p>
+<p>$$2a(x_1-x_2)=4cx_0$$</p>
+<p>$$x_1-x_2=2ex_0$$</p>
+<p>由 $x_1+x_2=2a$ 得</p>
+<p>$$x_1=a+ex_0,x_2=a-ex_0$$</p>
+<p>双曲线同理。</p>
+ </div>
+</details> 
+<h3 id="#夹角式">
+    夹角式
+    <a class="anchor" name="夹角式" href="#%e5%a4%b9%e8%a7%92%e5%bc%8f">#</a>
+</h3><p><img class="md_img" data-fancybox="gallery" src="img/1.3.drawio.svg" alt=""></p>
+<p>$$PF=\frac{b^2}{a-c\cos\theta}=\frac{\disp\frac{b^2}{a}}{1-e\cos\theta}$$</p>
+<details class='mkdocs hint note' open>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p><img class="md_img" data-fancybox="gallery" src="img/1.4.drawio.svg" alt=""></p>
+<p>由余弦定理得</p>
+<p>$$r^2+(2c)^2-2\cdot r\cdot 2c\cos\theta=(2a-r)^2$$</p>
+<p>$$c^2-cr\cos\theta=a^2-ar$$</p>
+<p>$$r=\frac{b^2}{a-c\cos\theta}$$</p>
+<p>双曲线同理。</p>
+ </div>
+</details> 
+<h2 id="#焦点三角形面积">
+    焦点三角形面积
+    <a class="anchor" name="焦点三角形面积" href="#%e7%84%a6%e7%82%b9%e4%b8%89%e8%a7%92%e5%bd%a2%e9%9d%a2%e7%a7%af">#</a>
+</h2><p><img class="md_img" data-fancybox="gallery" src="img/1.1.drawio.svg" alt=""></p>
+<p>椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 焦点为 $F_1,F_2$，其上有一点 $P$。焦点三角形面积为</p>
+<p>$$S_{\Delta PF_1F_2}=b^2\tan\frac{P}{2}$$</p>
+<p>对于双曲线 $\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$，则为</p>
+<p>$$S_{\Delta PF_1F_2}=\frac{b^2}{\tan\frac{P}{2}}$$</p>
+<details class='mkdocs hint note' open>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p><img class="md_img" data-fancybox="gallery" src="img/2.drawio.svg" alt=""></p>
+<p>记 $PF_1=m,PF_2=n$，则 $m+n=2a$。</p>
+<p>在 $\Delta PF_1F_2$ 中，根据余弦定理</p>
+<p>$$\begin{aligned}
+    &amp; m^2 &#43; n^2 - 2mn\cos P = |F_1F_2|^2 \\
+    \intro \ &amp; (m&#43;n)^2 - 2mn(1 &#43; \cos P) = 4c ^2 \\
+    \intro \ &amp; mn = \frac{2b^2}{1 &#43; \cos P}
+\end{aligned}$$</p><p>$$S_{\Delta PF_1F_2}=\frac{1}{2}mn\sin P=b^2\frac{\sin P}{1 &#43; \cos P}=b^2\tan\frac{P}{2}$$</p><p>双曲线同理。</p>
+ </div>
+</details> 
+<h2 id="#离心率">
+    离心率
+    <a class="anchor" name="离心率" href="#%e7%a6%bb%e5%bf%83%e7%8e%87">#</a>
+</h2><h3 id="#渐近线倾斜角公式">
+    渐近线倾斜角公式
+    <a class="anchor" name="渐近线倾斜角公式" href="#%e6%b8%90%e8%bf%91%e7%ba%bf%e5%80%be%e6%96%9c%e8%a7%92%e5%85%ac%e5%bc%8f">#</a>
+</h3><p><img class="md_img" data-fancybox="gallery" src="img/3.drawio.svg" alt=""></p>
+<p>$$e=\frac{1}{|\cos\theta|}=\sqrt{1+\tan^2\theta}$$</p>
+<h3 id="#正弦比值公式">
+    正弦比值公式
+    <a class="anchor" name="正弦比值公式" href="#%e6%ad%a3%e5%bc%a6%e6%af%94%e5%80%bc%e5%85%ac%e5%bc%8f">#</a>
+</h3><div class='mkdocs columns'> 
+<div class='inner markdown'><p><img class="md_img" data-fancybox="gallery" src="img/4.drawio.svg" alt=""></p>
+<p>$$e=\frac{2c}{2a}=\frac{F_1F_2}{PF_1+PF_2}=\frac{\sin\theta}{\sin\alpha+\sin\beta}$$</p>
+</div> 
+<div class='inner markdown'><p><img class="md_img" data-fancybox="gallery" src="img/5.drawio.svg" alt=""></p>
+<p>$$e=\frac{2c}{2a}=\frac{F_1F_2}{|PF_1-PF_2|}=\frac{\sin\theta}{|\sin\alpha-\sin\beta|}$$</p>
+</div> 
+ </div> 
+<h3 id="#焦比弦公式">
+    焦比弦公式
+    <a class="anchor" name="焦比弦公式" href="#%e7%84%a6%e6%af%94%e5%bc%a6%e5%85%ac%e5%bc%8f">#</a>
+</h3><p><img class="md_img" data-fancybox="gallery" src="img/6.drawio.svg" alt=""></p>
+<p>$$|e\cos\theta|=\left|\frac{\lambda-1}{\lambda+1}\right|$$</p>
+<p>其中 $AF=\lambda BF$。</p>
+<details class='mkdocs hint note' open>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p><img class="md_img" data-fancybox="gallery" src="img/7.drawio.svg" alt=""></p>
+<p>由 <a class="md-link" href="#%e5%a4%b9%e8%a7%92%e5%bc%8f"  >焦半径公式 - 夹角式<img class="icon" src="../../../../img/link.svg" /></a> 知</p>
+<p>$$AF=\frac{\disp\frac{b^2}{a}}{1-e\cos\theta},BF=\frac{\disp\frac{b^2}{a}}{1+e\cos\theta}$$</p>
+<p>$$\lambda=\frac{AF}{BF}=\frac{1+e\cos\theta}{1-e\cos\theta}$$</p>
+<p>$$e\cos\theta=\frac{\lambda-1}{\lambda+1}$$</p>
+ </div>
+</details> 
+<h3 id="#最大张角公式">
+    最大张角公式
+    <a class="anchor" name="最大张角公式" href="#%e6%9c%80%e5%a4%a7%e5%bc%a0%e8%a7%92%e5%85%ac%e5%bc%8f">#</a>
+</h3><p><img class="md_img" data-fancybox="gallery" src="img/8.drawio.svg" alt=""></p>
+<p>椭圆 $C:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 上存在一点 $P$ 满足 $\angle F_1PF_2=\theta$，则离心率 $e$ 满足</p>
+<p>$$\cos\theta\ge 1-2e^2$$</p>
+<details class='mkdocs hint note' open>
+    <summary class='title'>
+        <img class='icon' src='../../../../img/material/note.svg' />
+        <span>证明</span>
+        <img class='arrow' src='../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p><img class="md_img" data-fancybox="gallery" src="img/9.drawio.svg" alt=""></p>
+<p>当 $P$ 为上顶点时为临界情况。</p>
+<p>$$\sin\frac{\theta}{2}=\frac{c}{a}=e$$</p>
+<p>$$e^2=\sin^2\frac{\theta}{2}=\frac{1-\cos\theta}{2}$$</p>
+<p>$$\cos\theta=1-2e^2$$</p>
+ </div>
+</details></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

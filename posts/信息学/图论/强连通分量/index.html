@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>强连通分量 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">强连通分量</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a>
+      <ul>
+        <li><a href="#强连通">强连通</a></li>
+        <li><a href="#强连通图">强连通图</a></li>
+        <li><a href="#强连通分量">强连通分量</a></li>
+      </ul>
+    </li>
+    <li><a href="#tarjan-算法">Tarjan 算法</a>
+      <ul>
+        <li><a href="#图的结构">图的结构</a></li>
+        <li><a href="#时间戳">时间戳</a></li>
+        <li><a href="#追溯值">追溯值</a></li>
+        <li><a href="#基本原理">基本原理</a></li>
+      </ul>
+    </li>
+    <li><a href="#kosaraju-算法">Kosaraju 算法</a></li>
+    <li><a href="#garbow-算法">Garbow 算法</a></li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../categories/%e5%9b%be%e8%ae%ba">图论</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-6-8</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">强连通分量</h1>
+  <span class="description"></span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><h3 id="#强连通">
+    强连通
+    <a class="anchor" name="强连通" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a">#</a>
+</h3><p>在有向图 $G$ 中，如果同时存在 $u→v$ 和 $v→u$ 的路径，那么称 $u$ 和 $v$ 强连通.</p>
+<p><img class="md_img" data-fancybox="gallery" src="0.svg" alt=""></p>
+<h3 id="#强连通图">
+    强连通图
+    <a class="anchor" name="强连通图" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%9b%be">#</a>
+</h3><p>如果有向图 $G$ 的任意两个节点都强连通，那么称 $G$ 是强连通图.</p>
+<p><img class="md_img" data-fancybox="gallery" src="1.svg" alt=""></p>
+<h3 id="#强连通分量">
+    强连通分量
+    <a class="anchor" name="强连通分量" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f">#</a>
+</h3><p>如果图 $G$ 的子图是强连通图，那么该子图称作 $G$ 的强连通分量.</p>
+<p><img class="md_img" data-fancybox="gallery" src="2.svg" alt=""></p>
+<p>本章介绍求强连通分量的三种算法.</p>
+<h2 id="#tarjan-算法">
+    Tarjan 算法
+    <a class="anchor" name="tarjan-算法" href="#tarjan-%e7%ae%97%e6%b3%95">#</a>
+</h2><h3 id="#图的结构">
+    图的结构
+    <a class="anchor" name="图的结构" href="#%e5%9b%be%e7%9a%84%e7%bb%93%e6%9e%84">#</a>
+</h3><p><code>Tarjan</code> 算法基于对图的 <a class="md-link" href="../../../../post/%e4%bf%a1%e6%81%af%e5%ad%a6/%e7%ae%97%e6%b3%95/%e6%90%9c%e7%b4%a2/#%e6%b7%b1%e5%ba%a6%e4%bc%98%e5%85%88%e6%90%9c%e7%b4%a2dfs"  >深度优先遍历（<code>DFS</code>）<img class="icon" src="../../../../img/link.svg" /></a>，并且将图近似地看成一棵 <a class="md-link" href="../../../../post/%e4%bf%a1%e6%81%af%e5%ad%a6/%e5%9b%be%e8%ae%ba/%e6%a0%91/"  >树<img class="icon" src="../../../../img/link.svg" /></a>.因此，这棵树中会不可避免地出现一些奇怪的边.</p>
+<p><img class="md_img" data-fancybox="gallery" src="3.svg" alt=""></p>
+<ul>
+<li>
+<p><font color=green>前向边</font>：与普通边方向一致，但跨越多个节点.</p>
+</li>
+<li>
+<p><font color=red>返祖边</font>：与普通边方向相反，从子孙指向祖先.</p>
+</li>
+<li>
+<p><font color=#4169e1>横向边</font>：边的两个端点居于树的同一深度.</p>
+</li>
+</ul>
+<h3 id="#时间戳">
+    时间戳
+    <a class="anchor" name="时间戳" href="#%e6%97%b6%e9%97%b4%e6%88%b3">#</a>
+</h3><p><code>DFS</code> 遍历一张图时，按访问顺序给节点打标记.$u$ 是第 $i$ 个被访问的节点，记作 $dfn[u]=i$.这个标记叫做「时间戳」.在图中，时间戳标记在节点的右上方.</p>
+<p><img class="md_img" data-fancybox="gallery" src="4.svg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$u$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$dfn[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$6$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="#追溯值">
+    追溯值
+    <a class="anchor" name="追溯值" href="#%e8%bf%bd%e6%ba%af%e5%80%bc">#</a>
+</h3><p><code>Tarjan</code> 算法还引入了「追溯值」：$low[u]$，定义为以下节点时间戳的最小值：</p>
+<ul>
+<li>
+<p>以 $u$ 为根的子树中的所有节点.</p>
+</li>
+<li>
+<p>从这棵子树的任意节点出发，经过 $1$ 条前向边、返祖边或横向边，能到达的节点.</p>
+</li>
+</ul>
+<p>以 $low[2]$ 为例，其子树中有 $2,4,5$ 号节点，还可以通过一条返祖边到达 $1$ 号节点.$low[2]$ 为这些节点时间戳的最小值，也就是 $1$.</p>
+<p><img class="md_img" data-fancybox="gallery" src="5.svg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$u$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$low[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$6$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="#基本原理">
+    基本原理
+    <a class="anchor" name="基本原理" href="#%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">#</a>
+</h3><p><code>Tarjan</code> 算法是如何利用 $dfn$ 和 $low$ 来求强连通分量的呢？</p>
+<ul>
+<li>
+<p>首先，强连通分量中必然存在环，也就必然存在返祖边.</p>
+</li>
+<li>
+<p>如果节点 $u$ 满足 $dfn[u]=low[u]$，存在两种情况：</p>
+<ul>
+<li>
+<p>如果 $u$ 没有出边，则 $u$ 独自为一个强连通分量.</p>
+</li>
+<li>
+<p>否则 $u$ 的子树中必有一条返祖边指向 $u$ 本身，此处必存在多节点的强连通分量.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>要想具体地确定哪些节点是强连通分量，还得借助 <a class="md-link" href="../../../../post/%e4%bf%a1%e6%81%af%e5%ad%a6/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84/%e6%a0%88/"  >栈<img class="icon" src="../../../../img/link.svg" /></a>.具体看以下样例.</p>
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-%!s(int=1)" id="tabs-%!s(int=1)-0"
+        checked="checked" />
+    <label class="label " for="tabs-%!s(int=1)-0">1</label>
+    
+    <div class="inner"><p>$dfn[1]=low[1]=1$.
+<img class="md_img" data-fancybox="gallery" src="6.svg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$u$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$dfn[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">$low[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+    <input type="radio" class="toggle" name="tabs-%!s(int=1)" id="tabs-%!s(int=1)-1"
+         />
+    <label class="label " for="tabs-%!s(int=1)-1">2</label>
+    
+    <div class="inner"><p>$dfn[2]=low[2]=1$.
+<img class="md_img" data-fancybox="gallery" src="7.svg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$u$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$dfn[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">$low[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+    <input type="radio" class="toggle" name="tabs-%!s(int=1)" id="tabs-%!s(int=1)-2"
+         />
+    <label class="label " for="tabs-%!s(int=1)-2">3</label>
+    
+    <div class="inner"><p>$dfn[4]=low[4]=3$.节点 $4$ 有一条返祖边指向 $1$，故更新 $low[4]=low[1]=1$.
+<img class="md_img" data-fancybox="gallery" src="8.svg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$u$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$dfn[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">$low[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$\textcolor{red}{1}$</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+    <input type="radio" class="toggle" name="tabs-%!s(int=1)" id="tabs-%!s(int=1)-3"
+         />
+    <label class="label " for="tabs-%!s(int=1)-3">4</label>
+    
+    <div class="inner"><p>回溯至节点 $2$，更新 $low[2]=\min(low[2],low[4])=1$.
+<img class="md_img" data-fancybox="gallery" src="9.svg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$u$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$dfn[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">$low[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$\textcolor{red}{1}$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+    <input type="radio" class="toggle" name="tabs-%!s(int=1)" id="tabs-%!s(int=1)-4"
+         />
+    <label class="label " for="tabs-%!s(int=1)-4">5</label>
+    
+    <div class="inner"><p>$dfn[5]=low[5]=4$.节点 $5$ 没有出边和子树，单独一个节点构成强连通分量.移除栈顶的 $5$.
+<img class="md_img" data-fancybox="gallery" src="10.svg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$u$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$dfn[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$\textcolor{red}{4}$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">$low[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$\textcolor{red}{4}$</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+    <input type="radio" class="toggle" name="tabs-%!s(int=1)" id="tabs-%!s(int=1)-5"
+         />
+    <label class="label " for="tabs-%!s(int=1)-5">6</label>
+    
+    <div class="inner"><p>回溯至节点 $2$，$low[2]=\min(low[2],low[5])=1$.
+<img class="md_img" data-fancybox="gallery" src="11.svg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$u$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$dfn[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$4$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">$low[u]$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$4$</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+    <input type="radio" class="toggle" name="tabs-%!s(int=1)" id="tabs-%!s(int=1)-6"
+         />
+    <label class="label " for="tabs-%!s(int=1)-6">7</label>
+    
+    <div class="inner"><p>回溯至节点 $1$，$low[1]=\min(low[1],low[2])=1$.此时 $low[1]=dfn[1]$，栈顶的红色部分同属一个强连通分量.将其从栈中删除.
+<img class="md_img" data-fancybox="gallery" src="12.svg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$u$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$dfn[u]$</td>
+<td style="text-align:center">$\textcolor{red}{1}$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$4$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">$low[u]$</td>
+<td style="text-align:center">$\textcolor{red}{1}$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$4$</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+    <input type="radio" class="toggle" name="tabs-%!s(int=1)" id="tabs-%!s(int=1)-7"
+         />
+    <label class="label " for="tabs-%!s(int=1)-7">&hellip;</label>
+    
+    <div class="inner"></div>
+    </div>
+
+<p>时间复杂度为 $O(n+m)$（$n$ 为点数，$m$ 为边数）.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// ans: 强连通分量个数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dfn</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">low</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">tot</span><span class="p">,</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">in</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">// u 号节点在第 in[u] 个强连通分量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">// g[u]: u 指向的节点集合
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">tarjan</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span> <span class="n">tot</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">dfn</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tarjan</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">in</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">dfn</span><span class="p">[</span><span class="n">v</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">==</span> <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">in</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">!=</span> <span class="n">u</span><span class="p">)</span> <span class="c1">// 栈顶到 u 这部分的节点在同一个强连通分量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">in</span><span class="p">[</span><span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#kosaraju-算法">
+    Kosaraju 算法
+    <a class="anchor" name="kosaraju-算法" href="#kosaraju-%e7%ae%97%e6%b3%95">#</a>
+</h2><p><code>Kosaraju</code> 的核心思想可以总结为两点：</p>
+<ul>
+<li>
+<p>强连通分量反过来还是强连通分量.</p>
+</li>
+<li>
+<p>把强连通分量反一半过来会得到两条共起点、终点的路径.</p>
+</li>
+</ul>
+<p>第一次正向遍历，第二次反向遍历，若出现共起点、终点的两条路径，则此处必有强连通分量.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">sccCnt</span><span class="p">,</span> <span class="n">color</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">vis</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>  <span class="c1">// g[u]:  u 指向的节点集合
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g2</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">// g2[u]: 指向 u 的节点集合（反图）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs1</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="n">dfs1</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs2</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">sccCnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">g2</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">g2</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">color</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">kosaraju</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sccCnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">dfs1</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">color</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="o">++</span> <span class="n">sccCnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dfs2</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#garbow-算法">
+    Garbow 算法
+    <a class="anchor" name="garbow-算法" href="#garbow-%e7%ae%97%e6%b3%95">#</a>
+</h2><blockquote>
+<p>未完待续 &hellip;</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">garbow</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack1</span><span class="p">[</span><span class="o">++</span><span class="n">p1</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack2</span><span class="p">[</span><span class="o">++</span><span class="n">p2</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">dfs_clock</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">];</span> <span class="n">i</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">to</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">garbow</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">sccno</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">stack2</span><span class="p">[</span><span class="n">p2</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="n">p2</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">stack2</span><span class="p">[</span><span class="n">p2</span><span class="p">]</span> <span class="o">==</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p2</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">scc_cnt</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">do</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">sccno</span><span class="p">[</span><span class="n">stack1</span><span class="p">[</span><span class="n">p1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">scc_cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">stack1</span><span class="p">[</span><span class="n">p1</span><span class="o">--</span><span class="p">]</span> <span class="o">!=</span> <span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">find_scc</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dfs_clock</span> <span class="o">=</span> <span class="n">scc_cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p1</span> <span class="o">=</span> <span class="n">p2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">sccno</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">sccno</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">low</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">low</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">garbow</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数学 on Yharim Area</title>
+    <link>/categories/%E6%95%B0%E5%AD%A6/</link>
+    <description>Recent content in 数学 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>伴侣点</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E4%BC%B4%E4%BE%A3%E7%82%B9/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E4%BC%B4%E4%BE%A3%E7%82%B9/</guid>
+      <description>定义#对椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$，若 $x$ 轴的点 $M,N$ 满足 $x_M\cdot x_N=a^2$，则 $M,N$ 互为伴侣点。
+!!! tip 若 $M,N$ 在 $y$ 轴，则应满足 $y_M\cdot y_N=b^2$。
+性质#等角性#过其中任意一个伴侣点作弦 $CD$，均可产生等角。
+$M,N$ 为伴侣点 $\intro k_{CN}+k_{DN}=0$ $M,N$ 为伴侣点 $\intro k_{CM}+k_{DM}=0$ 证明：设 $CD$ 斜率为 $k$，暴力计算求证。
+互极性#由 极点极线方程 知识易得 $M,N$ 互极。
+$$\frac{x_Mx_N}{a^2}+\frac{y_My_N}{b^2}=\frac{a^2}{a^2}=1$$
+其它性质#椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$，$E(-m,0),F(m,0),Q(\frac{a^2}{m},0)$。
+$y_M\cdot y_N=b^2\left(1-\frac{a^2}{m^2}\right)$ $k_{BM}\cdot k_{BN}=\frac{m-a}{m+a}(e^2-1)$ $k_{EM}\cdot k_{FN}=\frac{-b^2}{m^2+a^2}$ $\vec{EM}\cdot\vec{FN}=\frac{(a^2-m^2)(a^2+m^2-b^2)}{m^2}$ $\vec{FM}\cdot\vec{FN}=\frac{(a^2-m^2)(a^2-m^2+b^2)}{m^2}$ $\vec{AN}\cdot\vec{BM}=\frac{(a^2-m^2)(a^2-b^2)}{m^2}$ $\vec{FN}\cdot\vec{BM}=\frac{(a^2-m^2)(a^2+am-b^2)}{m^2}$ 统一的证明方法：设 $P$ 坐标，暴力计算求证。
+!!! tip 明白是定值就够了。
+推广#对于双曲线 $\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$，$M,N$ 为伴侣点 $\eq x_M\cdot x_N=a^2$。</description>
+    </item>
+    
+    <item>
+      <title>圆锥曲线简化模型</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF%E7%AE%80%E5%8C%96%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF%E7%AE%80%E5%8C%96%E6%A8%A1%E5%9E%8B/</guid>
+      <description>等效判别式#原理#$$\begin{cases}\disp\frac{x^2}{m}&amp;#43;\frac{y^2}{n}=1\newlineAx&amp;#43;By&amp;#43;C=0\end{cases}$$
+$$\Delta&amp;rsquo;=(A^2m+B^2n-C^2)$$
+$$\Delta=4mnB^2\Delta&amp;rsquo;$$
+!!! tip 对于双曲线 $\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$，将 $n$ 视作 $-b^2$。
+使用例#$\frac{x^2}{4}+\frac{y^2}{3}=1$ 和 $y=kx+2$ 有两个交点，求 $k$ 的范围。
+解：
+$$\begin{cases}\disp\frac{x^2}{4}&amp;#43;\frac{y^2}{3}=1\newlinekx-y&amp;#43;2=0\end{cases}$$
+$$\begin{matrix}m=4 &amp;amp; n=3 &amp;amp; \newlineA^2=k^2 &amp;amp; B^2=1 &amp;amp; C^2=4\end{matrix}$$
+$$\Delta&amp;rsquo;=(4k^2+3-4)&amp;gt;0$$
+$$k^2&amp;gt;\frac{1}{4}$$
+$$k&amp;lt;-\frac{1}{2} \ \text{或} \ k&amp;gt;\frac{1}{2}$$
+简化二次恒等式#原理#$$\begin{cases}b^2x^2&amp;#43;a^2y^2-a^2b^2=0\newlineAx&amp;#43;By&amp;#43;C=0\end{cases}$$
+$$(a^2A^2&amp;#43;b^2B^2)x^2&amp;#43;(2a^2AC)x&amp;#43;(a^2C^2-a^2b^2B^2)=0$$
+!!! tip 二倍爬山放中间，
+直线平方交叉乘。``` latex\left[\begin{matrix}b^2 &amp;amp; &amp;amp; a^2 &amp;amp; &amp;amp; -a^2b^2 \newline&amp;amp; \large\times_1 &amp;amp; &amp;amp; \large\times_2 &amp;amp; \newlineA &amp;amp; &amp;amp; B &amp;amp; &amp;amp; C\end{matrix}\right]`````` latex({\large\times_{1^2}^+})x^2+(2\diagup\!</description>
+    </item>
+    
+    <item>
+      <title>自极三角形</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E8%87%AA%E6%9E%81%E4%B8%89%E8%A7%92%E5%BD%A2/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E8%87%AA%E6%9E%81%E4%B8%89%E8%A7%92%E5%BD%A2/</guid>
+      <description>!!! warning 需要 极点极线方程 的相关知识。
+定义#:::
+圆锥曲线任意内接四边形 $ABCD$，其边交点 $M,N$ 和对角线交点 $P$ 构成自极三角形。- $MN$ 是 $P$ 的极线- $MP$ 是 $N$ 的极线- $NP$ 是 $M$ 的极线:::
+![](img/1-定义.jpg &amp;quot;15%&amp;quot;):-:证明#引理#Ceva 定理#$\Delta ABC$ 中，$AD,BE,CF$ 共点 $O$。
+$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$ 证明：
+$$\frac{BD}{DC}=\frac{S_{\Delta AOB}}{S_{\Delta AOC}},\frac{CE}{CA}=\frac{S_{\Delta BOC}}{S_{\Delta AOB}},\frac{AF}{FB}=\frac{S_{\Delta AOC}}{S_{\Delta BOC}}$$
+代入即得
+$$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$$
+Ceva 定理还有角元形式
+$$\frac{\sin\angle BAD}{\sin\angle CAD}\cdot\frac{\sin\angle CBE}{\sin\angle ABE}\cdot\frac{\sin\angle ACF}{\sin\angle BCF}=1$$
+证明过程与边元形式大致相同。
+证明过程都是充要的，故 Ceva 定理可逆用。</description>
+    </item>
+    
+    <item>
+      <title>极点极线方程</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E6%9E%81%E7%82%B9%E6%9E%81%E7%BA%BF%E6%96%B9%E7%A8%8B/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E6%9E%81%E7%82%B9%E6%9E%81%E7%BA%BF%E6%96%B9%E7%A8%8B/</guid>
+      <description>定义#极点和极线是双映射关系。
+对椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$，任意一点 $P(x_0,y_0)$ 对应的极线为 $l:\frac{x_0x}{a^2}+\frac{y_0y}{b^2}=1$。同理，任意直线 $l$ 对应的极点为 $P$。
+当极点 $P$ 位于不同的空间位置时，极线 $l$ 的几何意义有所区别。
+P 在椭圆上#$l$ 为切线 证明：
+$\because\frac{x_0^2}{a^2}+\frac{y_0^2}{b^2}=1,\therefore l$ 过点 $P$。
+对于椭圆上任意非 $P$ 点 $(x_0&amp;rsquo;,y_0&amp;rsquo;)$ 有
+$$\frac{x_0&amp;rsquo;^2}{a_2}+\frac{y_0&amp;rsquo;^2}{b^2}=1\not=\frac{x_0x_0&amp;rsquo;}{a^2}+\frac{y_0y_0&amp;rsquo;}{b^2}$$
+即 $l$ 上有且仅有一点 $P$ 在椭圆上。$l$ 为切线。
+P 在椭圆外#$l$ 为切点弦 证明：
+设 $AB$ 为切点弦。下证 $A,B$ 在 $l$ 上。
+由 $P$ 在椭圆上 得
+$$PA:\frac{x_1x}{a^2}+\frac{y_1y}{b^2}=1,PB:\frac{x_2x}{a^2}+\frac{y_2y}{b^2}=1$$
+将 $P(x_0,y_0)$ 分别代入
+$$\begin{cases}\disp\frac{x_1x_0}{a^2}&amp;#43;\frac{y_1y_0}{b^2}=1\\\disp\frac{x_2x_0}{a^2}&amp;#43;\frac{y_2y_0}{b^2}=1\end{cases}$$
+即 $(x_1,y_1),(x_2,y_2)$ 是方程 $\frac{x_0x}{a^2}+\frac{y_0y}{b^2}=1$ 的两解，即证 $A,B$ 在 $l$ 上。</description>
+    </item>
+    
+    <item>
+      <title>e² - 1 的应用</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/e2-1%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/e2-1%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <description>为什么使用 e² - 1#一个圆锥曲线第三定义的例子：
+椭圆 双曲线 $k_{AP}\cdot k_{BP}=-\frac{b^2}{a^2}$ $k_{AP}\cdot k_{BP}=\frac{b^2}{a^2}$ 在椭圆中，$-\frac{b^2}{a^2}=e^2-1$，而在双曲线中 $\frac{b^2}{a^2}=e^2-1$。使用 $e^2-1$ 可以无视正负性的影响，将椭圆和双曲线的通用理论更好地串联起来。
+应用 1#$$k_1\cdot k_2=e^2-1$$ 证明：
+$$\begin{aligned}k_1\cdot k_2&amp;amp;=\frac{y_0}{x_0&amp;#43;a}\cdot\frac{y_0}{x_0-a}=\frac{y_0^2}{x_0^2-a^2} \\&amp;amp;=-\frac{b^2}{a^2}=e^2-1\end{aligned}$$
+应用 2#$$k_1\cdot k_2=e^2-1$$ 证明：
+$$\left.\begin{aligned}\disp\frac{x_0^2}{a^2}&amp;#43;\frac{y_0^2}{b^2}=1\\\disp\frac{x_1^2}{a^2}&amp;#43;\frac{y_1^2}{b^2}=1\end{aligned}\right\}\intro\frac{x_0^2-x_1^2}{a^2}&amp;#43;\frac{y_0^2-y_1^2}{b^2}=0$$
+$$\begin{aligned}k_1\cdot k_2&amp;amp;=\frac{y_0-y_1}{x_0-x_1}\cdot\frac{y_0&amp;#43;y_1}{x_0&amp;#43;x_1}=\frac{y_0^2-y_1^2}{x_0^2-x_1^2}\\&amp;amp;=-\frac{b^2}{a^2}=e^2-1\end{aligned}$$
+应用 3#$$k_1\cdot k_2=e^2-1$$ 证明：
+$M\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right)$.
+$$\left.\begin{aligned}\disp\frac{x_1^2}{a^2}&amp;#43;\frac{y_1^2}{b^2}=1\\\disp\frac{x_2^2}{a^2}&amp;#43;\frac{y_2^2}{b^2}=1\end{aligned}\right\}\intro\frac{x_1^2-x_2^2}{a^2}&amp;#43;\frac{y_1^2-y_2^2}{b^2}=0$$
+$$\begin{aligned}k_1\cdot k_2&amp;amp;=\frac{y_1-y_2}{x_1-x_2}\cdot\frac{(y_1&amp;#43;y_2)/2}{(x_1&amp;#43;x_2)/2}=\frac{y_1^2-y_2^2}{x_1^2-x_2^2} \\&amp;amp;=-\frac{b^2}{a^2}=e^2-1\end{aligned}$$
+应用 4#$$k_1\cdot k_2=e^2-1$$ 证明：</description>
+    </item>
+    
+    <item>
+      <title>平面几何</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%B9%B3%E9%9D%A2%E5%87%A0%E4%BD%95/</link>
+      <pubDate>Tue, 21 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%B9%B3%E9%9D%A2%E5%87%A0%E4%BD%95/</guid>
+      <description>距离公式#$(x_1,y_1)$ 到 $(x_2,y_2)$ 距离公式
+$$d=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$$
+$(x_0,y_0)$ 到 $Ax+By+C=0$ 距离公式
+$$d=\frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}$$
+$Ax+By+C_1=0$ 到 $Ax+By+C_2=0$ 距离公式
+$$d=\frac{|C_1-C_2|}{\sqrt{A^2+B^2}}$$
+切线公式#切线长公式#过 $A(x_0,y_0)$ 作圆 $(x-a)^2+(y-b)^2=r^2$ 的一条切线，切点为 $B$，切线长为
+$$AB=\sqrt{(x_0-a)^2+(y_0-b)^2-r^2}$$
+切线 / 切点弦方程#过圆 $(x-a)^2+(y-b)^2=r^2$ 上一点 $P(x_0,y_0)$ 的切线方程为
+$$l:(x_0-a)(x-a)+(y_0-b)(y-b)=r^2$$
+过椭圆（双曲线）$\frac{x^2}{a^2}\pm\frac{y^2}{b^2}=1$ 上一点 $P(x_0,y_0)$ 的切线方程为
+$$l:\frac{x_0\cdot x}{a^2}\pm\frac{y_0\cdot y}{b^2}=1$$
+过抛物线 $y^2=2px$ 上一点 $P(x_0,y_0)$ 的切线方程为
+$$l:y_0\cdot y=p(x_0+x)$$
+当 $P$ 不在对应曲线上时，$l$ 表示切点弦方程。
+公共弦方程#圆 $x^2+y^2+A_1x+B_1y+C_1=0$ 和 $x^2+y^2+A_2x+B_2y+C_2=0$ 的公共弦方程为
+$$l:(A_1-A_2)x+(B_1-B_2)y+(C_1-C_2)=0$$
+焦半径公式#坐标式#::: $$PF_1=a+ex_0,PF_2=a-ex_0$$::: $$PF_1=|ex_0+a|,PF_2=|ex_0-a|$$?</description>
+    </item>
+    
+    <item>
+      <title>立体几何</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95/</guid>
+      <description>基本公式#体积 表面积 柱体 $V=Sh$ $S=2\pi r(r+l)$ 锥体 $V=\frac{1}{3}Sh$ $S=\pi r(r+l)$ 台体 $V=\frac{1}{3}\left(S_1+S_2+\sqrt{S_1S_2}\right)h$ $S=\pi[r^2+R^2+l(r+R)]$ 法向量#交点倒数法#平面过 $(a,0,0),(0,b,0),(0,0,c)$，则法向量为 $\left(\frac{1}{a},\frac{1}{b},\frac{1}{c}\right)$。
+平面平行于 $x$ 轴，且过 $(0,b,0),(0,0,c)$，则法向量为 $\left(0,\frac{1}{b},\frac{1}{c}\right)$。
+!!! tip 坐标系可应用平移变换。
+捺撇法#$\vec{PA}=(x_1,y_1,z_1),\vec{PB}=(x_2,y_2,z_2)$，平面 $PAB$ 法向量表示为：
+$$\xymatrix@C=2em@R=2em {x_1 &amp;amp; y_1\ar@{-}[dr] &amp;amp; z_1\ar@{-}[dl]\ar@{-}[dr] &amp;amp; x_1\ar@{-}[dl]\ar@{-}[dr] &amp;amp; y_1\ar@{-}[dl] &amp;amp; z_1 \\x_2 &amp;amp; y_2 &amp;amp; z_2 &amp;amp; x_2 &amp;amp; y_2 &amp;amp; z_2}$$
+$$(y_1z_2 - z_1y_2, z_1x_2 - x_1z_2, x_1y_2 - y_1x_2)$$</description>
+    </item>
+    
+    <item>
+      <title>大同小异</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E5%A4%A7%E5%90%8C%E5%B0%8F%E5%BC%82/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E5%A4%A7%E5%90%8C%E5%B0%8F%E5%BC%82/</guid>
+      <description>!!! warning 未经严格证明的理论！慎用！
+简介#若 构造函数 题满足
+$f&amp;rsquo;(x)$ 的不等号与 $f(x)$ 的相同. $f(x_0)$ 是 $f(x)$ 的唯一定值. 则答案必为 $(x_0,+\infty)$.
+若不等号相反，则必为 $(-\infty,x_0)$.
+!!! info - $f&amp;rsquo;(x)$ 和 $f(x)$ 必须移项至不等号左侧，且系数为正. - 同一不等式中同时出现 $f&amp;rsquo;(x)$ 与 $f(x)$，则此不等号应归为 $f&amp;rsquo;(x)$. - 若 $f(x)$ 定义域不为 $\mathbb R$，则答案需调整至定义域内.
+原理#Under Construction ...
+例 1#$f(x)$ 定义域为 $\mathbb R,f(-1)=3,f&amp;rsquo;(x)&amp;lt;3$，则 $f(x)&amp;gt;3x+6$ 的解集为
+$$A.\ (-1,1)\qquad B.\ (-1,+\infty)\qquad C.\ (-\infty,-1)\qquad D.\ \mathbb R$$
+???+ note 常规解法 构造 $g(x)=f(x)-3x-6$，原问题等价于 $g(x)&amp;gt;0$ 的解集.
+$g&#39;(x)=f&#39;(x)-3&amp;lt;0,\therefore g(x)\downarrow$.</description>
+    </item>
+    
+    <item>
+      <title>N1 互换</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97/n1%E4%BA%92%E6%8D%A2/</link>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97/n1%E4%BA%92%E6%8D%A2/</guid>
+      <description>简介#表述 1#$a_n=\frac{b}{(kn+p)(kn+q)}$. 若 $a_n$ 满足
+$(kn+p)(kn+q)=0$ 的两根 $n_1-n_2=1$. 大根 $n_1$ 所在的位置是 $(kn+p)$，即 $kn_1+p=0$. 则 $\{a_n\}$ 的前 $n$ 项和为
+$$S_n=\frac{bn}{(k+p)(kn+q)}$$
+若 $n_1-n_2\not=1$ 则不可使用 N1 互换.
+表述 2#$a_n$ 为等差数列，则 $\frac{1}{a_na_{n+1}}$ 的前 $n$ 项和为
+$$S_n=\frac{n}{a_1a_{n+1}}$$
+容易证明同 表述 1 等价.
+原理#$$\frac{1}{a_na_{n&amp;#43;1}}=\frac{1}{d}\cdot\frac{a_{n&amp;#43;1}-a_n}{a_na_{n&amp;#43;1}}=\frac{1}{d}\left(\frac{1}{a_n}-\frac{1}{a_{n&amp;#43;1}}\right)\\\begin{aligned}S_n&amp;amp;=\frac{1}{d}\left(\frac{1}{a_1}-\frac{1}{a_2}&amp;#43;\frac{1}{a_2}-\frac{1}{a_3}&amp;#43;\cdots&amp;#43;\frac{1}{a_n}-\frac{1}{a_{n&amp;#43;1}}\right)\\&amp;amp;=\frac{1}{d}\left(\frac{1}{a_1}-\frac{1}{a_{n&amp;#43;1}}\right)\\&amp;amp;=\frac{1}{d}\cdot\frac{a_{n&amp;#43;1}-a_1}{a_1a_{n&amp;#43;1}}\\&amp;amp;=\frac{n}{a_1a_{n&amp;#43;1}}\end{aligned}$$
+例 1#已知 $a_n=\frac{1}{(2n+1)(2n+3)}$，则 $\{a_n\}$ 的前 $n$ 项和 $S_n=\underline{\textcolor{transparent}{whatthefuck}}$.
+常规解法 1.裂项
+$$a_n=\frac{1}{(2n+1)(2n+3)}=\frac{1}{2}\left(\frac{1}{2n+1}-\frac{1}{2n+3}\right)$$
+2.求和
+$$\begin{aligned}S_n&amp;amp;=a_1&amp;#43;a_2&amp;#43;a_3&amp;#43;\cdots&amp;#43;a_n\\&amp;amp;=\frac{1}{2}\left(\frac{1}{3}-\frac{1}{5}&amp;#43;\frac{1}{5}-\frac{1}{7}&amp;#43;\cdots&amp;#43;\frac{1}{2n&amp;#43;1}-\frac{1}{2n&amp;#43;3}\right)\\&amp;amp;=\frac{1}{2}\left(\frac{1}{3}-\frac{1}{2n&amp;#43;3}\right)\\&amp;amp;=\frac{n}{3(2n&amp;#43;3)}\end{aligned}$$</description>
+    </item>
+    
+    <item>
+      <title>端点效应</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E7%AB%AF%E7%82%B9%E6%95%88%E5%BA%94/</link>
+      <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E7%AB%AF%E7%82%B9%E6%95%88%E5%BA%94/</guid>
+      <description>简介#若 $f(x)$ 满足
+$f(x_0)=0$. $f(x)\geq 0$ 在 $[x_0,+\infty)$ 恒成立. 则 $f&amp;rsquo;(x_0)\geq 0$. 需要检验充分性.
+例 1#$f(x)=kx-\sin x,\forall x\in[0,+\infty),f(x)\geq 0$，求 $k$ 的范围.
+证 $f&amp;rsquo;(x)=k-\cos x$.
+$\because f(0)=0,f(x)\geq 0$ 在 $[0,+\infty)$ 恒成立，
+$\therefore f&amp;rsquo;(0)=k-1\geq 0\eq k\geq 1$.
+充分性检验：
+$k\geq 1$ 时，$f&amp;rsquo;(x)=k-\cos x\geq 0,f(x)\uparrow,f(x)\geq f(0)=0$. 符合题意.
+综上 $k\in[1,+\infty)$.
+例 2#$f(x)=\ln\frac{1+x}{1-x}-k(x+\frac{x^3}{3}),\forall x\in(0,1),f(x)&amp;gt;0$，求 $k$ 的范围.
+证 $f&amp;rsquo;(x)=\frac{2}{1-x^2}-k(1+x^2)=\frac{kx^4-k+2}{1-x^2}$.
+$\because f(0)=\ln\frac{1+0}{1-0}-0=0,f(x)&amp;gt;0$ 在 $(0,1)$ 上恒成立，
+$\therefore f&amp;rsquo;(0)=2-k\geq 0\eq k\leq 2$.
+充分性检验：
+$k\leq 2$ 时，$x\in(0,1),f&amp;rsquo;(x)=\frac{k(x^4-1)+2}{1-x^2}\geq 0,f(x)\uparrow,f(x)&amp;gt;f(0)=0$.</description>
+    </item>
+    
+    <item>
+      <title>泰勒展开</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80/</link>
+      <pubDate>Sat, 11 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80/</guid>
+      <description>简介#泰勒展开是用形如 $a_0+a_1x+a_2x^2+\cdots+a_nx^n$ 的函数逼近 $e^x,\ln x$ 等超越函数的技巧。
+推导#在 $x=0$ 处展开#设 $f(x)$ 有 $n$ 阶导，$g(x)=a_0+a_1x+a_2x^2+\cdots+a_nx^n$.
+令 $f(x)$ 和 $g(x)$ 在 $x=0$ 处的函数值和各阶导相等，这样 $f(x)$ 在 $x=0$ 附近的图像才能逼近 $g(x)$. 因此
+$$\begin{aligned}&amp;amp;f(0)=g(0)=a_0\\&amp;amp;f&amp;#39;(0)=g&amp;#39;(0)=a_1\\&amp;amp;f&amp;#39;&amp;#39;(0)=g&amp;#39;&amp;#39;(0)=2a_2\\&amp;amp;f&amp;#39;&amp;#39;&amp;#39;(0)=g&amp;#39;&amp;#39;&amp;#39;(0)=3\times 2a_3\\&amp;amp;\cdots\\&amp;amp;f^{(n)}(0)=g^{(n)}(0)=n!\times a_n\end{aligned}$$
+$\therefore a_n$ 的通项为 $a_i=\frac{f^{(i)}(0)}{i!}$. 即
+$$f(x)\approx f(0)&amp;#43;\frac{f&amp;#39;(0)}{1!}x&amp;#43;\frac{f&amp;#39;&amp;#39;(0)}{2!}x^2&amp;#43;\frac{f&amp;#39;&amp;#39;&amp;#39;(0)}{3!}x^3&amp;#43;\cdots&amp;#43;\frac{f^{(n)}(0)}{n!}x^n$$
+此式称为 $f(x)$ 在 $x=0$ 处的 $n$ 阶泰勒展开式.
+在 $x=m$ 处展开#只需设 $g(x)=a_0+a_1(x-m)+a_2(x-m)^2+\cdots+a_n(x-m)^n$. 推导过程与 在 $x=0$ 处展开 并无二致.
+$$f(x)\approx f(0)&amp;#43;\frac{f&amp;#39;(0)}{1!}(x-m)&amp;#43;\frac{f&amp;#39;&amp;#39;(0)}{2!}(x-m)^2&amp;#43;\cdots&amp;#43;\frac{f^{(n)}(0)}{n!}(x-m)^n$$</description>
+    </item>
+    
+    <item>
+      <title>极值点偏移</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%9E%81%E5%80%BC%E7%82%B9%E5%81%8F%E7%A7%BB/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%9E%81%E5%80%BC%E7%82%B9%E5%81%8F%E7%A7%BB/</guid>
+      <description>简介#已知 $f(x_1)=f(x_2)$，$x_0$ 是极值点，求证 $x_1+x_2&amp;gt;2x_0$ 或 $x_1x_2&amp;gt;x_0^2$. 这就是极值点偏移问题.
+$$极值点不偏移$$
+$$\frac{x_1+x_2}{2}=x_0$$
+$$极值点左偏$$
+$$\frac{x_1+x_2}{2}&amp;gt;x_0$$
+$$极值点右偏$$
+$$\frac{x_1+x_2}{2}&amp;lt;x_0$$
+原理#以极值点左偏为例，求证 $x_1+x_2&amp;gt;2x_0$，即 $x_1&amp;gt;2x_0-x_2$.
+若 $x_1$ 和 $m-x_2$ 在函数的 $\uparrow$ 区间，则 $f(x_2)&amp;gt;f(2x_0-x_2)$.
+原命题转化为关于 $x_2$ 的单变量问题.
+$x_1x_2&amp;gt;x_0^2$ 同理.
+例题#$f(x)=\frac{x}{e^x}$，若 $f(x_1)=f(x_2)$ 且 $x_1\not=x_2$，求证 $x_1+x_2&amp;gt;2$.
+证 $f&amp;rsquo;(x)=\frac{1-x}{e^x}$.
+$x\in(-\infty,1),f&amp;rsquo;(x)&amp;gt;0,f(x)\uparrow$. $x\in(1,+\infty),f&amp;rsquo;(x)&amp;lt;0,f(x)\downarrow$. 不妨设 $x_1&amp;lt;1&amp;lt;x_2$.
+$$x_1&amp;#43;x_2&amp;gt;2\eq x_1&amp;gt;2-x_2\eq f(x_1)&amp;gt;f(2-x_2)\eq f(x_2)&amp;gt;f(2-x_2)$$
+于是转而证明 $f(x_2)-f(2-x_2)&amp;gt;0$，其中 $x_2&amp;gt;1$.
+设 $g(x)=f(x)-f(2-x)=\frac{x}{e^x}-\frac{2-x}{e^{2-x}}$，即证 $g(x)$ 在 $(1,+\infty)$ 上恒 $&amp;gt;0$.
+$g&amp;rsquo;(x)=\frac{1-x}{e^x}-\frac{1-x}{e^{2-x}}=(x-1)(e^{x-2}-e^{-x})$.
+$\therefore x\in(1,+\infty),g&amp;rsquo;(x)&amp;gt;0,g(x)\uparrow$.
+$\therefore g(x)&amp;gt;g(1)=f(1)-f(1)=0$. 命题得证.</description>
+    </item>
+    
+    <item>
+      <title>坐标系平移法</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E5%9D%90%E6%A0%87%E7%B3%BB%E5%B9%B3%E7%A7%BB%E6%B3%95/</link>
+      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%A0%E4%BD%95/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF/%E5%9D%90%E6%A0%87%E7%B3%BB%E5%B9%B3%E7%A7%BB%E6%B3%95/</guid>
+      <description>简介#若圆锥曲线题围绕某特殊点展开，可将坐标系原点平移至此点，减小计算量.
+例 1#已知椭圆 $E:\frac{x^2}{4}+\frac{y^2}{3}=1$，过 $P(2, 1)$ 的直线 $l$ 与椭圆 $E$ 交于 $A,B$ 且 $\vec{OP}^2=4\vec{PA}\cdot\vec{PB}$，求 $l$ 的方程.
+标答#联立 $\begin{cases}y=k(x-2)+1\\ \frac{x^2}{4}+\frac{y^2}{3}=1\end{cases}$ 得
+$$(3&amp;#43;4k^2)x^2-8k(2k-1)x&amp;#43;16k^2-16k-8=0$$
+$\Delta=[-8k(2k-1)]^2-4(3+4k^2)(16k^2-16k-8)&amp;gt;0$
+$\therefore 32(6k+3)&amp;gt;0,k&amp;gt;-\frac{1}{2}$
+$x_1+x_2=\frac{8k(2k-1)}{3+4k^2},x_1x_2=\frac{16k^2-16k-8}{3+k^2}$
+$\because\vec{OP}^2=4\vec{PA}\cdot\vec{PB}$
+$\therefore(x_1-2,y_1-1)\cdot(x_2-2,y_2-1)=\frac{5}{4}$
+$\therefore [x_1x_2-2(x_1+x_2)+4] (1+k^2)=\frac{5}{4}$
+$\therefore \left[\frac{16k^2-16k-8}{3+4k^2}-2\frac{8k(2k-1)}{3+4k^2}+4\right] (1+k^2)=\frac{4+4k^2}{3+4k^2}=\frac{5}{4}$
+解得 $k=\pm\frac{1}{2},k=-\frac{1}{2}$ 不合题意，舍去.
+$\therefore l:y=\frac{1}{2}x$.
+快速解法#将坐标系原点平移至 $P(2,1)$. 为了区分坐标系，令 $\lambda=x-2,\mu=y-1$. 新坐标系中 $A(\lambda_1,\mu_1),B(\lambda_2,\mu_2)$.
+设 $l:\mu=k\lambda$. 于是 $\vec{PA}\cdot\vec{PB}=(k^2+1)\lambda_1\lambda_2=\frac{5}{4}$.
+联立 $\begin{cases}\mu=k\lambda\\ \frac{(\lambda+2)^2}{4}+\frac{(\mu+1)^2}{3}=1\end{cases}$ 得
+$$(4k^2&amp;#43;3)\lambda^2&amp;#43;(12&amp;#43;8k)\lambda&amp;#43;4=0$$
+$\Delta=192k+96&amp;gt;0,\therefore k&amp;gt;-\frac{1}{2}$.
+$\lambda_1\lambda_2=\frac{4}{4k^2+3}$
+代入得 $(k^2+1)\frac{4}{4k^2+3}=\frac{5}{4}$，解得 $k=\frac{1}{2}$. $\therefore y=\frac{1}{2}x$.</description>
+    </item>
+    
+    <item>
+      <title>一轮复习踩坑记录</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
+      <description>未完待续.
+答题规范#草稿工整. 计算不得跳步. 阅读题干时不得跳题. 软柿子先捏，先易后难. 一、数学工具#1. 集合#注意空集 $\emptyset$. 空集是任何集合的子集. 2. 逻辑用语#$\neg(\forall f(x)\in A)\eq(\exists f(x)\notin A)$. 3. 一元二次不等式#讨论二次项系数是否为 $0$. 两边同乘参数时注意正负. 注意端点能否取等. 4. 基本不等式#大题要写当且仅当. 不等号方向相同才能互推. 二、函数#1. 函数定义#$f:A\rightarrow B$，值域是 $B$ 的子集. 整数定义域： 错误：$x\in[l,r],x\in\mathbb{Z}$. 正确：$x\in\{x\mid l\leq x\leq r, x\in\mathbb{Z}\}$. 2. 单调性#若 $f(x)\uparrow$，则 $\dfrac{1}{f(x)}$ 未必 $\downarrow$，如 $f(x)=\dfrac{1}{x}$. $f(x)\uparrow,g(x)\uparrow\eq f(g(x))\uparrow$，反之亦然. 3. 奇偶性和对称性#奇偶函数定义域关于原点对称. 4. 幂、指、对函数#$f(x)=x^a(a\in\mathbb{Q},a\not=0)$，$a&amp;lt;0$ 时 $x\not=0$.</description>
+    </item>
+    
+    <item>
+      <title>构造函数</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</guid>
+      <description>简介#若已知 $f(x)&amp;gt;0$，则构造函数 $F(x)$，使 $F&amp;rsquo;(x)=\text{某正数}\times f(x)$，利用 $F(x)\uparrow$ 解题. $f(x)&amp;lt;0$ 同理.
+例 1#已知 $f(x)+f&amp;rsquo;(x)&amp;gt;0$，$f(0)=1$，求证当 $x\in[0,+\infty)$ 时 $f(x)\geq\frac{1}{e^x}$.
+???+ note 证明
+构造 $g(x)=e^xf(x)$，则$$g&#39;(x)=e^xf(x)+e^xf&#39;(x)=e^x[f(x)+f&#39;(x)]&amp;gt;0$$$\therefore x\in[0,+\infty)$ 时，$g(x)\uparrow$，$g(x)\geq g(0)$，即 $e^xf(x)\geq e^0f(0)=1$.$\therefore f(x)\geq \frac{1}{e^x}$. 即证.基本构造#和差构造#$f&amp;rsquo;+g&amp;rsquo;&amp;gt;0\intro F=f+g$ $f&amp;rsquo;-g&amp;rsquo;&amp;gt;0\intro F=f-g$ 积商构造#$f&amp;rsquo;g+fg&amp;rsquo;&amp;gt;0\intro F=fg$ $f&amp;rsquo;g-fg&amp;rsquo;&amp;gt;0\intro F=\frac{f}{g}\big(g\not=0\big)$ 变形#含 $x$ 形构造#$xf&amp;rsquo;(x)+nf(x)&amp;gt;0\intro F(x)=x^nf(x)$ $xf&amp;rsquo;(x)-nf(x)&amp;gt;0\intro F(x)=\frac{f(x)}{x^n}\big(x\not=0\big)$ 含 $e$ 形构造#$f&amp;rsquo;(x)+nf(x)&amp;gt;0\intro F(x)=e^{nx}f(x)$ $f&amp;rsquo;(x)-nf(x)&amp;gt;0\intro F(x)=\frac{f(x)}{e^{nx}}$ 三角构造#$f(x)+f&amp;rsquo;(x)\tan x&amp;gt;0\intro F(x)=\sin x f(x)$</description>
+    </item>
+    
+    <item>
+      <title>不动点法</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97/%E4%B8%8D%E5%8A%A8%E7%82%B9%E6%B3%95/</link>
+      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97/%E4%B8%8D%E5%8A%A8%E7%82%B9%E6%B3%95/</guid>
+      <description>本篇证明可略过.
+不动点#函数不动点#$y=f(x)$ 与 $y=x$ 的交点是 $f(x)$ 的不动点，即不动点 $x_0$ 满足
+$$f(x_0)=x_0$$
+数列不动点#若 $a_n=f(a_{n-1})$，则 $f(x)$ 的不动点也是数列 $\{a_n\}$ 的不动点.
+一次不动点#已知 $a_n=A\cdot a_{n-1}+B(A\not=0)$.
+若 $\{a_n\}$ 有不动点 $x_0$，则 $\{a_n-x_0\}$ 是公比为 $A$ 的等比数列.
+证 由 不动点 的定义得
+$$Ax_0+B=x_0$$
+$$\therefore B=x_0-Ax_0$$
+$$\therefore a_n-x_0=A\cdot a_{n-1}+B-x_0=A(a_{n-1}-x_0)$$
+$\therefore$ 数列 $\{a_n-x_0\}$ 是公比为 $A$ 的等比数列
+齐次不动点#已知 $a_n=\dfrac{Aa_{n-1}+B}{Ca_{n-1}+D}(C\not=0,AD-BC\not=0)$.
+单根#若 $\{a_n\}$ 有唯一不动点 $x_0$，则 $\left\{\dfrac{1}{a_n-x_0}\right\}$ 是公差为 $\dfrac{2C}{A+D}$ 的等差数列.
+证 由 不动点 的定义得</description>
+    </item>
+    
+    <item>
+      <title>特征根法</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97/%E7%89%B9%E5%BE%81%E6%A0%B9%E6%B3%95/</link>
+      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97/%E7%89%B9%E5%BE%81%E6%A0%B9%E6%B3%95/</guid>
+      <description>二次特征根#已知 $af_{n+2}+bf_{n+1}+cf_n=0$.
+两边同除 $a$：
+$$f_{n+2}+\frac{b}{a}f_{n+1}+\frac{c}{a}f_n=0$$
+根据韦达定理，方程 $ax^2+bx+c=0$ 的解满足
+$$\begin{cases}x_1&amp;#43;x_2=-\dfrac{b}{a}\\x_1\cdot x_2=\dfrac{c}{a}\end{cases}$$
+代入化简得
+$$f_{n+2}-(x_1+x_2)f_{n+1}+(x_1\cdot x_2)f_n=0$$
+$$f_{n+2}-x_1f_{n+1}=x_2(f_{n+1}-x_1f_n)$$
+$\therefore$ 数列 $\{f_{n+1}-x_1f_n\}$ 是公比为 $x_2$ 的等比数列.
+由韦达定理的对称性知，$x_1,x_2$ 可互换.
+$$f_{n+1}-x_1f_n=(f_2-x_1f_1)\cdot x_2^{n-1}\tag{1}$$ $$f_{n+1}-x_2f_n=(f_2-x_2f_1)\cdot x_1^{n-1}\tag{2}$$
+联立 $(1)(2)$ 可解得 $f_n$ 通项.
+例 已知 $f_1=f_2=1,f_{n+2}=f_{n+1}+f_n$，求 $f_n$ 的通项.
+解：设 $f_{n+2}-rf_{n+1}=q(f_{n+1}-rf_n)$，
+则 $f_{n+2}=(q+r)f_{n+1}-q\cdot rf_n$.
+对比 $f_{n+2}=f_{n+1}+f_n$ 得
+$$\begin{cases}q&amp;#43;r=1\\q\cdot r=-1\end{cases}$$
+解得
+$$\begin{cases}q=\cfrac{1-\sqrt{5}}{2}\\r=\cfrac{1&amp;#43;\sqrt{5}}{2}\end{cases}\quad\text{或}\quad\begin{cases}q=\cfrac{1&amp;#43;\sqrt{5}}{2}\\r=\cfrac{1-\sqrt{5}}{2}\end{cases}$$
+∴ 数列 $\{f_{n+1}-rf_n\}$ 是以 $f_2-rf_1$ 为首项，$q$ 为公比的等比数列.</description>
+    </item>
+    
+    <item>
+      <title>三角函数公式</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%85%AC%E5%BC%8F/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%85%AC%E5%BC%8F/</guid>
+      <description>诱导公式#奇变偶不变，符号看象限.
+$ \sin{(2k\pi+α)}=\sin{α}$ $ \cos{(2k\pi+α)}=\cos{α}$ $ \tan{(2k\pi+α)}=\tan{α}$ $ \sin{(2k\pi-α)}=-\sin{α}$ $ \cos{(2k\pi-α)}=\cos{α}$ $ \tan{(2k\pi-α)}=-\tan{α}$ $ \sin{(\pi+α)}=-\sin{α}$ $ \cos{(\pi+α)}=-\cos{α}$ $ \tan{(\pi+α)}=\tan{α}$ $ \sin{(\pi-α)}=\sin{α}$ $ \cos{(\pi-α)}=-\cos{α}$ $ \tan{(\pi-α)}=-\tan{α}$ $ \sin{(\frac{\pi}{2}+α)}=\cos{α}$ $ \cos{(\frac{\pi}{2}+α)}=-\sin{α}$ $ \tan{(\frac{\pi}{2}+α)}=-\frac{1}{\tan{α}}$ $ \sin{(\frac{\pi}{2}-α)}=\cos{α}$ $ \cos{(\frac{\pi}{2}-α)}=\sin{α}$ $ \tan{(\frac{\pi}{2}-α)}=\frac{1}{\tan{α}}$ $ \sin{(\frac{3\pi}{2}+α)}=-\cos{α}$ $ \cos{(\frac{3\pi}{2}+α)}=\sin{α}$ $ \tan{(\frac{3\pi}{2}+α)}=-\frac{1}{\tan{α}}$ $ \sin{(\frac{3\pi}{2}-α)}=-\cos{α}$ $ \cos{(\frac{3\pi}{2}-α)}=-\sin{α}$ $ \tan{(\frac{3\pi}{2}-α)}=\frac{1}{\tan{α}}$ $ \sin{(-α)}=-\sin{α}$ $ \cos{(-α)}=\cos{α}$ $ \tan{(-α)}=-\tan{α}$ 和差角公式#$ \sin{(α+β)}=\sin{α}\cos{β}+\cos{α}\sin{β}$ $ \sin{(α-β)}=\sin{α}\cos{β}-\cos{α}\sin{β}$ $ \cos{(α+β)}=\cos{α}\cos{β}-\sin{α}\sin{β}$ $ \cos{(α-β)}=\cos{α}\cos{β}+\sin{α}\sin{β}$ $ \tan{(α+β)}=\frac{\tan{α}+\tan{β}}{1-\tan{α}\tan{β}}$ $ \tan{(α-β)}=\frac{\tan{α}-\tan{β}}{1+\tan{α}\tan{β}}$ 二倍角公式#降幂扩角 升幂缩角.</description>
+    </item>
+    
+  </channel>
+</rss>

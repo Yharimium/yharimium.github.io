@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>杂项 on Yharim Area</title>
+    <link>/posts/%E6%9D%82%E9%A1%B9/</link>
+    <description>Recent content in 杂项 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/posts/%E6%9D%82%E9%A1%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>哥德尔不完备性定理的证明</title>
+      <link>/posts/%E6%9D%82%E9%A1%B9/%E5%93%A5%E5%BE%B7%E5%B0%94%E4%B8%8D%E5%AE%8C%E5%A4%87%E6%80%A7%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%9D%82%E9%A1%B9/%E5%93%A5%E5%BE%B7%E5%B0%94%E4%B8%8D%E5%AE%8C%E5%A4%87%E6%80%A7%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/</guid>
+      <description>!!! info 所有变量默认为自然数。
+罗素悖论#!!! question 一个理发师要给所有「不给自己理发的人」理发，不给「给自己理发的人」理发，他是否应该给自己理发？
+如果理发师给自己理发，他就属于「给自己理发的人」，但他不能给这类人理发，矛盾；如果他不给自己理发，他就属于「不给自己理发的人」，但他必须给这类人理发，也矛盾。
+英国哲学家罗素（Russell）最早发现了这类悖论。罗素悖论的具体形式还有很多，比如：
+我正在说的这句话是假话。 一张明信片的正面写「背面的话是真的」，背面写「正面的话是假的」。 一本书要列出所有「不列出自己书名的书」，这本书是否应该列出它自己？ 这些悖论都能以「朴素集合论」的形式概括：
+设集合 $A=\{x\mid x\not\in A\}$
+若 $x\in A$，则 $x\not\in A$ 若 $x\not\in A$，则 $x\in A$ 罗素最终构建了一个新的集合论系统 $\text{ZF(C)}$，取代了朴素集合论。$\text{ZF(C)}$ 通过对集合概念的限定，将 $A=\{x\mid x\not\in A\}$ 这种异端从集合的名单里剔除出去，从而规避了集合论中的罗素悖论。
+但是，当我们离开集合论，来到自然数公理系统时，事情似乎变得更加复杂。
+哥德尔不完备性定理#1931年，德国数学家库尔特·哥德尔（Kurt Gödel）在他的论文中提出了一个惊为天人的定理：
+!!! quote 在蕴含 皮亚诺公理（自然数公理） 的公理系统中，必然存在一个「既不能证明，又不能证伪」的命题。
+此定理揭示了公理系统的巨大的缺陷。此缺陷至今未被修复。
+哥德尔的证明#哥德尔在皮亚诺公理的环境下找到了一个「罗素悖论」式的数学命题：
+$$A:\neg A$$
+若 $A$ 是真的，则 $A$ 是假的。 若 $A$ 是假的，则 $A$ 是真的。 命题 $A$ 就是「既不能证明，又不能证伪」的数学命题。
+那么命题 $A$ 到底是什么？哥德尔是如何找到命题 $A$ 的？
+哥德尔编码#哥德尔创造了一种编码算法，将数学语句编码为自然数。</description>
+    </item>
+    
+    <item>
+      <title>皮亚诺公理</title>
+      <link>/posts/%E6%9D%82%E9%A1%B9/%E7%9A%AE%E4%BA%9A%E8%AF%BA%E5%85%AC%E7%90%86/</link>
+      <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%9D%82%E9%A1%B9/%E7%9A%AE%E4%BA%9A%E8%AF%BA%E5%85%AC%E7%90%86/</guid>
+      <description>概述#皮亚诺公理（自然数公理）定义了一种形如「单向链表」的数数方法。
+$$\xymatrix {0\ar[r] &amp;amp; 1\ar[r] &amp;amp; 2\ar[r] &amp;amp; 3\ar[r] &amp;amp; 4\ar[r] &amp;amp; \cdots}$$
+为了在公理系统中严谨地使用「自然数」，数学家朱塞佩 · 皮亚诺（Giuseppe Peano）提出了五条公理。
+公理一#!!! quote $0$ 是自然数。
+自然数的起点诞生了。
+公理二#!!! quote 任何自然数都有一个后继（$n$ 的后继记作 $sn$）。
+自然数的雏形有了，大概长这样：
+$$\xymatrix {0\ar[r] &amp;amp; 1\ar[r] &amp;amp; 2\ar[r] &amp;amp; 3\ar[r] &amp;amp; 4\ar[r] &amp;amp; \cdots}$$
+但也有可能长这样：
+$$\xymatrix {0\ar[r] &amp;amp; 1\ar[r] &amp;amp; 1\ar[r] &amp;amp; 4\ar[r] &amp;amp; 5\ar[r] &amp;amp; 1\ar[r] &amp;amp; 4\ar[r] &amp;amp; \cdots}$$</description>
+    </item>
+    
+    <item>
+      <title>速度增量法</title>
+      <link>/posts/%E6%9D%82%E9%A1%B9/%E9%80%9F%E5%BA%A6%E5%A2%9E%E9%87%8F%E6%B3%95/</link>
+      <pubDate>Sat, 25 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%9D%82%E9%A1%B9/%E9%80%9F%E5%BA%A6%E5%A2%9E%E9%87%8F%E6%B3%95/</guid>
+      <description>简介#质量 $m_1$，速度 $v_1$ 的小球与质量 $m_2$，速度 $v_2$ 的小球弹性碰撞，无动能损失，则碰后速度 $v_1&amp;rsquo;,v_2&amp;rsquo;$ 满足
+$$\begin{gather}v_1&amp;#43;v_1&amp;#39;=2v_{共}\\v_2&amp;#43;v_2&amp;#39;=2v_{共}\\v_{共}=\frac{m_1v_1&amp;#43;m_2v_2}{m_1&amp;#43;m_2}\end{gather}$$
+简记为
+$$\xymatrix@C=2em@R=.5em{v_1\ar@{-}[dr] &amp;amp; &amp;amp; v_2&amp;#39;\\&amp;amp; v_{共}\ar@{-}[dr]\ar@{-}[ur] &amp;amp; \\v_2\ar@{-}[ur] &amp;amp; &amp;amp; v_1&amp;#39;}$$
+出现负值表示反向. 若可能存在动能损失，碰后实际速度 $v_{1实}\in[v_{共},v_1&amp;rsquo;],v_{2实}\in[v_{共},v_2&amp;rsquo;]$. 原理#由动量定理和动能定理得
+$$\begin{gather*}&amp;amp;m_1v_1&amp;#43;m_2v_2=m_1v_1&amp;#39;&amp;#43;m_2v_2&amp;#39;\tag{1}\\&amp;amp;\disp\frac{1}{2}m_1v_1^2&amp;#43;\frac{1}{2}m_2v_2^2=\frac{1}{2}m_1v_1&amp;#39;^2&amp;#43;\frac{1}{2}m_2v_2&amp;#39;^2\tag{2}\end{gather*}$$
+由 $(1)$ 得
+$$m_1(v_1-v_1&amp;#39;)=-m_2(v_2-v_2&amp;#39;)\tag{3}$$
+由 $(2)$ 得
+$$\begin{gather}m_1v_1^2&amp;#43;m_2v_2^2=m_1v_1&amp;#39;^2&amp;#43;m_2v_2&amp;#39;^2\\m_1(v_1^2-v_1&amp;#39;^2)&amp;#43;m_2(v_2^2-v_2&amp;#39;^2)=0\\m_1(v_1-v_1&amp;#39;)(v_1&amp;#43;v_1&amp;#39;)&amp;#43;m_2(v_2-v_2&amp;#39;)(v_2&amp;#43;v_2&amp;#39;)=0\end{gather}$$
+将 $(3)$ 代入
+$$\begin{align*}v_1&amp;#43;v_1&amp;#39;=v_2&amp;#43;v_2&amp;#39;\\v_2&amp;#39;=v_1&amp;#43;v_1&amp;#39;-v_2\tag{4}\end{align*}$$
+将 $(4)$ 代入 $(1)$
+$$\begin{gather}m_1v_1&amp;#43;m_2v_2=m_1v_1&amp;#39;&amp;#43;m_2(v_1&amp;#43;v_1&amp;#39;-v_2)\\(m_1&amp;#43;m_2)v_1&amp;#39;=v_1(m_1-m_2)&amp;#43;2m_2v_2\\v_1&amp;#39;=\frac{v_1(m_1-m_2)&amp;#43;2m_2v_2}{m_1&amp;#43;m_2}\end{gather}$$</description>
+    </item>
+    
+  </channel>
+</rss>

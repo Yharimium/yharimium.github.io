@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>同余 on Yharim Area</title>
+    <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/</link>
+    <description>Recent content in 同余 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>中国剩余定理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/</guid>
+      <description>若无特殊说明，本章涉及的变量皆为正整数.
+简介#中国剩余定理最早发现于《孙子算经》中.
+有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二. 问物几何？
+即求满足下列条件的 $x$：
+$$\left\{\begin{aligned}x \bmod 3 = 2 \\x \bmod 5 = 3 \\x \bmod 7 = 2 \\\end{aligned}\right.$$
+它的通解公式为 $x=233+105k$.
+《孙子算经》中只给出了最小正整数解，也就是 $k=-2$ 时的解：$x=23$.
+不过，今天我们只关心中国剩余定理更普遍的应用.
+问题#中国剩余定理指关于 $x$ 的同余方程组的解法：
+$$\left\{\begin{aligned}x&amp;amp;≡a_1 \ (\bmod \ m_1)\\x&amp;amp;≡a_2 \ (\bmod \ m_2)\\&amp;amp;\cdots\\x&amp;amp;≡a_k \ (\bmod \ m_k)\end{aligned}\right.$$
+其中 $a_1, a_2, \cdots, a_k$ 两两互质.
+解法#设 $M=\prod^k_{i=1}m_i$.
+设 $ M_i=\frac{M}{m_i}$，即除 $m_i$ 外，其余所有 $m$ 的乘积.</description>
+    </item>
+    
+    <item>
+      <title>欧拉函数</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+定义#$n$ 的欧拉函数为 $[1,n]$ 中与 $n$ 互质的数的个数，记为 $\varphi(n)$. 特别地，$\varphi(1)=1$.
+性质#质数的欧拉函数#$p$ 为质数，则 $\varphi(p)=p-1$.
+证 $p$ 与 $[1,p-1]$ 中的每个数互质. $p^k$ 的欧拉函数#$p$ 为质数，$n=p^k$，则 $\varphi(n)=p^k-p^{k-1}$.
+证 在 $[1,n]$ 中，只有 $p$ 的倍数不与 $n=p^k$ 互质.
+$∵\;[1,n]$ 中 $p$ 的倍数有 $\dfrac{n}{p}=\dfrac{p^k}{p}=p^{k-1}$ 个，
+$∴\varphi(n)=n-p^{k-1}=p^k-p^{k-1}$.
+通项公式#$n$ 有 $m$ 个质因子 $p_1∼p_m$，则 $\varphi(n)=n\prod_{i=1}^{m}(1-\frac{1}{p_i})$.
+证 若 $n$ 有质因子 $p$，则 $p$ 的倍数不与 $n$ 互质.
+$[1,n]$ 中 $p$ 的倍数有 $\cfrac{n}{p}$ 个，则剩下的 $n-\cfrac{n}{p}=n\cdot(1-\cfrac{1}{p})$ 个数不是 $p$ 的倍数.</description>
+    </item>
+    
+    <item>
+      <title>乘法逆元</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</link>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+定义#若 $a\cdot b≡1\pmod{p}$，则 $b$ 为 $a$ 在模 $p$ 意义下的逆元，记作 $a^{-1}$ 或 $inv(a)$.
+$$a·a^{-1}≡1 \ (\bmod \ p)$$
+乘法逆元能够很好地将模运算中的除法转为乘法：
+$$\dfrac{a}{b}≡a\cdot b^{-1} \ (\bmod \ p)$$
+在模运算中，$a^{-1}$ 是整数，并不是 $a$ 的 $-1$ 次方.
+解法#对于整数 $x$，可以求解关于 $x^{-1}$ 的 线性同余方程 $x\cdot x^{-1}≡1 \ (\bmod \ p)$，其中 $x$ 为已知常数.
+int exGcd(int a, int b, int&amp;amp; x, int&amp;amp; y) { if(b == 0) { x = 1, y = 0; return a; } int d = exGcd(b, a % b, x, y); int t = x; x = y, y = t - a / b * y; return d; } int liEu(int a, int b, int c) { // a·x ≡ c (mod b) int x, y, d = exGcd(a, b, x, y); x *= (c / d); int t = b / d; return (x % t + t) % t; } int inv(int x, int m) { return liEu(x, m, 1); } 质数的逆元#当 $p$ 为质数时，由 费马小定理 得：</description>
+    </item>
+    
+    <item>
+      <title>线性同余方程</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+简介#形如 $ax≡c\pmod{b}$ 的方程称为线性同余方程.
+特殊解#$ax≡c\pmod{b}\eq ax+by=c$. 由 裴蜀定理 可知，当且仅当 $gcd(a,b)\mid c$ 时有整数解.
+先用 扩展欧几里得算法 求出一组 $x_0,y_0$，使得：
+$$ax_0+by_0=gcd(a,b)$$
+两边同时乘 $\frac{c}{gcd(a,b)}$：
+$$a\frac{c}{gcd(a,b)}x_0+b\frac{c}{gcd(a,b)}y_0=c$$
+于是找到方程 $ax+by=c$ 的一组特殊解：
+$$\left\{\begin{aligned}x=\frac{c}{gcd(a,b)}x_0\\y=\frac{c}{gcd(a,b)}y_0\end{aligned}\right.$$
+通解#若 $x_0,y_0$ 为方程 $ax+by=c$ 的一组解，则该方程的任意解可表示为：
+$$\left\{\begin{aligned}x=x_0&amp;#43;bt\\y=y_0-at\end{aligned}\right.$$
+在实际问题中，往往只需要最小正整数解：
+$$x=(x_0 \bmod t&amp;#43;t) \bmod t, \ t=\frac{b}{gcd(a,b)}$$
+模板#int exGcd(int a, int b, int&amp;amp; x, int&amp;amp; y) { if (b == 0) { x = 1, y = 0; return a; } int d = exGcd(b, a % b, x, y); int t = x; x = y, y = t - a / b * y; return d; } int liEu(int a, int b, int c) { // ax ≡ c (mod b) int x, y, d = exGcd(a, b, x, y); if (c % d !</description>
+    </item>
+    
+    <item>
+      <title>欧几里得算法</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</guid>
+      <description>最大公因数#$a$ 和 $b$ 的最大公因数记作 $gcd(a,b)$，简记为 $(a,b)$.
+若 $a,b$ 有公因数 $d$，则 $a \bmod b = a - b \cdot\left\lfloor\frac{a}{b}\right\rfloor$ 也有因数 $d$. 也就是说，$a$ 和 $b$ 的所有公因数，同时也是 $b$ 和 $a \bmod b$ 的公因数，因此它们的最大公因数也相等.
+$$gcd(a,b)=gcd(b,a \bmod b)$$
+递归到 $b=0$ 时，$a$ 即为 $gcd(a,b)$.
+时间复杂度为 $O(log{(a+b)})$.
+int gcd(int a, int b) { if (b == 0) return a; return gcd(b, a % b); } 最小公倍数#$a$ 和 $b$ 的最小公倍数记作 $lcm(a,b)$，简记为 $[a,b]$.
+设 $gcd(a,b)=d$，则 $a=k_1d,b=k_2d$，所以：</description>
+    </item>
+    
+    <item>
+      <title>贝祖定理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E8%B4%9D%E7%A5%96%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E8%B4%9D%E7%A5%96%E5%AE%9A%E7%90%86/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+简介#对于任意 $a,b$，$ax+by=c\eq gcd(a,b)\mid c$.
+证明#设 $gcd(a,b)=d$，则：
+$$\left\{\begin{aligned}&amp;amp;d\mid a\\&amp;amp;d\mid b\end{aligned}\right.\eq\left\{\begin{aligned}&amp;amp;d\mid ax\\&amp;amp;d\mid by\end{aligned}\right.\eqd\mid (ax&amp;#43;by)\eqd\mid c$$
+即 $gcd(a,b)\mid c$.</description>
+    </item>
+    
+    <item>
+      <title>同余</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E5%90%8C%E4%BD%99/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%90%8C%E4%BD%99/%E5%90%8C%E4%BD%99/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+定义#若 $a \bmod m=b \bmod m$，则 $a$ 和 $b$ 模 $m$ 同余，记作 $a≡b\pmod{m}$.
+$$a≡b \ (\bmod \ m)\eq a=b+km\eq m\mid(a-b)$$
+性质#自反性：$a≡a\pmod{m}$.
+对称性：$a≡b\pmod{m}\eq b≡a\pmod{m}$.
+传递性：$\left\{\begin{aligned}a&amp;amp;≡b \ (\bmod \ m)\\b&amp;amp;≡c \ (\bmod \ m)\end{aligned}\right.\eq a≡c\pmod{m}$.
+同加性：$a≡b\pmod{m}\eq a+c≡b+c\pmod{m}$.
+同乘性：$a≡b\pmod{m}\eq ac≡bc\pmod{m}$.
+同幂性：$a≡b\pmod{m}\eq a^n≡b^n\pmod{m}$.
+同余不满足同除性. 当 $a≡b \ (\bmod \ m)$ 时不一定有 $\frac{a}{n}≡\frac{b}{n} \ (\bmod \ m)$.
+同余类#集合 $A$ 是模 $m$ 的同余类，当且仅当：
+$A$ 中的所有元素模 $m$ 都等于同一个值 $a$. $$A=\{x\mid x \bmod m=a\}$$</description>
+    </item>
+    
+  </channel>
+</rss>

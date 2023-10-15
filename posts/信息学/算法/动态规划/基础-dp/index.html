@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>基础 DP - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../../">博客</a><a class="nav-item " href="../../../../../docs/">文档</a><a class="nav-item " href="../../../../../search/">搜索</a><a class="nav-item " href="../../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">基础 DP</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#斐波那契数列">斐波那契数列</a></li>
+    <li><a href="#汉诺塔问题">汉诺塔问题</a></li>
+    <li><a href="#骨牌问题">骨牌问题</a></li>
+    <li><a href="#平面分割问题">平面分割问题</a></li>
+    <li><a href="#最长上升子序列-lis">最长上升子序列 (LIS)</a></li>
+    <li><a href="#最长公共子序列-lcs">最长公共子序列 (LCS)</a></li>
+    <li><a href="#数字金字塔">数字金字塔</a></li>
+    <li><a href="#数字矩阵">数字矩阵</a></li>
+    <li><a href="#前缀和">前缀和</a>
+      <ul>
+        <li><a href="#预处理">预处理</a></li>
+        <li><a href="#查询">查询</a></li>
+      </ul>
+    </li>
+    <li><a href="#二维前缀和">二维前缀和</a>
+      <ul>
+        <li><a href="#预处理-1">预处理</a></li>
+        <li><a href="#查询-1">查询</a></li>
+      </ul>
+    </li>
+    <li><a href="#差分">差分</a>
+      <ul>
+        <li><a href="#预处理-2">预处理</a></li>
+        <li><a href="#区间修改">区间修改</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../../categories/%e7%ae%97%e6%b3%95">算法</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../../tags/dp">DP</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-1-16</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">基础 DP</h1>
+  <span class="description"></span><h2 id="#斐波那契数列">
+    斐波那契数列
+    <a class="anchor" name="斐波那契数列" href="#%e6%96%90%e6%b3%a2%e9%82%a3%e5%a5%91%e6%95%b0%e5%88%97">#</a>
+</h2><p>斐波那契数列是形如 $\{1,1,2,3,5,8,\cdots\}$ 的数列. 求数列的第 $n$ 项.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>分析</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$f[n]$：数列的第 $n$ 项.</p>
+<p>$$f[n]=
+\begin{cases}
+    1&amp;n=1,2\\
+    f[n-1]&#43;f[n-2]&amp;n\geq 3
+\end{cases}$$</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">f</span><span class="p">[];</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">];</span>
+</span></span></code></pre></div> </div>
+</details> 
+<h2 id="#汉诺塔问题">
+    汉诺塔问题
+    <a class="anchor" name="汉诺塔问题" href="#%e6%b1%89%e8%af%ba%e5%a1%94%e9%97%ae%e9%a2%98">#</a>
+</h2><p>汉诺塔由 $n$ 个不同的盘子和 $3$ 根杆子组成. 初始时，$n$ 个盘子从小到大叠在 $a$ 杆上：</p>
+<p><img class="md_img" data-fancybox="gallery" src="1.png" alt=""></p>
+<p>现在，按以下规则将 $n$ 个盘子从 $a$ 杆移到 $c$ 杆.</p>
+<ol>
+<li>一次只能动一个盘子.</li>
+<li>盘子只能放在杆上.</li>
+<li>大盘子不能叠在小盘子上.</li>
+</ol>
+<p>求移动盘子的最少次数.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>分析</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$f[n]$：将 $n$ 个盘子从一杆移至另一杆，所需的最少移动次数.</p>
+<p>将 $n$ 个盘子从 $a$ 杆移到 $c$ 杆，需要以下 $3$ 步：</p>
+<ol>
+<li>将 $a$ 杆的 $n-1$ 个盘子移至 $b$ 杆（共 $f[n-1]$ 次）.</li>
+<li>将 $a$ 杆的最后一个盘子移至 $c$ 杆（共 $1$ 次）.</li>
+<li>将 $b$ 杆的 $n-1$ 个盘子移至 $c$ 杆（共 $f[n-1]$ 次）.</li>
+</ol>
+<p>$$f[n]=
+\begin{cases}
+    1&amp;n=1\\
+    2\cdot f[n-1]&#43;1&amp;n\geq 2
+\end{cases}$$</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">f</span><span class="p">[];</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span></code></pre></div> </div>
+</details> 
+<h2 id="#骨牌问题">
+    骨牌问题
+    <a class="anchor" name="骨牌问题" href="#%e9%aa%a8%e7%89%8c%e9%97%ae%e9%a2%98">#</a>
+</h2><p>用若干 $1×2$ 的骨牌铺满 $2×n$ 的方格. 如图为 $n=3$ 时的所有铺法：</p>
+<p><img class="md_img" data-fancybox="gallery" src="2.png" alt=""></p>
+<p>求任意 $n$ 对应的方法总数.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>分析</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$f[n]$：$n$ 对应的方法总数.</p>
+<ul>
+<li>若第一个骨牌竖放在左边，则剩余 $2×(n-1)$ 个空方格，铺法数为 $f[n-1]$.</li>
+<li>若第一个骨牌横放在左上角，为了不留空，第二个骨牌必须横放在其正下方. 剩余 $2×(n-2)$ 个空方格，铺法数为 $f[n-2]$.</li>
+</ul>
+<p>$$f[n]=
+\begin{cases}
+    1&amp;n=1\\
+    2&amp;n=2\\
+    f[n-1]&#43;f[n-2]&amp;n\geq 3
+\end{cases}$$</p><p>状态转移方程几乎和 <a class="md-link" href="#%e6%96%90%e6%b3%a2%e9%82%a3%e5%a5%91%e6%95%b0%e5%88%97"  >斐波那契数列<img class="icon" src="../../../../../img/link.svg" /></a> 一致.</p>
+ </div>
+</details> 
+<h2 id="#平面分割问题">
+    平面分割问题
+    <a class="anchor" name="平面分割问题" href="#%e5%b9%b3%e9%9d%a2%e5%88%86%e5%89%b2%e9%97%ae%e9%a2%98">#</a>
+</h2><p>平面上有 $n$ 条闭曲线，每 $2$ 条恰好交于 $2$ 点，且每 $3$ 条不交于同一点. 求平面被分割成的区域个数.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>分析</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$a[n]$：$n$ 条封闭曲线分割成的区域个数.</p>
+<p><img class="md_img" data-fancybox="gallery" src="3.png" alt=""></p>
+<p>由上图可得：</p>
+<p>$$a[1]=2\\
+a[2]-a[1]=2\\
+a[3]-a[2]=4\\
+a[4]-a[3]=6$$</p><p>即</p>
+<p>$$a[n]=\begin{cases}
+    2&amp;n=1\\
+    a[n-1]&#43;2(n-1)&amp;n≥2
+\end{cases}$$</p><p>正确性证明：</p>
+<p>新增一条曲线时，每与一条已有曲线相交一次，就增加一个区域. 而新增的第 $n$ 条曲线与已有的 $n-1$ 条曲线各有 $2$ 个交点</p>
+<p>$∴$ 新增区域数 $=$ 新增交点数 $=2\cdot (n-1)$.</p>
+<p>$∴$ 现有区域个数 $a[n]=$ 原有区域个数 $+$ 新增区域个数 $=a[n-1]+2(n-1)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">[];</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span></code></pre></div> </div>
+</details> 
+<h2 id="#最长上升子序列-lis">
+    最长上升子序列 (LIS)
+    <a class="anchor" name="最长上升子序列-lis" href="#%e6%9c%80%e9%95%bf%e4%b8%8a%e5%8d%87%e5%ad%90%e5%ba%8f%e5%88%97-lis">#</a>
+</h2><p>求序列 $A$（长度 $n$）的最长上升子序列 $\text{LIS}(A)$ 的长度.</p>
+<p>例：$A=\{2,3,6,4,5,1\}$, $\text{LIS}(A)=\{2,3,4,5\}$（长度 $4$）.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>分析</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$f[i]$：$\text{LIS}(A_{1\cdots i})$ 的长度.</p>
+<p>枚举 $j=1\cdots i-1$：</p>
+<ul>
+<li>若 $A_j&lt;A_i$，则 $A_i$ 可以接在 $\text{LIS}(A_{1\cdots j})$ 后面，形成的上升子序列长度为 $f[j]+1$.</li>
+<li>若 $A_j≥A_i$，$A_j$ 对 $f[i]$ 没有贡献，直接跳过.</li>
+</ul>
+<p>$$f[i]=\max_{j&lt;i, \ A_j&lt;A_i}(f[j]+1)$$</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 问题的解是 f[n]
+</span></span></span></code></pre></div> </div>
+</details> 
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>单调栈优化</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>扫描每一个数，将其加入单调栈.</p>
+<p>假设当前单调栈内有 $\{2,3,6\}$，而扫描到 $4$. 根据贪心原理，将 $6$ 替换为 $4$ 必定更优.</p>
+<p>当扫描到 $a[i]$：</p>
+<ul>
+<li>若 $a[i]$ 大于栈尾，则直接将其入栈.</li>
+<li>否则在栈中二分查找第一个 $\geq a[i]$ 的数，将其替换为 $a[i]$.</li>
+</ul>
+<p>最终栈的长度即为 LIS 的长度. 时间复杂度为 $O(n\log{n})$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">back</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">[</span><span class="o">*</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div> </div>
+</details> 
+<h2 id="#最长公共子序列-lcs">
+    最长公共子序列 (LCS)
+    <a class="anchor" name="最长公共子序列-lcs" href="#%e6%9c%80%e9%95%bf%e5%85%ac%e5%85%b1%e5%ad%90%e5%ba%8f%e5%88%97-lcs">#</a>
+</h2><p>求序列 $A$（长度 $n$）和序列 $b$（长度 $m$）的最长公共子序列 $\text{LCS}(A,B)$ 的长度.</p>
+<p>例：$A=$ <code>freeze</code>, $B=$ <code>refeze</code>, $\text{LCS}(A,B)=$ <code>reeze</code>（长度 $5$）.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>分析</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$f[i,j]$：$\text{LCS}(A_{1\cdots i},B_{1\cdots j})$ 的长度.</p>
+<p>枚举 $i=1\cdots n$：
+枚举 $j=1\cdots m$：</p>
+<ul>
+<li>若 $A_i\not=B_j$，继承最优子状态：$f[i,j]=\max(f[i-1,j],f[i,j-1])$.</li>
+<li>若 $A_i=B_j$，则 $A_i$（或 $B_j$）可以接在 $\text{LCS}(A_{1\cdots i-1},B_{1\cdots j-1})$ 之后，形成的公共序列长度为 $f[i-1,j-1]+1$.</li>
+</ul>
+<p>$$f[i,j]=\max\left\{\begin{aligned}
+&amp;f[i-1,j]\\
+&amp;f[i,j-1]\\
+&amp;f[i-1,j-1]&#43;1,A_i=B_j
+\end{aligned}\right.$$</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div> </div>
+</details> 
+<h2 id="#数字金字塔">
+    数字金字塔
+    <a class="anchor" name="数字金字塔" href="#%e6%95%b0%e5%ad%97%e9%87%91%e5%ad%97%e5%a1%94">#</a>
+</h2><p>三角矩阵 $A$ 有 $n$ 行，第 $i$ 行有 $i$ 列. 从第一行第一列出发，每次可以移动到下一行相邻的两个数字. 到达底部时，经过的数字之和最大为多少？</p>
+<p><img class="md_img" data-fancybox="gallery" src="4.svg" alt=""></p>
+<p>此例中，最优路径为 $13→8→26→15$，最大值为 $62$.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>分析</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$(i,j)$：第 $i$ 行第 $j$ 列的数字.</p>
+<p>$f[i,j]$：走到 $(i,j)$ 时，经过的数字之和的最大值.</p>
+<p>逆推法：要走到 $(i,j)$，则上一步只能在 $(i-1,j-1)$ 或 $(i-1,j)$.</p>
+<p>$$f[i,j]=(i,j)&#43;\max\left\{\begin{aligned}
+&amp;f[i-1,j-1]\\
+&amp;f[i-1,j]
+\end{aligned}\right.$$</p><p><strong>注意</strong>：当 $j=1$ 或 $j=i$ 时，$f[i-1,j-1]$ 和 $f[i-1,j]$ 会越界. 故 $f$ 数组须初始化为 $-∞$，以使越界的元素在 $\max$ 操作中被自动淘汰.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">memset</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">f</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
+</span></span></code></pre></div> </div>
+</details> 
+<h2 id="#数字矩阵">
+    数字矩阵
+    <a class="anchor" name="数字矩阵" href="#%e6%95%b0%e5%ad%97%e7%9f%a9%e9%98%b5">#</a>
+</h2><p>有 $n$ 行 $m$ 列的数字矩阵 $A$. 从左上角出发，每次只能向下或向右走一步. 到右下角时，经过的数字之和最大为多少？</p>
+<p><img class="md_img" data-fancybox="gallery" src="5.svg" alt=""></p>
+<p>此例中，最优路径为 $17→1→20→12→9→2$，最大值为 $61$.</p>
+<details class='mkdocs hint note' ZgotmplZ>
+    <summary class='title'>
+        <img class='icon' src='../../../../../img/material/note.svg' />
+        <span>分析</span>
+        <img class='arrow' src='../../../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$(i,j)$：第 $i$ 行第 $j$ 列的数字.</p>
+<p>$f[i,j]$：走到 $(i,j)$ 时，经过的数字之和的最大值.</p>
+<p>逆推法：由于只能向左走或向下走，要走到 $(i,j)$，上一步只能在 $(i-1,j)$ 或 $(i,j-1)$.</p>
+<p>$$f[i,j]=(i,j)&#43;\max\left\{\begin{aligned}
+&amp;f[i-1,j]\\
+&amp;f[i,j-1]
+\end{aligned}\right.$$</p><p><strong>注意</strong>：当 $i=1$ 或 $j=1$ 时，$f[i-1,j]$ 和 $f[i,j-1]$ 会越界. $f$ 数组须初始化为 $-∞$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">memset</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">f</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div> </div>
+</details> 
+<h2 id="#前缀和">
+    前缀和
+    <a class="anchor" name="前缀和" href="#%e5%89%8d%e7%bc%80%e5%92%8c">#</a>
+</h2><p>前缀和是一种重要的预处理技巧，能大幅降低查询区间元素和的时间复杂度.</p>
+<h3 id="#预处理">
+    预处理
+    <a class="anchor" name="预处理" href="#%e9%a2%84%e5%a4%84%e7%90%86">#</a>
+</h3><p>数列 $A$ 有 $n$ 个元素.</p>
+<p>$f[i]$: $A_1$ 到 $A_i$ 的和.</p>
+<p>$$f[i]=f[i-1]+A_i$$</p>
+<p>时间复杂度：$O(n)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span></code></pre></div><h3 id="#查询">
+    查询
+    <a class="anchor" name="查询" href="#%e6%9f%a5%e8%af%a2">#</a>
+</h3><p>$g[i,j]$：$A_i$ 到 $A_j$ 的和.</p>
+<p>$$g[i,j]=f[j]-f[i-1]$$</p>
+<p>单次查询的时间复杂度：$O(1)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// sum of a[i ... j]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#二维前缀和">
+    二维前缀和
+    <a class="anchor" name="二维前缀和" href="#%e4%ba%8c%e7%bb%b4%e5%89%8d%e7%bc%80%e5%92%8c">#</a>
+</h2><h3 id="#预处理-1">
+    预处理
+    <a class="anchor" name="预处理-1" href="#%e9%a2%84%e5%a4%84%e7%90%86-1">#</a>
+</h3><p>矩阵 $A$ 有 $n$ 行 $m$ 列.</p>
+<p>$f[i,j]$：以 $(1,1)$ 为左上角，以 $(i, j)$ 为右下角的矩阵的元素和.</p>
+<p>$$f[i,j]=f[i-1,j]+f[i,j-1]-f[i-1,j-1]+(i,j)$$</p>
+<p><img class="md_img" data-fancybox="gallery" src="8.png" alt=""></p>
+<p>时间复杂度：$O(nm)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span></code></pre></div><h3 id="#查询-1">
+    查询
+    <a class="anchor" name="查询-1" href="#%e6%9f%a5%e8%af%a2-1">#</a>
+</h3><p>$g[x_1,y_1,x_2,y_2]$：以 $(x_1,y_1)$ 为左上角，以 $(x_2, y_2)$ 为右下角的矩阵的元素和.</p>
+<p>$$g[x_1,y_1,x_2,y_2]=f[x_2,y_2]-f[x_1-1,y_2]-f[x_2,y_1-1]+f[x_1-1,y_1-1]$$</p>
+<p><img class="md_img" data-fancybox="gallery" src="9.png" alt=""></p>
+<p>单次查询的时间复杂度：$O(1)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">f</span><span class="p">[</span><span class="n">x2</span><span class="p">][</span><span class="n">y2</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">[</span><span class="n">x1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y2</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">[</span><span class="n">x2</span><span class="p">][</span><span class="n">y1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">x1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#差分">
+    差分
+    <a class="anchor" name="差分" href="#%e5%b7%ae%e5%88%86">#</a>
+</h2><p>差分是前缀和的逆运算，能大幅降低区间修改的时间复杂度.</p>
+<h3 id="#预处理-2">
+    预处理
+    <a class="anchor" name="预处理-2" href="#%e9%a2%84%e5%a4%84%e7%90%86-2">#</a>
+</h3><p>数列 $A$ 有 $n$ 个元素.</p>
+<p>令 $f[i]=A_i-A_{i-1}$. $f$ 为差分数列.</p>
+<p>时间复杂度：$O(n)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span></code></pre></div><h3 id="#区间修改">
+    区间修改
+    <a class="anchor" name="区间修改" href="#%e5%8c%ba%e9%97%b4%e4%bf%ae%e6%94%b9">#</a>
+</h3><p>当给 $A_l\cdots A_r$ 统一加上 $x$ 时，$f[l]$ 增加了 $x$，$f[r+1]$ 减少了 $x$, $f$ 数列中其余元素不变.</p>
+<p>因此可以每次只修改 $f[l]$ 和 $f[r+1]$，最后通过 $f$ 数列还原出 $A$.</p>
+<p>单次修改的时间复杂度：$O(1)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// add x to A[l ... r]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">f</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">[</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">restore</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../../scripts/mathjax.js"></script>
+</html>

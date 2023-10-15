@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构 on Yharim Area</title>
+    <link>/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>二叉堆</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E5%A0%86/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E5%A0%86/</guid>
+      <description>简介#二叉堆（Binary Heap） 是一种基于完全二叉树的数据结构.
+小根堆：任意节点 $≥$ 其父节点，根节点最小.
+大根堆：任意节点 $≤$ 其父节点，根节点最大.
+本篇以小根堆为例，介绍二叉堆的实现方式.
+构造#按照从上到下，从左到右的顺序给节点编号.
+该二叉堆具有以下性质：
+$1$ 号节点是根节点.
+$u$ 号的父节点为 $\frac{u}{2}$（向下取整）.
+$u$ 号的左子节点为 $2u$，右子节点为 $2u+1$.
+二叉堆的任意一条支路都按照升序排序.
+使用数组保存二叉堆.
+int t[], n; // t[u] : u 号节点的值 // n : 节点总数 插入#如何往小根堆中插入元素 $2$？
+在堆底新建节点，值为 $2$；
+对新节点所在支路进行排序.重复执行以下步骤：
+若新节点 $&amp;lt;$ 其父节点，则交换它们的位置，否则跳出循环. 1 2 3 时间复杂度为 $O(n\log{n})$.
+void push(int val) { // 插入元素 val t[++ n] = val; // 新建节点 for(int u = n; u !</description>
+    </item>
+    
+    <item>
+      <title>并查集</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
+      <description>简介#并查集支持以下操作：
+往一个集合中加入元素；
+查询两个元素是否在同一集合；
+合并两个集合.
+问题#$\{a,b\}$，$\{e,c\}$，$\{e,d\}$ 分别在同一个集合，则共有几个集合？$b$ 和 $d$ 是否同集？
+构造#把同集的两节点相连，则集合数 $=$ 连通图数. 若两节点连通，则它们同集.
+并查集在每个集合中选取一个代表元素作为根节点，构造树型结构. 如图，$a,e$ 分别为两集合的代表元素.
+flowcharta --&amp;gt; be --&amp;gt; ce --&amp;gt; d $fa[i]$ 为节点 $i$ 的父节点编号.上图中 $fa[b]=a$，$fa[c]=e$，$fa[d]=e$.
+根节点的 $fa$ 值都设为 $0$，$fa[a]=0$，$fa[e]=0$.
+查询代表元素#集合的代表元素就是并查集中的根节点.若节点 $x$ 没有父节点，则它自己是根节点，否则递归查询它的父节点.时间复杂度为 $O(\log{n})$.
+int find(int x) { // 返回节点 x 的根节点 if (!fa[x]) return x; return find(fa[x]); } 查询是否同集#若两个节点所在树的根节点相同，则它们同集.
+bool judge(int x, int y) { return find(x) == find(y); } 合并集合#若 $\{b,c\}$ 也同集，则合并其所在的集合.</description>
+    </item>
+    
+    <item>
+      <title>Trie 树</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/trie-%E6%A0%91/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/trie-%E6%A0%91/</guid>
+      <description>简介#Trie 树又叫「字典树」，能够像字典一样录入和查询多个字符串.
+构造#一般我们会用数组保存字符串，可是这么做既浪费空间，查询速度又慢.
+const int N = 4; const string str[N] = { &amp;#34;his&amp;#34;, &amp;#34;her&amp;#34;, &amp;#34;hello&amp;#34;, &amp;#34;this&amp;#34; }; bool query(string s) { // 查询 str[] 中是否有字符串 s for(int i = 0; i &amp;lt; N; i ++) if(str[i] == s) return true; return false; } 如果将字符串放在链表里，就会有相当一部分节点可以合并.例如 his，her，hello 的开头都是 h，那么它们可以共享同一个 h 节点.同理，her 和 hello 可以共享 he.
+最后，在上方建一个空节点，指向各个字符串的开头，一棵标准的 Trie 树就建好了.至于这个空节点，纯粹是为了让程序写起来更方便.
+节点#Trie 树的节点存储于结构体中：
+const int N = 1e6; struct Node { bool isEnd = false; // 该节点是否为某单词的末尾，默认为 false int next[26]; // 该节点的子节点 } trie[N]; 按照节点的创建顺序为其编号，令 trie[u] 表示第 $u$ 个建立的节点.</description>
+    </item>
+    
+    <item>
+      <title>哈希表</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/</guid>
+      <description>简介#哈希表 由 哈希函数 和 链表 组成，相当于「超级数组」.
+数组的下标1可以是整数，浮点数，字符串等.
+不用定义数组的长度.
+问题#医院的排队系统需要记录每个病人对应的问诊顺序.此处假设每个病人的名称都是数字.
+名称 $32$ $26$ $75$ $4$ 问诊顺序 $1$ $2$ $3$ $4$ $p[i]$ 表示「名称为 $i$ 的病人的问诊顺序」.查询问诊顺序的时间复杂度为 $O(1)$.
+int p[]; void update(int i, int x) { // 记录病人 i 的问诊顺序为 x p[i] = x; } int query(int i) { // 查询病人 i 的问诊顺序 return p[i]; } 然而总有某些病人不按套路取名.
+名称 $114514$ $2333$ $2147483647$ $404$ 问诊顺序 $1$ $2$ $3$ $4$ 要存储 $p[2147483647]=3$，得先开一个长度为 $2147483647$ 的数组.</description>
+    </item>
+    
+    <item>
+      <title>线段树</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/</guid>
+      <description>问题#数组 $A$ 中共 $n$ 个元素，对其反复进行以下操作共 $m$ 次：
+单点修改：将 $A[id]$ 修改为 $v$.
+区间查询：查询 $A[l\cdots r]$ 的最小值.
+区间修改：将 $A[l\cdots r]$ 每个数加上 $v$.
+int a[]; void set(int id, int v) { // 单点修改 a[id] = v; } int ask(int l, int r) { // 区间查询 int ans = 0; for(int i = l; i &amp;lt;= r; i ++) ans = min(ans, a[i]); return ans; } void add(int l, int r, int v) { // 区间修改 for(int i = l; i &amp;lt;= r; i ++) a[i] += v; } 暴力算法（$\textcolor{red}{×}$） 线段树（$\textcolor{green}{√}$） 单点修改 $\textcolor{green}{O(1)}$ $\textcolor{green}{O(\log{n})}$ 区间查询 $\textcolor{red}{O(n)}$ $\textcolor{green}{O(\log{n})}$ 区间修改 $\textcolor{red}{O(n)}$ $\textcolor{green}{O(\log{n})}$ $m$ 次操作 $\textcolor{red}{O(mn)}$ $\textcolor{green}{O(m\log{n})}$ 构造#查询数组 $A={6,2,3,7,1,5,4,2}$ 中的最小值时，通常使用「两两比较法」：每次比较相邻两项，只保留更小的一项.</description>
+    </item>
+    
+    <item>
+      <title>树状数组</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
+      <description>问题#数组 $A$ 中共 $n$ 个元素，对其反复进行以下操作共 $m$ 次：
+单点修改：将 $A[ x]$ 加上 $k$.
+区间查询：查询 $A[l\cdots r]$ 的和.
+int a[]; void set(int id, int v) { // 单点修改 a[id] = v; } int ask(int l, int r) { // 区间查询 int ans = 0; for(int i = l; i &amp;lt;= r; i ++) ans += a[i]; return ans; } 暴力算法（$\textcolor{red}{×}$） 树状数组（$\textcolor{green}{√}$） 单点修改 $\textcolor{green}{O(1)}$ $\textcolor{green}{O(\log{n})}$ 区间查询 $\textcolor{red}{O(n)}$ $\textcolor{green}{O(\log{n})}$ $m$ 次操作 $\textcolor{red}{O(mn)}$ $\textcolor{green}{O(m\log{n})}$ 构造#在原数组的上方构建树型结构，每个节点表示一段区间和：</description>
+    </item>
+    
+    <item>
+      <title>链表</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/</guid>
+      <description>简介#链表只能按顺序依次访问元素，而数组支持随机访问. 链表支持在任意位置插入或删除元素，而数组不支持. 链表节点#用一个结构体表示链表的节点，其中可以存储任意数据.每个节点有 prev 和 next 两个指针，指向前后相邻的节点.
+struct Node { int val; // 数据（可以是任意类型） Node *prev, *next; // 指针 }; 初始化#初始化链表时，额外建立两个节点 head 和 tail 代表链表头尾，把实际节点存储在 head 与 tail 之间，简化链表边界的判断.
+Node *head, *tail; void init() { head = new Node(); tail = new Node(); head-&amp;gt;next = tail; tail-&amp;gt;prev = next; } 插入/删除节点#如何在 1 和 2 之间插入 3 ？
+Step 1Step 2删除节点运用到类似的方法.</description>
+    </item>
+    
+    <item>
+      <title>栈</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/</guid>
+      <description>简介#栈是一种「先进后出」的数据结构.类似于在桶中堆积物品，取物品时只能从顶端开始取，最先进桶的被压在最底下，最后被取出来.基本操作见 STL Stack.
+表达式计算#算术表达式分为三类（$op$ 为运算符，$A,B$ 为数字或表达式）：
+中缀表达式：全国人民都在用的表达式，如「$5×(3+2)$」； 前缀表达式：形如「$op \ \textcolor{red}{A} \ \textcolor{blue}{B}$」，如「$× \ \textcolor{red}{5} \ \textcolor{blue}{+} \ \textcolor{blue}{3} \ \textcolor{blue}{2}$」； 后缀表达式：形如「$\textcolor{red}{A} \ \textcolor{blue}{B} \ op$」，如「$\textcolor{red}{3} \ \textcolor{red}{2} \ \textcolor{red}{+} \ \textcolor{blue}{5} \ ×$」. 计算前/后缀表达式时，先递归求出 $A,B$ 的值，二者再做 $op$ 运算.计算方案是唯一确定的，且不需要使用括号.计算后缀表达式的算法最容易设计.
+后缀表达式#定义一个栈，用于存放数； 逐一扫描后缀表达式中的元素： 若扫到一个数 $n$，则把 $n$ 入栈； 若扫到运算符 $op$ ，则弹出栈顶的两个元素，二者做 $op$ 计算.将计算结果入栈. 最终的栈顶元素就是计算结果.时间复杂度为 $O(n)$.
+bool isdigit(char ch) { // 判断是否为数字 return ch &amp;gt;= &amp;#39;0&amp;#39; &amp;amp;&amp;amp; ch &amp;lt;= &amp;#39;9&amp;#39;; } bool isop(char ch) { // 判断是否为运算符 return ch == &amp;#39;+&amp;#39; || ch == &amp;#39;-&amp;#39; || ch == &amp;#39;*&amp;#39; || ch == &amp;#39;/&amp;#39; || ch == &amp;#39;^&amp;#39;; } double postfix_calc(string str) { stack&amp;lt;double&amp;gt; s; int i = 0; s = stack&amp;lt;double&amp;gt;(); while(i &amp;lt; str.</description>
+    </item>
+    
+    <item>
+      <title>队列</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/</guid>
+      <description>简介#队列是一种「先进先出」的数据结构.元素从队列的前端进入（入队），从末端离开（出队），类似于排队.基本操作见 STL Queue.
+双向队列#队列元素只能从一端进，另一端出，有时无法满足问题的需要.双向队列应运而生，它支持从两端插入或删除元素.
+双向队列的基本操作见 STL Deque.
+单调队列#单调队列的元素从队头到队尾满足单调性，适用于查询某一动态区间的最大（或最小）元素.
+插入元素#将 $A[i]$ 入队，维护队列单调性，同时保证队列元素在 $A[p\cdots i]$ 范围内.以单调递增队列为例：
+重复弹出队头，直到队头 $≥p$；
+重复弹出队尾，直到 $A[$队尾$]&amp;lt;A[i]$（若单调递减，则重复直到 $A[$队尾$]&amp;gt;A[i]$）.
+将 $i$ 入队.
+涉及双端操作，须使用双向队列.此时 $A[p\cdots i]$ 范围内最小元素为 $A[$队头$]$.
+deque&amp;lt;int&amp;gt; q; // 存储元素下标 void insert(int i, int p) { // 将 a[i] 入队，维护队列元素在 a[p...i] 范围内 while(!q.empty() &amp;amp;&amp;amp; q.front() &amp;lt; p) q.pop_front(); while(!q.empty() &amp;amp;&amp;amp; a[q.back()] &amp;gt;= a[i]) q.pop_back(); q.push_back(i); } 滑动窗口#一个滑动窗口（长度为 $k$）从数组 $A$ （长度为 $n$）的左端移动到右端，每次只向右移一位.</description>
+    </item>
+    
+  </channel>
+</rss>

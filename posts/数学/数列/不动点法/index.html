@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>不动点法 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">不动点法</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#不动点">不动点</a>
+      <ul>
+        <li><a href="#函数不动点">函数不动点</a></li>
+        <li><a href="#数列不动点">数列不动点</a></li>
+      </ul>
+    </li>
+    <li><a href="#一次不动点">一次不动点</a></li>
+    <li><a href="#齐次不动点">齐次不动点</a>
+      <ul>
+        <li><a href="#单根">单根</a></li>
+        <li><a href="#双根">双根</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e6%95%b0%e5%ad%a6">数学</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../tags/%e6%95%b0%e5%88%97">数列</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2022-1-16</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">不动点法</h1>
+  <span class="description"></span><blockquote>
+<p>本篇证明可略过.</p>
+</blockquote>
+<h2 id="#不动点">
+    不动点
+    <a class="anchor" name="不动点" href="#%e4%b8%8d%e5%8a%a8%e7%82%b9">#</a>
+</h2><h3 id="#函数不动点">
+    函数不动点
+    <a class="anchor" name="函数不动点" href="#%e5%87%bd%e6%95%b0%e4%b8%8d%e5%8a%a8%e7%82%b9">#</a>
+</h3><p>$y=f(x)$ 与 $y=x$ 的交点是 $f(x)$ 的不动点，即不动点 $x_0$ 满足</p>
+<p>$$f(x_0)=x_0$$</p>
+<h3 id="#数列不动点">
+    数列不动点
+    <a class="anchor" name="数列不动点" href="#%e6%95%b0%e5%88%97%e4%b8%8d%e5%8a%a8%e7%82%b9">#</a>
+</h3><p>若 $a_n=f(a_{n-1})$，则 $f(x)$ 的不动点也是数列 $\{a_n\}$ 的不动点.</p>
+<h2 id="#一次不动点">
+    一次不动点
+    <a class="anchor" name="一次不动点" href="#%e4%b8%80%e6%ac%a1%e4%b8%8d%e5%8a%a8%e7%82%b9">#</a>
+</h2><p>已知 $a_n=A\cdot a_{n-1}+B(A\not=0)$.</p>
+<p>若 $\{a_n\}$ 有不动点 $x_0$，则 $\{a_n-x_0\}$ 是公比为 $A$ 的等比数列.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>由 <a class="md-link" href="#%e4%b8%8d%e5%8a%a8%e7%82%b9"  >不动点<img class="icon" src="../../../../img/link.svg" /></a> 的定义得</p>
+<p>$$Ax_0+B=x_0$$</p>
+<p>$$\therefore B=x_0-Ax_0$$</p>
+<p>$$\therefore a_n-x_0=A\cdot a_{n-1}+B-x_0=A(a_{n-1}-x_0)$$</p>
+<p>$\therefore$ 数列 $\{a_n-x_0\}$ 是公比为 $A$ 的等比数列</p>
+</div>
+</details>
+<h2 id="#齐次不动点">
+    齐次不动点
+    <a class="anchor" name="齐次不动点" href="#%e9%bd%90%e6%ac%a1%e4%b8%8d%e5%8a%a8%e7%82%b9">#</a>
+</h2><p>已知 $a_n=\dfrac{Aa_{n-1}+B}{Ca_{n-1}+D}(C\not=0,AD-BC\not=0)$.</p>
+<h3 id="#单根">
+    单根
+    <a class="anchor" name="单根" href="#%e5%8d%95%e6%a0%b9">#</a>
+</h3><p>若 $\{a_n\}$ 有唯一不动点 $x_0$，则 $\left\{\dfrac{1}{a_n-x_0}\right\}$ 是公差为 $\dfrac{2C}{A+D}$ 的等差数列.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>由 <a class="md-link" href="#%e4%b8%8d%e5%8a%a8%e7%82%b9"  >不动点<img class="icon" src="../../../../img/link.svg" /></a> 的定义得</p>
+<p>$$x_0=\frac{Ax_0+B}{Cx_0+D}$$</p>
+<p>$$B-Dx_0=Cx_0^2-Ax_0\tag{1}$$</p>
+<p>$$Cx_0^2+(D-A)x_0-B=0\tag{2}$$</p>
+<p>$\because$ 方程 $(2)$ 仅有一根，故</p>
+<p>$$x_0=\dfrac{A-D}{2C}\tag{3}$$</p>
+<p>$$\begin{aligned}
+\therefore a_n-x_0&amp;=\frac{Aa_{n-1}&#43;B}{Ca_{n-1}&#43;D}-\frac{Ca_{n-1}x_0&#43;Dx_0}{Ca_{n-1}&#43;D}\\
+&amp;=\frac{(A-Cx_0)a_{n-1}&#43;B-Dx_0}{Ca_{n-1}&#43;D}\\
+\end{aligned}$$</p><p>代入 $(1)$：</p>
+<p>$$\begin{aligned}
+a_n-x_0&amp;=\frac{(A-Cx_0)a_{n-1}&#43;Cx_0^2-Ax_0}{Ca_{n-1}&#43;D}\\
+&amp;=\frac{(a_{n-1}-x_0)(A-Cx_0)}{Ca_{n-1}&#43;D}\\
+&amp;=\frac{(a_{n-1}-x_0)(A-Cx_0)}{C(a_{n-1}-x_0)&#43;Cx_0&#43;D}\\
+\\
+\therefore \frac{1}{a_n-x_0}&amp;=\frac{C(a_{n-1}-x_0)&#43;Cx_0&#43;D}{(a_{n-1}-x_0)(A-Cx_0)}\\
+&amp;=\frac{C}{(A-Cx_0)}&#43;\frac{Cx_0&#43;D}{(a_{n-1}-x_0)(A-Cx_0)}\\
+\end{aligned}$$</p><p>代入 $(2)$：</p>
+<p>$$\begin{aligned}
+\frac{1}{a_n-x_0}&amp;=\frac{C}{\left(\dfrac{A&#43;D}{2}\right)}&#43;\frac{\dfrac{A-D}{2}&#43;D}{(a_{n-1}-x_0)\left(\dfrac{A&#43;D}{2}\right)}\\
+&amp;=\frac{2C}{A&#43;D}&#43;\frac{1}{a_{n-1}-x_0}
+\end{aligned}$$</p><p>$\therefore$ 数列 $\left\{\dfrac{1}{a_n-x_0}\right\}$ 是公差为 $\dfrac{2C}{A+D}$ 的等差数列.</p>
+</div>
+</details>
+
+<details class="book-details" >
+  <summary><span>例</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>已知 $a_1=2,a_{n+1}=\dfrac{2a_n-1}{a_n}$，求 $a_n$ 与 $a_1$ 的关系.</p>
+<p><strong>解：</strong> 解 $x=\dfrac{2x-1}{x}$ 得唯一不动点 $x_0=1$.</p>
+<p>$$\therefore\frac{1}{a_n-1}=\frac{1}{\dfrac{2a_{n-1}-1}{a_{n-1}}-1}=\frac{1}{a_{n-1}-1}+1$$</p>
+<p>$\therefore$ $\left\{\dfrac{1}{a_n-1}\right\}$ 是首项为 $1$，公差为 $1$ 的等差数列.</p>
+<p>$$\therefore \frac{1}{a_n-1}=n$$</p>
+<p>$$\therefore a_n=1+\frac{1}{n}$$</p>
+</div>
+</details>
+<h3 id="#双根">
+    双根
+    <a class="anchor" name="双根" href="#%e5%8f%8c%e6%a0%b9">#</a>
+</h3><p>若 $\{a_n\}$ 有不动点 $x_1,x_2$，则 $\left\{\dfrac{a_n-x_1}{a_n-x_2}\right\}$ 是公比为 $\dfrac{A-Cx_1}{A-Cx_2}$ 的等比数列.</p>
+
+<details class="book-details" >
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>由 <a class="md-link" href="#%e4%b8%8d%e5%8a%a8%e7%82%b9"  >不动点<img class="icon" src="../../../../img/link.svg" /></a> 的定义得</p>
+<p>$$\begin{cases}
+    x_1=\frac{Ax_1&#43;B}{Cx_1&#43;D}\\
+    \\
+    x_2=\frac{Ax_2&#43;B}{Cx_2&#43;D}
+\end{cases}
+\intro
+\begin{cases}
+    x_1(Cx_1-A)=B-Dx_1\\
+    x_2(Cx_2-A)=B-Dx_2
+\end{cases}$$</p><p>$$\begin{aligned}
+\therefore a_n-x_1&amp;=\frac{Aa_{n-1}&#43;B}{Ca_{n-1}&#43;D}-x_1\\
+\therefore (a_n-x_1)(Ca_{n-1}&#43;D)&amp;=Aa_{n-1}&#43;B-x_1(Ca_{n-1}&#43;D)\\
+&amp;=(A-Cx_1)a_{n-1}&#43;B-Dx_1\\
+&amp;=(A-Cx_1)a_{n-1}-x_1(A-Cx_1)\\
+&amp;=(A-Cx_1)(a_{n-1}-x_1)
+\end{aligned}$$</p><p>即</p>
+<p>$$(a_n-x_1)(Ca_{n-1}+D)=(A-Cx_1)(a_{n-1}-x_1)$$</p>
+<p>同理可得</p>
+<p>$$(a_n-x_2)(Ca_{n-1}+D)=(A-Cx_2)(a_{n-1}-x_2)$$</p>
+<p>$$\begin{aligned}
+\therefore \frac{a_n-x_1}{a_n-x_2}=\frac{A-Cx_1}{A-Cx_2}\cdot\frac{a_{n-1}-x_1}{a_{n-2}-x_2}
+\end{aligned}$$</p><p>$\therefore$ 数列 $\left\{\dfrac{a_n-x_1}{a_n-x_2}\right\}$ 是公比为 $\dfrac{A-Cx_1}{A-Cx_2}$ 的等比数列.</p>
+</div>
+</details>
+
+<details class="book-details" >
+  <summary><span>例</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>已知 $a_{n+1}=\dfrac{2a_n}{a_n+1}$，求 $a_n$ 与 $a_1$ 的关系.</p>
+<p><strong>解：</strong> 解 $x=\dfrac{2x}{x+1}$ 得两个相异的不动点 $x_1=0,x_2=1$.</p>
+<p>$$\therefore\frac{a_n-0}{a_n-1}=\frac{\cfrac{2a_{n-1}}{a_{n-1}+1}-0}{\cfrac{2a_{n-1}}{a_{n-1}+1}-1}=2\frac{a_{n-1}-0}{a_{n-1}-1}$$</p>
+<p>$\therefore$ $\left\{\dfrac{a_n}{a_n-1}\right\}$ 是首项为 $\dfrac{a_1}{a_1-1}$，公比为 $2$ 的等比数列.</p>
+<p>$$\therefore \frac{a_n}{a_n-1}=\frac{a_1}{a_1-1}\cdot 2^{n-1}$$</p>
+<p>$$\therefore a_n=\frac{2^{n-1}a_1}{(2^{n-1}-1)a_1+1}$$</p>
+</div>
+</details>
+</article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

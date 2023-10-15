@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>树状数组 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">树状数组</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#问题">问题</a></li>
+    <li><a href="#构造">构造</a>
+      <ul>
+        <li><a href="#父节点">父节点</a></li>
+        <li><a href="#左邻节点">左邻节点</a></li>
+      </ul>
+    </li>
+    <li><a href="#单点修改">单点修改</a></li>
+    <li><a href="#区间查询">区间查询</a></li>
+    <li><a href="#模板">模板</a></li>
+    <li><a href="#拓展">拓展</a>
+      <ul>
+        <li><a href="#区间修改">区间修改</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">数据结构</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-4-5</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">树状数组</h1>
+  <span class="description"></span><h2 id="#问题">
+    问题
+    <a class="anchor" name="问题" href="#%e9%97%ae%e9%a2%98">#</a>
+</h2><p>数组 $A$ 中共 $n$ 个元素，对其反复进行以下操作共 $m$ 次：</p>
+<ul>
+<li>
+<p><strong>单点修改</strong>：将 $A[ x]$ 加上 $k$.</p>
+</li>
+<li>
+<p><strong>区间查询</strong>：查询 $A[l\cdots r]$ 的和.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">[];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">set</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 单点修改
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">a</span><span class="p">[</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">ask</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 区间查询
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">暴力算法（$\textcolor{red}{×}$）</th>
+<th style="text-align:center">树状数组（$\textcolor{green}{√}$）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单点修改</td>
+<td style="text-align:center">$\textcolor{green}{O(1)}$</td>
+<td style="text-align:center">$\textcolor{green}{O(\log{n})}$</td>
+</tr>
+<tr>
+<td style="text-align:center">区间查询</td>
+<td style="text-align:center">$\textcolor{red}{O(n)}$</td>
+<td style="text-align:center">$\textcolor{green}{O(\log{n})}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$m$ 次操作</td>
+<td style="text-align:center">$\textcolor{red}{O(mn)}$</td>
+<td style="text-align:center">$\textcolor{green}{O(m\log{n})}$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="#构造">
+    构造
+    <a class="anchor" name="构造" href="#%e6%9e%84%e9%80%a0">#</a>
+</h2><p>在原数组的上方构建树型结构，每个节点表示一段区间和：</p>
+<p><img class="md_img" data-fancybox="gallery" src="1.png" alt=""></p>
+<p>$C_1=A_1$；</p>
+<p>$C_2=A_1+A_2$；</p>
+<p>$C_3=A_3$；</p>
+<p>$C_4=A_1+A_2+A_3+A_4$；</p>
+<p>$\cdots \ \cdots$</p>
+<h3 id="#父节点">
+    父节点
+    <a class="anchor" name="父节点" href="#%e7%88%b6%e8%8a%82%e7%82%b9">#</a>
+</h3><p>如何求 $C_i$ 的父节点？</p>
+<p>将 $C$ 数组的下标转换成二进制数，观察该图.</p>
+<p><img class="md_img" data-fancybox="gallery" src="2.png" alt=""></p>
+<ul>
+<li>
+<p>$C[$000<font color="red">1</font>$]$ 的父节点为 $C[$00<font color="red">10</font>$]$.</p>
+</li>
+<li>
+<p>$C[$0<font color="red">100</font>$]$ 的父节点为 $C[$<font color="red">1000</font>$]$.</p>
+</li>
+<li>
+<p>$C[$010<font color="red">1</font>$]$ 的父节点为 $C[$01<font color="red">10</font>$]$.</p>
+<p>$\cdots \ \cdots$</p>
+</li>
+</ul>
+<p>不难总结出规律：</p>
+<ul>
+<li>$C_i$ 的父节点为 $C[i+$ <a class="md-link" href="../../../../docs/NOI/Basics/zip/#lowbit-%e8%bf%90%e7%ae%97"  >$lowbit(i)$<img class="icon" src="../../../../img/link.svg" /></a> $]$.</li>
+</ul>
+<h3 id="#左邻节点">
+    左邻节点
+    <a class="anchor" name="左邻节点" href="#%e5%b7%a6%e9%82%bb%e8%8a%82%e7%82%b9">#</a>
+</h3><p>$C_i$ 的「左邻节点」与 $C_i$ 的左端相邻.例如 $C_5$ 的左邻节点为 $C_4$.</p>
+<p><img class="md_img" data-fancybox="gallery" src="3.png" alt=""></p>
+<p>观察同一张图：</p>
+<p><img class="md_img" data-fancybox="gallery" src="2.png" alt=""></p>
+<ul>
+<li>
+<p>$C[$001<font color="red">1</font>$]$ 的左邻节点为 $C[$001<font color="red">0</font>$]$.</p>
+</li>
+<li>
+<p>$C[$010<font color="red">1</font>$]$ 的左邻节点为 $C[$010<font color="red">0</font>$]$.</p>
+</li>
+<li>
+<p>$C[$01<font color="red">10</font>$]$ 的左邻节点为 $C[$01<font color="red">00</font>$]$.</p>
+</li>
+</ul>
+<p>总结规律：</p>
+<ul>
+<li>$C_i$ 的左邻节点为 $C[i-lowbit(i)]$.</li>
+</ul>
+<h2 id="#单点修改">
+    单点修改
+    <a class="anchor" name="单点修改" href="#%e5%8d%95%e7%82%b9%e4%bf%ae%e6%94%b9">#</a>
+</h2><p>将 $A[x]$ 增加 $k$，$A[x]$ 的所有祖先都会跟着变动.以 $A_3$ 为例：</p>
+<p><img class="md_img" data-fancybox="gallery" src="4.png" alt=""></p>
+<p>$C_3=\textcolor{red}{A_3}$；</p>
+<p>$C_4=A_1+A_2+\textcolor{red}{A_3}+A_4$；</p>
+<p>$C_8=A_1+A_2+\textcolor{red}{A_3}+A_4+A_5+A_6+A_7+A_8$.</p>
+<p>因此，修改 $A[3]$ 的同时，$C_3,C_4,C_8$ 也需要加上 $k$.</p>
+<p>对于给定的 $x$，从 $C_x$ 开始逐层访问 <a class="md-link" href="../../../../docs/NOI/DS/treearray/#%e7%88%b6%e8%8a%82%e7%82%b9"  >父节点<img class="icon" src="../../../../img/link.svg" /></a>，并给其值加上 $k$.时间复杂度为 $O(\log{n})$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">lowbit</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="o">-</span><span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 将 a[p] 增加 k
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(;</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">p</span> <span class="o">+=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="n">c</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">+=</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#区间查询">
+    区间查询
+    <a class="anchor" name="区间查询" href="#%e5%8c%ba%e9%97%b4%e6%9f%a5%e8%af%a2">#</a>
+</h2><p>采用 <a class="md-link" href="../../../../docs/NOI/DP/basics/#%e5%89%8d%e7%bc%80%e5%92%8c"  >前缀和<img class="icon" src="../../../../img/link.svg" /></a> 思想.$sum[x]$ 表示 $A[1]+A[2]+\cdots+A[x]$，则：</p>
+<center>$A[l\cdots r]$ 的和 $=sum[r]-sum[l-1]$</center>
+<p>自此，问题转换为求 $sum[x]$.以 $sum[7]$ 为例：</p>
+<p><img class="md_img" data-fancybox="gallery" src="5.png" alt=""></p>
+<p>$C_4=A_1+A_2+A_3+A_4$；</p>
+<p>$C_6=A_5+A_6$；</p>
+<p>$C_7=A_7$；</p>
+<p>因而 $sum[7]=C_4+C_6+C_7$.</p>
+<p>查询 $sum[x]$ 时，从 $C_x$ 开始依次遍历 <a class="md-link" href="../../../../docs/NOI/DS/treearray/#%e5%b7%a6%e9%82%bb%e8%8a%82%e7%82%b9"  >左邻节点<img class="icon" src="../../../../img/link.svg" /></a>.时间复杂度为 $O(\log{n})$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">ask</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 查询 A[1...p] 的和
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(;</span> <span class="n">p</span><span class="p">;</span> <span class="n">p</span> <span class="o">-=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 查询 A[l...r] 的和
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="n">ask</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="n">ask</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#模板">
+    模板
+    <a class="anchor" name="模板" href="#%e6%a8%a1%e6%9d%bf">#</a>
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">lowbit</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="o">-</span><span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(;</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">p</span> <span class="o">+=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="n">c</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">+=</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">ask</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(;</span> <span class="n">p</span><span class="p">;</span> <span class="n">p</span> <span class="o">-=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ask</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="n">ask</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#拓展">
+    拓展
+    <a class="anchor" name="拓展" href="#%e6%8b%93%e5%b1%95">#</a>
+</h2><h3 id="#区间修改">
+    区间修改
+    <a class="anchor" name="区间修改" href="#%e5%8c%ba%e9%97%b4%e4%bf%ae%e6%94%b9">#</a>
+</h3><p>如果你已经学过 <a class="md-link" href="../../../../docs/NOI/DP/basics/#%e5%b7%ae%e5%88%86"  >差分<img class="icon" src="../../../../img/link.svg" /></a>，区间修改就容易的多.</p>
+<ol>
+<li>
+<p>在数组 $A$ 的「差分数组」上建立树状数组.</p>
+</li>
+<li>
+<p>将 $A[l\cdots r]$ 所有元素都加上 $v$ 时，$f[l]$ 增加了 $v$，$f[r+1]$ 减少了 $v$.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">seg_add</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 将 A[l...r] 加上 v
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">add</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">add</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 输入部分省略 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

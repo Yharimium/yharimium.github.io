@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>KMP 算法 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../../">博客</a><a class="nav-item " href="../../../../../docs/">文档</a><a class="nav-item " href="../../../../../search/">搜索</a><a class="nav-item " href="../../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">KMP 算法</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#问题">问题</a></li>
+    <li><a href="#原理">原理</a></li>
+    <li><a href="#预处理">预处理</a></li>
+    <li><a href="#模板">模板</a></li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../../categories/%e7%ae%97%e6%b3%95">算法</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../../tags/%e5%ad%97%e7%ac%a6%e4%b8%b2">字符串</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-5-28</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">KMP 算法</h1>
+  <span class="description"></span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p><code>KMP</code> 算法不是看毛片算法，而是一种字符串匹配算法. <code>KMP</code> 是此算法的发明者 <code>Kruth</code>，<code>Morris</code> 和 <code>Pratt</code> 的名字缩写.</p>
+<p><img class="md_img" data-fancybox="gallery" src="1.png" alt=""></p>
+<h2 id="#问题">
+    问题
+    <a class="anchor" name="问题" href="#%e9%97%ae%e9%a2%98">#</a>
+</h2><p>给定字符串 $A$（长度为 $m$）和 $B$（长度为 $n$），问 $A$ 中是否包含 $B$ ？</p>
+<p>$$\begin{aligned}
+A&amp;=a \ b \ a \ b \ a \ b \ a \ b \ c\\
+B&amp;=a \ b \ a \ b \ c
+\end{aligned}$$</p><p>考虑暴力算法：</p>
+<ul>
+<li>先将 $A$ 和 $B$ 左端对齐.</li>
+<li>如果匹配失败，就将 $B$ 右移一位，直到匹配成功.</li>
+</ul>
+<p>$$\begin{aligned}
+A&amp;=\textcolor{red}{a \ b \ a \ b \ a} \ b \ a \ b \ c\\
+B&amp;=\textcolor{red}{a \ b \ a \ b \ c}
+\end{aligned}$$</p><p>$$\begin{aligned}
+A=a \ &amp;\textcolor{red}{b \ a \ b \ a \ b} \ a \ b \ c\\
+B=\;&amp;\textcolor{red}{a \ b \ a \ b \ c}
+\end{aligned}$$</p><p>$$\begin{aligned}
+A=a \ b \ &amp;\textcolor{red}{a \ b \ a \ b \ a} \ b \ c\\
+B=\;&amp;\textcolor{red}{a \ b \ a \ b \ c}
+\end{aligned}$$</p><p>$$\begin{aligned}
+A=a \ b \ a \ &amp;\textcolor{red}{b \ a \ b \ a \ b} \ c\\
+B=\;&amp;\textcolor{red}{a \ b \ a \ b \ c}
+\end{aligned}$$</p><p>$$\begin{aligned}
+A=a \ b \ a \ b \ &amp;\textcolor{green}{a \ b \ a \ b \ c}\\
+B=\;&amp;\textcolor{green}{a \ b \ a \ b \ c}
+\end{aligned}$$</p><p>时间复杂度：$O(mn)$.</p>
+<blockquote>
+<p>本章统一使用<font color=red>红色</font>表示不匹配，<font color=green>绿色</font>表示匹配.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">match</span><span class="p">(</span><span class="n">string</span> <span class="n">a</span><span class="p">,</span> <span class="n">string</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">n</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="n">j</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">++</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#原理">
+    原理
+    <a class="anchor" name="原理" href="#%e5%8e%9f%e7%90%86">#</a>
+</h2><p>当匹配失败时，我们忽视了一些重要的信息.当第一次匹配失败时，两个绿串相等.</p>
+<p>$$\begin{aligned}
+A&amp;=\textcolor{green}{a \ b \ a \ b} \ \textcolor{red}{a} \ b \ a \ b \ c\\
+B&amp;=\textcolor{green}{a \ b \ a \ b} \ \textcolor{red}{c}
+\end{aligned}$$</p><p>该绿串还有着相同的前缀<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>和后缀.我们管它叫做「公共前后缀」.$abab$ 的公共前后缀为 $ab$.</p>
+<p>$$\underset{\large前缀}{\underline{\textcolor{green}{a \ b}}} \ \underset{\large后缀}{\underline{\textcolor{green}{a \ b}}}$$</p><p>从下面这个角度看，$A$ 和 $B$ 划线的两段，都是公共前后缀，它们相等.</p>
+<p>$$\begin{aligned}
+A&amp;=a \ b \ \underline{\textcolor{green}{a \ b}} \ a \ b \ a \ b \ c\\
+B&amp;=\underline{\textcolor{green}{a \ b}} \ a \ b \ c
+\end{aligned}$$</p><p>若 $B$ 右移后能与 $A$ 匹配，那么 $B$ 至少要右移 $2$ 位，也就是使相等的两段对齐.这样就避免了一位一位地移，从而提高效率.</p>
+<p>$$\begin{aligned}
+A=a \ b \ &amp;\underline{\textcolor{green}{a \ b}} \ a \ b \ a \ b \ c\\
+B=\;&amp;\underline{\textcolor{green}{a \ b}} \ a \ b \ c
+\end{aligned}$$</p><p>到此为止，<code>KMP</code> 的思路已经很明朗了.</p>
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-0" id="tabs-0-0"
+        checked="checked" />
+    <label class="label " for="tabs-0-0">1</label>
+    
+    <div class="inner"><p>将 $A$ 串和 $B$ 串左端对齐（$σ$ 表示不定字符）.</p>
+<p>$$\begin{aligned}
+A &amp;= σσσσσσσσσσσσ\\
+B &amp;= σσσσσσσ
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-0" id="tabs-0-1"
+         />
+    <label class="label " for="tabs-0-1">2</label>
+    
+    <div class="inner"><p>从左往右比较字符，直到不匹配.此时 $A$ 和 $B$ 的绿串相等.</p>
+<p>$$\begin{aligned}
+A &amp;= \color{green}{σσσσσ}\color{red}σ\color{black}σσσσσσ\\
+B &amp;= \color{green}{σσσσσ}\color{red}σ\color{black}σ
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-0" id="tabs-0-2"
+         />
+    <label class="label " for="tabs-0-2">3</label>
+    
+    <div class="inner"><p>在绿串中找出相同的前缀和后缀（公共前后缀）.</p>
+<p>$$\begin{aligned}
+A &amp;= \color{lightgreen}{σσσ}\color{green}{\underline{σσ}}\color{black}σσσσσσσ\\
+B &amp;= \color{green}{\underline{σσ}}\color{lightgreen}{σσσ}\color{black}σσ
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-0" id="tabs-0-3"
+         />
+    <label class="label " for="tabs-0-3">4</label>
+    
+    <div class="inner"><p>右移 $B$ 串，直到前缀和后缀竖直对齐.</p>
+<p>$$\begin{aligned}
+A = \color{lightgreen}{σσσ}&amp;\color{green}{\underline{σσ}}\color{black}σσσσσσσ\\
+B = \;&amp;\color{green}{\underline{σσ}}\color{lightgreen}{σσσ}\color{black}σσ
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-0" id="tabs-0-4"
+         />
+    <label class="label " for="tabs-0-4">5</label>
+    
+    <div class="inner"><p>从对齐部分的后一个字符开始，继续向右匹配，重复前面的过程.</p>
+<p>$$\begin{aligned}
+A = σσσ&amp;\color{green}{\underline{σσ}}\color{goldenrod}σ\color{black}σσσσσσ\\
+B = \;&amp;\color{green}{\underline{σσ}}\color{goldenrod}σ\color{black}σσσσ
+\end{aligned}$$</p></div>
+    </div>
+
+<p>现在还有一个问题：在程序中，如何实现字符串的右移？—— 使用指针.</p>
+<p>指针 $i,j$ 分别指向 $A$ 串和 $B$ 串，表示 $A[i]$ 和 $B[j]$ 前的两个绿串匹配.如果将 $B$ 串右移 $x$ 位，那么在程序中，只需要将 $j$ 指针左移 $x$ 位.</p>
+<p>$$\begin{aligned}
+A&amp;=\textcolor{green}{σσσσσ}\overset{\overset{i}{↓}}{\textcolor{red}{σ}}σσσσσσ\\
+B&amp;=\textcolor{green}{σσσσσ}\underset{\underset{j}{↑}}{\textcolor{red}{σ}}σ
+\end{aligned}$$</p><p>$$\begin{aligned}
+A=σσσ\textcolor{green}{σσ}\overset{\overset{i}{↓}}{σ}&amp;σσσσσσ\\
+B=\textcolor{green}{σσ}\underset{\underset{j}{↑}}{σ}&amp;σσσσ
+\end{aligned}$$</p><p>$pre[i]$ 表示 $B[0\cdots i]$ 的公共前后缀长度，$pre[ \ ]$ 具体怎么预处理后续会说.现在假设 $pre[ \ ]$ 数组已经处理好了.依照刚才的思路，<code>KMP</code> 的主程序可以分解为以下步骤（结合下面的样例理解）：</p>
+<ol>
+<li>
+<p>令 $i,j$ 分别指向 $A$ 和 $B$ 的开头，即 $i=0,j=0$.</p>
+</li>
+<li>
+<p>如果 $A[i]=B[j]$，$i$ 和 $j$ 同时右移一位.</p>
+</li>
+<li>
+<p>如果 $A[i]\not=B[j]$，又分两种情况讨论：</p>
+<ul>
+<li>
+<p>$j\not=0$ 时，绿串的公共前后缀长度为 $pre[j-1]$.那么就令 $j=pre[j-1]$.</p>
+</li>
+<li>
+<p>$j=0$ 时，$j$ 不能再往左移.此时只能将 $i$ 右移一位.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>重复 2、3 两个步骤，直到匹配完成.</p>
+</li>
+</ol>
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-1" id="tabs-1-0"
+        checked="checked" />
+    <label class="label " for="tabs-1-0">1</label>
+    
+    <div class="inner"><p>令指针 $i$ 和 $j$ 分别指向 $A$ 串和 $B$ 串的开头.</p>
+<p>$$\begin{aligned}
+A&amp;=\overset{\overset{ i}{↓}}{a}bababc\\
+B&amp;=\underset{\underset{ j}{↑}}{a}babc
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-1" id="tabs-1-1"
+         />
+    <label class="label " for="tabs-1-1">2</label>
+    
+    <div class="inner"><p>$A[i]=B[i]$，$i$ 和 $j$ 同时右移一位.</p>
+<p>$$\begin{aligned}
+A&amp;=\overset{\overset{ i}{↓}}{\textcolor{green}{a}}bababc\\
+B&amp;=\underset{\underset{ j}{↑}}{\textcolor{green}{a}}babc
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-1" id="tabs-1-2"
+         />
+    <label class="label " for="tabs-1-2">3</label>
+    
+    <div class="inner"><p>$A[i]=B[j]$，$i$ 和 $j$ 同时右移一位.</p>
+<p>$$\begin{aligned}
+A&amp;=\overset{\overset{ i}{↓}}{\textcolor{green}{ab}a}babc\\
+B&amp;=\underset{\underset{ j}{↑}}{\textcolor{green}{ab}a}bc
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-1" id="tabs-1-3"
+         />
+    <label class="label " for="tabs-1-3">4</label>
+    
+    <div class="inner"><p>$A[i]=B[j]$，$i$ 和 $j$ 同时右移一位.</p>
+<p>$$\begin{aligned}
+A&amp;=\textcolor{green}{ab}\overset{\overset{ i}{↓}}{\textcolor{green}{a}}babc\\
+B&amp;=\textcolor{green}{ab}\underset{\underset{ j}{↑}}{\textcolor{green}{a}}bc
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-1" id="tabs-1-4"
+         />
+    <label class="label " for="tabs-1-4">5</label>
+    
+    <div class="inner"><p>$A[i]=B[j]$，$i$ 和 $j$ 同时右移一位.</p>
+<p>$$\begin{aligned}
+A&amp;=\textcolor{green}{ab}\overset{\overset{ i}{↓}}{\textcolor{green}{ab}a}bc\\
+B&amp;=\textcolor{green}{ab}\underset{\underset{ j}{↑}}{\textcolor{green}{ab}c}
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-1" id="tabs-1-5"
+         />
+    <label class="label " for="tabs-1-5">6</label>
+    
+    <div class="inner"><p>$A[i]\not=B[j]$，令 $j=pre[j-1]=2$.这样，$A[i]$ 和 $B[j]$ 前的绿串就又匹配了.</p>
+<p>$$\begin{aligned}
+A&amp;=\textcolor{lightgreen}{ab}\underline{\textcolor{green}{ab}}\overset{\overset{ i}{↓}}{\textcolor{red}{a}}bc\\
+B&amp;=\underline{\textcolor{green}{ab}}\textcolor{lightgreen}{ab}\underset{\underset{ j}{↑}}{\textcolor{red}{c}}
+\end{aligned}$$</p><p>$$\begin{aligned}
+A&amp;=ab\underline{\textcolor{green}{ab}}\overset{\overset{ i}{↓}}{a}bc\\
+B&amp;=\underline{\textcolor{green}{ab}}\underset{\underset{ j}{↑}}{a}bc
+\end{aligned}$$</p><blockquote>
+<p>字符串的下标是从 $0$ 开始计算的.$j=2$ 实际上就是将 $j$ 指向 $B$ 串的第 $3$ 个字符.</p>
+</blockquote>
+</div>
+    <input type="radio" class="toggle" name="tabs-1" id="tabs-1-6"
+         />
+    <label class="label " for="tabs-1-6">7</label>
+    
+    <div class="inner"><p>$A[i]=B[j]$，$i$ 和 $j$ 同时右移一位.</p>
+<p>$$\begin{aligned}
+A&amp;=ab\textcolor{green}{ab}\overset{\overset{ i}{↓}}{\textcolor{green}{a}}bc\\
+B&amp;=\textcolor{green}{ab}\underset{\underset{ j}{↑}}{\textcolor{green}{a}}bc
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-1" id="tabs-1-7"
+         />
+    <label class="label " for="tabs-1-7">8</label>
+    
+    <div class="inner"><p>$A[i]=B[j]$，$i$ 和 $j$ 同时右移一位.</p>
+<p>$$\begin{aligned}
+A&amp;=ab\textcolor{green}{ab}\overset{\overset{ i}{↓}}{\textcolor{green}{ab}c}\\
+B&amp;=\textcolor{green}{ab}\underset{\underset{ j}{↑}}{\textcolor{green}{ab}c}
+\end{aligned}$$</p></div>
+    <input type="radio" class="toggle" name="tabs-1" id="tabs-1-8"
+         />
+    <label class="label " for="tabs-1-8">9</label>
+    
+    <div class="inner"><p>$A[i]=B[j]$，$i$ 和 $j$ 同时右移一位.</p>
+<p>$$\begin{aligned}
+A&amp;=ab\textcolor{green}{abab}\overset{\overset{ i}{↓}}{\textcolor{green}{c}}\\
+B&amp;=\textcolor{green}{abab}\underset{\underset{ j}{↑}}{\textcolor{green}{c}}
+\end{aligned}$$</p><p>此时 $j=B\;$串长度 $ =5$，指到了 $B$ 串外面，代表匹配成功.</p>
+<p>$$\begin{aligned}
+A&amp;=ab\textcolor{green}{ababc}\overset{\overset{ i}{↓}}{\color{white}{b}}\\
+B&amp;=\textcolor{green}{ababc}\underset{\underset{ j}{↑}}{\color{white}{b}}
+\end{aligned}$$</p></div>
+    </div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">pre</span><span class="p">[];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">kmp</span><span class="p">(</span><span class="n">string</span> <span class="n">A</span><span class="p">,</span> <span class="n">string</span> <span class="n">B</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="n">i</span> <span class="o">++</span><span class="p">,</span> <span class="n">j</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="n">j</span> <span class="o">=</span> <span class="n">pre</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="n">i</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">B</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="c1">//匹配成功
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#预处理">
+    预处理
+    <a class="anchor" name="预处理" href="#%e9%a2%84%e5%a4%84%e7%90%86">#</a>
+</h2><p>$pre[ \ ]$ 数组的求法和 <code>KMP</code> 的主程序很相似.</p>
+<p>指针 $i,j$ 都指向 $B$ 串，表示当前求的是 $B[0\cdots i]$ 的公共前后缀长度 $pre[i]$.并且 $B[0\cdots i]$ 的公共前后缀为 $B[0\cdots j]$，即 $pre[i]=j+1$.</p>
+<p>因为 $pre[0]=0$ 不用求，所以直接从 $pre[1]$ 开始求就好，初始时 $i=1,j=0$.</p>
+<p>$$\begin{aligned}
+B&amp;=\overset{\overset{ i}{↓}}{aba}bc\\
+B&amp;=\underset{\underset{ j}{↑}}{a}babc
+\end{aligned}$$</p><p>然后，我们直接采用 <a class="md-link" href="../../../../../docs/NOI/String/KMP/#%e5%8e%9f%e7%90%86"  ><code>KMP</code> 主程序<img class="icon" src="../../../../../img/link.svg" /></a> 的策略：</p>
+<ol>
+<li>
+<p>如果 $B[i]=B[j]$，那么 $pre[i]=j+1$，并将 $i$ 和 $j$ 同时右移一位.</p>
+</li>
+<li>
+<p>如果 $B[i]\not=B[j]$，又分两种情况讨论：</p>
+<ul>
+<li>
+<p>$j\not=0$ 时，绿串的公共前后缀长度为 $pre[j-1]$.那么就令 $j=pre[j-1]$.</p>
+</li>
+<li>
+<p>$j=0$ 时，绿串长度为 $0$，$j$ 不能再往左移了.此时只能将 $i$ 右移一位.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>重复前两步，直到 $pre[ \ ]$ 全部求完.</p>
+</li>
+</ol>
+<p>为什么可以这么做呢？因为仅当 $B[i]$ 和 $B[j]$ 前的若干个字符相匹配时，$B[0\cdots j]$ 才可能是公共前后缀.而 <code>KMP</code> 的主程序能够维护这一特征.</p>
+<p>$$\begin{aligned}
+B&amp;=ab\underline{\textcolor{green}{ab}}\overset{\overset{ i}{↓}}{c}\\
+B&amp;=\underline{\textcolor{green}{ab}}\underset{\underset{ j}{↑}}{a}bc
+\end{aligned}$$</p><p>也就是说，预处理 $pre[ \ ]$ 数组，和 <code>KMP</code> 的主程序，其实是在干同一件事情.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">pre</span><span class="p">[];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">getPre</span><span class="p">(</span><span class="n">string</span> <span class="n">B</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 注意 i = 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">B</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="n">pre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">++</span><span class="p">,</span> <span class="n">j</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="n">j</span> <span class="o">=</span> <span class="n">pre</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="n">i</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#模板">
+    模板
+    <a class="anchor" name="模板" href="#%e6%a8%a1%e6%9d%bf">#</a>
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">pre</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">getPre</span><span class="p">(</span><span class="n">string</span> <span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">str</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="n">pre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">++</span><span class="p">,</span> <span class="n">j</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="n">j</span> <span class="o">=</span> <span class="n">pre</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="n">i</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">kmp</span><span class="p">(</span><span class="n">string</span> <span class="n">str</span><span class="p">,</span> <span class="n">string</span> <span class="n">substr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">getPre</span><span class="p">(</span><span class="n">substr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">substr</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="n">i</span> <span class="o">++</span><span class="p">,</span> <span class="n">j</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="n">j</span> <span class="o">=</span> <span class="n">pre</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="n">i</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">substr</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">string</span> <span class="n">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">str</span> <span class="o">&gt;&gt;</span> <span class="n">substr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">kmp</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>字符串 $s$ 左部的任意子串为 $s$ 的前缀，且 $s$ 的前缀不能是 $s$ 本身.例如 <code>freeze</code> 的前缀有 <code>f</code>，<code>fr</code>，<code>fre</code>，<code>free</code>，<code>freez</code>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../../scripts/mathjax.js"></script>
+</html>

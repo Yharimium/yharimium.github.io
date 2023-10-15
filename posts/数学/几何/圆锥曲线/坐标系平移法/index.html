@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>坐标系平移法 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../../">博客</a><a class="nav-item " href="../../../../../docs/">文档</a><a class="nav-item " href="../../../../../search/">搜索</a><a class="nav-item " href="../../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">坐标系平移法</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#例-1">例 1</a>
+      <ul>
+        <li><a href="#标答">标答</a></li>
+        <li><a href="#快速解法">快速解法</a></li>
+      </ul>
+    </li>
+    <li><a href="#例-2">例 2</a>
+      <ul>
+        <li><a href="#快速解法-1">快速解法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../../categories/%e6%95%b0%e5%ad%a6">数学</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../../tags/%e5%b9%b3%e9%9d%a2%e5%87%a0%e4%bd%95">平面几何</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../../tags/%e5%9c%86%e9%94%a5%e6%9b%b2%e7%ba%bf">圆锥曲线</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2022-5-25</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">坐标系平移法</h1>
+  <span class="description"></span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p>若圆锥曲线题围绕某特殊点展开，可将坐标系原点平移至此点，减小计算量.</p>
+<h2 id="#例-1">
+    例 1
+    <a class="anchor" name="例-1" href="#%e4%be%8b-1">#</a>
+</h2><p>已知椭圆 $E:\frac{x^2}{4}+\frac{y^2}{3}=1$，过 $P(2, 1)$ 的直线 $l$ 与椭圆 $E$ 交于 $A,B$ 且 $\vec{OP}^2=4\vec{PA}\cdot\vec{PB}$，求 $l$ 的方程.</p>
+<h3 id="#标答">
+    标答
+    <a class="anchor" name="标答" href="#%e6%a0%87%e7%ad%94">#</a>
+</h3><p>联立 $\begin{cases}y=k(x-2)+1\\ \frac{x^2}{4}+\frac{y^2}{3}=1\end{cases}$ 得</p>
+<p>$$(3&#43;4k^2)x^2-8k(2k-1)x&#43;16k^2-16k-8=0$$</p><p>$\Delta=[-8k(2k-1)]^2-4(3+4k^2)(16k^2-16k-8)&gt;0$</p>
+<p>$\therefore 32(6k+3)&gt;0,k&gt;-\frac{1}{2}$</p>
+<p>$x_1+x_2=\frac{8k(2k-1)}{3+4k^2},x_1x_2=\frac{16k^2-16k-8}{3+k^2}$</p>
+<p>$\because\vec{OP}^2=4\vec{PA}\cdot\vec{PB}$</p>
+<p>$\therefore(x_1-2,y_1-1)\cdot(x_2-2,y_2-1)=\frac{5}{4}$</p>
+<p>$\therefore [x_1x_2-2(x_1+x_2)+4] (1+k^2)=\frac{5}{4}$</p>
+<p>$\therefore \left[\frac{16k^2-16k-8}{3+4k^2}-2\frac{8k(2k-1)}{3+4k^2}+4\right] (1+k^2)=\frac{4+4k^2}{3+4k^2}=\frac{5}{4}$</p>
+<p>解得 $k=\pm\frac{1}{2},k=-\frac{1}{2}$ 不合题意，舍去.</p>
+<p>$\therefore l:y=\frac{1}{2}x$.</p>
+<h3 id="#快速解法">
+    快速解法
+    <a class="anchor" name="快速解法" href="#%e5%bf%ab%e9%80%9f%e8%a7%a3%e6%b3%95">#</a>
+</h3><p>将坐标系原点平移至 $P(2,1)$. 为了区分坐标系，令 $\lambda=x-2,\mu=y-1$. 新坐标系中 $A(\lambda_1,\mu_1),B(\lambda_2,\mu_2)$.</p>
+<p>设 $l:\mu=k\lambda$. 于是 $\vec{PA}\cdot\vec{PB}=(k^2+1)\lambda_1\lambda_2=\frac{5}{4}$.</p>
+<p>联立 $\begin{cases}\mu=k\lambda\\ \frac{(\lambda+2)^2}{4}+\frac{(\mu+1)^2}{3}=1\end{cases}$ 得</p>
+<p>$$(4k^2&#43;3)\lambda^2&#43;(12&#43;8k)\lambda&#43;4=0$$</p><p>$\Delta=192k+96&gt;0,\therefore k&gt;-\frac{1}{2}$.</p>
+<p>$\lambda_1\lambda_2=\frac{4}{4k^2+3}$</p>
+<p>代入得 $(k^2+1)\frac{4}{4k^2+3}=\frac{5}{4}$，解得 $k=\frac{1}{2}$. $\therefore y=\frac{1}{2}x$.</p>
+<h2 id="#例-2">
+    例 2
+    <a class="anchor" name="例-2" href="#%e4%be%8b-2">#</a>
+</h2><p>已知双曲线 $C:x^2-\frac{y^2}{16}=1$. $T$ 在直线 $x=\frac{1}{2}$ 上. 过 $T$ 的两条直线分别交 $C$ 的右支于 $A,B$ 和 $P,Q$. 若 $|TA|\cdot|TB|=|TP|\cdot|TQ|$，求 $k_{AB}+k_{PQ}$.</p>
+<h3 id="#快速解法-1">
+    快速解法
+    <a class="anchor" name="快速解法-1" href="#%e5%bf%ab%e9%80%9f%e8%a7%a3%e6%b3%95-1">#</a>
+</h3><p>标答我就不贴了.</p>
+<p>设 $T\left(\frac{1}{2},t\right)$. 将坐标系原点平移至 $T$. 令 $\lambda=x-\frac{1}{2},\mu=y-t$.</p>
+<p>设 $AB:\mu=k_1\lambda,PQ:\mu=k_2\lambda$.</p>
+<p>$\because|TA|\cdot|TB|=|TP|\cdot|TQ|$</p>
+<p>$\therefore(\lambda_A^2+\mu_A^2)(\lambda_B^2+\mu_B^2)=(\lambda_P^2+\mu_P^2)(\lambda_Q^2+\mu_Q^2)$</p>
+<p>$\therefore(k_1^2+1)^2(\lambda_A\lambda_B)^2=(k_2^2+1)^2(\lambda_P\lambda_Q)^2$</p>
+<p>联立 $\begin{cases}\mu=k\lambda\\ \left(\lambda+\frac{1}{2}\right)^2-\frac{(\mu+t)^2}{16}=1\end{cases}$ 得</p>
+<p>$$(16-k^2)\lambda^2+(16-2kt)\lambda-t^2-12=0$$</p>
+<p>$\Delta&gt;0$ 解得 $k&lt;4$.</p>
+<p>$\lambda_1\lambda_2=\frac{-t^2-12}{16-k^2}$，即 $\lambda_A\lambda_B=\frac{-t^2-12}{16-k_1^2},\lambda_P\lambda_Q=\frac{-t^2-12}{16-k_2^2}$</p>
+<p>代入得 $\frac{k_1^2+1}{16-k_1^2}=\frac{k_2^2+1}{16-k_2^2}$. 设左边表达式 $=s,\therefore k_1,k_2$ 是 $f(x)=\frac{k^2+1}{16-k^2}=s$ 的两根.</p>
+<p>$\because f(-x)=f(x)$，且 $f(x)=s$ 仅有两根，$\therefore (k_1,s),(k_2,s)$ 关于 $y$ 轴对称.</p>
+<p>$\therefore k_{AB}+k_{PQ}=k_1+k_2=0$.</p>
+</article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../../scripts/mathjax.js"></script>
+</html>

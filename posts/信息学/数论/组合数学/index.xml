@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>组合数学 on Yharim Area</title>
+    <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/</link>
+    <description>Recent content in 组合数学 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>容斥原理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 06 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/</guid>
+      <description>!!! info 若无特殊说明，本章涉及的变量皆为正整数.
+简介#容斥原理是一种不重不漏的计数原理.
+例，$A,B,C$ 三人竞选扫黄队长：
+::: - $15$ 人投给 $A$ - $16$ 人投给 $B$ - $17$ 人投给 $C$ - $2$ 人同时投给 $A,B,C$ ::: - $4$ 人同时投给 $A,B$ - $5$ 人同时投给 $A,C$ - $6$ 人同时投给 $B,C$
+问共有多少人参与投票.
+$A,B,C$ 三人的得票情况以用韦恩图描述：
+::: - $|A|=15$ - $|B|=16$ - $|C|=17$ - $|A∩B∩C|=2$ ::: - $|A∩B|=4$ - $|A∩C|=5$ - $|B∩C|=6$
+求的是投票人数，即 $|A∪B∪C|$.
+$$|A∪B∪C|=|A|+|B|+|C|-|A∩B|-|A∩C|-|B∩C|+|A∩B∩C|$$
+将上述问题推广到普遍情况，就是容斥原理.
+公式#并集#对于 $n$ 个集合 $S_1,S_2\cdots S_n$，$|S|$ 表示集合 $S$ 的元素数，则：</description>
+    </item>
+    
+    <item>
+      <title>Lucas 定理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/lucas-%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/lucas-%E5%AE%9A%E7%90%86/</guid>
+      <description>若无特殊说明，本章涉及的变量皆为正整数.
+简介#Lucas 定理用于求解大组合数对质数 $p$（$p≤10^6$）取模：
+$${n\choose m}≡{n \bmod p\choose m \bmod p}\cdot{\lfloor n/p\rfloor\choose\lfloor m/p\rfloor} \ (\bmod \ p)$$
+证明#我不会，长大后再学习.
+解法#对于 $n,m≤10^6$ 的组合数 ${n\choose m}$，可以直接代入 公式，并使用 乘法逆元 将除法转为乘法.
+$$\binom{n}{m}=\frac{n!}{m!(n-m)!}≡n!\cdot(m!)^{-1}\cdot[(n-m)!]^{-1} \ (\bmod \ p)$$
+/* fac[x]: x! * inv[x]: x! 关于模 p 的乘法逆元（注意有阶乘） * 以上需要预处理 */ LL C(LL n, LL m) { if (n &amp;lt; m) return 0; return fac[n] * inv[m] % P * inv[n - m] % P; } 对于更大的组合数，套用 Lucas 定理.</description>
+    </item>
+    
+    <item>
+      <title>卡特兰数列</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0%E5%88%97/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0%E5%88%97/</guid>
+      <description> 若无特殊说明，本章涉及的变量皆为正整数.
+简介#卡特兰数列是许多看似毫不相关的问题的解.
+$n$ 个节点能构成 $Cat_n$ 种不同的二叉树. $n$ 个左括号和 $n$ 个右括号组成的合法序列有 $Cat_n$ 种. $n$ 个元素的进栈顺序为 $1,2,\cdots,n$，合法的出栈顺序有 $Cat_n$ 种. 在圆上选择 $2n$ 个点成对连接，使得 $n$ 条线段不相交的方法数为 $Cat_n$. 通过若干条互不相交的对角线,把凸 $n$ 边形拆分成若干个三角形的方案数为 $Cat_{n-2}$. 在平面直角坐标系上，每一步只能向上或向右走 $1$ 个单位，从 $(0,0)$ 走到 $(n,n)$ 且不接触直线 $y=x$ 的路径数量为 $2Cat_n-1$. 通项公式#$$Cat_n={2n\choose n}÷(n+1)={2n\choose n}-{2n\choose n-1}$$
+递推公式#$$Cat_n=\sum_{i=0}^{n-1}Cat_i\cdot Cat_{n-i+1}$$
+附表#$Cat_0$ $Cat_1$ $Cat_2$ $Cat_3$ $Cat_4$ $Cat_5$ $Cat_6$ $Cat_7$ $Cat_8$ $\cdots$ $1 $ $1 $ $2 $ $5 $ $14 $ $42 $ $132 $ $429 $ $1430 $ $\cdots$ </description>
+    </item>
+    
+    <item>
+      <title>二项式定理</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+简介#$$(a+b)^n=\sum_{i=0}^n\binom{n}{i}a^{n-i}b^i$$
+证明#使用数学归纳法.
+设 $n=k$ 时二项式定理成立，考察 $n=k+1$ 时是否也成立：
+$$\begin{aligned}&amp;amp;\textcolor{transparent}{=}(a&amp;#43;b)^{k&amp;#43;1}\\&amp;amp;=(a&amp;#43;b)\cdot(a&amp;#43;b)^k\\&amp;amp;=a(a&amp;#43;b)^k&amp;#43;b(a&amp;#43;b)^k\\&amp;amp;=a\sum_{i=0}^k\binom{k}{i}a^{k-i}b^i&amp;#43;b\sum_{j=0}^k\binom{k}{j}a^{k-j}b^j\\&amp;amp;=\sum_{i=0}^k\binom{k}{i}a^{k-i&amp;#43;1}b^i&amp;#43;\sum_{j=0}^k\binom{k}{j}a^{k-j}b^{j&amp;#43;1}&amp;amp;&amp;amp;将 \ a,b \ 乘进去\\&amp;amp;=a^{k&amp;#43;1}&amp;#43;\sum_{i=1}^k\binom{k}{i}a^{k-i&amp;#43;1}b^i&amp;#43;\sum_{j=0}^k\binom{k}{j}a^{k-j}b^{j&amp;#43;1}&amp;amp;&amp;amp;提出 \ i=0 \ 的项\\&amp;amp;=a^{k&amp;#43;1}&amp;#43;\sum_{i=1}^k\binom{k}{i}a^{k-i&amp;#43;1}b^i&amp;#43;\sum_{λ=1}^{k&amp;#43;1}\binom{k}{λ-1}a^{k-λ&amp;#43;1}b^λ&amp;amp;&amp;amp;设 \ λ=j&amp;#43;1，代入\\&amp;amp;=a^{k&amp;#43;1}&amp;#43;\sum_{i=1}^k\binom{k}{i}a^{k-i&amp;#43;1}b^i&amp;#43;b^{k&amp;#43;1}&amp;#43;\sum_{λ=1}^{k}\binom{k}{λ-1}a^{k-λ&amp;#43;1}b^λ&amp;amp;&amp;amp;提出 \ λ=k&amp;#43;1 \ 的项\\&amp;amp;=a^{k&amp;#43;1}&amp;#43;b^{k&amp;#43;1}&amp;#43;\sum_{i=1}^k\binom{k&amp;#43;1}{i}a^{k&amp;#43;1-i}b^i&amp;amp;&amp;amp;套用 \ 帕斯卡法则\\&amp;amp;=\sum_{i=0}^{k&amp;#43;1}\binom{k&amp;#43;1}{i}a^{k&amp;#43;1-i}b^i\\\end{aligned}$$
+∴ 二项式定理满足递推成立关系：
+$n=k$ 时成立 $\Longrightarrow$ $n=k+1$ 时成立∵ $n=1$ 时 $(a+b)^1=\sum_{i=0}^1\binom{n}{i}a^{n-i}b^i=a+b$ 成立，
+∴ 二项式定理在 $n=1$ 之后的任何整数都成立.</description>
+    </item>
+    
+    <item>
+      <title>组合数学</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/</link>
+      <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/</guid>
+      <description>注意：若无特殊说明，本章涉及的变量皆为正整数.
+简介#排列：从 $n$ 个元素中取出 $m$ 个，按一定顺序排列.
+组合：从 $n$ 个元素中取出 $m$ 个，不计排列顺序.
+加法原理#一算法有 $n$ 种方式，第 $i$ 种方式有 $a_i$ 种方法，该算法共有 $\sum_{i=1}^na_i$ 种实现方法.
+例 从 $A$ 地到 $B$ 地有爬行、骑车、飞行三种方式，可以任选一个. 而爬行、骑车、飞行分别有 $a_1,a_2,a_3$ 种方法，那么 $A→B$ 共有 $a_1+a_2+a_3$ 种方法. 乘法原理#一算法有 $n$ 个步骤，第 $i$ 个步骤有 $a_i$ 种方法，该算法共有 $\prod_{i=1}^na_i$ 种实现方法.
+例 从 $A$ 地到 $B$ 地必须先爬行到车站，再骑车到机场，最后飞行到北京，而爬行、骑车、飞行分别有 $a_1,a_2,a_3$ 种方法，那么 $A→B$ 共有 $a_1\cdot a_2\cdot a_3$ 种方法. 排列数#从 $n$ 个元素中取出 $m$ 个，按一定顺序排列的方案数，用符号 $A_n^m$ 表示.</description>
+    </item>
+    
+  </channel>
+</rss>

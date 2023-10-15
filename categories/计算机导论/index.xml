@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机导论 on Yharim Area</title>
+    <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/</link>
+    <description>Recent content in 计算机导论 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为什么补码会是这个鬼样</title>
+      <link>/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A1%A5%E7%A0%81%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E9%AC%BC%E6%A0%B7/</link>
+      <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A1%A5%E7%A0%81%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E9%AC%BC%E6%A0%B7/</guid>
+      <description>为什么使用补码#即答：想把减法转换为加法。
+加法器的逻辑门电路易于设计、效率高。如果能把减法转换为加法，那么加减法就都能通过加法器进行，不需要额外设计减法器，能进一步简化芯片的设计。
+具体怎么转换呢？
+!!! info 减去一个数，等于加上这个数的相反数。
+$$a-b=a+(-b)$$就是这一句废话文学给补码的理论奠大基。
+补码是如何形成的#补码充分体现了什么叫作「bug 用得好就是特性」。
+溢出#计算机中，储存数据的容器有一个重要的特性：溢出。
+这是一个四位二进制数的容器，最多可以存到 $(15)_{10}=(1111)_2$。
+$$\boxed{1} \ \boxed{1} \ \boxed{1} \ \boxed{1}$$
+当我们把 $(10010)_2$ 存进该容器时，最高位的 $1$ 会被扔掉（悲），相当于减少了 $\color{red}(10000)_2$。
+$$\cancel 1 \ \boxed{0} \ \boxed{0} \ \boxed{1} \ \boxed{0} \ \color{transparent}{\cancel 1}$$
+这也就导致了，在长度为 $4$ 的容器中，$(10001)_2\Rightarrow(1)_2$，$(10010)_2\Rightarrow(10)_2$，$\cdots$
+越加越小#在固定长度的容器中作加法，会出现「越加越小」的情况。还是拿长度 $4$ 的容器举例：
+$$(1010)_2+(111)_2=(10001)_2\Rightarrow(1)_2$$
+而我们又知道
+$$(1010)_2+(-1001)_2=(1)_2$$
+进一步说，在这样的环境下，给一个数加上负数 $(-1001)_2$，完全等价于给其加上正数 $(111)_2$。
+有没有一种系统的方法，能给每个负数找到等价正数？
+!!! note 以负数 $(-1001)_2$ 为例。设其等价正数为 $x$，参与加法的另一个常数为 $C$，则
+$$C+(-1001)_2=C+x\color{red}-(10000)_2$$解得 $x={\color{red}(10000)_2}-(1001)_2=(111)_2$进一步说，对于一般的负数 $-y$，有</description>
+    </item>
+    
+  </channel>
+</rss>

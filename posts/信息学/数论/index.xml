@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数论 on Yharim Area</title>
+    <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/</link>
+    <description>Recent content in 数论 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>矩阵快速幂</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <description>简介#矩阵快速幂能将 $O(n)$ 的线性递推优化成 $O(\log n)$.
+矩阵#矩阵相当于二维数组.
+矩阵 $A$ 有 $m$ 行 $n$ 列，称为 $m×n$ 矩阵，简记为 $A_{mn}$.
+矩阵 $A$ 第 $i$ 行 $j$ 列的元素写作 $a_{ij}$.
+$$A=\begin{bmatrix}a_{11}&amp;amp; a_{12}&amp;amp; \cdots &amp;amp; a_{1n}\\a_{21}&amp;amp; a_{22}&amp;amp; \cdots &amp;amp; a_{2n}\\\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\a_{m1}&amp;amp; a_{m2}&amp;amp; \cdots &amp;amp; a_{mn}\end{bmatrix}$$
+单位矩阵#主对角线上的元素都为 $1$，其余元素为 $0$ 的 $n×n$ 矩阵称为 $n$ 阶单位矩阵，记作 $I_n$ 或 $E_n$.
+$$I_n=\begin{bmatrix}1 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 \\0 &amp;amp; 1 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 \\0 &amp;amp; 0 &amp;amp; 1 &amp;amp; \cdots &amp;amp; 0 \\\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 1\end{bmatrix}$$</description>
+    </item>
+    
+    <item>
+      <title>莫比乌斯反演</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</guid>
+      <description>!!! info 若无特殊说明，本章涉及的变量皆为正整数.
+简介#由函数 $f$ 定义一个函数 $g$：
+$$g(n)=\sum_{d\mid n}f(d)\quad\big(\text{或}\quad g(n)=\sum_{n\mid d}f(d)\big)$$
+已知 $g(n)$，即可用莫比乌斯反演推出 $f(n)$.
+莫比乌斯函数#定义#$n$ 的莫比乌斯函数记为 $\mu(n)$：
+$$\mu(n)=\begin{cases}0 &amp;amp; n \ 有平方因数 \\1 &amp;amp; n \ 无平方因数，且有偶数个质因数 \\-1 &amp;amp; n \ 无平方因数，且有奇数个质因数\end{cases}$$
+特别地，$μ(1)=1$.
+性质#性质 1#$$\sum_{d\mid n}μ(d)= \left\lfloor\frac{1}{n}\right\rfloor= \begin{cases}1 &amp;amp; n=1\\0 &amp;amp; n&amp;gt;1\end{cases}$$
+证 设 $n$ 有 $k$ 个质因子 $p_1,p_2,\cdots,p_k$，则：
+$$\begin{aligned}\sum_{d\mid n}μ(d)= \ &amp;amp;μ(1)&amp;#43;μ(p_1)&amp;#43;μ(p_2)&amp;#43;\cdots&amp;#43;μ(p_k)&amp;#43;μ(p_1p_2)&amp;#43;\cdots&amp;#43;μ(p_1p_2\cdots p_k)\\= \ &amp;amp;{k\choose 0}&amp;#43;{k\choose 1}(-1)&amp;#43;{k\choose 2}(-1)^2&amp;#43;\cdots&amp;#43;{k\choose k}(-1)^k\\= \ &amp;amp;\sum_{i=0}^k{k\choose i}(-1)^i\end{aligned}$$</description>
+    </item>
+    
+    <item>
+      <title>博弈论</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%8D%9A%E5%BC%88%E8%AE%BA/</guid>
+      <description>简介#博弈论研究在一局博弈中如何最优化玩家的策略.
+公平组合游戏 ICG#两名玩家轮流行动，且行动规则相同. 最终不能行动的玩家判负. NIM 游戏#简介#有 $n$ 堆石子，第 $i$ 堆石子数为 $A_i$. 两名玩家轮流取走任意一堆的任意个石子，但不能不取. 取走最后一个石子的玩家胜.
+NIM 游戏属于 公平组合游戏，且不存在平局，只有「先手必胜」和「后手必胜」两种情况.
+策略#当且仅当 $A_1\oplus A_2\oplus\cdots\oplus A_n\not=0$ 时，先手必胜（$\oplus$ 表示二进制异或）.
+$A\oplus B$：将 $A$ 和 $B$ 的二进制位对齐，相等取 $0$，不相等取 $1$.
+$$\begin{aligned}1 \ 0 \ 0 \ 1 \ 0 \ 1 \ 0\\\underline{\oplus \ 1 \ 1 \ 0 \ 1 \ 1 \ 0 \ 1}\\0 \ 1 \ 0 \ 0 \ 1 \ 1 \ 1\end{aligned}$$</description>
+    </item>
+    
+    <item>
+      <title>快速幂</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <description>快速幂#如何快速求 $a^b$（$a,b\in\mathbb{Z}$）？
+递归写法#根据乘方公式 $a^{m+n}=a^m\cdot a^n$，有：
+$$a^b=\left\{\begin{aligned}&amp;amp;a^{\left\lfloor b/2\right\rfloor}\cdot a^{\left\lfloor b/2\right\rfloor} &amp;amp;&amp;amp; b=2k\\&amp;amp;a^{\left\lfloor b/2\right\rfloor}\cdot a^{\left\lfloor b/2\right\rfloor}\cdot a &amp;amp;&amp;amp; b=2k&amp;#43;1\end{aligned}\right.,k\in\mathbb{Z}$$
+边界条件 时间复杂度 $a^0=1$ $O(\log{b})$ typedef long long LL; LL Pow(LL a, LL b) { if(!b) return 1; // 边界条件 LL res = Pow(a, b / 2); if(b % 2 == 0) // b 是偶数 return res * res; else // b 是奇数 return res * res * a; } 递推写法#若 $b$ 在二进制下的第 $k_1,k_2,k_3,\cdots$ 位为 $1$，则 $b=2^{k_1}+2^{k_2}+2^{k_3}+\cdots(k_i≤\log{b})$.</description>
+    </item>
+    
+    <item>
+      <title>因数</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%9B%A0%E6%95%B0/</link>
+      <pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E5%9B%A0%E6%95%B0/</guid>
+      <description>若无特殊说明，本章涉及的变量皆为正整数.
+定义#若 $n \div d$ 为整数，则 $d$ 是 $n$ 的因数，记作 $d\mid n$.
+算数基本定理#任意正整数 $n$ 都能唯一地分解为有限个质数的乘积.
+$$n=p_1^{\normalsize c_1}\cdot p_2^{\normalsize c_2}\cdots p_m^{\normalsize c_m}$$
+分解质因数#试除法#将 $n$ 分解成 算数基本定理 的形式. 如 $$360=2^3\times 3^2\times 5$$
+枚举 $i=2,3,\cdots,\sqrt{n}$，除尽 $n$ 中的 $i$，并记录除的次数.
+const int N = 1e6; vector&amp;lt;int&amp;gt; P, C; void factor(int n) { for (int i = 2; i &amp;lt;= sqrt(n); i ++) { if (n % i == 0) { P.</description>
+    </item>
+    
+    <item>
+      <title>质数</title>
+      <link>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%B4%A8%E6%95%B0/</link>
+      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%95%B0%E8%AE%BA/%E8%B4%A8%E6%95%B0/</guid>
+      <description>若无特殊说明，本章涉及的变量皆为正整数.
+定义#若 $n$ 只能被 $1$ 和 $n$ 整除，则 $n$ 是质数，否则是合数. $\pi(n)$：$n$ 以内的质数个数，$\pi(n)≈\frac{n}{\ln{n}}$. $p(n)$：第 $n$ 个质数，$p(n)≈n\ln{n}$. 质数判定#若 $n$ 为合数，则必定存在 $i≤\sqrt{n}$，使 $n$ 能整除 $i$. $n=0,1$ 需要特判.
+时间复杂度：$O(\sqrt n)$.
+bool isPrime(int n) { if (n &amp;lt; 2) return false; for (int i = 2; i &amp;lt;= sqrt(n); i ++) if (n % i == 0) return false; return true; } 质数筛法#求 $n$ 以内的所有质数.
+暴力算法#对 $[2,n]$ 中的所有整数进行一次 质数判定.</description>
+    </item>
+    
+  </channel>
+</rss>

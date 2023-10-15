@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>二分 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">二分</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#条件">条件</a></li>
+    <li><a href="#原理">原理</a></li>
+    <li><a href="#q--a">Q &amp; A</a></li>
+    <li><a href="#整数域上的二分">整数域上的二分</a></li>
+    <li><a href="#实数域上的二分">实数域上的二分</a></li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e7%ae%97%e6%b3%95">算法</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-1-11</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">二分</h1>
+  <span class="description">据说只有 10% 的程序员能写对二分.</span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p>玩个游戏.</p>
+<ul>
+<li>想一个 $1000$ 以内的正整数 $n$.</li>
+<li>每次我给出一个整数 $x$，告诉我「$n&gt;x$」「$n&lt;x$」或「$n=x$」.</li>
+</ul>
+<p>我能保证在 $10$ 次以内猜到它.</p>
+<p>首先我猜 $x=500$. 除了正好猜中以外，我能把 $n$ 的范围缩小一半.</p>
+<ul>
+<li>$n&gt;x\intro n\in[501,1000]$</li>
+<li>$n&lt;x\intro n\in[1,499]$</li>
+</ul>
+<p>然后如法炮制，重复给出可行范围的中间数，每次都能把范围折半. 由于 $\log_2{1000}&lt;10$，最多 $10$ 次就能确定 $n$.</p>
+
+<details class="book-details" >
+  <summary><span>例</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>$n=324$：</p>
+<ol>
+<li>$x=500$. $n&lt;x\intro n\in[1,499]$.</li>
+<li>$x=250$. $n&gt;x\intro n\in[251,499]$.</li>
+<li>$x=375$. $n&lt;x\intro n\in[251,375]$.</li>
+<li>$x=313$. $n&gt;x\intro n\in[313,375]$.</li>
+<li>$x=344$. $n&lt;x\intro n\in[313,344]$.</li>
+<li>$x=328$. $n&lt;x\intro n\in[313,328]$.</li>
+<li>$x=320$. $n&gt;x\intro n\in[320,328]$.</li>
+<li>$x=324$. $n=x$.</li>
+</ol>
+</div>
+</details>
+<h2 id="#条件">
+    条件
+    <a class="anchor" name="条件" href="#%e6%9d%a1%e4%bb%b6">#</a>
+</h2><p>数组须呈现广义上的「单调性」.</p>
+<p>将数组 $a$ 对半分，前段都不满足 $P$，后段都满足 $P$，则可用二分算法确定分割点，进而确定「第一个满足 $P$ 的元素」.</p>
+<h2 id="#原理">
+    原理
+    <a class="anchor" name="原理" href="#%e5%8e%9f%e7%90%86">#</a>
+</h2><p>查找数组 $a$（长度 $n$）中第一个满足条件 $P$ 的元素：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">check</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 返回 a[k] 是否满足条件 P */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">binQuery</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">m</span><span class="p">]))</span> <span class="n">r</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="n">l</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#q--a">
+    Q &amp; A
+    <a class="anchor" name="q--a" href="#q--a">#</a>
+</h2><p>作者列出了大家在学习二分算法中的一些疑问和解答，供参考学习.</p>
+<blockquote>
+<p><strong>Q</strong>：为何循环的条件是 $l+1&lt;r$？我在其他参考书上看的是 $l&lt;r$.</p>
+<p><strong>A</strong>：在我的版本中，当 $l+1=r$ 时，$a[l]$ 或 $a[r]$ 就是要找的分割点，此时应退出循环. 故循环能进行的条件是 $l+1&lt;r$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Q</strong>：针对一段数组区间，比如对 $a[L\cdots R]$ 进行二分查找怎么办？</p>
+<p><strong>A</strong>：在程序开头令 $l=L-1,r=R+1$，此举的目的是保证 $m=\left\lfloor\dfrac{ l+r}{2}\right\rfloor$ 能取到范围端点 $L$ 或 $R$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Q</strong>：$m$ 会溢出 $[L,R]$ 的范围吗？</p>
+<p><strong>A</strong>：不会. 那时已因不满足 $l+1&lt;r$ 而退出循环了.</p>
+</blockquote>
+<blockquote>
+<p><strong>Q</strong>：如果反过来，数组 $a$ 的前段满足 $P$，后段不满足 $P$ 怎么办？</p>
+<p><strong>A</strong>：我们把两种情况都讨论一遍.</p>
+<p>若前段（$a[1\cdots l]$）不满足 $P$，后段（$a[r\cdots n]$）满足 $P$：</p>
+<ul>
+<li>$a[l]$ 总不满足 $P$，$a[r]$ 总满足 $P$.</li>
+<li>因此当 $a[m]$ 满足 $P$ 时，应令 $r=m$，否则令 $l=m$.</li>
+<li>第一个满足 $P$ 的是 $a[r]$.</li>
+</ul>
+<p>若前段（$a[1\cdots l]$）满足 $P$，后段（$a[r\cdots n]$）不满足 $P$：</p>
+<ul>
+<li>$a[l]$ 总满足 $P$，$a[r]$ 总不满足 $P$.</li>
+<li>因此当 $a[m]$ 满足 $P$ 时，应令 $l=m$，否则令 $r=m$.</li>
+<li>最后一个满足 $P$ 的是 $a[l]$.</li>
+</ul>
+</blockquote>
+<h2 id="#整数域上的二分">
+    整数域上的二分
+    <a class="anchor" name="整数域上的二分" href="#%e6%95%b4%e6%95%b0%e5%9f%9f%e4%b8%8a%e7%9a%84%e4%ba%8c%e5%88%86">#</a>
+</h2><p>在单调递增数组 $a$（长度 $n$）中查找第一个 $\ge x$ 的数：</p>
+<p>前段 $&lt;x$，后段 $\ge x$，因此 $a[m]\ge x$ 时应令 $r=m$，最终答案是 $a[r]$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">binQuery</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">x</span><span class="p">)</span> <span class="n">r</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="n">l</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>在单调递增数组 $a$（长度 $n$）中查找最后一个 $\le x$ 的数：</p>
+<p>前段 $\le x$，后段 $&gt; x$，因此 $a[m]\le x$ 时应令 $l=m$，最终答案是 $a[l]$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">binQuery</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">)</span> <span class="n">l</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="n">r</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#实数域上的二分">
+    实数域上的二分
+    <a class="anchor" name="实数域上的二分" href="#%e5%ae%9e%e6%95%b0%e5%9f%9f%e4%b8%8a%e7%9a%84%e4%ba%8c%e5%88%86">#</a>
+</h2><p>实数域上的二分需要指定精度 $eps$，以 $l+eps&lt;r$ 为循环条件.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">eps</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">check</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="n">r</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="n">l</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>此外还可采用固定次数的二分. 此方法得到的答案精度通常更高.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">check</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="n">r</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="n">l</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

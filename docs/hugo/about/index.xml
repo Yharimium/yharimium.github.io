@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>关于 Hugo on Yharim Area</title>
+    <link>/docs/hugo/about/</link>
+    <description>Recent content in 关于 Hugo on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/docs/hugo/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 简介</title>
+      <link>/docs/hugo/about/what-is-hugo/</link>
+      <pubDate>Tue, 17 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/hugo/about/what-is-hugo/</guid>
+      <description>Hugo 是一个 静态网站生成器。不同于「根据每个访客的请求动态构建网页」的系统，Hugo 在编辑网站内容时构建网页。这是因为网站的浏览频率远高于编辑频率。Hugo 旨在为网站的访客提供最佳的浏览体验，并为网站作者提供理想的写作体验。
+使用 Hugo 构建网站快速且安全。Hugo 网站可以托管在很多地方，包括 Netlify，Heroku，GoDaddy，DreamHost，GitHub Pages，GitLab Pages，Surge，Firebase，Google 云盘，Amazon S3，Rackspace，Azure 和 CloudFront，并且可以与 CDN 配合使用。Hugo 网站不需要数据库，也不依赖昂贵的运行环境（如 Ruby，Python 或 PHP）。
+Hugo 有多快#https://www.youtube.com/embed/CdiDYZ51a2o
+Hugo 的工作方式#Hugo 根据当前目录下的各个 markdown 文件和 HTML 模板等构建网站。
+Hugo 的目标群体#Hugo 适用于以下群体：
+喜欢在文本编辑器而不是浏览器中写作的人。 希望自己搭建网站且不想设置复杂的运行环境、依赖关系和数据库的人。 希望搭建博客、公司网站、投资合作网站、文档、单个登录页面或具有上千个页面的网站的人。 </description>
+    </item>
+    
+    <item>
+      <title>Hugo 特性</title>
+      <link>/docs/hugo/about/features/</link>
+      <pubDate>Tue, 17 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/hugo/about/features/</guid>
+      <description>基本特性#极快的构建速度（每个网页 1 ms 以内） 强大的主题功能 跨平台，易安装（支持 macOS，Linux，Windows 等） 使用 LiveReload 动态加载网页，编辑文章的同时可预览网站 网站易于托管 结构特性#清晰的项目结构（包括网站结构） 支持自定义 URL 格式 支持美化 URL 支持永久链接（Permalink）模式 支持通过路径别名（Aliases）重定向 支持自定义类别系统（taxonomy），包括分类（categories）和标签（tags）等 内置文章排序功能 自动生成文章目录 自动生成网站菜单 内容特性#支持原生 Markdown，Emacs Org-Mode 以及其它语法格式（详见 语法格式支持） 支持在导言区（front matter）使用 TOML，YAML 和 JSON 元数据格式 支持自定义网站主页 多样化的文章类型 支持自定义和自动生成文章摘要 支持自定义短代码（Shortcodes）以在 Markdown 中使用富文本 内置阅读时间评估功能 内置文章字数统计功能 其它特性#集成 Disqus 评论支持 集成 Google Analytics 支持 自动生成 RSS 支持在 HTML 中使用 Go 模板 代码块语法高亮（由 Chroma 提供支持） </description>
+    </item>
+    
+    <item>
+      <title>Hugo 安全问题</title>
+      <link>/docs/hugo/about/security-model/</link>
+      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/hugo/about/security-model/</guid>
+      <description>运行时安全#Hugo 构建的是静态网站。构建后的网站运行在浏览器或和服务器（API）中。但在开发网站时，网站运行在 hugo 程序中。确保网站 运行时安全 十分重要。
+Hugo 的主要措施：使用沙盒（虚拟文件系统）并制定严格的安全策略。
+Hugo 内置有沙盒，仅主项目（而非第三方组件）可在沙盒根目录外挂载东西。 仅主项目可以遍历网站链接。 自定义组件对文件系统有只读权限。 Hugo 调用外部程序以支持 Asciidoctor 等功能，但这些程序及其传递参数是预定的，默认禁用（见 安全策略）。我们曾考虑添加 运行外部操作系统的命令 这一功能，但出于安全问题没有实现。 安全策略#Hugo 内置了安全策略，以限制对 os/exec、远程通信等的访问。以下是其默认配置。违反安全策略时，Hugo 将不会构建网站，并会给出解决方案。
+=== config. === yaml
+``` yamlsecurity:enableInlineShortcodes: falseexec:allow:- ^dart-sass-embedded$- ^go$- ^npx$- ^postcss$osEnv:- (?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM)$funcs:getenv:- ^HUGO_- ^CI$http:methods:- (?i)GET|POSTurls:- .*```=== toml
+``` toml[security]enableInlineShortcodes = false[security.</description>
+    </item>
+    
+    <item>
+      <title>Hugo 隐私配置</title>
+      <link>/docs/hugo/about/hugo-and-gdpr/</link>
+      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/hugo/about/hugo-and-gdpr/</guid>
+      <description>通用数据保护条例 (GDPR) 是欧盟法律中关于数据保护和隐私的规定，适用于欧盟和欧洲经济区内的所有个人。该协议于 2018/5/25 生效。
+Hugo 是静态网站生成器，构建的网站具有非常坚实的安全基础。与服务器和数据库驱动的网站相比，静态 HTML 文件更容易解析。
+但即便是静态网站也可能与外部服务集成，所以从版本 0.41 开始，Hugo 提供隐私配置。
+注意:
+隐私配置默认为 false（即 Hugo 0.41 之前的工作方式）。 隐私配置适用于 内部模板。某些主题可能包含用于嵌入服务（如 Google Analytics）的自定义模板，这将使隐私配置不生效。 我们将继续更新，并在未来的 Hugo 版本中进一步改进。 全部隐私配置#以下是全部隐私配置及其默认值。此内容需放在网站配置文件（如 config.toml）中。
+=== config. === yaml
+``` yamlprivacy:disqus:disable: falsegoogleAnalytics:anonymizeIP: falsedisable: falserespectDoNotTrack: falseuseSessionStorage: falseinstagram:disable: falsesimple: falsetwitter:disable: falseenableDNT: falsesimple: falsevimeo:disable: falseenableDNT: falsesimple: falseyoutube:disable: falseprivacyEnhanced: false```=== toml</description>
+    </item>
+    
+    <item>
+      <title>静态网站生成器的优势</title>
+      <link>/docs/hugo/about/benefits/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/hugo/about/benefits/</guid>
+      <description>网站生成器将内容渲染成 HTML 文件。它们大多数是「动态网站生成器」——在用户访问网站时，动态地生成 HTML 文件。为了减小延迟，动态网站生成器会缓存其 HTML 文件。
+Hugo 比缓存更进一步，一次性生成所有的 HTML 文件。你可以在本地查看这些文件，然后再把它们上传到托管静态网站的服务器上。由于 HTML 文件不是动态生成的，Hugo 属于「静态网站生成器」。
+静态网站优势众多，其中最突出的是性能。解析相同数量的网页时，静态网站消耗的内存和 CPU 占用率远低于动态网站。
+更多信息#「静态网站生成器简介」，David Walsh 「网页加载速度：Hugo 完胜 WordPress」, GettingThingsTech 「静态网站生成器」，O&amp;rsquo;Reilly 「StaticGen: 顶级开源静态网站生成器」（GitHub Stars） 「静态网站生成器 Top 10」，Netlify blog 「静态网站的崛起」，dotCMS </description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>/docs/hugo/about/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/hugo/about/license/</guid>
+      <description>Hugo v0.15 and later are released under the Apache 2.0 license. Earlier versions of Hugo were released under the Simple Public License.
+Version 2.0, January 2004 https://www.apache.org/licenses/LICENSE-2.0
+Terms and Conditions for use, reproduction, and distribution
+1. Definitions#“License” shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.
+“Licensor” shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.</description>
+    </item>
+    
+  </channel>
+</rss>

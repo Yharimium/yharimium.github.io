@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>哥德尔不完备性定理的证明 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../avatar.png" onerror="this.classList.add('error');this.src='../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../">博客</a><a class="nav-item " href="../../../docs/">文档</a><a class="nav-item " href="../../../search/">搜索</a><a class="nav-item " href="../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">哥德尔不完备性定理的证明</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#罗素悖论">罗素悖论</a></li>
+    <li><a href="#哥德尔不完备性定理">哥德尔不完备性定理</a></li>
+    <li><a href="#哥德尔的证明">哥德尔的证明</a>
+      <ul>
+        <li><a href="#哥德尔编码">哥德尔编码</a></li>
+        <li><a href="#元数学命题">元数学命题</a></li>
+        <li><a href="#sub-函数">sub 函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#布洛斯的证明">布洛斯的证明</a>
+      <ul>
+        <li><a href="#全函数">全函数</a></li>
+        <li><a href="#可枚举集">可枚举集</a></li>
+        <li><a href="#证明主体">证明主体</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../avatar.png" onerror="this.classList.add('error');this.src='../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../categories/%e6%9d%82%e9%a1%b9">杂项</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../tags/%e5%85%ac%e7%90%86%e7%b3%bb%e7%bb%9f">公理系统</a>
+      <span class="sep">/</span><a class="cap item" href="../../../tags/%e6%8a%bd%e8%b1%a1">抽象</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2023-1-9</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">哥德尔不完备性定理的证明</h1>
+  <span class="description">公理系统中竟然存在「既不能证明，又不能证伪」的命题 ...</span><div class='mkdocs hint info' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/info.svg' />
+        <span>info</span>
+    </p>
+    <div class='inner'> 
+<p>所有变量默认为自然数。</p>
+ </div>
+</div> 
+<h2 id="#罗素悖论">
+    罗素悖论
+    <a class="anchor" name="罗素悖论" href="#%e7%bd%97%e7%b4%a0%e6%82%96%e8%ae%ba">#</a>
+</h2><div class='mkdocs hint question' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/question.svg' />
+        <span>question</span>
+    </p>
+    <div class='inner'> 
+<p>一个理发师要给所有「不给自己理发的人」理发，不给「给自己理发的人」理发，他是否应该给自己理发？</p>
+ </div>
+</div> 
+<p>如果理发师给自己理发，他就属于「给自己理发的人」，但他不能给这类人理发，矛盾；如果他不给自己理发，他就属于「不给自己理发的人」，但他必须给这类人理发，也矛盾。</p>
+<p>英国哲学家罗素（Russell）最早发现了这类悖论。罗素悖论的具体形式还有很多，比如：</p>
+<ul>
+<li>我正在说的这句话是假话。</li>
+<li>一张明信片的正面写「背面的话是真的」，背面写「正面的话是假的」。</li>
+<li>一本书要列出所有「不列出自己书名的书」，这本书是否应该列出它自己？</li>
+</ul>
+<p>这些悖论都能以「朴素集合论」的形式概括：</p>
+<p>设集合 $A=\{x\mid x\not\in A\}$</p>
+<ul>
+<li>若 $x\in A$，则 $x\not\in A$</li>
+<li>若 $x\not\in A$，则 $x\in A$</li>
+</ul>
+<p>罗素最终构建了一个新的集合论系统 $\text{ZF(C)}$，取代了朴素集合论。$\text{ZF(C)}$ 通过对集合概念的限定，将 $A=\{x\mid x\not\in A\}$ 这种异端从集合的名单里剔除出去，从而规避了集合论中的罗素悖论。</p>
+<p>但是，当我们离开集合论，来到自然数公理系统时，事情似乎变得更加复杂。</p>
+<h2 id="#哥德尔不完备性定理">
+    哥德尔不完备性定理
+    <a class="anchor" name="哥德尔不完备性定理" href="#%e5%93%a5%e5%be%b7%e5%b0%94%e4%b8%8d%e5%ae%8c%e5%a4%87%e6%80%a7%e5%ae%9a%e7%90%86">#</a>
+</h2><p>1931年，德国数学家库尔特·哥德尔（Kurt Gödel）在他的论文中提出了一个惊为天人的定理：</p>
+<div class='mkdocs hint quote' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/quote.svg' />
+        <span>quote</span>
+    </p>
+    <div class='inner'> 
+<p>在蕴含 <a class="md-link" href="../../../post/%e6%95%b0%e5%ad%a6/%e7%9a%ae%e4%ba%9a%e8%af%ba%e5%85%ac%e7%90%86"  >皮亚诺公理（自然数公理）<img class="icon" src="../../../img/link.svg" /></a> 的公理系统中，必然存在一个「既不能证明，又不能证伪」的命题。</p>
+ </div>
+</div> 
+<p>此定理揭示了公理系统的巨大的缺陷。此缺陷至今未被修复。</p>
+<h2 id="#哥德尔的证明">
+    哥德尔的证明
+    <a class="anchor" name="哥德尔的证明" href="#%e5%93%a5%e5%be%b7%e5%b0%94%e7%9a%84%e8%af%81%e6%98%8e">#</a>
+</h2><p>哥德尔在皮亚诺公理的环境下找到了一个「<a class="md-link" href="#%e7%bd%97%e7%b4%a0%e6%82%96%e8%ae%ba"  >罗素悖论<img class="icon" src="../../../img/link.svg" /></a>」式的数学命题：</p>
+<p>$$A:\neg A$$</p>
+<ul>
+<li>若 $A$ 是真的，则 $A$ 是假的。</li>
+<li>若 $A$ 是假的，则 $A$ 是真的。</li>
+</ul>
+<p>命题 $A$ 就是「既不能证明，又不能证伪」的数学命题。</p>
+<p>那么命题 $A$ 到底是什么？哥德尔是如何找到命题 $A$ 的？</p>
+<h3 id="#哥德尔编码">
+    哥德尔编码
+    <a class="anchor" name="哥德尔编码" href="#%e5%93%a5%e5%be%b7%e5%b0%94%e7%bc%96%e7%a0%81">#</a>
+</h3><p>哥德尔创造了一种编码算法，将数学语句编码为自然数。</p>
+<p>首先，哥德尔给公理系统的 $12$ 种符号分配了 $12$ 个哥德尔数。变量 $x,y,z,\cdots$ 分配到了 $12$ 以后的质数。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">哥德尔数</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">哥德尔数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\neg$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">否定</td>
+<td style="text-align:center">$($</td>
+<td style="text-align:center">$8$</td>
+<td style="text-align:center">左括号</td>
+</tr>
+<tr>
+<td style="text-align:center">$\vee$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">或</td>
+<td style="text-align:center">$)$</td>
+<td style="text-align:center">$9$</td>
+<td style="text-align:center">右括号</td>
+</tr>
+<tr>
+<td style="text-align:center">$\supset$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">如果 &hellip; 则 &hellip;</td>
+<td style="text-align:center">$,$</td>
+<td style="text-align:center">$10$</td>
+<td style="text-align:center">逗号</td>
+</tr>
+<tr>
+<td style="text-align:center">$\exists$</td>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">存在</td>
+<td style="text-align:center">$+$</td>
+<td style="text-align:center">$11$</td>
+<td style="text-align:center">加号</td>
+</tr>
+<tr>
+<td style="text-align:center">$=$</td>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">等号</td>
+<td style="text-align:center">$\times$</td>
+<td style="text-align:center">$12$</td>
+<td style="text-align:center">乘号</td>
+</tr>
+<tr>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$6$</td>
+<td style="text-align:center">零</td>
+<td style="text-align:center">$x$</td>
+<td style="text-align:center">$13$</td>
+<td style="text-align:center">变量</td>
+</tr>
+<tr>
+<td style="text-align:center">$s$</td>
+<td style="text-align:center">$7$</td>
+<td style="text-align:center">后继<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></td>
+<td style="text-align:center">$y$</td>
+<td style="text-align:center">$17$</td>
+<td style="text-align:center">变量</td>
+</tr>
+</tbody>
+</table>
+<p>以数学语句 $0=0$ 为例。首先将各个符号转换为哥德尔数：</p>
+<p>$$6,5,6$$</p>
+<p>再以前 $3$ 个质数为底数，以这些哥德尔数为指数，全部相乘：</p>
+<p>$$2^6\times 3^5\times 5^6$$</p>
+<p>这样就得到了 $0=0$ 的哥德尔数，记作 $G(“0=0”)=2^6\times 3^5\times 5^6$。</p>
+<p>类似地，还有：</p>
+<p>$$G(“\neg(0=s0)”)=2^1\times 3^8\times 5^6\times 7^5\times 11^7\times 13^6\times 17^9$$</p>
+<p>由算术基本定理<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 可知，每个自然数都能解码出唯一的数学语句。例如：</p>
+<p>$$G^{-1}(15932)=G^{-1}(2^6\times 3^5\times 5^6)=“0=0”$$</p>
+<p>此外，数学证明过程也可编码为哥德尔数。</p>
+<p>$$G(“A\intro B\intro C\intro D”)=2^{G(A)}\times 3^{G(B)}\times 5^{G(C)}\times 7^{G(D)}$$</p>
+<h3 id="#元数学命题">
+    元数学命题
+    <a class="anchor" name="元数学命题" href="#%e5%85%83%e6%95%b0%e5%ad%a6%e5%91%bd%e9%a2%98">#</a>
+</h3><p>考虑一类命题：</p>
+<ul>
+<li>命题 $“\neg(0=s0)”$ 的第一个字符是 $“\neg”$。</li>
+<li>命题 $“\neg(0=s0)”$ 有 $7$ 个字符。</li>
+<li>哥德尔数为 $a$ 的命题不能被证明。</li>
+</ul>
+<p>这类陈述数学命题性质的命题称作「<strong>元数学（meta-math）命题</strong>」，简称「<strong>元命题</strong>」。</p>
+<p>我们可以利用 <a class="md-link" href="#%e5%93%a5%e5%be%b7%e5%b0%94%e7%bc%96%e7%a0%81"  >哥德尔编码<img class="icon" src="../../../img/link.svg" /></a> 明智地讨论这些元命题。例如，上述前两个命题等价于：</p>
+<ul>
+<li>$G(“\neg(0=s0)”)$ 有且仅有一个 $2$ 因子。</li>
+<li>$G(“\neg(0=s0)”)$ 能被 $17$ 整除，但不能被 $19$ 整除。</li>
+</ul>
+<p>对于第三个命题，哥德尔另外定义了一个命题形式 $\text{Dem}(a,b)$，表示「哥德尔数为 $a$ 的命题」可以证明「哥德尔数为 $b$ 的命题」。</p>
+<p>$$\text{Dem}(a,b): G^{-1}(a)\Rightarrow G^{-1}(b)$$</p><p>于是「哥德尔数为 $a$ 的命题不能被证明」这样的元命题便可以转化为普通数学命题：</p>
+<p>$$(\forall x) \neg\text{Dem}(x,a)$$</p>
+<p>根据黑格尔（Hegel）的三段论，上述元命题甚至也能编码为哥德尔数。至于具体是怎么做到的，以后我会出一篇文章细说。</p>
+<h3 id="#sub-函数">
+    sub 函数
+    <a class="anchor" name="sub-函数" href="#sub-%e5%87%bd%e6%95%b0">#</a>
+</h3><p>哥德尔证明的核心在于「替换」。</p>
+<p>哥德尔定义了一个替换函数 $\text{sub}(a,b,c)$，其算法如下：</p>
+<ol>
+<li>将自然数 $a,b$ 解码成数学语句：$A=G^{-1}(a),B=G^{-1}(b)$；</li>
+<li>将 $A$ 中的所有 $B$ 替换为自然数 $c$，得到 $A&rsquo;$；</li>
+<li>以 $G(A&rsquo;)$ 为函数值。</li>
+</ol>
+<div class='mkdocs hint example' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/example.svg' />
+        <span>example</span>
+    </p>
+    <div class='inner'> 
+<p>以 $\text{sub}(15932,6,1)$ 为例：</p>
+<ol>
+<li>$A=G^{-1}(15932)=“0=0”,B=G^{-1}(6)=“0”$；</li>
+<li>将 $A$ 中的 $“0”$ 替换为自然数 $“1”$（即 $“s0”$），得到 $A&rsquo;=“s0=s0”$；</li>
+<li>以 $G(A&rsquo;)=2^{7}\times 3^6\times 5^{5}\times 7^{7}\times 11^{6}$ 为函数值。</li>
+</ol>
+<p>即 $\text{sub}(15932,6,13)=2^{7}\times 3^6\times 5^{5}\times 7^{7}\times 11^{6}$。</p>
+ </div>
+</div> 
+<p>考虑一个关于变量 $y$ 的 <a class="md-link" href="#%e5%85%83%e6%95%b0%e5%ad%a6%e5%91%bd%e9%a2%98"  >元命题<img class="icon" src="../../../img/link.svg" /></a> $M$：</p>
+<p>$$M:\text{哥德尔数为} \ \text{sub}(y,17,y) \ \text{的命题不能被证明}$$</p>
+<p>设 $m=G(M)$。<strong>将命题 $M$ 中的符号 $“y”$ 替换为数字 $m$，得到新命题 $N$</strong>：</p>
+<p>$$N:\text{哥德尔数为} \ \text{sub}(m,17,m) \ \text{的命题不能被证明}$$</p>
+<p>那么「哥德尔数为 $\text{sub}(m,17,m)$ 的命题」是什么？哇哦，它居然也是 $N$！</p>
+<div class='mkdocs hint example' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/example.svg' />
+        <span>example</span>
+    </p>
+    <div class='inner'> 
+<p>我们走一遍 $\text{sub}(m,17,m)$ 函数的算法：</p>
+<ol>
+<li>$G^{-1}(m)=M$，$G^{-1}(17)=“y”$；</li>
+<li><strong>将 $M$ 中的符号 $“y”$ 替换为自然数 $m$，得到的恰好是 $N$</strong>；</li>
+<li>以 $G(N)$ 为 $\text{sub}(m,17,m)$ 的函数值。</li>
+</ol>
+<p>容易发现，「哥德尔数为 $\text{sub}(m,17,m)$ 的命题」就是 $N$。</p>
+ </div>
+</div> 
+<p>也就是说，命题 $N$ 等价于：</p>
+<p>$$N:\text{命题} \ N \ \text{不能被证明}$$</p>
+<p>命题 $N$ 就是我们要找的「既不能证明，又不能证伪」的命题。</p>
+<h2 id="#布洛斯的证明">
+    布洛斯的证明
+    <a class="anchor" name="布洛斯的证明" href="#%e5%b8%83%e6%b4%9b%e6%96%af%e7%9a%84%e8%af%81%e6%98%8e">#</a>
+</h2><div class='mkdocs hint info' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/info.svg' />
+        <span>info</span>
+    </p>
+    <div class='inner'> 
+<p>下文以 $D(f),R(f)$ 指称函数 $f$ 的定义域和值域。</p>
+ </div>
+</div> 
+<p>1994 年，逻辑学家乔治·布洛斯（George Boolos）给出了一个更简单的证明。该证明沿用了 <a class="md-link" href="#%e5%93%a5%e5%be%b7%e5%b0%94%e7%bc%96%e7%a0%81"  >哥德尔编码<img class="icon" src="../../../img/link.svg" /></a> 方法。</p>
+<h3 id="#全函数">
+    全函数
+    <a class="anchor" name="全函数" href="#%e5%85%a8%e5%87%bd%e6%95%b0">#</a>
+</h3><p>$f$ 是全函数，当且仅当 $f$ 定义在全体自然数上，即 $D(f)=\mathbb{N}$。</p>
+<div class='mkdocs hint info' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/info.svg' />
+        <span>info</span>
+    </p>
+    <div class='inner'> 
+<p>此处引入的是狭义上的全函数。广义上的全函数 $f$ 满足 $D(f)\supseteq\mathbb{N}$。</p>
+ </div>
+</div> 
+<h3 id="#可枚举集">
+    可枚举集
+    <a class="anchor" name="可枚举集" href="#%e5%8f%af%e6%9e%9a%e4%b8%be%e9%9b%86">#</a>
+</h3><p>对于集合 $A$，若存在算法满足：</p>
+<ul>
+<li>输出的均为 $A$ 中的元素。</li>
+<li>$A$ 中的任意元素，在有限时间内一定会被输出。</li>
+</ul>
+<p>则 $A$ 是可枚举集。</p>
+<div class='mkdocs hint note' open>
+    <p class='title'>
+        <img class='icon' src='../../../img/material/note.svg' />
+        <span>引理</span>
+    </p>
+    <div class='inner'> 
+<p>$A$ 是 <a class="md-link" href="#%e5%8f%af%e6%9e%9a%e4%b8%be%e9%9b%86"  >可枚举集<img class="icon" src="../../../img/link.svg" /></a> $\eq f$ 是 <a class="md-link" href="#%e5%85%a8%e5%87%bd%e6%95%b0"  >全函数<img class="icon" src="../../../img/link.svg" /></a>，$R(f)=A$</p>
+<p><strong>充分性证明</strong></p>
+<p>若 $A$ 是可枚举集，由定义知，存在一个与之对应的算法。令 $f(n)$ 为此算法的第 $n$ 个输出元素（$n$ 从 $0$ 记起），则 $f$ 是全函数且 $R(f)=A$。</p>
+<p><strong>必要性证明</strong></p>
+<p>考虑如下算法：逐个计算并输出 $f(0),f(1),f(2),\cdots$ 此算法满足：</p>
+<ul>
+<li>输出的均为 $R(f)$ 中的元素。</li>
+<li>$R(f)$ 中的任意元素，在有限时间内一定会被输出。</li>
+</ul>
+<p>即得 $R(f)=A$ 是可枚集。</p>
+ </div>
+</div> 
+<h3 id="#证明主体">
+    证明主体
+    <a class="anchor" name="证明主体" href="#%e8%af%81%e6%98%8e%e4%b8%bb%e4%bd%93">#</a>
+</h3><p>令 $S$ 为<strong>所有</strong>全函数的 <a class="md-link" href="#%e5%93%a5%e5%be%b7%e5%b0%94%e7%bc%96%e7%a0%81"  >哥德尔编码<img class="icon" src="../../../img/link.svg" /></a> 集合，即：</p>
+<p>$$S=\{G(f)\mid D(f)=\mathbb{N}\}$$</p>
+<p>考虑如下命题：</p>
+<p>$$M:S \ \text{是可枚举集}$$</p>
+<p>假设 $M$ 成立，由引理得，存在全函数 $F,R(F)=S$。</p>
+<p>令函数 $g(n)=G^{-1}[F(n)] (n)$。注意到 $R(F)=S$，所以 $F(n)$ 是某个全函数的哥德尔数，则 $G^{-1}[F(n)]$ 是一个全函数，即 $g$ 是全函数。也就是说：</p>
+<p>$$\begin{aligned}
+    &amp;\forall n,g(n)=G^{-1}[F(n)](n) \\[5pt]
+    \eq &amp; \forall n,\exists x=n,g(x)=G^{-1}[F(n)](x) \\[5pt]
+    \eq &amp; \forall n,g \ \text{与} \ G^{-1}[F(n)] \ \text{有交点}
+\end{aligned}$$</p><p>由于 $\forall n,G^{-1}[F(n)]$ 涵盖了所有的全函数，上述命题实际上是说 $g$ 与所有全函数都有交点。但这显然不可能。$g$ 是全函数，$g+1$ 也是全函数，但 $g$ 与 $g+1$ 没有交点。故 <strong>命题 $M$ 不成立</strong>。</p>
+<p>现在从另一个角度出发。我们可以按照句子长度一个个枚举字符串，一旦发现字符串对应的函数是全函数，就输出它的哥德尔数。如此一来，我们构建了这样的算法：</p>
+<ul>
+<li>输出的均为全函数的哥德尔数。</li>
+<li>任意全函数的哥德尔数，在有限时间内一定会被输出。</li>
+</ul>
+<p>此算法符合可枚举集的定义，故 $S$ 是可枚举集，<strong>命题 $M$ 成立</strong>。</p>
+<p>命题 $M$ 就是「既不能证明，又不能证伪」的命题。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>符号 $s$ 表示「后继」，$s0=1,ss0=2$，以此类推。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>算术基本定理：每个数都有唯一的质因数分解形式，如 $300=2^2\times 3^1\times 5^2$。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../scripts/mathjax.js"></script>
+</html>

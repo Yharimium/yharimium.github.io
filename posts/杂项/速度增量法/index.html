@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>速度增量法 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../avatar.png" onerror="this.classList.add('error');this.src='../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../">博客</a><a class="nav-item " href="../../../docs/">文档</a><a class="nav-item " href="../../../search/">搜索</a><a class="nav-item " href="../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">速度增量法</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#原理">原理</a></li>
+    <li><a href="#例-1">例 1</a></li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../avatar.png" onerror="this.classList.add('error');this.src='../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../categories/%e6%9d%82%e9%a1%b9">杂项</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../tags/%e7%89%a9%e7%90%86">物理</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2022-6-25</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">速度增量法</h1>
+  <span class="description">碰撞问题大杀器。</span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p>质量 $m_1$，速度 $v_1$ 的小球与质量 $m_2$，速度 $v_2$ 的小球弹性碰撞，无动能损失，则碰后速度 $v_1&rsquo;,v_2&rsquo;$ 满足</p>
+<p>$$\begin{gather}
+v_1&#43;v_1&#39;=2v_{共}\\
+v_2&#43;v_2&#39;=2v_{共}\\
+v_{共}=\frac{m_1v_1&#43;m_2v_2}{m_1&#43;m_2}
+\end{gather}$$</p><p>简记为</p>
+<p>$$\xymatrix@C=2em@R=.5em{
+    v_1\ar@{-}[dr] &amp; &amp; v_2&#39;\\
+        &amp; v_{共}\ar@{-}[dr]\ar@{-}[ur] &amp; \\
+    v_2\ar@{-}[ur] &amp; &amp; v_1&#39;
+}$$</p><blockquote>
+<ul>
+<li>出现负值表示反向.</li>
+<li>若可能存在动能损失，碰后实际速度 $v_{1实}\in[v_{共},v_1&rsquo;],v_{2实}\in[v_{共},v_2&rsquo;]$.</li>
+</ul>
+</blockquote>
+<h2 id="#原理">
+    原理
+    <a class="anchor" name="原理" href="#%e5%8e%9f%e7%90%86">#</a>
+</h2><p>由动量定理和动能定理得</p>
+<p>$$\begin{gather*}
+&amp;m_1v_1&#43;m_2v_2=m_1v_1&#39;&#43;m_2v_2&#39;\tag{1}\\
+&amp;\disp\frac{1}{2}m_1v_1^2&#43;\frac{1}{2}m_2v_2^2=\frac{1}{2}m_1v_1&#39;^2&#43;\frac{1}{2}m_2v_2&#39;^2\tag{2}
+\end{gather*}$$</p><p>由 $(1)$ 得</p>
+<p>$$m_1(v_1-v_1&#39;)=-m_2(v_2-v_2&#39;)\tag{3}$$</p><p>由 $(2)$ 得</p>
+<p>$$\begin{gather}
+m_1v_1^2&#43;m_2v_2^2=m_1v_1&#39;^2&#43;m_2v_2&#39;^2\\
+m_1(v_1^2-v_1&#39;^2)&#43;m_2(v_2^2-v_2&#39;^2)=0\\
+m_1(v_1-v_1&#39;)(v_1&#43;v_1&#39;)&#43;m_2(v_2-v_2&#39;)(v_2&#43;v_2&#39;)=0
+\end{gather}$$</p><p>将 $(3)$ 代入</p>
+<p>$$\begin{align*}
+v_1&#43;v_1&#39;=v_2&#43;v_2&#39;\\
+v_2&#39;=v_1&#43;v_1&#39;-v_2\tag{4}
+\end{align*}$$</p><p>将 $(4)$ 代入 $(1)$</p>
+<p>$$\begin{gather}
+m_1v_1&#43;m_2v_2=m_1v_1&#39;&#43;m_2(v_1&#43;v_1&#39;-v_2)\\
+(m_1&#43;m_2)v_1&#39;=v_1(m_1-m_2)&#43;2m_2v_2\\
+v_1&#39;=\frac{v_1(m_1-m_2)&#43;2m_2v_2}{m_1&#43;m_2}
+\end{gather}$$</p><p>同理</p>
+<p>$$v_2&#39;=\frac{v_1(m_2-m_1)&#43;2m_1v_1}{m_1&#43;m_2}$$</p><p>从初态到共速：</p>
+<p>$$\Delta v_1=v_{共}-v_1=\frac{m_1v_1&#43;m_2v_2}{m_1&#43;m_2}-v_1=\frac{m_2(v_2-v_1)}{m_1&#43;m_2}\\
+\Delta v_2=v_{共}-v_2=\frac{m_1v_1&#43;m_2v_2}{m_1&#43;m_2}-v_2=\frac{m_1(v_1-v_2)}{m_1&#43;m_2}$$</p><p>从共速到末态：</p>
+<p>$$\Delta v_1&#39;=v_1&#39;-v_{共}=\frac{v_1(m_1-m_2)&#43;2m_2v_2}{m_1&#43;m_2}-\frac{m_1v_1&#43;m_2v_2}{m_1&#43;m_2}=\frac{m_2(v_2-v_1)}{m_1&#43;m_2}\\
+\Delta v_2&#39;=v_2&#39;-v_{共}=\frac{v_1(m_2-m_1)&#43;2m_1v_1}{m_1&#43;m_2}-\frac{m_1v_1&#43;m_2v_2}{m_1&#43;m_2}=\frac{m_1(v_1-v_2)}{m_1&#43;m_2}$$</p><p>即</p>
+<p>$$\Delta v_1=\Delta v_1&#39;\\
+\Delta v_2=\Delta v_2&#39;$$</p><p>两阶段速度增量相等. $v_{共}$ 是两小球的平均速度.</p>
+<p>$$v_1&#43;v_1&#39;=2v_{共}\\
+v_2&#43;v_2&#39;=2v_{共}$$</p><p>即证.</p>
+<h2 id="#例-1">
+    例 1
+    <a class="anchor" name="例-1" href="#%e4%be%8b-1">#</a>
+</h2><p>质量为 $m$，速度为 $v$ 的 $A$ 球和质量为 $3m$ 的静止 $B$ 球发生正碰，可能存在动能损失，碰后 $B$ 球的速度大小可能为</p>
+<p>$$A.\ 0.6v\qquad B.\ 0.4v\qquad C.\ 0.3v\qquad D.\ 0.2v$$</p>
+<details class='mkdocs hint note' open>
+    <summary class='title'>
+        <img class='icon' src='../../../img/material/note.svg' />
+        <span>解</span>
+        <img class='arrow' src='../../../img/arrow.svg'>
+    </summary>
+    <div class='inner'> 
+<p>$v_{共}=\frac{mv+0}{m+3m}=0.25v$.</p>
+<p>$$\xymatrix@C=1em@R=1em{
+    \textcolor{transparent}{0.}v\textcolor{transparent}{5}\ar@{-}[dr] &amp; &amp; 0.5v\\
+        &amp; 0.25v\ar@{-}[dr]\ar@{-}[ur] &amp; \\
+    \textcolor{transparent}{0.}0\textcolor{transparent}{5}\ar@{-}[ur] &amp; &amp; -0.5v
+}$$</p><p>$v_{B实}\in[0.25v,0.5v]$. 选 $BC$.</p>
+ </div>
+</details></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../scripts/mathjax.js"></script>
+</html>

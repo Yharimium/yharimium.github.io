@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>泰勒展开 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">泰勒展开</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#推导">推导</a>
+      <ul>
+        <li><a href="#在-x0-处展开">在 $x=0$ 处展开</a></li>
+        <li><a href="#在-xm-处展开">在 $x=m$ 处展开</a></li>
+      </ul>
+    </li>
+    <li><a href="#应用">应用</a>
+      <ul>
+        <li><a href="#近似">近似</a></li>
+        <li><a href="#放缩">放缩</a>
+          <ul>
+            <li><a href="#例-1">例 1</a></li>
+            <li><a href="#例-2">例 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e6%95%b0%e5%ad%a6">数学</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../tags/%e5%af%bc%e6%95%b0">导数</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2022-6-11</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">泰勒展开</h1>
+  <span class="description"></span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p>泰勒展开是用形如 $a_0+a_1x+a_2x^2+\cdots+a_nx^n$ 的函数逼近 $e^x,\ln x$ 等超越函数的技巧。</p>
+<h2 id="#推导">
+    推导
+    <a class="anchor" name="推导" href="#%e6%8e%a8%e5%af%bc">#</a>
+</h2><h3 id="#在-x0-处展开">
+    在 $x=0$ 处展开
+    <a class="anchor" name="在-x0-处展开" href="#%e5%9c%a8-x0-%e5%a4%84%e5%b1%95%e5%bc%80">#</a>
+</h3><p>设 $f(x)$ 有 $n$ 阶导，$g(x)=a_0+a_1x+a_2x^2+\cdots+a_nx^n$.</p>
+<p>令 $f(x)$ 和 $g(x)$ 在 $x=0$ 处的函数值和各阶导相等，这样 $f(x)$ 在 $x=0$ 附近的图像才能逼近 $g(x)$. 因此</p>
+<p>$$\begin{aligned}
+&amp;f(0)=g(0)=a_0\\
+&amp;f&#39;(0)=g&#39;(0)=a_1\\
+&amp;f&#39;&#39;(0)=g&#39;&#39;(0)=2a_2\\
+&amp;f&#39;&#39;&#39;(0)=g&#39;&#39;&#39;(0)=3\times 2a_3\\
+&amp;\cdots\\
+&amp;f^{(n)}(0)=g^{(n)}(0)=n!\times a_n
+\end{aligned}$$</p><p>$\therefore a_n$ 的通项为 $a_i=\frac{f^{(i)}(0)}{i!}$. 即</p>
+<p>$$f(x)\approx f(0)&#43;\frac{f&#39;(0)}{1!}x&#43;\frac{f&#39;&#39;(0)}{2!}x^2&#43;\frac{f&#39;&#39;&#39;(0)}{3!}x^3&#43;\cdots&#43;\frac{f^{(n)}(0)}{n!}x^n$$</p><p>此式称为 $f(x)$ 在 $x=0$ 处的 $n$ 阶泰勒展开式.</p>
+<h3 id="#在-xm-处展开">
+    在 $x=m$ 处展开
+    <a class="anchor" name="在-xm-处展开" href="#%e5%9c%a8-xm-%e5%a4%84%e5%b1%95%e5%bc%80">#</a>
+</h3><p>只需设 $g(x)=a_0+a_1(x-m)+a_2(x-m)^2+\cdots+a_n(x-m)^n$. 推导过程与 <a class="md-link" href="#%e5%9c%a8-x0-%e5%a4%84%e5%b1%95%e5%bc%80"  >在 $x=0$ 处展开<img class="icon" src="../../../../img/link.svg" /></a> 并无二致.</p>
+<p>$$f(x)\approx f(0)&#43;\frac{f&#39;(0)}{1!}(x-m)&#43;\frac{f&#39;&#39;(0)}{2!}(x-m)^2&#43;\cdots&#43;\frac{f^{(n)}(0)}{n!}(x-m)^n$$</p><h2 id="#应用">
+    应用
+    <a class="anchor" name="应用" href="#%e5%ba%94%e7%94%a8">#</a>
+</h2><h3 id="#近似">
+    近似
+    <a class="anchor" name="近似" href="#%e8%bf%91%e4%bc%bc">#</a>
+</h3><p>以下皆为在 $x=0$ 处的展开.</p>
+<ul>
+<li>$e^x\approx 1+x$</li>
+<li>$e^x\approx 1+x+\frac{1}{2}x^2$</li>
+<li>$\ln(1+x)\approx x$</li>
+<li>$\ln(1+x)\approx x-\frac{1}{2}x^2$</li>
+<li>$\sin x\approx x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots$</li>
+<li>$\cos x\approx 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\cdots$</li>
+<li>$\tan x\approx x+\frac{x^3}{3}+\frac{2x^5}{15}+\frac{17x^7}{315}+\frac{62x^9}{2835}+\cdots$</li>
+</ul>
+<h3 id="#放缩">
+    放缩
+    <a class="anchor" name="放缩" href="#%e6%94%be%e7%bc%a9">#</a>
+</h3><p>低阶泰勒展开具有天然的单调性，因此高考出题人常用泰勒构造不等式.</p>
+<ul>
+<li>$e^x\geq 1+x(x\in\mathbb{R})$</li>
+<li>$e^x\geq 1+x+\frac{1}{2}x^2(x\geq 0)$</li>
+<li>$\ln(1+x)\leq x(x\in\mathbb{R})$</li>
+<li>$\ln(1+x)\geq x-\frac{1}{2}x^2(x\geq 0)$</li>
+</ul>
+<div class="columns">
+
+  <div class="inner">
+    <p><img class="md_img" data-fancybox="gallery" src="0.svg" alt=""></p>
+
+  </div>
+
+  <div class="inner">
+    <p><img class="md_img" data-fancybox="gallery" src="1.svg" alt=""></p>
+
+  </div>
+
+</div>
+
+<div class="columns">
+
+  <div class="inner">
+    <p><img class="md_img" data-fancybox="gallery" src="2.svg" alt=""></p>
+
+  </div>
+
+  <div class="inner">
+    <p><img class="md_img" data-fancybox="gallery" src="3.svg" alt=""></p>
+
+  </div>
+
+</div>
+
+<p>凡是 $n$ 阶泰勒展开构造的不等式，都可以 $n$ 次求导证明. 因为以此法构造的式子，导得越多，导函数结构必然越简单. 因此泰勒展开可作为解题的探路器.</p>
+<h4 id="#例-1">
+    例 1
+    <a class="anchor" name="例-1" href="#%e4%be%8b-1">#</a>
+</h4><p>求证 $x\geq 0$ 时 $e^x\geq 1+x+\frac{1}{2}x^2$.</p>
+
+<details class="book-details" open>
+  <summary><span>证</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>观察得 $e^x$ 的 $2$ 阶泰勒展开为 $1+x+\frac{1}{2}x^2$.</p>
+<hr>
+<p>令 $f(x)=e^x-(1+x+\frac{1}{2}x^2)$.</p>
+<p>$f&rsquo;(x)=e^x-(1+x)$.</p>
+<p>$f&rsquo;&rsquo;(x)=e^x-1$.</p>
+<p>$\because x\geq 0,\therefore f&rsquo;&rsquo;(x)\geq 0,f&rsquo;(x)\uparrow,f&rsquo;(x)&gt;f&rsquo;(0)=0$.</p>
+<p>$\therefore f&rsquo;(x)\geq 0,f(x)\uparrow,f(x)&gt;f(0)=0$.</p>
+<p>即 $e^x-(1+x+\frac{1}{2}x^2)\geq 0$. 即证.</p>
+</div>
+</details>
+<h4 id="#例-2">
+    例 2
+    <a class="anchor" name="例-2" href="#%e4%be%8b-2">#</a>
+</h4><p>$f(x)=e^x-1-x-ax^2$，当 $x\geq 0$ 时 $f(x)\geq 0$ 恒成立，求 $a$ 的范围.</p>
+
+<details class="book-details" open>
+  <summary><span>解</span><img class="alt" src="../../../../img/arrow.svg"></summary>
+  <div class='inner'><p>由泰勒展开可知 $e^x\geq 1+x+\frac{1}{2}x^2(x\geq 0)$，因此 $a\in(-\infty,\frac{1}{2}]$. 大题对 $a$ 进行分类讨论即可.</p>
+<hr>
+<p>$f(x)=e^x-1-x-ax^2$.</p>
+<p>$f&rsquo;(x)=e^x-1-2ax$.</p>
+<p>$f&rsquo;&rsquo;(x)=e^x-2a$.</p>
+<p>$1)\quad a\leq\frac{1}{2}$ 时</p>
+<p>$f&rsquo;&rsquo;(x)\geq 0,f&rsquo;(x)\uparrow,f&rsquo;(x)&gt;f&rsquo;(0)=0$.</p>
+<p>$\therefore f&rsquo;(x)\geq 0,f(x)\uparrow,f(x)\geq f(0)=0$.</p>
+<p>符合题意.</p>
+<p>$2)\quad a&gt;\frac{1}{2}$ 时</p>
+<p>解 $f&rsquo;&rsquo;(x)&lt;0$ 得 $x\in(0,\ln 2a)$. 此时</p>
+<p>$f&rsquo;&rsquo;(x)&lt;0,f&rsquo;(x)\downarrow,f&rsquo;(x)&lt;f&rsquo;(0)=0$.</p>
+<p>$\therefore f&rsquo;(x)\leq 0,f(x)\downarrow,f(x)&lt;f(0)=0$.</p>
+<p>即存在 $x\in(0,\ln 2a),f(x)&lt;0$. 不合题意，舍去.</p>
+<p>综上 $a\in(-\infty,\frac{1}{2}]$.</p>
+</div>
+</details>
+</article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

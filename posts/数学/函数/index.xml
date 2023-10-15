@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>函数 on Yharim Area</title>
+    <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/</link>
+    <description>Recent content in 函数 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大同小异</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E5%A4%A7%E5%90%8C%E5%B0%8F%E5%BC%82/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E5%A4%A7%E5%90%8C%E5%B0%8F%E5%BC%82/</guid>
+      <description>!!! warning 未经严格证明的理论！慎用！
+简介#若 构造函数 题满足
+$f&amp;rsquo;(x)$ 的不等号与 $f(x)$ 的相同. $f(x_0)$ 是 $f(x)$ 的唯一定值. 则答案必为 $(x_0,+\infty)$.
+若不等号相反，则必为 $(-\infty,x_0)$.
+!!! info - $f&amp;rsquo;(x)$ 和 $f(x)$ 必须移项至不等号左侧，且系数为正. - 同一不等式中同时出现 $f&amp;rsquo;(x)$ 与 $f(x)$，则此不等号应归为 $f&amp;rsquo;(x)$. - 若 $f(x)$ 定义域不为 $\mathbb R$，则答案需调整至定义域内.
+原理#Under Construction ...
+例 1#$f(x)$ 定义域为 $\mathbb R,f(-1)=3,f&amp;rsquo;(x)&amp;lt;3$，则 $f(x)&amp;gt;3x+6$ 的解集为
+$$A.\ (-1,1)\qquad B.\ (-1,+\infty)\qquad C.\ (-\infty,-1)\qquad D.\ \mathbb R$$
+???+ note 常规解法 构造 $g(x)=f(x)-3x-6$，原问题等价于 $g(x)&amp;gt;0$ 的解集.
+$g&#39;(x)=f&#39;(x)-3&amp;lt;0,\therefore g(x)\downarrow$.</description>
+    </item>
+    
+    <item>
+      <title>端点效应</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E7%AB%AF%E7%82%B9%E6%95%88%E5%BA%94/</link>
+      <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E7%AB%AF%E7%82%B9%E6%95%88%E5%BA%94/</guid>
+      <description>简介#若 $f(x)$ 满足
+$f(x_0)=0$. $f(x)\geq 0$ 在 $[x_0,+\infty)$ 恒成立. 则 $f&amp;rsquo;(x_0)\geq 0$. 需要检验充分性.
+例 1#$f(x)=kx-\sin x,\forall x\in[0,+\infty),f(x)\geq 0$，求 $k$ 的范围.
+证 $f&amp;rsquo;(x)=k-\cos x$.
+$\because f(0)=0,f(x)\geq 0$ 在 $[0,+\infty)$ 恒成立，
+$\therefore f&amp;rsquo;(0)=k-1\geq 0\eq k\geq 1$.
+充分性检验：
+$k\geq 1$ 时，$f&amp;rsquo;(x)=k-\cos x\geq 0,f(x)\uparrow,f(x)\geq f(0)=0$. 符合题意.
+综上 $k\in[1,+\infty)$.
+例 2#$f(x)=\ln\frac{1+x}{1-x}-k(x+\frac{x^3}{3}),\forall x\in(0,1),f(x)&amp;gt;0$，求 $k$ 的范围.
+证 $f&amp;rsquo;(x)=\frac{2}{1-x^2}-k(1+x^2)=\frac{kx^4-k+2}{1-x^2}$.
+$\because f(0)=\ln\frac{1+0}{1-0}-0=0,f(x)&amp;gt;0$ 在 $(0,1)$ 上恒成立，
+$\therefore f&amp;rsquo;(0)=2-k\geq 0\eq k\leq 2$.
+充分性检验：
+$k\leq 2$ 时，$x\in(0,1),f&amp;rsquo;(x)=\frac{k(x^4-1)+2}{1-x^2}\geq 0,f(x)\uparrow,f(x)&amp;gt;f(0)=0$.</description>
+    </item>
+    
+    <item>
+      <title>泰勒展开</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80/</link>
+      <pubDate>Sat, 11 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80/</guid>
+      <description>简介#泰勒展开是用形如 $a_0+a_1x+a_2x^2+\cdots+a_nx^n$ 的函数逼近 $e^x,\ln x$ 等超越函数的技巧。
+推导#在 $x=0$ 处展开#设 $f(x)$ 有 $n$ 阶导，$g(x)=a_0+a_1x+a_2x^2+\cdots+a_nx^n$.
+令 $f(x)$ 和 $g(x)$ 在 $x=0$ 处的函数值和各阶导相等，这样 $f(x)$ 在 $x=0$ 附近的图像才能逼近 $g(x)$. 因此
+$$\begin{aligned}&amp;amp;f(0)=g(0)=a_0\\&amp;amp;f&amp;#39;(0)=g&amp;#39;(0)=a_1\\&amp;amp;f&amp;#39;&amp;#39;(0)=g&amp;#39;&amp;#39;(0)=2a_2\\&amp;amp;f&amp;#39;&amp;#39;&amp;#39;(0)=g&amp;#39;&amp;#39;&amp;#39;(0)=3\times 2a_3\\&amp;amp;\cdots\\&amp;amp;f^{(n)}(0)=g^{(n)}(0)=n!\times a_n\end{aligned}$$
+$\therefore a_n$ 的通项为 $a_i=\frac{f^{(i)}(0)}{i!}$. 即
+$$f(x)\approx f(0)&amp;#43;\frac{f&amp;#39;(0)}{1!}x&amp;#43;\frac{f&amp;#39;&amp;#39;(0)}{2!}x^2&amp;#43;\frac{f&amp;#39;&amp;#39;&amp;#39;(0)}{3!}x^3&amp;#43;\cdots&amp;#43;\frac{f^{(n)}(0)}{n!}x^n$$
+此式称为 $f(x)$ 在 $x=0$ 处的 $n$ 阶泰勒展开式.
+在 $x=m$ 处展开#只需设 $g(x)=a_0+a_1(x-m)+a_2(x-m)^2+\cdots+a_n(x-m)^n$. 推导过程与 在 $x=0$ 处展开 并无二致.
+$$f(x)\approx f(0)&amp;#43;\frac{f&amp;#39;(0)}{1!}(x-m)&amp;#43;\frac{f&amp;#39;&amp;#39;(0)}{2!}(x-m)^2&amp;#43;\cdots&amp;#43;\frac{f^{(n)}(0)}{n!}(x-m)^n$$</description>
+    </item>
+    
+    <item>
+      <title>极值点偏移</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%9E%81%E5%80%BC%E7%82%B9%E5%81%8F%E7%A7%BB/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%9E%81%E5%80%BC%E7%82%B9%E5%81%8F%E7%A7%BB/</guid>
+      <description>简介#已知 $f(x_1)=f(x_2)$，$x_0$ 是极值点，求证 $x_1+x_2&amp;gt;2x_0$ 或 $x_1x_2&amp;gt;x_0^2$. 这就是极值点偏移问题.
+$$极值点不偏移$$
+$$\frac{x_1+x_2}{2}=x_0$$
+$$极值点左偏$$
+$$\frac{x_1+x_2}{2}&amp;gt;x_0$$
+$$极值点右偏$$
+$$\frac{x_1+x_2}{2}&amp;lt;x_0$$
+原理#以极值点左偏为例，求证 $x_1+x_2&amp;gt;2x_0$，即 $x_1&amp;gt;2x_0-x_2$.
+若 $x_1$ 和 $m-x_2$ 在函数的 $\uparrow$ 区间，则 $f(x_2)&amp;gt;f(2x_0-x_2)$.
+原命题转化为关于 $x_2$ 的单变量问题.
+$x_1x_2&amp;gt;x_0^2$ 同理.
+例题#$f(x)=\frac{x}{e^x}$，若 $f(x_1)=f(x_2)$ 且 $x_1\not=x_2$，求证 $x_1+x_2&amp;gt;2$.
+证 $f&amp;rsquo;(x)=\frac{1-x}{e^x}$.
+$x\in(-\infty,1),f&amp;rsquo;(x)&amp;gt;0,f(x)\uparrow$. $x\in(1,+\infty),f&amp;rsquo;(x)&amp;lt;0,f(x)\downarrow$. 不妨设 $x_1&amp;lt;1&amp;lt;x_2$.
+$$x_1&amp;#43;x_2&amp;gt;2\eq x_1&amp;gt;2-x_2\eq f(x_1)&amp;gt;f(2-x_2)\eq f(x_2)&amp;gt;f(2-x_2)$$
+于是转而证明 $f(x_2)-f(2-x_2)&amp;gt;0$，其中 $x_2&amp;gt;1$.
+设 $g(x)=f(x)-f(2-x)=\frac{x}{e^x}-\frac{2-x}{e^{2-x}}$，即证 $g(x)$ 在 $(1,+\infty)$ 上恒 $&amp;gt;0$.
+$g&amp;rsquo;(x)=\frac{1-x}{e^x}-\frac{1-x}{e^{2-x}}=(x-1)(e^{x-2}-e^{-x})$.
+$\therefore x\in(1,+\infty),g&amp;rsquo;(x)&amp;gt;0,g(x)\uparrow$.
+$\therefore g(x)&amp;gt;g(1)=f(1)-f(1)=0$. 命题得证.</description>
+    </item>
+    
+    <item>
+      <title>构造函数</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</guid>
+      <description>简介#若已知 $f(x)&amp;gt;0$，则构造函数 $F(x)$，使 $F&amp;rsquo;(x)=\text{某正数}\times f(x)$，利用 $F(x)\uparrow$ 解题. $f(x)&amp;lt;0$ 同理.
+例 1#已知 $f(x)+f&amp;rsquo;(x)&amp;gt;0$，$f(0)=1$，求证当 $x\in[0,+\infty)$ 时 $f(x)\geq\frac{1}{e^x}$.
+???+ note 证明
+构造 $g(x)=e^xf(x)$，则$$g&#39;(x)=e^xf(x)+e^xf&#39;(x)=e^x[f(x)+f&#39;(x)]&amp;gt;0$$$\therefore x\in[0,+\infty)$ 时，$g(x)\uparrow$，$g(x)\geq g(0)$，即 $e^xf(x)\geq e^0f(0)=1$.$\therefore f(x)\geq \frac{1}{e^x}$. 即证.基本构造#和差构造#$f&amp;rsquo;+g&amp;rsquo;&amp;gt;0\intro F=f+g$ $f&amp;rsquo;-g&amp;rsquo;&amp;gt;0\intro F=f-g$ 积商构造#$f&amp;rsquo;g+fg&amp;rsquo;&amp;gt;0\intro F=fg$ $f&amp;rsquo;g-fg&amp;rsquo;&amp;gt;0\intro F=\frac{f}{g}\big(g\not=0\big)$ 变形#含 $x$ 形构造#$xf&amp;rsquo;(x)+nf(x)&amp;gt;0\intro F(x)=x^nf(x)$ $xf&amp;rsquo;(x)-nf(x)&amp;gt;0\intro F(x)=\frac{f(x)}{x^n}\big(x\not=0\big)$ 含 $e$ 形构造#$f&amp;rsquo;(x)+nf(x)&amp;gt;0\intro F(x)=e^{nx}f(x)$ $f&amp;rsquo;(x)-nf(x)&amp;gt;0\intro F(x)=\frac{f(x)}{e^{nx}}$ 三角构造#$f(x)+f&amp;rsquo;(x)\tan x&amp;gt;0\intro F(x)=\sin x f(x)$</description>
+    </item>
+    
+    <item>
+      <title>三角函数公式</title>
+      <link>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%85%AC%E5%BC%8F/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%85%AC%E5%BC%8F/</guid>
+      <description>诱导公式#奇变偶不变，符号看象限.
+$ \sin{(2k\pi+α)}=\sin{α}$ $ \cos{(2k\pi+α)}=\cos{α}$ $ \tan{(2k\pi+α)}=\tan{α}$ $ \sin{(2k\pi-α)}=-\sin{α}$ $ \cos{(2k\pi-α)}=\cos{α}$ $ \tan{(2k\pi-α)}=-\tan{α}$ $ \sin{(\pi+α)}=-\sin{α}$ $ \cos{(\pi+α)}=-\cos{α}$ $ \tan{(\pi+α)}=\tan{α}$ $ \sin{(\pi-α)}=\sin{α}$ $ \cos{(\pi-α)}=-\cos{α}$ $ \tan{(\pi-α)}=-\tan{α}$ $ \sin{(\frac{\pi}{2}+α)}=\cos{α}$ $ \cos{(\frac{\pi}{2}+α)}=-\sin{α}$ $ \tan{(\frac{\pi}{2}+α)}=-\frac{1}{\tan{α}}$ $ \sin{(\frac{\pi}{2}-α)}=\cos{α}$ $ \cos{(\frac{\pi}{2}-α)}=\sin{α}$ $ \tan{(\frac{\pi}{2}-α)}=\frac{1}{\tan{α}}$ $ \sin{(\frac{3\pi}{2}+α)}=-\cos{α}$ $ \cos{(\frac{3\pi}{2}+α)}=\sin{α}$ $ \tan{(\frac{3\pi}{2}+α)}=-\frac{1}{\tan{α}}$ $ \sin{(\frac{3\pi}{2}-α)}=-\cos{α}$ $ \cos{(\frac{3\pi}{2}-α)}=-\sin{α}$ $ \tan{(\frac{3\pi}{2}-α)}=\frac{1}{\tan{α}}$ $ \sin{(-α)}=-\sin{α}$ $ \cos{(-α)}=\cos{α}$ $ \tan{(-α)}=-\tan{α}$ 和差角公式#$ \sin{(α+β)}=\sin{α}\cos{β}+\cos{α}\sin{β}$ $ \sin{(α-β)}=\sin{α}\cos{β}-\cos{α}\sin{β}$ $ \cos{(α+β)}=\cos{α}\cos{β}-\sin{α}\sin{β}$ $ \cos{(α-β)}=\cos{α}\cos{β}+\sin{α}\sin{β}$ $ \tan{(α+β)}=\frac{\tan{α}+\tan{β}}{1-\tan{α}\tan{β}}$ $ \tan{(α-β)}=\frac{\tan{α}-\tan{β}}{1+\tan{α}\tan{β}}$ 二倍角公式#降幂扩角 升幂缩角.</description>
+    </item>
+    
+  </channel>
+</rss>

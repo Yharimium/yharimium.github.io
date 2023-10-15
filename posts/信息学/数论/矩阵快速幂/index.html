@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>矩阵快速幂 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">矩阵快速幂</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#矩阵">矩阵</a>
+      <ul>
+        <li><a href="#单位矩阵">单位矩阵</a></li>
+        <li><a href="#矩阵加减法">矩阵加、减法</a></li>
+        <li><a href="#矩阵乘法">矩阵乘法</a></li>
+      </ul>
+    </li>
+    <li><a href="#矩阵快速幂">矩阵快速幂</a></li>
+    <li><a href="#应用">应用</a>
+      <ul>
+        <li><a href="#例-1">例 1</a></li>
+        <li><a href="#例-2">例 2</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../categories/%e6%95%b0%e8%ae%ba">数论</a>
+      <span class="sep">/</span></div><div class="breadcrumb"><a class="cap item" href="../../../../tags/%e7%9f%a9%e9%98%b5">矩阵</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-10-28</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">矩阵快速幂</h1>
+  <span class="description"></span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p>矩阵快速幂能将 $O(n)$ 的线性递推优化成 $O(\log n)$.</p>
+<h2 id="#矩阵">
+    矩阵
+    <a class="anchor" name="矩阵" href="#%e7%9f%a9%e9%98%b5">#</a>
+</h2><p>矩阵相当于二维数组.</p>
+<ul>
+<li>
+<p>矩阵 $A$ 有 $m$ 行 $n$ 列，称为 $m×n$ 矩阵，简记为 $A_{mn}$.</p>
+</li>
+<li>
+<p>矩阵 $A$ 第 $i$ 行 $j$ 列的元素写作 $a_{ij}$.</p>
+</li>
+</ul>
+<p>$$A=\begin{bmatrix}
+a_{11}&amp; a_{12}&amp; \cdots  &amp; a_{1n}\\
+a_{21}&amp; a_{22}&amp; \cdots  &amp; a_{2n}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m1}&amp; a_{m2}&amp; \cdots  &amp; a_{mn}
+\end{bmatrix}$$</p><h3 id="#单位矩阵">
+    单位矩阵
+    <a class="anchor" name="单位矩阵" href="#%e5%8d%95%e4%bd%8d%e7%9f%a9%e9%98%b5">#</a>
+</h3><p>主对角线上的元素都为 $1$，其余元素为 $0$ 的 $n×n$ 矩阵称为 $n$ 阶单位矩阵，记作 $I_n$ 或 $E_n$.</p>
+<p>$$I_n=\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; \cdots  &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; \cdots  &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; \cdots  &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \cdots  &amp; 1
+\end{bmatrix}$$</p><h3 id="#矩阵加减法">
+    矩阵加、减法
+    <a class="anchor" name="矩阵加减法" href="#%e7%9f%a9%e9%98%b5%e5%8a%a0%e5%87%8f%e6%b3%95">#</a>
+</h3><p>矩阵的加减法就是将两个矩阵对应位置上的元素相加减.</p>
+<p>$$C_{ij}=A_{ij}±B_{ij}$$</p>
+<h3 id="#矩阵乘法">
+    矩阵乘法
+    <a class="anchor" name="矩阵乘法" href="#%e7%9f%a9%e9%98%b5%e4%b9%98%e6%b3%95">#</a>
+</h3><p>定义矩阵 $A×B=C$：</p>
+<ul>
+<li>
+<p>必须满足 $A$ 的列数 $=$ $B$ 的行数.</p>
+</li>
+<li>
+<p>$A_{mr}×B_{rn}$ 会得到一个 $m×n$ 矩阵.</p>
+</li>
+</ul>
+<p>$$C_{ij}=\sum_{k=1}^nA_{ik}\cdot B_{kj}$$</p>
+<p>任意矩阵乘 $I_n$ 都等于它本身.</p>
+<blockquote>
+<ul>
+<li>
+<p>矩阵乘法满足结合律，不满足交换律.</p>
+</li>
+<li>
+<p>只有行数 $=$ 列数的矩阵才能进行乘幂运算.</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="#矩阵快速幂">
+    矩阵快速幂
+    <a class="anchor" name="矩阵快速幂" href="#%e7%9f%a9%e9%98%b5%e5%bf%ab%e9%80%9f%e5%b9%82">#</a>
+</h2><p>基于 <a class="md-link" href="../../../../post/%e6%95%b0%e5%ad%a6/%e6%95%b0%e8%ae%ba/%e5%bf%ab%e9%80%9f%e5%b9%82/"  >快速幂<img class="icon" src="../../../../img/link.svg" /></a> 的思想求 $n$ 阶矩阵的 $x$ 次方. 时间复杂度：$O(n^3\log x)$.</p>
+<blockquote>
+<p>矩阵运算可能需要高精度或取模.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">101</span><span class="p">;</span> <span class="c1">// 矩阵的行数和列数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">matrix</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">at</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">matrix</span><span class="p">()</span> <span class="p">{</span> <span class="n">memset</span><span class="p">(</span><span class="n">at</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">at</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">at</span><span class="p">[</span><span class="n">key</span><span class="p">];</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">matrix</span> <span class="k">operator</span> <span class="o">*</span><span class="p">(</span><span class="n">matrix</span> <span class="n">a</span><span class="p">,</span> <span class="n">matrix</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 矩阵 A × 矩阵 B
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">matrix</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">k</span> <span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">matrix</span> <span class="k">operator</span> <span class="o">^</span><span class="p">(</span><span class="n">matrix</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">// 矩阵 A 的 x 次方
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">matrix</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>        <span class="c1">// 初始化为单位矩阵
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="n">x</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#应用">
+    应用
+    <a class="anchor" name="应用" href="#%e5%ba%94%e7%94%a8">#</a>
+</h2><p>若已知 $f(1),f(2)$，且有矩阵 $A$ 满足</p>
+<p>$$A\times
+\begin{bmatrix}
+f(n)\\
+f(n-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+f(n&#43;1)\\
+f(n)
+\end{bmatrix}$$</p><p>就可推出 $f(n)$ 的值.</p>
+<p>$$(A^{n-2})\times
+\begin{bmatrix}
+f(2)\\
+f(1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+f(n)\\
+f(n-1)
+\end{bmatrix}$$</p><p>可用矩阵快速幂求 $A^{n-2}$. 时间复杂度：$O(\log n)$.</p>
+<h3 id="#例-1">
+    例 1
+    <a class="anchor" name="例-1" href="#%e4%be%8b-1">#</a>
+</h3><p>求斐波那契数列的第 $n$ 项 $f(n)$（$n\geq 10^{12}$）.</p>
+<p>$$f(n)=
+\begin{cases}
+    1&amp;n=1,2\\
+     f(n-1)&#43;f(n-2)&amp;n\geq 3
+\end{cases}$$</p><p>设矩阵 $A=\begin{bmatrix}a_{11}&amp;a_{12}\newline a_{21}&amp;a_{22}\end{bmatrix}$ 满足</p>
+<p>$$\begin{bmatrix}
+a_{11}&amp;a_{12}\\
+a_{21}&amp;a_{22}
+\end{bmatrix}
+\times
+\begin{bmatrix}
+f(n)\\
+f(n-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+f(n&#43;1)\\
+f(n)
+\end{bmatrix}$$</p><p>即</p>
+<p>$$\begin{cases}
+    f(n&#43;1)&amp;=&amp;a_{11}\cdot f(n)&#43;a_{12}\cdot f(n-1)\\
+    f(n)&amp;=&amp;a_{21}\cdot f(n)&#43;a_{22}\cdot f(n-1)
+\end{cases}$$</p><p>解得</p>
+<p>$$\begin{cases}
+    a_{11}=1&amp;a_{12}=1\\
+    a_{21}=1&amp;a_{22}=0
+\end{cases}
+,
+\quad
+A=
+\begin{bmatrix}
+1&amp;1\\
+1&amp;0
+\end{bmatrix}$$</p><p>因此</p>
+<p>$$\begin{bmatrix}
+1&amp;1\\
+1&amp;0
+\end{bmatrix}
+^{n-2}
+\times
+\begin{bmatrix}
+f(2)\\
+f(1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+f(n)\\
+f(n-1)
+\end{bmatrix}$$</p><p>将 $f(1)=f(2)=1$ 代入即可.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">matrix</span> <span class="n">A</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">matrix</span> <span class="n">B</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>	<span class="o">=</span> <span class="mi">1</span><span class="p">;</span>	<span class="c1">// f(1) = 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">B</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>	<span class="c1">// f(2) = 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span> <span class="o">^</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">B</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="#例-2">
+    例 2
+    <a class="anchor" name="例-2" href="#%e4%be%8b-2">#</a>
+</h3><p>求数列的第 $n$ 项 $f(n)$（$n\geq 10^{12}$）.</p>
+<p>$$f(n)=
+\begin{cases}
+    1&amp;n=1,2\\
+    f(n-1)&#43;f(n-2)&#43;n-1&amp;n\geq 3
+\end{cases}$$</p><p>设 $4$ 阶矩阵 $A$ 满足</p>
+<p>$$\begin{bmatrix}
+a_{11}&amp;a_{12}&amp;a_{13}&amp;a_{14}\\
+a_{21}&amp;a_{22}&amp;a_{23}&amp;a_{24}\\
+a_{31}&amp;a_{32}&amp;a_{33}&amp;a_{34}\\
+a_{41}&amp;a_{42}&amp;a_{43}&amp;a_{44}
+\end{bmatrix}
+\times
+\begin{bmatrix}
+f(n)\\
+f(n-1)\\
+n\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+f(n&#43;1)\\
+f(n)\\
+n&#43;1\\
+1
+\end{bmatrix}$$</p><p>解得</p>
+<p>$$A=
+\begin{bmatrix}
+1&amp;1&amp;1&amp;0\\
+1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;1&amp;1\\
+0&amp;0&amp;0&amp;1
+\end{bmatrix}$$</p></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

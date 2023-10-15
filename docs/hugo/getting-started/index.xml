@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>入门 on Yharim Area</title>
+    <link>/docs/hugo/getting-started/</link>
+    <description>Recent content in 入门 on Yharim Area</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="/docs/hugo/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>快速开始</title>
+      <link>/docs/hugo/getting-started/quick-start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/hugo/getting-started/quick-start/</guid>
+      <description>在本教程中，您将学习：
+创建网站 添加内容 配置网站 发布网站 预备工作#在本教程开始之前，您需要：
+安装 Hugo（最好是 extended 版本） 安装 Git 您还必须对命令行有一定的熟悉度。
+创建网站#打开命令行，将当前位置更改到您的工作目录，并运行以下内容：
+hugo new site quickstartcd quickstartgit initgit submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/anankeecho &amp;#34;theme = &amp;#39;ananke&amp;#39;&amp;#34; &amp;gt;&amp;gt; config.tomlhugo server 以下是对这些命令的解释：
+在 /quickstart 中生成网站的 目录结构。
+hugo new site quickstart 将当前位置更改到 /quickstart。
+cd quickstart 在当前目录下初始化 Git 仓库。
+git init 将 Ananke 主题 下载到 /themes/ananke 中，并将其作为 Git 子模块 添加到项目中。
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke 在网站配置文件 config.</description>
+    </item>
+    
+  </channel>
+</rss>

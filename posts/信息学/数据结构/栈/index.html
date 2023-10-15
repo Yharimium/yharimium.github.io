@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>栈 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">栈</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#表达式计算">表达式计算</a>
+      <ul>
+        <li><a href="#后缀表达式">后缀表达式</a></li>
+        <li><a href="#中缀表达式">中缀表达式</a></li>
+      </ul>
+    </li>
+    <li><a href="#单调栈">单调栈</a>
+      <ul>
+        <li><a href="#插入元素">插入元素</a></li>
+        <li><a href="#应用">应用</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">数据结构</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-3-5</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">栈</h1>
+  <span class="description"></span><h2 id="#简介">
+    简介
+    <a class="anchor" name="简介" href="#%e7%ae%80%e4%bb%8b">#</a>
+</h2><p>栈是一种「先进后出」的数据结构.类似于在桶中堆积物品，取物品时只能从顶端开始取，最先进桶的被压在最底下，最后被取出来.基本操作见 <code>STL Stack</code>.</p>
+<p><img class="md_img" data-fancybox="gallery" src="1.png" alt=""></p>
+<h2 id="#表达式计算">
+    表达式计算
+    <a class="anchor" name="表达式计算" href="#%e8%a1%a8%e8%be%be%e5%bc%8f%e8%ae%a1%e7%ae%97">#</a>
+</h2><p>算术表达式分为三类（$op$ 为运算符，$A,B$ 为数字或表达式）：</p>
+<ol>
+<li><strong>中缀表达式</strong>：全国人民都在用的表达式，如「$5×(3+2)$」；</li>
+<li><strong>前缀表达式</strong>：形如「$op \ \textcolor{red}{A} \ \textcolor{blue}{B}$」，如「$× \ \textcolor{red}{5} \ \textcolor{blue}{+} \ \textcolor{blue}{3} \ \textcolor{blue}{2}$」；</li>
+<li><strong>后缀表达式</strong>：形如「$\textcolor{red}{A} \ \textcolor{blue}{B} \ op$」，如「$\textcolor{red}{3} \ \textcolor{red}{2} \ \textcolor{red}{+} \ \textcolor{blue}{5} \ ×$」.</li>
+</ol>
+<p>计算前/后缀表达式时，先递归求出 $A,B$ 的值，二者再做 $op$ 运算.计算方案是唯一确定的，且不需要使用括号.计算后缀表达式的算法最容易设计.</p>
+<h3 id="#后缀表达式">
+    后缀表达式
+    <a class="anchor" name="后缀表达式" href="#%e5%90%8e%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">#</a>
+</h3><ol>
+<li>定义一个栈，用于存放数；</li>
+<li>逐一扫描后缀表达式中的元素：
+<ul>
+<li>若扫到一个数 $n$，则把 $n$ 入栈；</li>
+<li>若扫到运算符 $op$ ，则弹出栈顶的两个元素，二者做 $op$ 计算.将计算结果入栈.</li>
+</ul>
+</li>
+</ol>
+<p>最终的栈顶元素就是计算结果.时间复杂度为 $O(n)$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">isdigit</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 判断是否为数字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="n">ch</span> <span class="o">&gt;=</span> <span class="sc">&#39;0&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">ch</span> <span class="o">&lt;=</span> <span class="sc">&#39;9&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">isop</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 判断是否为运算符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;+&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;*&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;/&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;^&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="nf">postfix_calc</span><span class="p">(</span><span class="n">string</span> <span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="n">stack</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="p">{</span> <span class="c1">// 假定输入数据只包含整数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span><span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span> <span class="o">++</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">isop</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">double</span> <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span> <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">double</span> <span class="n">l</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span> <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">double</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">switch</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">case</span> <span class="sc">&#39;+&#39;</span> <span class="o">:</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">case</span> <span class="sc">&#39;-&#39;</span> <span class="o">:</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">l</span> <span class="o">-</span> <span class="n">r</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">case</span> <span class="sc">&#39;*&#39;</span> <span class="o">:</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">r</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">case</span> <span class="sc">&#39;/&#39;</span> <span class="o">:</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">l</span> <span class="o">/</span> <span class="n">r</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">case</span> <span class="sc">&#39;^&#39;</span> <span class="o">:</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">pow</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="#中缀表达式">
+    中缀表达式
+    <a class="anchor" name="中缀表达式" href="#%e4%b8%ad%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">#</a>
+</h3><p>先将中缀表达式转换成 <a class="md-link" href="../../../../docs/NOI/DS/stack/#%e5%90%8e%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f"  >后缀表达式<img class="icon" src="../../../../img/link.svg" /></a> 再计算.</p>
+<ol>
+<li>定义一个栈，用于存放运算符；</li>
+<li>逐一扫描中缀表达式中的元素：
+<ul>
+<li>若扫到一个数 $n$，直接输出 $n$；</li>
+<li>若扫到「左括号」，把左括号入栈；</li>
+<li>若扫到「右括号」，重复取栈顶并输出，直到栈顶为左括号，再出栈左括号；</li>
+<li>若扫到其它运算符 $op$，重复取栈顶并输出，直到栈顶的<strong>优先级</strong>大于 $op$，再把 $op$ 入栈.</li>
+</ul>
+</li>
+</ol>
+<p>运算符优先级越大，越晚出栈，因此可以将「左括号」的优先级视作最低，「右括号」的优先级视作最高.</p>
+<p>时间复杂度为 $O(n)$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">$($</th>
+<th style="text-align:center">$+/-$</th>
+<th style="text-align:center">$×/÷$</th>
+<th style="text-align:center">$\wedge$</th>
+<th style="text-align:center">$)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">优先级</td>
+<td style="text-align:center">最低（0）</td>
+<td style="text-align:center">低（1）</td>
+<td style="text-align:center">中（2）</td>
+<td style="text-align:center">高（3）</td>
+<td style="text-align:center">最高（4）</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">lev</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 返回运算符对应的优先级 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">level</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">switch</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="sc">&#39;(&#39;</span> <span class="o">:</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span> <span class="k">case</span> <span class="sc">&#39;)&#39;</span> <span class="o">:</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="sc">&#39;+&#39;</span> <span class="o">:</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span> <span class="k">case</span> <span class="sc">&#39;-&#39;</span> <span class="o">:</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="sc">&#39;*&#39;</span> <span class="o">:</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span> <span class="k">case</span> <span class="sc">&#39;/&#39;</span> <span class="o">:</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="sc">&#39;^&#39;</span> <span class="o">:</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">level</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="nf">infix_calc</span><span class="p">(</span><span class="n">string</span> <span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">op</span><span class="p">;</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span><span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="n">data</span> <span class="o">+=</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span> <span class="o">++</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="n">data</span> <span class="o">+=</span> <span class="sc">&#39; &#39;</span><span class="p">;</span> <span class="c1">// 数与数之间用空格区分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">isop</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">op</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">lev</span><span class="p">(</span><span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="n">lev</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="p">(</span><span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">!=</span> <span class="sc">&#39;(&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">!=</span> <span class="sc">&#39;)&#39;</span><span class="p">)</span> <span class="n">data</span> <span class="o">+=</span> <span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">op</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">op</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">op</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// 输出栈内剩余元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span><span class="p">(</span><span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">!=</span> <span class="sc">&#39;(&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">!=</span> <span class="sc">&#39;)&#39;</span><span class="p">)</span> <span class="n">data</span> <span class="o">+=</span> <span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">postfix_calc</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="#单调栈">
+    单调栈
+    <a class="anchor" name="单调栈" href="#%e5%8d%95%e8%b0%83%e6%a0%88">#</a>
+</h2><p>单调栈中的元素从栈底到栈顶满足单调性.</p>
+<h3 id="#插入元素">
+    插入元素
+    <a class="anchor" name="插入元素" href="#%e6%8f%92%e5%85%a5%e5%85%83%e7%b4%a0">#</a>
+</h3><p>将元素 $x$ 入栈，同时维护栈的单调性.以单调递增栈为例：</p>
+<ul>
+<li>从栈顶依次弹掉比 $x$ 大的元素，保证 $x≥$ 栈顶；</li>
+<li>将 $x$ 入栈.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">)</span> <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="#应用">
+    应用
+    <a class="anchor" name="应用" href="#%e5%ba%94%e7%94%a8">#</a>
+</h3><p>单调递增栈可以实现快速查询「左边第一个更小的元素」.例如 $A=\{1,2,5,4,3,6\}$，$A_5=3$ 的左边第一个比它小的元素是 $A_2=2$.</p>
+<p>顺序扫描 $A$，将 $A_i$ 插入单调栈前，栈中比 $A_i$ 大的元素都被弹掉了，栈顶元素即为左边第一个比 $A_i$ 小的元素.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出 a[i] 左边第一个更小的元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">else</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;none&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 如果没有则输出 none
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class='mkdocs hint info' open>
+    <p class='title'>
+        <img class='icon' src='../../../../img/material/info.svg' />
+        <span>info</span>
+    </p>
+    <div class='inner'> 
+<ul>
+<li>求左边第一个更小的元素：顺序扫描 + 单调递增栈.</li>
+<li>求左边第一个更大的元素：顺序扫描 + 单调递减栈.</li>
+<li>求右边第一个更小的元素：倒序扫描 + 单调递增栈.</li>
+<li>求右边第一个更大的元素：倒序扫描 + 单调递减栈.</li>
+</ul>
+ </div>
+</div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

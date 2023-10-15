@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>图 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../../">博客</a><a class="nav-item " href="../../../../docs/">文档</a><a class="nav-item " href="../../../../search/">搜索</a><a class="nav-item " href="../../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">图</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#定义">定义</a></li>
+    <li><a href="#边的方向">边的方向</a></li>
+    <li><a href="#边权和点权">边权和点权</a></li>
+    <li><a href="#度数">度数</a></li>
+    <li><a href="#子图">子图</a></li>
+    <li><a href="#路径和连通">路径和连通</a></li>
+    <li><a href="#回路环">回路（环）</a></li>
+    <li><a href="#完全图和连通图">完全图和连通图</a></li>
+    <li><a href="#强连通分量">强连通分量</a></li>
+    <li><a href="#图的存储">图的存储</a>
+      <ul>
+        <li><a href="#直接存边">直接存边</a></li>
+        <li><a href="#邻接矩阵">邻接矩阵</a></li>
+        <li><a href="#邻接表">邻接表</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../../avatar.png" onerror="this.classList.add('error');this.src='../../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../../categories/%e4%bf%a1%e6%81%af%e5%ad%a6">信息学</a>
+      <span class="sep">/</span><a class="cap item" href="../../../../categories/%e5%9b%be%e8%ae%ba">图论</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2021-3-17</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">图</h1>
+  <span class="description"></span><h2 id="#定义">
+    定义
+    <a class="anchor" name="定义" href="#%e5%ae%9a%e4%b9%89">#</a>
+</h2><p><strong>图（Graph）</strong> 由若干 <strong>顶点</strong> 和 <strong>边</strong> 组成，用大写字母 $G$ 表示，$V$ 为顶点集合，$E$ 为边集合，记作 $G=(V,E)$.</p>
+<p><img class="md_img" data-fancybox="gallery" src="0.svg" alt=""></p>
+<p>图是描述实际问题的工具.如进行城市道规划时，可将每个城市视作顶点，连接城市的道路视作边.</p>
+<h2 id="#边的方向">
+    边的方向
+    <a class="anchor" name="边的方向" href="#%e8%be%b9%e7%9a%84%e6%96%b9%e5%90%91">#</a>
+</h2><ul>
+<li>图的每条边都有起点和终点，则图为 <strong>有向图</strong>；</li>
+<li>相反，边没有方向（可以理解为双向）的图为 <strong>无向图（双向图）</strong>.</li>
+</ul>
+<p><img class="md_img" data-fancybox="gallery" src="1.svg" alt=""></p>
+<h2 id="#边权和点权">
+    边权和点权
+    <a class="anchor" name="边权和点权" href="#%e8%be%b9%e6%9d%83%e5%92%8c%e7%82%b9%e6%9d%83">#</a>
+</h2><p>为解决实际问题，引入 <strong>边权</strong> 和 <strong>点权</strong> 的概念：</p>
+<ul>
+<li><strong>边权</strong> 及边的长度.解决最短路径问题时，将城市视作顶点，城市之间的道路长度视作边权；</li>
+<li><strong>点权</strong> 即点的大小.解决最小收费问题时，将收费站视作顶点，收费站之间的道路视作边，通过收费站支付的费用视作点权.</li>
+</ul>
+<h2 id="#度数">
+    度数
+    <a class="anchor" name="度数" href="#%e5%ba%a6%e6%95%b0">#</a>
+</h2><p>若图中有 $d$ 条边与节点 $i$ 相连，则节点 $i$ 的 <strong>度数</strong> 为 $d$（即节点的 <strong>连边</strong> 个数）.如下图，节点 $1$ 的度为 $6$：</p>
+<p><img class="md_img" data-fancybox="gallery" src="2.svg" alt=""></p>
+<ul>
+<li>若有向图中有 $d$ 条边的 <strong>终点</strong> 是节点 $i$，则节点 $i$ 的 <strong>入度</strong> 为 $d$（即节点的 <strong>入边</strong> 个数）；</li>
+<li>若有向图中有 $d$ 条边的 <strong>起点</strong> 是节点 $i$，则节点 $i$ 的 <strong>出度</strong> 为 $d$（即节点的 <strong>出边</strong> 个数）；</li>
+</ul>
+<h2 id="#子图">
+    子图
+    <a class="anchor" name="子图" href="#%e5%ad%90%e5%9b%be">#</a>
+</h2><p>图 $G$ 的子图 $H$ 满足以下条件：</p>
+<ul>
+<li>$G$ 中包含 $H$ 的所有节点和边；</li>
+<li>$G$ 和 $H$ 同时为无向图或有向图.</li>
+</ul>
+<p>即 $G=(V,E),H=(V&rsquo;,E&rsquo;),V&rsquo;\in V,E&rsquo;\in E$.如下图，$H$ 是 $G$ 的子图：</p>
+<p><img class="md_img" data-fancybox="gallery" src="3.svg" alt=""></p>
+<h2 id="#路径和连通">
+    路径和连通
+    <a class="anchor" name="路径和连通" href="#%e8%b7%af%e5%be%84%e5%92%8c%e8%bf%9e%e9%80%9a">#</a>
+</h2><p>从节点 $i$ 走到节点 $j$，经过的边的序列为 $i$ 到 $j$ 的 <strong>路径</strong>.路径的长度为经过边的边权和.</p>
+<p>如下图，节点 $1$ 到 $6$ 的一条路径为 $1-4-5-6$.</p>
+<p><img class="md_img" data-fancybox="gallery" src="4.svg" alt=""></p>
+<p>若两个节点之间存在路径，则称它们 <strong>连通</strong>.</p>
+<h2 id="#回路环">
+    回路（环）
+    <a class="anchor" name="回路环" href="#%e5%9b%9e%e8%b7%af%e7%8e%af">#</a>
+</h2><p>若图中存在起点和终点相同的路径，则此路径称作 <strong>回路（环）</strong>.</p>
+<h2 id="#完全图和连通图">
+    完全图和连通图
+    <a class="anchor" name="完全图和连通图" href="#%e5%ae%8c%e5%85%a8%e5%9b%be%e5%92%8c%e8%bf%9e%e9%80%9a%e5%9b%be">#</a>
+</h2><ul>
+<li>
+<p>若无向图 $G$ 的任意两个节点之间都有连边，则 $G$ 称为 <strong>完全图</strong>.</p>
+<p>$n$ 个节点的完全图有 $\frac{1}{2}n(n-1)$ 条边；</p>
+</li>
+<li>
+<p>若无向图 $G$ 的任意两个节点都连通，则 $G$ 称为 <strong>连通图</strong>.</p>
+<p>$n$ 个节点的连通图至少有 $n-1$ 条边.</p>
+</li>
+</ul>
+<h2 id="#强连通分量">
+    强连通分量
+    <a class="anchor" name="强连通分量" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f">#</a>
+</h2><ul>
+<li>若有向图 $G$ 的任意两个节点都连通，则 $G$ 称为 <strong>强连通图</strong>；</li>
+<li>若有向图 $G$ 的子图 $H$ 是强连通图，则 $H$ 称为 $G$ 的 <strong>强连通分量</strong>.</li>
+</ul>
+<h2 id="#图的存储">
+    图的存储
+    <a class="anchor" name="图的存储" href="#%e5%9b%be%e7%9a%84%e5%ad%98%e5%82%a8">#</a>
+</h2><h3 id="#直接存边">
+    直接存边
+    <a class="anchor" name="直接存边" href="#%e7%9b%b4%e6%8e%a5%e5%ad%98%e8%be%b9">#</a>
+</h3><p>把每条边的起点、终点、长度存入数组中.</p>
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-%!s(int=0)" id="tabs-%!s(int=0)-0"
+        checked="checked" />
+    <label class="label " for="tabs-%!s(int=0)-0">结构体</label>
+    
+    <div class="inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">edge</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span></code></pre></div></div>
+    <input type="radio" class="toggle" name="tabs-%!s(int=0)" id="tabs-%!s(int=0)-1"
+         />
+    <label class="label " for="tabs-%!s(int=0)-1">打散</label>
+    
+    <div class="inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">from</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">to</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">len</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span></code></pre></div></div>
+    </div>
+
+<h3 id="#邻接矩阵">
+    邻接矩阵
+    <a class="anchor" name="邻接矩阵" href="#%e9%82%bb%e6%8e%a5%e7%9f%a9%e9%98%b5">#</a>
+</h3><p>用二维数组 $g$（邻接矩阵）存储边长，$g[i,j]$ 表示边 $i→j$ 的权值.缺点是不能存储重边、浪费空间.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">g</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span>
+</span></span></code></pre></div><h3 id="#邻接表">
+    邻接表
+    <a class="anchor" name="邻接表" href="#%e9%82%bb%e6%8e%a5%e8%a1%a8">#</a>
+</h3><p>把节点 $i$ 的所有相邻节点插入以 $head[i]$ 开头的链表中.</p>
+<p><img class="md_img" data-fancybox="gallery" src="5.svg" alt=""></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">top</span><span class="p">,</span> <span class="n">head</span><span class="p">[];</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">next</span><span class="p">;</span> <span class="c1">// 这里只需要用到单向链表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">edge</span><span class="p">[];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 追加一条从 u 到 v，长度为 len 的边
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">edge</span><span class="p">[</span><span class="o">++</span> <span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="n">Node</span><span class="p">{</span><span class="n">v</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">]};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">top</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">path</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 获取以 u, v 为端点的边的长度（没有边则返回 -1）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">];</span> <span class="n">p</span><span class="p">;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">next</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">val</span> <span class="o">==</span> <span class="n">v</span><span class="p">)</span> <span class="k">return</span> <span class="n">edge</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../../scripts/mathjax.js"></script>
+</html>

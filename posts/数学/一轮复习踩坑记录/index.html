@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>一轮复习踩坑记录 - Yharim Area</title><meta charset="utf-8">
+    <meta name="author" content="Yharim">
+    <meta name="Robots" content="All">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="windows-Target" content="_top">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../logo.svg" />
+    <link rel="alt" type="application/rss+xml" href=../../../index.xml title="Yharim Area" />
+    <link rel="stylesheet" href=../../../_index.css>
+</head><body><div class="LBody" id="start">
+        <aside class="LSide"><header class="header">
+    <div class="logo-wrap">
+        <a class="avatar" href="../../../">
+            <div class="mask"></div>
+            <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+            <img class="avatar" src="../../../avatar.png" onerror="this.classList.add('error');this.src='../../../img/unknow.svg';">
+        </a>
+        <a class="title" href="../../../">
+            <div class="main" ff="title">Yharim</div>
+            <div class="sub normal cap">Snow is on the ground</div>
+            <div class="sub hover cap">Welcome to Yharim Area</div>
+        </a>
+    </div>
+    <nav class="menu dis-select"><a class="nav-item active" href="../../../">博客</a><a class="nav-item " href="../../../docs/">文档</a><a class="nav-item " href="../../../search/">搜索</a><a class="nav-item " href="../../../about/">关于</a></nav>
+</header><div class="widgets"><div class="widget search"><widget class="widget-wrapper search">
+    <div class="widget-body">
+        <div class="search-wrapper" id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search" AUTOCOMPLETE="off">
+                <svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg>
+            </div>
+        </div>
+    </div>
+</widget></div><div class="widget toc"><widgets class="widget-wrapper toc">
+    <div class="widget-header cap dis-select">
+        <a class="name" href="#">一轮复习踩坑记录</a>
+    </div>
+    <div class="widget-body fs14">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#答题规范">答题规范</a></li>
+    <li><a href="#一数学工具">一、数学工具</a>
+      <ul>
+        <li><a href="#1-集合">1. 集合</a></li>
+        <li><a href="#2-逻辑用语">2. 逻辑用语</a></li>
+        <li><a href="#3-一元二次不等式">3. 一元二次不等式</a></li>
+        <li><a href="#4-基本不等式">4. 基本不等式</a></li>
+      </ul>
+    </li>
+    <li><a href="#二函数">二、函数</a>
+      <ul>
+        <li><a href="#1-函数定义">1. 函数定义</a></li>
+        <li><a href="#2-单调性">2. 单调性</a></li>
+        <li><a href="#3-奇偶性和对称性">3. 奇偶性和对称性</a></li>
+        <li><a href="#4-幂指对函数">4. 幂、指、对函数</a></li>
+        <li><a href="#5-函数图像">5. 函数图像</a></li>
+        <li><a href="#6-函数模型及应用">6. 函数模型及应用</a></li>
+      </ul>
+    </li>
+    <li><a href="#三导数">三、导数</a>
+      <ul>
+        <li><a href="#1-导数定义">1. 导数定义</a></li>
+        <li><a href="#2-导数与单调性">2. 导数与单调性</a></li>
+        <li><a href="#3-导数与极值最值">3. 导数与极值、最值</a></li>
+        <li><a href="#4-导数与零点">4. 导数与零点</a></li>
+      </ul>
+    </li>
+    <li><a href="#四三角函数">四、三角函数</a>
+      <ul>
+        <li><a href="#1-三角函数定义">1. 三角函数定义</a></li>
+        <li><a href="#2-诱导公式">2. 诱导公式</a></li>
+        <li><a href="#3-三角恒等变换">3. 三角恒等变换</a></li>
+        <li><a href="#4-三角函数图像">4. 三角函数图像</a></li>
+      </ul>
+    </li>
+    <li><a href="#五数列">五、数列</a>
+      <ul>
+        <li><a href="#1-数列定义">1. 数列定义</a></li>
+        <li><a href="#2-等差等比数列及求和">2. 等差、等比数列及求和</a></li>
+        <li><a href="#3-数列综合应用">3. 数列综合应用</a></li>
+      </ul>
+    </li>
+    <li><a href="#六平面向量复数">六、平面向量、复数</a>
+      <ul>
+        <li><a href="#1-平面向量定义">1. 平面向量定义</a></li>
+        <li><a href="#2-平面向量基本定理">2. 平面向量基本定理</a></li>
+        <li><a href="#3-平面向量数量积">3. 平面向量数量积</a></li>
+        <li><a href="#4-正弦定理和余弦定理">4. 正弦定理和余弦定理</a></li>
+        <li><a href="#5-复数">5. 复数</a></li>
+      </ul>
+    </li>
+    <li><a href="#七立体几何与空间向量">七、立体几何与空间向量</a>
+      <ul>
+        <li><a href="#1-直观图">1. 直观图</a></li>
+        <li><a href="#2-表面积与体积">2. 表面积与体积</a></li>
+        <li><a href="#3-点线面位置关系">3. 点、线、面位置关系</a></li>
+        <li><a href="#4-线面平行垂直">4. 线面平行、垂直</a></li>
+        <li><a href="#5-空间向量的运算及应用">5. 空间向量的运算及应用</a></li>
+      </ul>
+    </li>
+    <li><a href="#八解析几何">八、解析几何</a>
+      <ul>
+        <li><a href="#1-直线与方程">1. 直线与方程</a></li>
+        <li><a href="#2-圆椭圆双曲线">2. 圆、椭圆、双曲线</a></li>
+        <li><a href="#3-抛物线">3. 抛物线</a></li>
+        <li><a href="#4-最值范围问题">4. 最值、范围问题</a></li>
+        <li><a href="#5-定点定值问题">5. 定点、定值问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#九统计">九、统计</a>
+      <ul>
+        <li><a href="#1-随机抽样">1. 随机抽样</a></li>
+        <li><a href="#2-统计图表">2. 统计图表</a></li>
+        <li><a href="#3-用样本估计总体">3. 用样本估计总体</a></li>
+        <li><a href="#4-成对数据的统计分析">4. 成对数据的统计分析</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</widgets></div></div>
+<footer class="footer dis-select">
+    <div class="social-wrap"><a class="social" href="https://gohugo.io/" target="_blank">
+            <img src="../../../social/hugo.png">
+        </a><a class="social" href="https://github.com/Yharimium/" target="_blank">
+            <img src="../../../social/github.svg">
+        </a><a class="social" href="https://space.bilibili.com/1116690502/" target="_blank">
+            <img src="../../../social/bilibili.ico">
+        </a></div>
+</footer></aside>
+        <main class="LMain"><header class="header mobile-only">
+  <div class="logo-wrap">
+      <a class="avatar" href="../../../">
+          <div class="mask"></div>
+          <div class="bg" style="background-image:url(/img/rainbow64@3x.webp)"></div>
+          <img class="avatar" src="../../../avatar.png" onerror="this.classList.add('error');this.src='../../../img/unknow.svg';">
+      </a>
+      <a class="title" href="../../../">
+          <div class="main" ff="title">Yharim</div>
+          <div class="sub normal cap">Snow is on the ground</div>
+          <div class="sub hover cap">Welcome to Yharim Area</div>
+      </a>
+  </div>
+</header><div class="bread-nav fs12"><div class="breadcrumb"><a class="cap item" href="../../../categories/%e6%95%b0%e5%ad%a6">数学</a>
+      <span class="sep">/</span></div><div class="post-meta">发布于 2022-5-23</div>
+</div>
+
+<article class="md-text content post">
+  <h1 class="article-title">一轮复习踩坑记录</h1>
+  <span class="description">一轮复习踩坑记录.</span><blockquote>
+<p>未完待续.</p>
+</blockquote>
+<h2 id="#答题规范">
+    答题规范
+    <a class="anchor" name="答题规范" href="#%e7%ad%94%e9%a2%98%e8%a7%84%e8%8c%83">#</a>
+</h2><ul>
+<li>草稿工整.</li>
+<li>计算不得跳步.</li>
+<li>阅读题干时不得跳题.</li>
+<li>软柿子先捏，先易后难.</li>
+</ul>
+<h2 id="#一数学工具">
+    一、数学工具
+    <a class="anchor" name="一数学工具" href="#%e4%b8%80%e6%95%b0%e5%ad%a6%e5%b7%a5%e5%85%b7">#</a>
+</h2><h3 id="#1-集合">
+    1. 集合
+    <a class="anchor" name="1-集合" href="#1-%e9%9b%86%e5%90%88">#</a>
+</h3><ul>
+<li>注意空集 $\emptyset$. 空集是任何集合的子集.</li>
+</ul>
+<h3 id="#2-逻辑用语">
+    2. 逻辑用语
+    <a class="anchor" name="2-逻辑用语" href="#2-%e9%80%bb%e8%be%91%e7%94%a8%e8%af%ad">#</a>
+</h3><ul>
+<li>$\neg(\forall f(x)\in A)\eq(\exists f(x)\notin A)$.</li>
+</ul>
+<h3 id="#3-一元二次不等式">
+    3. 一元二次不等式
+    <a class="anchor" name="3-一元二次不等式" href="#3-%e4%b8%80%e5%85%83%e4%ba%8c%e6%ac%a1%e4%b8%8d%e7%ad%89%e5%bc%8f">#</a>
+</h3><ul>
+<li>讨论二次项系数是否为 $0$.</li>
+<li>两边同乘参数时注意正负.</li>
+<li>注意端点能否取等.</li>
+</ul>
+<h3 id="#4-基本不等式">
+    4. 基本不等式
+    <a class="anchor" name="4-基本不等式" href="#4-%e5%9f%ba%e6%9c%ac%e4%b8%8d%e7%ad%89%e5%bc%8f">#</a>
+</h3><ul>
+<li>大题要写当且仅当.</li>
+<li>不等号方向相同才能互推.</li>
+</ul>
+<h2 id="#二函数">
+    二、函数
+    <a class="anchor" name="二函数" href="#%e4%ba%8c%e5%87%bd%e6%95%b0">#</a>
+</h2><h3 id="#1-函数定义">
+    1. 函数定义
+    <a class="anchor" name="1-函数定义" href="#1-%e5%87%bd%e6%95%b0%e5%ae%9a%e4%b9%89">#</a>
+</h3><ul>
+<li>$f:A\rightarrow B$，值域是 $B$ 的子集.</li>
+<li>整数定义域：
+<ul>
+<li>错误：$x\in[l,r],x\in\mathbb{Z}$.</li>
+<li>正确：$x\in\{x\mid l\leq x\leq r, x\in\mathbb{Z}\}$.</li>
+</ul>
+</li>
+</ul>
+<h3 id="#2-单调性">
+    2. 单调性
+    <a class="anchor" name="2-单调性" href="#2-%e5%8d%95%e8%b0%83%e6%80%a7">#</a>
+</h3><ul>
+<li>若 $f(x)\uparrow$，则 $\dfrac{1}{f(x)}$ 未必 $\downarrow$，如 $f(x)=\dfrac{1}{x}$.</li>
+<li>$f(x)\uparrow,g(x)\uparrow\eq f(g(x))\uparrow$，反之亦然.</li>
+</ul>
+<h3 id="#3-奇偶性和对称性">
+    3. 奇偶性和对称性
+    <a class="anchor" name="3-奇偶性和对称性" href="#3-%e5%a5%87%e5%81%b6%e6%80%a7%e5%92%8c%e5%af%b9%e7%a7%b0%e6%80%a7">#</a>
+</h3><ul>
+<li>奇偶函数定义域关于原点对称.</li>
+</ul>
+<h3 id="#4-幂指对函数">
+    4. 幂、指、对函数
+    <a class="anchor" name="4-幂指对函数" href="#4-%e5%b9%82%e6%8c%87%e5%af%b9%e5%87%bd%e6%95%b0">#</a>
+</h3><ul>
+<li>$f(x)=x^a(a\in\mathbb{Q},a\not=0)$，$a&lt;0$ 时 $x\not=0$.</li>
+<li>$f(x)=a^x(a&gt;0,a\not=1)$.</li>
+<li>$f(x)=\log_a{x}(a&gt;0,a\not=1)$.</li>
+<li>讨论 $a&lt;1,a=1,a&gt;1$.</li>
+</ul>
+<h3 id="#5-函数图像">
+    5. 函数图像
+    <a class="anchor" name="5-函数图像" href="#5-%e5%87%bd%e6%95%b0%e5%9b%be%e5%83%8f">#</a>
+</h3><ul>
+<li>善用特殊点法</li>
+<li>找零点、极值点时从左到右扫描，不遗漏.</li>
+</ul>
+<h3 id="#6-函数模型及应用">
+    6. 函数模型及应用
+    <a class="anchor" name="6-函数模型及应用" href="#6-%e5%87%bd%e6%95%b0%e6%a8%a1%e5%9e%8b%e5%8f%8a%e5%ba%94%e7%94%a8">#</a>
+</h3><ul>
+<li>小心计算.</li>
+<li>函数关系式要带定义域.</li>
+</ul>
+<h2 id="#三导数">
+    三、导数
+    <a class="anchor" name="三导数" href="#%e4%b8%89%e5%af%bc%e6%95%b0">#</a>
+</h2><h3 id="#1-导数定义">
+    1. 导数定义
+    <a class="anchor" name="1-导数定义" href="#1-%e5%af%bc%e6%95%b0%e5%ae%9a%e4%b9%89">#</a>
+</h3><ul>
+<li>$C&rsquo;=0$.</li>
+<li>$f&rsquo;(x)$ 要带定义域.</li>
+</ul>
+<h3 id="#2-导数与单调性">
+    2. 导数与单调性
+    <a class="anchor" name="2-导数与单调性" href="#2-%e5%af%bc%e6%95%b0%e4%b8%8e%e5%8d%95%e8%b0%83%e6%80%a7">#</a>
+</h3><ul>
+<li>$f(x)\uparrow\Longleftarrow f&rsquo;(x)\geq 0$. $f(x)\downarrow\Longleftarrow f&rsquo;(x)\leq 0$. 注意取等.</li>
+<li>大题列表.</li>
+</ul>
+<h3 id="#3-导数与极值最值">
+    3. 导数与极值、最值
+    <a class="anchor" name="3-导数与极值最值" href="#3-%e5%af%bc%e6%95%b0%e4%b8%8e%e6%9e%81%e5%80%bc%e6%9c%80%e5%80%bc">#</a>
+</h3><ul>
+<li>极值是 $y$ 坐标，极值点是 $x$ 坐标.</li>
+</ul>
+<h3 id="#4-导数与零点">
+    4. 导数与零点
+    <a class="anchor" name="4-导数与零点" href="#4-%e5%af%bc%e6%95%b0%e4%b8%8e%e9%9b%b6%e7%82%b9">#</a>
+</h3><ul>
+<li>对数单身狗，指数找奇偶.</li>
+<li>换元不要忘了还原原参.</li>
+<li>注意边界零点是否可取.</li>
+</ul>
+<h2 id="#四三角函数">
+    四、三角函数
+    <a class="anchor" name="四三角函数" href="#%e5%9b%9b%e4%b8%89%e8%a7%92%e5%87%bd%e6%95%b0">#</a>
+</h2><h3 id="#1-三角函数定义">
+    1. 三角函数定义
+    <a class="anchor" name="1-三角函数定义" href="#1-%e4%b8%89%e8%a7%92%e5%87%bd%e6%95%b0%e5%ae%9a%e4%b9%89">#</a>
+</h3><ul>
+<li>注意 $\tan x$ 函数定义域.</li>
+</ul>
+<h3 id="#2-诱导公式">
+    2. 诱导公式
+    <a class="anchor" name="2-诱导公式" href="#2-%e8%af%b1%e5%af%bc%e5%85%ac%e5%bc%8f">#</a>
+</h3><ul>
+<li>奇变偶不变，符号看象限. 奇偶看 $\sin\left(k\cdot\dfrac{\pi}{2}+\theta\right)$ 中的 $k$.</li>
+<li>$A+B&gt;90\degree\intro\cos A=\sin(90\degree-A)&lt;\sin B$.</li>
+</ul>
+<h3 id="#3-三角恒等变换">
+    3. 三角恒等变换
+    <a class="anchor" name="3-三角恒等变换" href="#3-%e4%b8%89%e8%a7%92%e6%81%92%e7%ad%89%e5%8f%98%e6%8d%a2">#</a>
+</h3><p>已知 $\sin x+\cos x$</p>
+<p>$\intro$ 可求 $\sin^2x+\cos^2x+2\sin x\cos x$</p>
+<p>$\intro$ 可求 $\sin x\cos x$</p>
+<p>$\intro$ 可求 $(\sin x-\cos x)^2$</p>
+<p>$\intro$ 可求 $\sin x-\cos x$</p>
+<p>$\intro$ 可求 $\sin x$ 和 $\cos x$.</p>
+<h3 id="#4-三角函数图像">
+    4. 三角函数图像
+    <a class="anchor" name="4-三角函数图像" href="#4-%e4%b8%89%e8%a7%92%e5%87%bd%e6%95%b0%e5%9b%be%e5%83%8f">#</a>
+</h3><ul>
+<li>注意内函数增减性.</li>
+<li>$f(x)=A\sin(k\omega x+\varphi)$ 中 $x$ 的系数是 $k\omega$ 而非 $\omega$.</li>
+<li>$f(x)=A\sin(\omega x+\varphi)$ 求极值易漏乘 $A$.</li>
+</ul>
+<h2 id="#五数列">
+    五、数列
+    <a class="anchor" name="五数列" href="#%e4%ba%94%e6%95%b0%e5%88%97">#</a>
+</h2><h3 id="#1-数列定义">
+    1. 数列定义
+    <a class="anchor" name="1-数列定义" href="#1-%e6%95%b0%e5%88%97%e5%ae%9a%e4%b9%89">#</a>
+</h3><ul>
+<li>通项公式最好带定义域.</li>
+<li>用函数分析数列单调性存在散点风险.</li>
+</ul>
+<h3 id="#2-等差等比数列及求和">
+    2. 等差、等比数列及求和
+    <a class="anchor" name="2-等差等比数列及求和" href="#2-%e7%ad%89%e5%b7%ae%e7%ad%89%e6%af%94%e6%95%b0%e5%88%97%e5%8f%8a%e6%b1%82%e5%92%8c">#</a>
+</h3><ul>
+<li>能不画图尽量不画图.</li>
+<li>等比 $q$ 可能为负.</li>
+</ul>
+<h3 id="#3-数列综合应用">
+    3. 数列综合应用
+    <a class="anchor" name="3-数列综合应用" href="#3-%e6%95%b0%e5%88%97%e7%bb%bc%e5%90%88%e5%ba%94%e7%94%a8">#</a>
+</h3><p>暂无.</p>
+<h2 id="#六平面向量复数">
+    六、平面向量、复数
+    <a class="anchor" name="六平面向量复数" href="#%e5%85%ad%e5%b9%b3%e9%9d%a2%e5%90%91%e9%87%8f%e5%a4%8d%e6%95%b0">#</a>
+</h2><h3 id="#1-平面向量定义">
+    1. 平面向量定义
+    <a class="anchor" name="1-平面向量定义" href="#1-%e5%b9%b3%e9%9d%a2%e5%90%91%e9%87%8f%e5%ae%9a%e4%b9%89">#</a>
+</h3><ul>
+<li>$\vec{0}$ 与任意向量平行（共线）.</li>
+</ul>
+<h3 id="#2-平面向量基本定理">
+    2. 平面向量基本定理
+    <a class="anchor" name="2-平面向量基本定理" href="#2-%e5%b9%b3%e9%9d%a2%e5%90%91%e9%87%8f%e5%9f%ba%e6%9c%ac%e5%ae%9a%e7%90%86">#</a>
+</h3><ul>
+<li>共线定理 $\vec{OM}=p\vec{OA}+(1-p)\vec{OB}$ 大题需证.</li>
+</ul>
+<h3 id="#3-平面向量数量积">
+    3. 平面向量数量积
+    <a class="anchor" name="3-平面向量数量积" href="#3-%e5%b9%b3%e9%9d%a2%e5%90%91%e9%87%8f%e6%95%b0%e9%87%8f%e7%a7%af">#</a>
+</h3><ul>
+<li>善用平方差：$\vec{NA}\cdot\vec{NB}=(\vec{NM}+\vec{MA})\cdot(\vec{NM}-\vec{MA})=|\vec{NM}|^2-|\vec{MA}|^2$.</li>
+</ul>
+<h3 id="#4-正弦定理和余弦定理">
+    4. 正弦定理和余弦定理
+    <a class="anchor" name="4-正弦定理和余弦定理" href="#4-%e6%ad%a3%e5%bc%a6%e5%ae%9a%e7%90%86%e5%92%8c%e4%bd%99%e5%bc%a6%e5%ae%9a%e7%90%86">#</a>
+</h3><ul>
+<li>余弦定理：$a^2+b^2-2ab\cos C=c^2$，是减号不是加号.</li>
+</ul>
+<h3 id="#5-复数">
+    5. 复数
+    <a class="anchor" name="5-复数" href="#5-%e5%a4%8d%e6%95%b0">#</a>
+</h3><ul>
+<li>小心共轭复数.</li>
+<li>$z=a+bi$，实部为 $a$，虚部为 $b$. 实部、虚部都为实数.</li>
+</ul>
+<h2 id="#七立体几何与空间向量">
+    七、立体几何与空间向量
+    <a class="anchor" name="七立体几何与空间向量" href="#%e4%b8%83%e7%ab%8b%e4%bd%93%e5%87%a0%e4%bd%95%e4%b8%8e%e7%a9%ba%e9%97%b4%e5%90%91%e9%87%8f">#</a>
+</h2><h3 id="#1-直观图">
+    1. 直观图
+    <a class="anchor" name="1-直观图" href="#1-%e7%9b%b4%e8%a7%82%e5%9b%be">#</a>
+</h3><ul>
+<li>斜二测：平行于 $y$ 轴的变为平行于 $y&rsquo;$ 轴，且长度变为 $\dfrac{1}{2}$.</li>
+</ul>
+<h3 id="#2-表面积与体积">
+    2. 表面积与体积
+    <a class="anchor" name="2-表面积与体积" href="#2-%e8%a1%a8%e9%9d%a2%e7%a7%af%e4%b8%8e%e4%bd%93%e7%a7%af">#</a>
+</h3><ul>
+<li>不要张冠李戴.</li>
+<li>三角形面积不要忘乘 $\dfrac{1}{2}$.</li>
+</ul>
+<h3 id="#3-点线面位置关系">
+    3. 点、线、面位置关系
+    <a class="anchor" name="3-点线面位置关系" href="#3-%e7%82%b9%e7%ba%bf%e9%9d%a2%e4%bd%8d%e7%bd%ae%e5%85%b3%e7%b3%bb">#</a>
+</h3><ul>
+<li>$A,B,C$ 三点共线 $\eq\angle BCD=\angle ACD$.</li>
+<li>证不出来用反证.</li>
+</ul>
+<h3 id="#4-线面平行垂直">
+    4. 线面平行、垂直
+    <a class="anchor" name="4-线面平行垂直" href="#4-%e7%ba%bf%e9%9d%a2%e5%b9%b3%e8%a1%8c%e5%9e%82%e7%9b%b4">#</a>
+</h3><p>暂无.</p>
+<h3 id="#5-空间向量的运算及应用">
+    5. 空间向量的运算及应用
+    <a class="anchor" name="5-空间向量的运算及应用" href="#5-%e7%a9%ba%e9%97%b4%e5%90%91%e9%87%8f%e7%9a%84%e8%bf%90%e7%ae%97%e5%8f%8a%e5%ba%94%e7%94%a8">#</a>
+</h3><ul>
+<li>向量夹角与向量方向有关.</li>
+<li>注意不要把菱形当成正方形，会很难受.</li>
+</ul>
+<h2 id="#八解析几何">
+    八、解析几何
+    <a class="anchor" name="八解析几何" href="#%e5%85%ab%e8%a7%a3%e6%9e%90%e5%87%a0%e4%bd%95">#</a>
+</h2><h3 id="#1-直线与方程">
+    1. 直线与方程
+    <a class="anchor" name="1-直线与方程" href="#1-%e7%9b%b4%e7%ba%bf%e4%b8%8e%e6%96%b9%e7%a8%8b">#</a>
+</h3><ul>
+<li>直线 $y=kx+b$ 截距相等的一种情况为 $y=x$.</li>
+<li>求与定点距离为定值的直线时，考虑平行于坐标轴的情况.</li>
+</ul>
+<h3 id="#2-圆椭圆双曲线">
+    2. 圆、椭圆、双曲线
+    <a class="anchor" name="2-圆椭圆双曲线" href="#2-%e5%9c%86%e6%a4%ad%e5%9c%86%e5%8f%8c%e6%9b%b2%e7%ba%bf">#</a>
+</h3><ul>
+<li>求范围时注意题干已知条件的限制.</li>
+<li>椭圆不是圆，$a\not=b$.</li>
+<li>焦点可能在 $y$ 轴.</li>
+<li>双曲线只有一只的情况下注意定义域.</li>
+</ul>
+<h3 id="#3-抛物线">
+    3. 抛物线
+    <a class="anchor" name="3-抛物线" href="#3-%e6%8a%9b%e7%89%a9%e7%ba%bf">#</a>
+</h3><ul>
+<li>小心 $y^2=2px$ 与 $y=2qx^2$.</li>
+</ul>
+<h3 id="#4-最值范围问题">
+    4. 最值、范围问题
+    <a class="anchor" name="4-最值范围问题" href="#4-%e6%9c%80%e5%80%bc%e8%8c%83%e5%9b%b4%e9%97%ae%e9%a2%98">#</a>
+</h3><ul>
+<li>讨论直线 $k$ 不存在，$k=0$，$k\not=0$.</li>
+<li>三角形面积不要忘乘 $\dfrac{1}{2}$.</li>
+</ul>
+<h3 id="#5-定点定值问题">
+    5. 定点、定值问题
+    <a class="anchor" name="5-定点定值问题" href="#5-%e5%ae%9a%e7%82%b9%e5%ae%9a%e5%80%bc%e9%97%ae%e9%a2%98">#</a>
+</h3><ul>
+<li>勾股定理 $a^2+b^2=c^2$ 常数易漏平方.</li>
+</ul>
+<h2 id="#九统计">
+    九、统计
+    <a class="anchor" name="九统计" href="#%e4%b9%9d%e7%bb%9f%e8%ae%a1">#</a>
+</h2><h3 id="#1-随机抽样">
+    1. 随机抽样
+    <a class="anchor" name="1-随机抽样" href="#1-%e9%9a%8f%e6%9c%ba%e6%8a%bd%e6%a0%b7">#</a>
+</h3><ul>
+<li>注意书写规范.</li>
+<li>勿将研究对象总数当样本容量.</li>
+<li>大题分步，万一算错还能拿点分.</li>
+</ul>
+<h3 id="#2-统计图表">
+    2. 统计图表
+    <a class="anchor" name="2-统计图表" href="#2-%e7%bb%9f%e8%ae%a1%e5%9b%be%e8%a1%a8">#</a>
+</h3><ul>
+<li>$y$ 坐标是 $\frac{频率}{组距}$，不是频率.</li>
+<li>统计总值时沿 $x$ 方向累加，若沿 $y$ 方向累加易漏.</li>
+<li>算平均值不要忘除以 $n$.</li>
+</ul>
+<h3 id="#3-用样本估计总体">
+    3. 用样本估计总体
+    <a class="anchor" name="3-用样本估计总体" href="#3-%e7%94%a8%e6%a0%b7%e6%9c%ac%e4%bc%b0%e8%ae%a1%e6%80%bb%e4%bd%93">#</a>
+</h3><ul>
+<li>$n\%$ 位数：小于等于该数的占 $n\%$.</li>
+<li>比较数据优劣：平均值优先，方差其次.</li>
+</ul>
+<h3 id="#4-成对数据的统计分析">
+    4. 成对数据的统计分析
+    <a class="anchor" name="4-成对数据的统计分析" href="#4-%e6%88%90%e5%af%b9%e6%95%b0%e6%8d%ae%e7%9a%84%e7%bb%9f%e8%ae%a1%e5%88%86%e6%9e%90">#</a>
+</h3><ul>
+<li>注意解析式定义域.</li>
+<li>$r$：（线性）相关系数. $-1\leq r\leq 1$. $|r|\rightarrow 1$，线性相关性越强.</li>
+<li>$R^2$：（拟合）决定系数. $0\leq R^2\leq 1$. $R^2\rightarrow 1$，拟合效果越好.</li>
+<li>$\hat{e}$：残差. $\hat{e}=y-\hat{y}$.</li>
+<li>算 $\chi^2$：先约 $0$，再约公因子，最后除法.</li>
+</ul>
+</article><div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width:1em;height:1em;vertical-align:middle;fill:currentColor;overflow:hidden" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301">
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path>
+      <path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path>
+    </svg>
+  </button>
+</div></main>
+    </div>
+</body>
+<script src="../../../scripts/table-of-contents.js"></script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js" defer></script>
+<script src="../../../scripts/mathjax.js"></script>
+</html>
